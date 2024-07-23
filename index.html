@@ -1764,11 +1764,11 @@
 
     // Function to load savedata on page load
     function loadState() {
-        helldivers_main_weps = JSON.parse(localStorage.getItem("helldivers_main_weps"));
-        helldivers_secondary_weps = JSON.parse(localStorage.getItem("helldivers_secondary_weps"));
-        helldivers_grenades = JSON.parse(localStorage.getItem("helldivers_grenades"));
-        helldivers_armour = JSON.parse(localStorage.getItem("helldivers_armour"));
-        helldivers_strategems = JSON.parse(localStorage.getItem("helldivers_strategems"));
+        helldivers_main_weps = JSON.parse(localStorage.getItem("helldivers_main_weps")) ?? helldivers_main_weps;
+        helldivers_secondary_weps = JSON.parse(localStorage.getItem("helldivers_secondary_weps")) ?? helldivers_secondary_weps;
+        helldivers_grenades = JSON.parse(localStorage.getItem("helldivers_grenades")) ?? helldivers_grenades;
+        helldivers_armour = JSON.parse(localStorage.getItem("helldivers_armour")) ?? helldivers_armour;
+        helldivers_strategems = JSON.parse(localStorage.getItem("helldivers_strategems"))?? helldivers_strategems;
         console.log(helldivers_main_weps);
         console.log(helldivers_secondary_weps);
         console.log(helldivers_grenades);
