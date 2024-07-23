@@ -1,0 +1,2725 @@
+<html>
+<head>
+<style>
+    /* Style the tab */
+
+    body {
+        background-color: rgb(37, 33, 33);
+        color: #f1f1f1;
+    }
+    .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    }
+
+    /* Style the buttons that are used to open the tab content */
+    .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    }
+
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+    background-color: #ddd;
+    }
+
+    /* Create an active/current tablink class */
+    .tab button.active {
+    background-color: #ccc;
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    }
+
+    input {
+    border: none;
+     color: #ccc;
+     background-color: rgb(37, 33, 33);
+    }
+
+    .toggleButton_inactive {
+        background-color: #777;
+    }
+
+    .toggleButton_active {
+        background-color: #FFF;
+    }
+
+    .mapsList_invisible {
+        display: none;
+    }
+    .mapsList_visible {
+        display: block;
+    }
+
+</style>
+</head>
+<body onload="init_sets()">
+
+<!-- Setting up the tabbar at the top -->
+<div class="tab">
+    <button class=tablinks onclick="openTab(event, 'randomizer_tab')" id="default_tab_button">GTFO Rando</button>
+    <button class=tablinks onclick="openTab(event, 'loadout_tab')">GTFO Loadout</button>
+    <button class=tablinks onclick="openTab(event, 'maps_tab')">Maps</button>
+    <button class=tablinks onclick="openTab(event, 'helldiver_tab')">Helldivers</button>
+    <button class=tablinks onclick="openTab(event, 'helldiver_loadout_tab')">Helldiver Loadout</button>
+    <button class=tablinks onclick="openTab(event, 'strategems_tab')">Strategems</button>
+    
+</div>
+
+<!-- Main tab for actually doing logic -->
+<div id="randomizer_tab" class="tabcontent" style="display: block">
+
+    <!-- Section related to loadout randomisation -->
+    <h6>Main:</h6>
+    <p id="p1">test1</p>
+    <h6>Special:</h6>
+    <p id="p2">test2</p>
+    <h6>Tool:</h6>
+    <p id="p3">test3</p>
+    <h6>Melee:</h6>
+    <p id="p4">test4</p>
+    <button id="buton1" onclick="doRando()">click</button>
+    <br></br>
+    <input type="checkbox" id="ch0" value="always_new" checked>
+    <label for="ch0">Force new items each time</label> &nbsp;&nbsp;
+    <br></br>
+
+    <!-- Section for disabling specific options-->
+    <input type="checkbox" id="ch1" value="tracker_on">
+    <label for="ch1">Include BioTracker?</label> &nbsp;&nbsp;
+    <input type="checkbox" id="ch2" value="foam_on" checked>
+    <label for="ch2">Include C-Foam?</label> &nbsp;&nbsp;
+    <input type="checkbox" id="ch3" value="mine_on" checked>
+    <label for="ch3">Include Mine Deployer?</label> &nbsp;&nbsp;
+
+    <!-- Very shitty spacing solution -->
+    <br></br>
+    <br></br>
+
+    <!-- Section related to map randomisation-->
+    <h6>map</h6>
+    <p id="p5">test5</p>
+    <button id="button2" onclick="doMapRando()">click</button>
+
+    <!-- Section dropdown for which rundown to pick from, might change it to allow multiple -->
+    <select name="maps" id="maps_select_box" title="Any Rundown">
+        <option value="0">Any Rundown</option>
+        <option value="1">Rundown 1</option>
+        <option value="2">Rundown 2</option>
+        <option value="3">Rundown 3</option>
+        <option value="4">Rundown 4</option>
+        <option value="5">Rundown 5</option>
+        <option value="6">Rundown 6</option>
+        <option value="7">RunDown 7</option>
+        <option value="8">RunDown 8</option>
+    </select>
+
+    <!-- Weighted option (for Any Rundown option) -->
+    <input type="checkbox" id="maps_weighted_box" value="maps_weighted" checked>
+    <label for="maps_weighted_box">Weighted randomisation? (For Any Rundown option)</label> &nbsp;&nbsp;
+
+    <h6>Cosmetics</h6>
+    <p>Headgear:</p>
+      <div>
+          <input name="randomHead" id="randomHead">
+        </div>
+        <p>Torso:</p>
+      <div>
+          <input name="randomTorso" id="randomTorso">
+      </div>
+        <p>Legs:</p>
+        <div>
+          <input name="randomLegs" id="randomLegs">
+        </div>
+        <p>Backpack:</p>
+        <div>
+          <input name="randomBack" id="randomBack">
+        </div>
+        <p>Palette:</p>
+        <div>
+          <input name="randomPal" id="randomPal">
+      </div>
+        <br><br>
+        <div>
+          <button type="random" onclick="randomize()">Get full drip</button>
+    </div>
+
+</div>
+
+<!-- Massive tab for all the buttons. Organized in the way they would be in the armory -->
+<div id="loadout_tab" class="tabcontent" style="display: block">
+    <button class ="toggleButton_active" onclick="toggleItem('Pistol', main_weps)">Pistol</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Burst pistol', main_weps)">Burst pistol</button>
+    <button class ="toggleButton_active" onclick="toggleItem('HEL Revolver', main_weps)">HEL Revolver</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('Machine Pistol', main_weps)">Machine Pistol</button>
+    <button class ="toggleButton_active" onclick="toggleItem('HEL Autopistol', main_weps)">HEL Autopistol</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Bullpup Rifle', main_weps)">Bullpup Rifle</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('SMG', main_weps)">SMG</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Heavy SMG', main_weps)">Heavy SMG</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Carbine', main_weps)">Carbine</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('DMR', main_weps)">DMR</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Double Tap Rifle', main_weps)">Double Tap Rifle</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Assault Rifle', main_weps)">Assault Rifle</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('Burst Rifle', main_weps)">Burst Rifle</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Rifle', main_weps)">Rifle</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Sawed-off Shotgun', main_weps)">Sawed-off Shotgun</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('HEL Shotgun', main_weps)">HEL Shotgun</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Slug Shotgun', main_weps)">Slug Shotgun</button>
+    <br>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('Heavy Assault Rifle', special_weps)">Heavy Assault Rifle</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Short Rifle', special_weps)">Short Rifle</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Shotgun', special_weps)">Shotgun</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('Combat Shotgun', special_weps)">Combat Shotgun</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Scattergun', special_weps)">Scattergun</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Choke Mod Shotgun', special_weps)">Choke Mod Shotgun</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('Revolver', special_weps)">Revolver</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Machine Gun V', special_weps)">Machine Gun V</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Machine Gun XII', special_weps)">Machine Gun XII</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('Burst Cannon', special_weps)">Burst Cannon</button>
+    <button class ="toggleButton_active" onclick="toggleItem('HEL Gun', special_weps)">HEL Gun</button>
+    <button class ="toggleButton_active" onclick="toggleItem('High Cal Pistol', special_weps)">High Cal Pistol</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('Precision Rifle', special_weps)">Precision Rifle</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Sniper', special_weps)">Sniper</button>
+    <button class ="toggleButton_active" onclick="toggleItem('HEL Rifle', special_weps)">HEL Rifle</button>
+    <br>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('Bio Tracker', tools)">Bio Tracker</button>
+    <button class ="toggleButton_active" onclick="toggleItem('C-Foam Launcher', tools)">C-Foam Launcher</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Mine Deployer', tools)">Mine Deployer</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('Burst Sentry', tools)">Burst Sentry</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Shotgun Sentry', tools)">Shotgun Sentry</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Sniper Sentry', tools)">Sniper Sentry</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('HEL Auto Sentry', tools)">HEL Auto Sentry</button>
+    <br>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('Santonian HDH', melees)">Santonian HDH</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Omneco Maul', melees)">Omneco Maul</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Mastaba Fixed Blade', melees)">Mastaba Fixed Blade</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('Wox Compact', melees)">Wox Compact</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Kovac Peacekeeper', melees)">Kovac Peacekeeper</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Attroc Titanium', melees)">Attroc Titanium</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('Maco Drillhead', melees)">Maco Drillhead</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Isoco Stinger', melees)">Isoco Stinger</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Kovac Sledgehammer', melees)">Kovac Sledgehammer</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('Santonian Mallet', melees)">Santonian Mallet</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Maco Gavel', melees)">Maco Gavel</button>
+</div>
+
+<!-- Tab related to map settings -->
+<div id="maps_tab" class="tabcontent">
+
+    <!-- Select box to dynamically change the list and make it more managable -->
+    <select name="maps" id="maps_select_box_settings" title="maps_select" onchange="selectMapTab()">
+        <option value="0">Rundown 1</option>
+        <option value="1">Rundown 2</option>
+        <option value="2">Rundown 3</option>
+        <option value="3">Rundown 4</option>
+        <option value="4">Rundown 5</option>
+        <option value="5">Rundown 6</option>
+        <option value="6">RunDown 7</option>
+        <option value="7">RunDown 8</option>
+    </select>
+    <br>
+    <br>
+
+    <div id="maps1" class="mapsList_visible">
+        <button class ="toggleButton_active" onclick="toggleItem('R1A1', maps[0])">R1A1</button>
+        <br>
+        <button class ="toggleButton_active" onclick="toggleItem('R1B1', maps[0])">R1B1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R1B2', maps[0])">R1B2</button>
+        <br>
+        <button class ="toggleButton_active" onclick="toggleItem('R1C1', maps[0])">R1C1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R1C2', maps[0])">R1C2</button>
+        <br>
+        <button class ="toggleButton_active" onclick="toggleItem('R1D1', maps[0])">R1D1</button>
+    </div>
+
+    <div id="maps2" class="mapsList_invisible">
+        <button class ="toggleButton_active" onclick="toggleItem('R2A1', maps[1])">R2A1</button>
+        <br>
+        <button class ="toggleButton_active" onclick="toggleItem('R2B1', maps[1])">R2B1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R2B2', maps[1])">R2B2</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R2B3', maps[1])">R2B3</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R2B4', maps[1])">R2B4</button>
+        <br>
+        <button class ="toggleButton_active" onclick="toggleItem('R2C1', maps[1])">R2C1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R2C2', maps[1])">R2C2</button>
+        <br>
+        <button class ="toggleButton_active" onclick="toggleItem('R2D1', maps[1])">R2D1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R2D2', maps[1])">R2D2</button>
+        <br>
+        <button class ="toggleButton_active" onclick="toggleItem('R2E1', maps[1])">R2E1</button>
+    </div>
+
+    <div id="maps3" class="mapsList_invisible">
+        <button class ="toggleButton_active" onclick="toggleItem('R3A1', maps[2])">R3A1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R3A2', maps[2])">R3A2</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R3A3', maps[2])">R3A3</button>
+        <br>
+        <button class ="toggleButton_active" onclick="toggleItem('R3B1', maps[2])">R3B1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R3B2', maps[2])">R3B2</button>
+        <br>
+        <button class ="toggleButton_active" onclick="toggleItem('R3C1', maps[2])">R3C1</button>
+        <br>
+        <button class ="toggleButton_active" onclick="toggleItem('R3D1', maps[2])">R3D1</button>
+    </div>
+
+    <div id="maps4" class="mapsList_invisible">
+        <button class ="toggleButton_active" onclick="toggleItem('R4A1', maps[3])">R4A1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R4A2', maps[3])">R4A2</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R4A3', maps[3])">R4A3</button>
+        <br>
+        <button class ="toggleButton_active" onclick="toggleItem('R4B1', maps[3])">R4B1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R4B2', maps[3])">R4B2</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R4B3', maps[3])">R4B3</button>
+        <br>
+        <button class ="toggleButton_active" onclick="toggleItem('R4C1', maps[3])">R4C1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R4C2', maps[3])">R4C2</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R4C3', maps[3])">R4C3</button>
+        <br>
+        <button class ="toggleButton_active" onclick="toggleItem('R4D1', maps[3])">R4D1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R4D2', maps[3])">R4D2</button>
+        <br>
+        <button class ="toggleButton_active" onclick="toggleItem('R4E1', maps[3])">R4E1</button>
+    </div>
+
+    <div id="maps5" class="mapsList_invisible">
+        <button class ="toggleButton_active" onclick="toggleItem('R5A1', maps[4])">R5A1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R5A2', maps[4])">R5A2</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R5A3', maps[4])">R5A3</button>
+        <br>
+        <button class ="toggleButton_active" onclick="toggleItem('R5B1', maps[4])">R5B1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R5B2', maps[4])">R5B2</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R5B3', maps[4])">R5B3</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R5B4', maps[4])">R5B4</button>
+        <br>
+        <button class ="toggleButton_active" onclick="toggleItem('R5C1', maps[4])">R5C1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R5C2', maps[4])">R5C2</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R5C3', maps[4])">R5C3</button>
+        <br>
+        <button class ="toggleButton_active" onclick="toggleItem('R5D1', maps[4])">R5D1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R5D2', maps[4])">R5D2</button>
+        <br>
+        <button class ="toggleButton_active" onclick="toggleItem('R5E1', maps[4])">R5E1</button>
+    </div>
+
+    <div id="maps6" class="mapsList_invisible">
+        <button class ="toggleButton_active" onclick="toggleItem('R6A1', maps[5])">R6A1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R6AX', maps[5])">R6AX</button>
+        <br>
+        <button class ="toggleButton_active" onclick="toggleItem('R6B1', maps[5])">R6B1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R6B2', maps[5])">R6B2</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R6BX', maps[5])">R6BX</button>
+        <br>
+        <button class ="toggleButton_active" onclick="toggleItem('R6C1', maps[5])">R6C1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R6C2', maps[5])">R6C2</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R6C3', maps[5])">R6C3</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R6CX', maps[5])">R6CX</button>
+        <br>
+        <button class ="toggleButton_active" onclick="toggleItem('R6D1', maps[5])">R6D1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R6D2', maps[5])">R6D2</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R6D3', maps[5])">R6D3</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R6D4', maps[5])">R6D4</button>
+    </div>
+
+    <div id="maps7" class="mapsList_invisible">
+        <button class ="toggleButton_active" onclick="toggleItem('R7A1', maps[6])">R7A1</button>
+        <br>
+        <button class ="toggleButton_active" onclick="toggleItem('R7B1', maps[6])">R7B1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R7B2', maps[6])">R7B2</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R7B3', maps[6])">R7B3</button>
+        <br>
+        <button class ="toggleButton_active" onclick="toggleItem('R7C1', maps[6])">R7C1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R7C2', maps[6])">R7C2</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R7C3', maps[6])">R7C3</button>
+        <br>
+        <button class ="toggleButton_active" onclick="toggleItem('R7D1', maps[6])">R7D1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R7D2', maps[6])">R7D2</button>
+        <br>
+        <button class ="toggleButton_active" onclick="toggleItem('R7E1', maps[6])">R7E1</button>
+    </div>
+
+    <div id="maps8" class="mapsList_invisible">
+        <button class ="toggleButton_active" onclick="toggleItem('R8A1', maps[7])">R8A1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R8A2', maps[7])">R8A2</button>
+        <br>
+        <button class ="toggleButton_active" onclick="toggleItem('R8B1', maps[7])">R8B1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R8B2', maps[7])">R8B2</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R8B3', maps[7])">R8B3</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R8B4', maps[7])">R8B4</button>
+        <br>
+        <button class ="toggleButton_active" onclick="toggleItem('R8C1', maps[7])">R8C1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R8C2', maps[7])">R8C2</button>
+        <br>
+        <button class ="toggleButton_active" onclick="toggleItem('R8D1', maps[7])">R8D1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R8D2', maps[7])">R8D2</button>
+        <br>
+        <button class ="toggleButton_active" onclick="toggleItem('R8E1', maps[7])">R8E1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R8E2', maps[7])">R8E2</button>
+    </div>
+
+
+
+
+    
+</div>
+
+<div id="helldiver_tab" class="tabcontent" style="display: block">
+
+    <!-- Equipment -->
+    <h6>Main:</h6>
+    <p id="h_p1">Main weapon</p>
+    <h6>Secondary:</h6>
+    <p id="h_p2">Secondary weapon</p>
+    <h6>Grenade:</h6>
+    <p id="h_p3">Grenade</p>
+    <h6>Armour:</h6>
+    <p id="h_p4">Armour</p>
+
+    <!-- Divider -->
+    <br></br>
+    <br></br>
+
+    <!-- Etc -->
+    <h6>Faction:     <select name="factions" id="faction_select_box" >
+        <option value="0">Terminids</option>
+        <option value="1">Automatons</option>
+        <option value="2" selected="selected">Random</option>
+    </select>
+</h6>
+    <p id="h_p5">Faction</p>
+    <h6>Difficulty:</h6>
+    <p id="h_p6">Difficulty</p>
+    <h6>Strategem 1:</h6>
+    <p id="h_p7">strat1</p>
+    <h6>Strategem 2:</h6>
+    <p id="h_p8">strat2</p>
+    <h6>Strategem 3:</h6>
+    <p id="h_p9">strat3</p>
+    <h6>Strategem 4:</h6>
+    <p id="h_p10">strat4</p>
+
+    <!-- User input -->
+    <button id="helldiver_rando_button" onclick="doHelldiverRando()">Randomize</button>
+    force_reroll?
+    <input type="checkbox" id="h_ch" value="always_new">
+    &nbsp;&nbsp;
+    force_support_wep?
+    <input type="checkbox" id="h_ch_sup">
+    &nbsp;&nbsp;
+    max 1 support wep?
+    <input type="checkbox" id="h_ch_sup_max" checked>
+    &nbsp;&nbsp;
+    max 1 backpack?
+    <input type="checkbox" id="h_ch_bp_max" checked>
+    &nbsp;&nbsp;
+    min penetration for faction
+    <input type="checkbox" id="h_ch_pen" checked>
+    &nbsp;&nbsp;
+    lock faction
+    <input type="checkbox" id="h_ch_fac" checked>
+    &nbsp;&nbsp;
+    <button id="helldiver_rando_reset" onclick="resetHelldiveRando()">reset lists</button>
+    
+    
+</div>
+
+<!-- Massive tab for all the buttons. Organized in the way they would be in-game -->
+<div id="helldiver_loadout_tab" class="tabcontent">
+    <button class ="toggleButton_active" onclick="toggleItem('AR-23 Liberator (Assault Rifle)', helldivers_main_weps)">AR-23 Liberator (Assault Rifle)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('AR-23P Liberator Penetrator (Assault Rifle)', helldivers_main_weps)">AR-23P Liberator Penetrator (Assault Rifle)</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('AR-23C Liberator Concussive (Assault Rifle)', helldivers_main_weps)">AR-23C Liberator Concussive (Assault Rifle)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('AR-23A Liberator Carbine (Assault Rifle)', helldivers_main_weps)">AR-23A Liberator Carbine (Assault Rifle)</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('AR-61 Tenderizer (Assault Rifle)', helldivers_main_weps)">AR-61 Tenderizer (Assault Rifle)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('BR-14 Adjudicator (Marksman Rifle)', helldivers_main_weps)">BR-14 Adjudicator (Marksman Rifle)</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('R-63 Diligence (Marksman Rifle)', helldivers_main_weps)">R-63 Diligence (Marksman Rifle)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('R-63 Diligence Counter Sniper (Marksman Rifle)', helldivers_main_weps)">R-63 Diligence Counter Sniper (Marksman Rifle)</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('SMG-37 Defender (Submachine Gun)', helldivers_main_weps)">SMG-37 Defender (Submachine Gun)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('SMG-72 Pummeler (Submachine Gun)', helldivers_main_weps)">SMG-72 Pummeler (Submachine Gun)</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('SG-8 Punisher (Shotgun)', helldivers_main_weps)">SG-8 Punisher (Shotgun)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('SG-8S Slugger (Shotgun)', helldivers_main_weps)">SG-8S Slugger (Shotgun)</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('SG-8P Punisher Plasma (Shotgun)', helldivers_main_weps)">SG-8P Punisher Plasma (Shotgun)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('ARC-12 Blitzer', helldivers_main_weps)">ARC-12 Blitzer</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('SG-225 Breaker (Shotgun)', helldivers_main_weps)">SG-225 Breaker (Shotgun)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('SG-225IE Breaker Incendiary (Shotgun)', helldivers_main_weps)">SG-225IE Breaker Incendiary (Shotgun)</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('SG-225SP Breaker Spray&Pray', helldivers_main_weps)">SG-225SP Breaker Spray&Pray</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('CB-9 Exploding Crossbow', helldivers_main_weps)">CB-9 Exploding Crossbow</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Jar-5 Dominator (Explosive)', helldivers_main_weps)">Jar-5 Dominator (Explosive)</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('R-36 Eruptor (Explosive)', helldivers_main_weps)">R-36 Eruptor (Explosive)</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('LAS-5 Scythe (Energy-Based)', helldivers_main_weps)">LAS-5 Scythe (Energy-Based)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('LAS-16 Sickle (Energy-Based)', helldivers_main_weps)">LAS-16 Sickle (Energy-Based)</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('Plas-1 Scorcher (Energy-Based)', helldivers_main_weps)">Plas-1 Scorcher (Energy-Based)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Plas-101 Purifier (Energy-Based)', helldivers_main_weps)">Plas-101 Purifier (Energy-Based)</button>
+    <br>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('SG-22 Bushwhacker (Shotgun)', helldivers_secondary_weps)">SG-22 Bushwhacker (Shotgun)</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('P-2 Peacemaker (Pistol)', helldivers_secondary_weps)">P-2 Peacemaker (Pistol)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('P-19 Redeemer (Pistol)', helldivers_secondary_weps)">P-19 Redeemer (Pistol)</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('GP-31 Grenade Pistol (Pistol)', helldivers_secondary_weps)">GP-31 Grenade Pistol (Pistol)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('P-4 Senator (Pistol)', helldivers_secondary_weps)">P-4 Senator (Pistol)</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('P-113 Verdict', helldivers_secondary_weps)">P-113 Verdict</button>
+    <button class ="toggleButton_active" onclick="toggleItem('LAS-7 Dagger', helldivers_secondary_weps)">LAS-7 Dagger</button>
+    <br>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('C-6 Frag (Standard Grenade)', helldivers_grenades)">C-6 Frag (Standard Grenade)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('C-12 High Explosive (Standard Grenade)', helldivers_grenades)">C-12 High Explosive (Standard Grenade)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('G-10 Incendiary (Standard Grenade)', helldivers_grenades)">G-10 Incendiary (Standard Grenade)</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('G-16 Impact (Special Grenade)', helldivers_grenades)">G-16 Impact (Special Grenade)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('G-13 Incendiary Impact (Special Grenade)', helldivers_grenades)">G-13 Incendiary Impact (Special Grenade)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('G-123 Thermite (Special Grenade)', helldivers_grenades)">G-123 Thermite (Special Grenade)</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('G-3 Smoke (Special Grenade)', helldivers_grenades)">G-3 Smoke (Special Grenade)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('G-23 Stun (Special Grenade)', helldivers_grenades)">G-23 Stun (Special Grenade)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('K-2 Throwing Knife (Special Grenade)', helldivers_grenades)">K-2 Throwing Knife (Special Grenade)</button>
+    <br>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('FS/37 Ravager (Light Armour)', helldivers_armour)">FS/37 Ravager (Light Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('CW-4 Arctic Ranger (Light Armour)', helldivers_armour)">CW-4 Arctic Ranger (Light Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('CE-74 Breaker (Light Armour)', helldivers_armour)">CE-74 Breaker (Light Armour)</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('CE-67 Titan (Light Armour)', helldivers_armour)">CE-67 Titan (Light Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('CM-21 Trench Paramedic (Light Armour)', helldivers_armour)">CM-21 Trench Paramedic (Light Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('CE-07 Demolition Specialist (Light Armour)', helldivers_armour)">CE-07 Demolition Specialist (Light Armour)</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('FS-38 Eradicator (Light Armour)', helldivers_armour)">FS-38 Eradicator (Light Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('EX-00 Prototype X (Light Armour)', helldivers_armour)">EX-00 Prototype X (Light Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('SC-37 LEgionnaire (Light Armour)', helldivers_armour)">SC-37 LEgionnaire (Light Armour)</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('B-08 Light Gunner (Light Armour)', helldivers_armour)">B-08 Light Gunner (Light Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('SC-30 Trailblazer Scout (Light Armour)', helldivers_armour)">SC-30 Trailblazer Scout (Light Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('SC-34 Infiltrator (Light Armour)', helldivers_armour)">SC-34 Infiltrator (Light Armour)</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('PH-9 Predator (Light Armour)', helldivers_armour)">PH-9 Predator (Light Armour)</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('SA-25 Steel Trooper (Medium Armour)', helldivers_armour)">SA-25 Steel Trooper (Medium Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('SA-12 Servo Assisted (Medium Armour)', helldivers_armour)">SA-12 Servo Assisted (Medium Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('CE-35 Trench Engineer (Medium Armour)', helldivers_armour)">CE-35 Trench Engineer (Medium Armour)</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('CE-27 Ground Breaker (Medium Armour)', helldivers_armour)">CE-27 Ground Breaker (Medium Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('CM-09 Bonesnapper (Medium Armour)', helldivers_armour)">CM-09 Bonesnapper (Medium Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('CM-10 Clinician (Medium Armour)', helldivers_armour)">CM-10 Clinician (Medium Armour)</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('SC-15 Drone Master (Medium Armour)', helldivers_armour)">SC-15 Drone Master (Medium Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('EX-03 Prototype 3 (Medium Armour)', helldivers_armour)">EX-03 Prototype 3 (Medium Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('EX-16 Prototype 16 (Medium Armour)', helldivers_armour)">EX-16 Prototype 16 (Medium Armour)</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('FS-34 Exterminator (Medium Armour)', helldivers_armour)">FS-34 Exterminator (Medium Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('DP-40 Hero of the federation (Medium Armour)', helldivers_armour)">DP-40 Hero of the federation (Medium Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('DP-11 Champion of the people (Medium Armour)', helldivers_armour)">DP-11 Champion of the people (Medium Armour)</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('CM-14 Physician (Medium Armour)', helldivers_armour)">CM-14 Physician (Medium Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('CE-81 Juggernaut (Medium Armour)', helldivers_armour)">CE-81 Juggernaut (Medium Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('B-24 Enforcer (Medium Armour)', helldivers_armour)">B-24 Enforcer (Medium Armour)</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('B-01 Tactical (Medium Armour) (1)', helldivers_armour)">B-01 Tactical (Medium Armour) (1)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('B-01 Tactical (Medium Armour) (2)', helldivers_armour)">B-01 Tactical (Medium Armour) (2)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('B-01 Tactical (Medium Armour) (3)', helldivers_armour)">B-01 Tactical (Medium Armour) (3)</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('B-01 Tactical (Medium Armour) (4)', helldivers_armour)">B-01 Tactical (Medium Armour) (4)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('CW-9 White Wolf (Medium Armour)', helldivers_armour)">CW-9 White Wolf (Medium Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('PH-56 Jaguar (Medium Armour)', helldivers_armour)">PH-56 Jaguar (Medium Armour)</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('SA-04 Combat Technician (Medium Armour)', helldivers_armour)">SA-04 Combat Technician (Medium Armour)</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('FS-55 Devastator (Heavy Armour)', helldivers_armour)">FS-55 Devastator (Heavy Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('CW-22 Kodiak (Heavy Armour)', helldivers_armour)">CW-22 Kodiak (Heavy Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('SA-32 Dynamo (Heavy Armour)', helldivers_armour)">SA-32 Dynamo (Heavy Armour)</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('CM-17 Butcher (Heavy Armour)', helldivers_armour)">CM-17 Butcher (Heavy Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('FS/61 Dreadnought (Heavy Armour)', helldivers_armour)">FS/61 Dreadnought (Heavy Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('B-27 Fortified Commando (Heavy Armour)', helldivers_armour)">B-27 Fortified Commando (Heavy Armour)</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('FS-05 Marksman (Heavy Armour)', helldivers_armour)">FS-05 Marksman (Heavy Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('FS-11 Executioner (Heavy Armour)', helldivers_armour)">FS-11 Executioner (Heavy Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('CE-101 Guerilla Gorilla (Heavy Armour)', helldivers_armour)">CE-101 Guerilla Gorilla (Heavy Armour)</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('CE-64 Grenadier (Heavy Armour)', helldivers_armour)">CE-64 Grenadier (Heavy Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('PH-202 Twigsnapper (Heavy Armour)', helldivers_armour)">PH-202 Twigsnapper (Heavy Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('FS-23 Battle Master (Heavy Armour)', helldivers_armour)">FS-23 Battle Master (Heavy Armour)</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('CM-36 Winter Warrior (Heavy Armour)', helldivers_armour)">CM-36 Winter Warrior (Heavy Armour)</button>
+
+</div>
+
+<!-- Tab related to strategem settings -->
+<div id="strategems_tab" class="tabcontent">
+    <button class ="toggleButton_active" onclick="toggleItem('Eagle 500KG Bomb', helldivers_strategems)">Eagle 500KG Bomb</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Orbital Gatling Barrage', helldivers_strategems)">Orbital Gatling Barrage</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Eagle Airstrike', helldivers_strategems)">Eagle Airstrike</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Orbital Walking Barrage', helldivers_strategems)">Orbital Walking Barrage</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('Eagle Strafing Run', helldivers_strategems)">Eagle Strafing Run</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Orbital EMS Strike', helldivers_strategems)">Orbital EMS Strike</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Eagle Smoke Strike', helldivers_strategems)">Eagle Smoke Strike</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Orbital Gas Strike', helldivers_strategems)">Orbital Gas Strike</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('Orbital Railcannon Strike', helldivers_strategems)">Orbital Railcannon Strike</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Eagle Cluster Bomb', helldivers_strategems)">Eagle Cluster Bomb</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Orbital Smoke Strike', helldivers_strategems)">Orbital Smoke Strike</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Orbital Airburst Strike', helldivers_strategems)">Orbital Airburst Strike</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('Orbital Laser', helldivers_strategems)">Orbital Laser</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Orbital Precision Strike', helldivers_strategems)">Orbital Precision Strike</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Orbital 380MM HE Barrage', helldivers_strategems)">Orbital 380MM HE Barrage</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Eagle Napalm Airstrike', helldivers_strategems)">Eagle Napalm Airstrike</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('Orbital 120MM HE Barrage', helldivers_strategems)">Orbital 120MM HE Barrage</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Eagle 110MM Rocket Pods', helldivers_strategems)">Eagle 110MM Rocket Pods</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('MLS-4X Commando', helldivers_strategems)">MLS-4X Commando</button>
+    <button class ="toggleButton_active" onclick="toggleItem('EX-049 Emancipator Exosuit', helldivers_strategems)">EX-049 Emancipator Exosuit</button>
+    <button class ="toggleButton_active" onclick="toggleItem('M-105 Stalwart', helldivers_strategems)">M-105 Stalwart</button>
+    <button class ="toggleButton_active" onclick="toggleItem('AC-8 Autocannon', helldivers_strategems)">AC-8 Autocannon</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('EX-045 Patriot Suit', helldivers_strategems)">EX-045 Patriot Suit</button>
+    <button class ="toggleButton_active" onclick="toggleItem('MG-206 Heavy Machine Gun', helldivers_strategems)">MG-206 Heavy Machine Gun</button>
+    <button class ="toggleButton_active" onclick="toggleItem('SH-32 Shield Generator', helldivers_strategems)">SH-32 Shield Generator</button>
+    <button class ="toggleButton_active" onclick="toggleItem('RL-77 Airburst Rocket Launcher', helldivers_strategems)">RL-77 Airburst Rocket Launcher</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('RS-422 Railgun', helldivers_strategems)">RS-422 Railgun</button>
+    <button class ="toggleButton_active" onclick="toggleItem('LAS-98 Laser Cannon', helldivers_strategems)">LAS-98 Laser Cannon</button>
+    <button class ="toggleButton_active" onclick="toggleItem('ARC-3 Arc Thrower', helldivers_strategems)">ARC-3 Arc Thrower</button>
+    <button class ="toggleButton_active" onclick="toggleItem('AX/AR-23 Guard Dog', helldivers_strategems)">AX/AR-23 Guard Dog</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('FAF-14 Spear', helldivers_strategems)">FAF-14 Spear</button>
+    <button class ="toggleButton_active" onclick="toggleItem('GL-21 Grenade Launcher', helldivers_strategems)">GL-21 Grenade Launcher</button>
+    <button class ="toggleButton_active" onclick="toggleItem('MG-43 Machine Gun', helldivers_strategems)">MG-43 Machine Gun</button>
+    <button class ="toggleButton_active" onclick="toggleItem('SH-20 Ballistic Shield Backpack', helldivers_strategems)">SH-20 Ballistic Shield Backpack</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('B-1 Supply Pack', helldivers_strategems)">B-1 Supply Pack</button>
+    <button class ="toggleButton_active" onclick="toggleItem('FLAM-40 Flamethrower', helldivers_strategems)">FLAM-40 Flamethrower</button>
+    <button class ="toggleButton_active" onclick="toggleItem('AX/LAS-5 Guard Dog Rover', helldivers_strategems)">AX/LAS-5 Guard Dog Rover</button>
+    <button class ="toggleButton_active" onclick="toggleItem('GR-8 Recoilless Rifle', helldivers_strategems)">GR-8 Recoilless Rifle</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('LIFT-850 Jump Pack', helldivers_strategems)">LIFT-850 Jump Pack</button>
+    <button class ="toggleButton_active" onclick="toggleItem('APW-1 Anti Material Rifle', helldivers_strategems)">APW-1 Anti Material Rifle</button>
+    <button class ="toggleButton_active" onclick="toggleItem('EAT-17 Expendable Anti-Tank', helldivers_strategems)">EAT-17 Expendable Anti-Tank</button>
+    <button class ="toggleButton_active" onclick="toggleItem('LAS-99 Quasar Cannon', helldivers_strategems)">LAS-99 Quasar Cannon</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('FX-12 Shield Generator Relay', helldivers_strategems)">FX-12 Shield Generator Relay</button>
+    <button class ="toggleButton_active" onclick="toggleItem('A/M-23 EMS Mortar Sentry', helldivers_strategems)">A/M-23 EMS Mortar Sentry</button>
+    <button class ="toggleButton_active" onclick="toggleItem('A/MLS-4X Rocket Sentry', helldivers_strategems)">A/MLS-4X Rocket Sentry</button>
+    <button class ="toggleButton_active" onclick="toggleItem('A/G-16 Gatling Sentry', helldivers_strategems)">A/G-16 Gatling Sentry</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('A/ARC-3 Tesla Tower', helldivers_strategems)">A/ARC-3 Tesla Tower</button>
+    <button class ="toggleButton_active" onclick="toggleItem('A/M-12 Mortar Sentry', helldivers_strategems)">A/M-12 Mortar Sentry</button>
+    <button class ="toggleButton_active" onclick="toggleItem('MD-6 Anti-Personnel Minefield', helldivers_strategems)">MD-6 Anti-Personnel Minefield</button>
+    <button class ="toggleButton_active" onclick="toggleItem('A/MG-43 Machine Gun Sentry', helldivers_strategems)">A/MG-43 Machine Gun Sentry</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('A/AC-8 Autocannon Sentry', helldivers_strategems)">A/AC-8 Autocannon Sentry</button>
+    <button class ="toggleButton_active" onclick="toggleItem('MD-I4 Incendiary Mines', helldivers_strategems)">MD-I4 Incendiary Mines</button>
+    <button class ="toggleButton_active" onclick="toggleItem('E/MG-101 HMG Emplacement', helldivers_strategems)">E/MG-101 HMG Emplacement</button>
+</div>
+
+
+
+
+
+<script>
+
+    
+    // Improvised enum to avoid typo's
+    const Properties = {
+        Explosive: ("Explosive"),
+        Eagle: ("Eagle"),
+        Orbital: ("Orbital"),
+        Backpack: ("Backpack"),
+        Support_Wep: ("Support_Wep"),
+        Fortification: ("Fortification"),
+        Sentry: ("Sentry"),
+        Stun: ("Stun"),
+        One_Handed: ("One Handed"),
+        Incendiary: ("Incendiary"),
+        Energy: ("Energy"),
+        Smoke: ("Smoke")
+    }
+
+    // Helldivers content
+    var helldivers_main_weps = [
+
+        // assault rifles
+        {key: "AR-23 Liberator (Assault Rifle)", penetration: 2, probability: 100, toggle: true},
+        {key: "AR-23P Liberator Penetrator (Assault Rifle)", penetration: 3, probability: 100, toggle: true},
+        {key: "AR-23C Liberator Concussive (Assault Rifle)", penetration: 2, properties: [Properties.Stun], probability: 100, toggle: true},
+        {key: "AR-23A Liberator Carbine (Assault Rifle)", penetration: 2, probability: 100, toggle: true},
+        {key: "AR-61 Tenderizer (Assault Rifle)", penetration: 2, probability: 100, toggle: true},
+        {key: "BR-14 Adjudicator (Assault Rifle)", penetration: 3, probability: 100, toggle: true},
+        
+        // rifles
+        
+        {key: "R-63 Diligence (Marksman Rifle)", penetration: 2, probability: 100, toggle: true},
+        {key: "R-63 Diligence Counter Sniper (Marksman Rifle)", penetration: 3, probability: 100, toggle: true},       
+
+        // smg
+        {key: "SMG-37 Defender (Submachine Gun)", penetration: 2, properties: [Properties.One_Handed], probability: 100, toggle: true},
+        {key: "SMG-72 Pummeler (Submachine Gun)", penetration: 2, properties: [Properties.One_Handed, Properties.Stun], probability: 100, toggle: true},
+        
+
+        // shotgun
+        {key: "SG-8 Punisher (Shotgun)", penetration: 2, probability: 100, toggle: true},
+        {key: "SG-8S Slugger (Shotgun)", penetration: 3, probability: 100, toggle: true},
+        {key: "SG-225 Breaker (Shotgun)", penetration: 2, probability: 100, toggle: true},
+        {key: "SG-225IE Breaker Incendiary (Shotgun)", penetration: 2, properties: [Properties.Incendiary], probability: 100, toggle: true},
+        {key: "SG-225SP Breaker Spray&Pray", penetration: 2, probability: 100, toggle: true},
+
+        // Explosive
+        {key: "CB-9 Exploding Crossbow", penetration: 3, properties: [Properties.Explosive], probability: 100, toggle: true},
+        {key: "Jar-5 Dominator (Explosive)", penetration: 3, probability: 100, toggle: true},
+        {key: "R-36 Eruptor (Explosive)", penetration: 3, properties: [Properties.Explosive], probability: 100, toggle: true},
+        
+
+        // energy
+        {key: "SG-8P Punisher Plasma (Energy-Based)", penetration: 3, properties: [Properties.Explosive], probability: 100, toggle: true},
+        {key: "ARC-12 Blitzer (Energy-Based)", penetration: 3, probability: 100, toggle: true},
+        {key: "LAS-5 Scythe (Energy-Based)", penetration: 2, properties: [Properties.Energy], probability: 100, toggle: true},
+        {key: "LAS-16 Sickle (Energy-Based)", penetration: 2, properties: [Properties.Energy], probability: 100, toggle: true},
+        {key: "Plas-1 Scorcher (Energy-Based)", penetration: 3, properties: [Properties.Energy], probability: 100, toggle: true},
+        {key: "Plas-101 Purifier (Energy-Based)", penetration: 3, properties: [Properties.Energy, Properties.Explosive], probability: 100, toggle: true}
+        
+    ]
+
+    
+    const helldivers_main_weps_clone = [
+
+        // assault rifles
+        {key: "AR-23 Liberator (Assault Rifle)", penetration: 2, probability: 100, toggle: true},
+        {key: "AR-23P Liberator Penetrator (Assault Rifle)", penetration: 3, probability: 100, toggle: true},
+        {key: "AR-23C Liberator Concussive (Assault Rifle)", penetration: 2, properties: [Properties.Stun], probability: 100, toggle: true},
+        {key: "AR-23A Liberator Carbine (Assault Rifle)", penetration: 2, probability: 100, toggle: true},
+        {key: "AR-61 Tenderizer (Assault Rifle)", penetration: 2, probability: 100, toggle: true},
+        {key: "BR-14 Adjudicator (Assault Rifle)", penetration: 3, probability: 100, toggle: true},
+        
+        // rifles
+        
+        {key: "R-63 Diligence (Marksman Rifle)", penetration: 2, probability: 100, toggle: true},
+        {key: "R-63 Diligence Counter Sniper (Marksman Rifle)", penetration: 3, probability: 100, toggle: true},       
+
+        // smg
+        {key: "SMG-37 Defender (Submachine Gun)", penetration: 2, properties: [Properties.One_Handed], probability: 100, toggle: true},
+        {key: "SMG-72 Pummeler (Submachine Gun)", penetration: 2, properties: [Properties.One_Handed, Properties.Stun], probability: 100, toggle: true},
+        
+
+        // shotgun
+        {key: "SG-8 Punisher (Shotgun)", penetration: 2, probability: 100, toggle: true},
+        {key: "SG-8S Slugger (Shotgun)", penetration: 3, probability: 100, toggle: true},
+        {key: "SG-225 Breaker (Shotgun)", penetration: 2, probability: 100, toggle: true},
+        {key: "SG-225IE Breaker Incendiary (Shotgun)", penetration: 2, properties: [Properties.Incendiary], probability: 100, toggle: true},
+        {key: "SG-225SP Breaker Spray&Pray", penetration: 2, probability: 100, toggle: true},
+
+        // Explosive
+        {key: "CB-9 Exploding Crossbow", penetration: 3, properties: [Properties.Explosive], probability: 100, toggle: true},
+        {key: "Jar-5 Dominator (Explosive)", penetration: 3, probability: 100, toggle: true},
+        {key: "R-36 Eruptor (Explosive)", penetration: 3, properties: [Properties.Explosive], probability: 100, toggle: true},
+        
+
+        // energy
+        {key: "SG-8P Punisher Plasma (Energy-Based)", penetration: 3, properties: [Properties.Explosive], probability: 100, toggle: true},
+        {key: "ARC-12 Blitzer (Energy-Based)", penetration: 3, probability: 100, toggle: true},
+        {key: "LAS-5 Scythe (Energy-Based)", penetration: 2, properties: [Properties.Energy], probability: 100, toggle: true},
+        {key: "LAS-16 Sickle (Energy-Based)", penetration: 2, properties: [Properties.Energy], probability: 100, toggle: true},
+        {key: "Plas-1 Scorcher (Energy-Based)", penetration: 3, properties: [Properties.Energy], probability: 100, toggle: true},
+        {key: "Plas-101 Purifier (Energy-Based)", penetration: 3, properties: [Properties.Energy, Properties.Explosive], probability: 100, toggle: true}
+        
+    ]
+
+    var helldivers_secondary_weps = [
+
+        // Shotgun
+        {key: "SG-22 Bushwhacker (Shotgun)", penetration: 2, properties: [Properties.One_Handed], probability: 100, toggle: true},
+        
+        // Pistol
+        {key: "P-2 Peacemaker (Pistol)", penetration: 2, properties: [Properties.One_Handed], probability: 100, toggle: true},
+        {key: "P-19 Redeemer (Pistol)", penetration: 2, properties: [Properties.One_Handed], probability: 100, toggle: true},
+        {key: "GP-31 Grenade Pistol (Pistol)", penetration: 3, properties: [Properties.Explosive, Properties.One_Handed], probability: 100, toggle: true},
+        {key: "P-4 Senator (Pistol)", penetration: 3, properties: [Properties.One_Handed], probability: 100, toggle: true},
+        {key: "P-113 Verdict", penetration: 2, properties: [Properties.One_Handed], probability: 100, toggle: true},
+        {key: "LAS-7 Dagger", penetration: 2, properties: [Properties.One_Handed], probability: 100, toggle: true}
+        
+
+    ]
+
+    const helldivers_secondary_weps_clone = [
+
+        // Shotgun
+        {key: "SG-22 Bushwhacker (Shotgun)", penetration: 2, properties: [Properties.One_Handed], probability: 100, toggle: true},
+        
+        // Pistol
+        {key: "P-2 Peacemaker (Pistol)", penetration: 2, properties: [Properties.One_Handed], probability: 100, toggle: true},
+        {key: "P-19 Redeemer (Pistol)", penetration: 2, properties: [Properties.One_Handed], probability: 100, toggle: true},
+        {key: "GP-31 Grenade Pistol (Pistol)", penetration: 3, properties: [Properties.Explosive, Properties.One_Handed], probability: 100, toggle: true},
+        {key: "P-4 Senator (Pistol)", penetration: 3, properties: [Properties.One_Handed], probability: 100, toggle: true},
+        {key: "P-113 Verdict", penetration: 2, properties: [Properties.One_Handed], probability: 100, toggle: true},
+        {key: "LAS-7 Dagger", penetration: 2, properties: [Properties.One_Handed], probability: 100, toggle: true}
+
+]
+
+    var helldivers_grenades = [
+
+        // Standard
+        {key: "C-6 Frag (Standard Grenade)", properties: [Properties.Explosive], probability: 100, toggle: true},
+        {key: "C-12 High Explosive (Standard Grenade)", properties: [Properties.Explosive], probability: 100, toggle: true},
+        {key: "G-10 Incendiary (Standard Grenade)", properties: [Properties.Explosive, Properties.Incendiary], probability: 100, toggle: true},
+        
+        // Special
+        {key: "G-16 Impact (Special Grenade)", properties: [Properties.Explosive], probability: 100, toggle: true},
+        {key: "G-13 Incendiary Impact (Special Grenade)", properties: [Properties.Explosive, Properties.Incendiary], probability: 100, toggle: true},
+        {key: "G-123 Thermite (Special Grenade)", properties: [Properties.Explosive, Properties.Incendiary], probability: 100, toggle: true},
+        
+        // Smoke in its own section since it's dumb
+        // -- Commented out as of 09/03/2024
+        {key: "G-3 Smoke (Special Grenade)", properties: [Properties.Smoke], probability: 100, toggle: false},
+        {key: "G-23 Stun (Special Grenade)", properties: [Properties.Stun], probability: 100, toggle: false},
+        {key: "K-2 Throwing Knife (Special Grenade)", probability: 100, toggle: false}
+        
+    ]
+
+    const helldivers_grenades_clone = [
+
+        // Standard
+        {key: "C-6 Frag (Standard Grenade)", properties: [Properties.Explosive], probability: 100, toggle: true},
+        {key: "C-12 High Explosive (Standard Grenade)", properties: [Properties.Explosive], probability: 100, toggle: true},
+        {key: "G-10 Incendiary (Standard Grenade)", properties: [Properties.Explosive, Properties.Incendiary], probability: 100, toggle: true},
+
+        // Special
+        {key: "G-16 Impact (Special Grenade)", properties: [Properties.Explosive], probability: 100, toggle: true},
+        {key: "G-13 Incendiary Impact (Special Grenade)", properties: [Properties.Explosive, Properties.Incendiary], probability: 100, toggle: true},
+        {key: "G-123 Thermite (Special Grenade)", properties: [Properties.Explosive, Properties.Incendiary], probability: 100, toggle: true},
+
+        // Smoke in its own section since it's dumb
+        // -- Commented out as of 09/03/2024
+        {key: "G-3 Smoke (Special Grenade)", properties: [Properties.Smoke], probability: 100, toggle: false},
+        {key: "G-23 Stun (Special Grenade)", properties: [Properties.Stun], probability: 100, toggle: false},
+        {key: "K-2 Throwing Knife (Special Grenade)", probability: 100, toggle: false}
+]
+
+    var helldivers_armour = [
+
+    // light
+    {key: "FS/37 Ravager (Light Armour)", probability: 100, toggle: true},
+    {key: "CW-4 Arctic Ranger (Light Armour)", probability: 100, toggle: true},
+    {key: "CE-74 Breaker (Light Armour)", probability: 100, toggle: true},
+    {key: "CE-67 Titan (Light Armour)", probability: 100, toggle: true},
+    {key: "CM-21 Trench Paramedic (Light Armour)", probability: 100, toggle: true},
+    {key: "CE-07 Demolition Specialist (Light Armour)", probability: 100, toggle: true},
+    {key: "FS-38 Eradicator (Light Armour)", probability: 100, toggle: true},
+    {key: "EX-00 Prototype X (Light Armour)", probability: 100, toggle: true},
+    {key: "SC-37 LEgionnaire (Light Armour)", probability: 100, toggle: true}, 
+    {key: "B-08 Light Gunner (Light Armour)", probability: 100, toggle: true}, 
+    {key: "SC-30 Trailblazer Scout (Light Armour)", probability: 100, toggle: true},
+    {key: "SC-34 Infiltrator (Light Armour)", probability: 100, toggle: true},
+    {key: "PH-9 Predator (Light Armour)", probability: 100, toggle: true},
+
+
+
+    // medium
+    {key: "SA-25 Steel Trooper (Medium Armour)", probability: 100, toggle: true},
+    {key: "SA-12 Servo Assisted (Medium Armour)", probability: 100, toggle: true},
+    {key: "CE-35 Trench Engineer (Medium Armour)", probability: 100, toggle: true},
+    {key: "CE-27 Ground Breaker (Medium Armour)", probability: 100, toggle: true},
+    {key: "CM-09 Bonesnapper (Medium Armour)", probability: 100, toggle: true},
+    {key: "CM-10 Clinician (Medium Armour)", probability: 100, toggle: true},
+    {key: "SC-15 Drone Master (Medium Armour)", probability: 100, toggle: true},
+    {key: "EX-03 Prototype 3 (Medium Armour)", probability: 100, toggle: true},
+    {key: "EX-16 Prototype 16 (Medium Armour)", probability: 100, toggle: true},
+    {key: "FS-34 Exterminator (Medium Armour)", probability: 100, toggle: true},
+    {key: "DP-40 Hero of the federation (Medium Armour)", probability: 100, toggle: true},
+    {key: "DP-11 Champion of the people (Medium Armour)", probability: 100, toggle: true},
+    {key: "CM-14 Physician (Medium Armour)", probability: 100, toggle: true},
+    {key: "CE-81 Juggernaut (Medium Armour)", probability: 100, toggle: true},
+    {key: "B-24 Enforcer (Medium Armour)", probability: 100, toggle: true},
+    {key: "B-01 Tactical (Medium Armour) (1)", probability: 100, toggle: true},
+    {key: "B-01 Tactical (Medium Armour) (2)", probability: 100, toggle: true},
+    {key: "B-01 Tactical (Medium Armour) (3)", probability: 100, toggle: true},
+    {key: "B-01 Tactical (Medium Armour) (4)", probability: 100, toggle: true},
+    {key: "CW-9 White Wolf (Medium Armour)", probability: 100, toggle: true},
+    {key: "SA-04 Combat Technician (Medium Armour)", probability: 100, toggle: true},
+    {key: "PH-56 Jaguar (Medium Armour)", probability: 100, toggle: true},
+
+
+    // heavy
+    {key: "FS-55 Devastator (Heavy Armour)", probability: 100, toggle: true},
+    {key: "CW-22 Kodiak (Heavy Armour)", probability: 100, toggle: true},
+    {key: "SA-32 Dynamo (Heavy Armour)", probability: 100, toggle: true},
+    {key: "CM-17 Butcher (Heavy Armour)", probability: 100, toggle: true},
+    {key: "FS/61 Dreadnought (Heavy Armour)", probability: 100, toggle: true},
+    {key: "B-27 Fortified Commando (Heavy Armour)", probability: 100, toggle: true},
+    {key: "FS-05 Marksman (Heavy Armour)", probability: 100, toggle: true},
+    {key: "FS-11 Executioner (Heavy Armour)", probability: 100, toggle: true},
+    {key: "CE-64 Grenadier (Heavy Armour)", probability: 100, toggle: true},
+    {key: "CE-101 Guerilla Gorilla (Heavy Armour)", probability: 100, toggle: true},
+    {key: "PH-202 Twigsnapper (Heavy Armour)", probability: 100, toggle: true},
+    {key: "FS-23 Battle Master (Heavy Armour)", probability: 100, toggle: true},
+    {key: "CM-36 Winter Warrior (Heavy Armour)", probability: 100, toggle: true}
+
+]
+
+    const helldivers_armour_clone = [
+
+    // light
+    {key: "FS/37 Ravager (Light Armour)", probability: 100, toggle: true},
+    {key: "CW-4 Arctic Ranger (Light Armour)", probability: 100, toggle: true},
+    {key: "CE-74 Breaker (Light Armour)", probability: 100, toggle: true},
+    {key: "CE-67 Titan (Light Armour)", probability: 100, toggle: true},
+    {key: "CM-21 Trench Paramedic (Light Armour)", probability: 100, toggle: true},
+    {key: "CE-07 Demolition Specialist (Light Armour)", probability: 100, toggle: true},
+    {key: "FS-38 Eradicator (Light Armour)", probability: 100, toggle: true},
+    {key: "EX-00 Prototype X (Light Armour)", probability: 100, toggle: true},
+    {key: "SC-37 LEgionnaire (Light Armour)", probability: 100, toggle: true}, 
+    {key: "B-08 Light Gunner (Light Armour)", probability: 100, toggle: true}, 
+    {key: "SC-30 Trailblazer Scout (Light Armour)", probability: 100, toggle: true},
+    {key: "SC-34 Infiltrator (Light Armour)", probability: 100, toggle: true},
+    {key: "PH-9 Predator (Light Armour)", probability: 100, toggle: true},
+
+
+
+    // medium
+    {key: "SA-25 Steel Trooper (Medium Armour)", probability: 100, toggle: true},
+    {key: "SA-12 Servo Assisted (Medium Armour)", probability: 100, toggle: true},
+    {key: "CE-35 Trench Engineer (Medium Armour)", probability: 100, toggle: true},
+    {key: "CE-27 Ground Breaker (Medium Armour)", probability: 100, toggle: true},
+    {key: "CM-09 Bonesnapper (Medium Armour)", probability: 100, toggle: true},
+    {key: "CM-10 Clinician (Medium Armour)", probability: 100, toggle: true},
+    {key: "SC-15 Drone Master (Medium Armour)", probability: 100, toggle: true},
+    {key: "EX-03 Prototype 3 (Medium Armour)", probability: 100, toggle: true},
+    {key: "EX-16 Prototype 16 (Medium Armour)", probability: 100, toggle: true},
+    {key: "FS-34 Exterminator (Medium Armour)", probability: 100, toggle: true},
+    {key: "DP-40 Hero of the federation (Medium Armour)", probability: 100, toggle: true},
+    {key: "DP-11 Champion of the people (Medium Armour)", probability: 100, toggle: true},
+    {key: "CM-14 Physician (Medium Armour)", probability: 100, toggle: true},
+    {key: "CE-81 Juggernaut (Medium Armour)", probability: 100, toggle: true},
+    {key: "B-24 Enforcer (Medium Armour)", probability: 100, toggle: true},
+    {key: "B-01 Tactical (Medium Armour) (1)", probability: 100, toggle: true},
+    {key: "B-01 Tactical (Medium Armour) (2)", probability: 100, toggle: true},
+    {key: "B-01 Tactical (Medium Armour) (3)", probability: 100, toggle: true},
+    {key: "B-01 Tactical (Medium Armour) (4)", probability: 100, toggle: true},
+    {key: "CW-9 White Wolf (Medium Armour)", probability: 100, toggle: true},
+    {key: "SA-04 Combat Technician (Medium Armour)", probability: 100, toggle: true},
+    {key: "PH-56 Jaguar (Medium Armour)", probability: 100, toggle: true},
+
+
+    // heavy
+    {key: "FS-55 Devastator (Heavy Armour)", probability: 100, toggle: true},
+    {key: "CW-22 Kodiak (Heavy Armour)", probability: 100, toggle: true},
+    {key: "SA-32 Dynamo (Heavy Armour)", probability: 100, toggle: true},
+    {key: "CM-17 Butcher (Heavy Armour)", probability: 100, toggle: true},
+    {key: "FS/61 Dreadnought (Heavy Armour)", probability: 100, toggle: true},
+    {key: "B-27 Fortified Commando (Heavy Armour)", probability: 100, toggle: true},
+    {key: "FS-05 Marksman (Heavy Armour)", probability: 100, toggle: true},
+    {key: "FS-11 Executioner (Heavy Armour)", probability: 100, toggle: true},
+    {key: "CE-64 Grenadier (Heavy Armour)", probability: 100, toggle: true},
+    {key: "CE-101 Guerilla Gorilla (Heavy Armour)", probability: 100, toggle: true},
+    {key: "PH-202 Twigsnapper (Heavy Armour)", probability: 100, toggle: true},
+    {key: "FS-23 Battle Master (Heavy Armour)", probability: 100, toggle: true},
+    {key: "CM-36 Winter Warrior (Heavy Armour)", probability: 100, toggle: true}
+        
+    ]
+
+    var helldivers_factions = [
+        {key: "Terminids", probability: 100, toggle: true},
+        {key: "Automatons", probability: 100, toggle: true}
+        
+    ]    
+
+    const helldivers_factions_clone = [
+        {key: "Terminids", probability: 100, toggle: true},
+        {key: "Automatons", probability: 100, toggle: true}
+        
+    ]
+
+    var helldivers_difficulties = [
+        {key: "1", probability: 100, toggle: true},
+        {key: "2", probability: 100, toggle: true},
+        {key: "3", probability: 100, toggle: true},
+        {key: "4", probability: 100, toggle: true},
+        {key: "5", probability: 100, toggle: true},
+        {key: "6", probability: 100, toggle: true},
+        {key: "7", probability: 100, toggle: true},
+        {key: "8", probability: 100, toggle: true},
+        {key: "9", probability: 100, toggle: true}
+
+    ]
+
+        const helldivers_difficulties_clone = [
+        {key: "1", probability: 100, toggle: true},
+        {key: "2", probability: 100, toggle: true},
+        {key: "3", probability: 100, toggle: true},
+        {key: "4", probability: 100, toggle: true},
+        {key: "5", probability: 100, toggle: true},
+        {key: "6", probability: 100, toggle: true},
+        {key: "7", probability: 100, toggle: true},
+        {key: "8", probability: 100, toggle: true},
+        {key: "9", probability: 100, toggle: true}
+
+    ]
+
+    var helldivers_strategems = [
+
+
+        // Strikes
+        {key: "Eagle 500KG Bomb", penetration: 9, properties: [Properties.Explosive, Properties.Eagle], probability: 100, toggle: true},
+        {key: "Orbital Gatling Barrage", penetration: 2, properties: [Properties.Orbital], probability: 100, toggle: true},
+        {key: "Eagle Airstrike", penetration: 9, properties: [Properties.Explosive, Properties.Eagle], probability: 100, toggle: true},
+        {key: "Orbital Walking Barrage", penetration: 9, properties: [Properties.Explosive, Properties.Orbital], probability: 100, toggle: true},
+        {key: "Eagle Strafing Run", penetration: 2, properties: [Properties.Explosive, Properties.Eagle], probability: 100, toggle: true},
+        {key: "Orbital EMS Strike", properties: [Properties.Stun, Properties.Orbital], probability: 100, toggle: true},
+        {key: "Eagle Smoke Strike", properties: [Properties.Smoke, Properties.Eagle], probability: 100, toggle: true},
+        {key: "Orbital Gas Strike", properties: [Properties.Orbital], probability: 100, toggle: true},
+        {key: "Orbital Railcannon Strike", penetration: 2, properties: [Properties.Orbital], probability: 100, toggle: true},
+        {key: "Eagle Cluster Bomb", penetration: 2, properties: [Properties.Explosive, Properties.Eagle], probability: 100, toggle: true},
+        {key: "Orbital Smoke Strike", properties: [Properties.Smoke, Properties.Orbital], probability: 100, toggle: true},
+        {key: "Orbital Airburst Strike", penetration: 2, properties: [Properties.Orbital], probability: 100, toggle: true},
+        {key: "Orbital Laser", penetration: 9, properties: [Properties.Explosive, Properties.Orbital], probability: 100, toggle: true},
+        {key: "Orbital Precision Strike", penetration: 9, properties: [Properties.Explosive, Properties.Orbital], probability: 100, toggle: true},
+        {key: "Orbital 380MM HE Barrage", penetration: 9, properties: [Properties.Explosive, Properties.Orbital], probability: 100, toggle: true},
+        {key: "Eagle Napalm Airstrike", penetration: 2, properties: [Properties.Eagle], probability: 100, toggle: true},
+        {key: "Orbital 120MM HE Barrage", penetration: 9, properties: [Properties.Explosive, Properties.Orbital], probability: 100, toggle: true},
+        {key: "Eagle 110MM Rocket Pods", penetration: 9, properties: [Properties.Explosive, Properties.Eagle], probability: 100, toggle: true},
+        
+
+        // Equipment
+        {key: "MLS-4X Commando", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep], probability: 100, toggle: true},
+        {key: "EX-049 Emancipator Exosuit", properties: [Properties.Explosive], probability: 100, toggle: true},
+        {key: "M-105 Stalwart", penetration: 2, properties: [Properties.Support_Wep], probability: 100, toggle: true},
+        {key: "AC-8 Autocannon", penetration: 4, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 100, toggle: true},
+        {key: "EX-045 Patriot Suit", properties: [Properties.Explosive], probability: 100, toggle: true},
+        {key: "MG-206 Heavy Machine Gun", penetration: 4, properties: [Properties.Support_Wep], probability: 100, toggle: true},
+        {key: "SH-32 Shield Generator", properties: [Properties.Backpack], probability: 100, toggle: true},
+        {key: "RL-77 Airburst Rocket Launcher", penetration: 3, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 100, toggle: true},
+        {key: "RS-422 Railgun", penetration: 5, properties: [Properties.Support_Wep], probability: 100, toggle: true},
+        {key: "LAS-98 Laser Cannon", penetration: 4, properties: [Properties.Support_Wep], probability: 100, toggle: true},
+        {key: "ARC-3 Arc Thrower", penetration: 7, properties: [Properties.Support_Wep], probability: 100, toggle: true},
+        {key: "AX/AR-23 Guard Dog", properties: [Properties.Backpack], probability: 100, toggle: true},
+        {key: "FAF-14 Spear", penetration: 8, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 100, toggle: true},
+        {key: "GL-21 Grenade Launcher", properties: [Properties.Explosive, Properties.Support_Wep], probability: 100, toggle: true},
+        {key: "MG-43 Machine Gun", penetration: 3, properties: [Properties.Support_Wep], probability: 100, toggle: true},
+        {key: "SH-20 Ballistic Shield Backpack", properties: [Properties.Backpack, Properties.One_Handed], probability: 100, toggle: true},
+        {key: "B-1 Supply Pack", properties: [Properties.Backpack], probability: 100, toggle: true},
+        {key: "FLAM-40 Flamethrower", properties: [Properties.Incendiary, Properties.Support_Wep], probability: 100, toggle: true},
+        {key: "AX/LAS-5 Guard Dog Rover", properties: [Properties.Backpack], probability: 100, toggle: true},
+        {key: "GR-8 Recoilless Rifle", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 100, toggle: true},
+        {key: "LIFT-850 Jump Pack", properties: [Properties.Backpack], probability: 100, toggle: true},
+        {key: "APW-1 Anti Material Rifle", penetration: 4, properties: [Properties.Support_Wep], probability: 100, toggle: true},
+        {key: "EAT-17 Expendable Anti-Tank", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep], probability: 100, toggle: true},
+        {key: "LAS-99 Quasar Cannon", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep], probability: 100, toggle: true},
+
+        
+        // Defensive buildings
+        {key: "FX-12 Shield Generator Relay", properties: [Properties.Fortification], probability: 100, toggle: true},
+        {key: "A/M-23 EMS Mortar Sentry", properties: [Properties.Sentry, Properties.Stun], probability: 100, toggle: true},
+        {key: "A/MLS-4X Rocket Sentry", properties: [Properties.Sentry, Properties.Explosive], probability: 100, toggle: true},
+        {key: "A/G-16 Gatling Sentry", properties: [Properties.Sentry], probability: 100, toggle: true},
+        {key: "A/ARC-3 Tesla Tower", properties: [Properties.Sentry], probability: 100, toggle: true},
+        {key: "A/M-12 Mortar Sentry", properties: [Properties.Sentry, Properties.Explosive], probability: 100, toggle: true},
+        {key: "MD-6 Anti-Personnel Minefield", properties: [Properties.Fortification], probability: 100, toggle: true},
+        {key: "A/MG-43 Machine Gun Sentry", properties: [Properties.Sentry], probability: 100, toggle: true},
+        {key: "A/AC-8 Autocannon Sentry", properties: [Properties.Sentry, Properties.Explosive], probability: 100, toggle: true},
+        {key: "MD-I4 Incendiary Mines", properties: [Properties.Fortification, Properties.Incendiary], probability: 100, toggle: true},
+        {key: "E/MG-101 HMG Emplacement", penetration: 4, properties: [Properties.Fortification], probability: 100, toggle: true}
+        
+    ]
+
+    
+    const helldivers_strategems_clone = [
+
+
+        // Strikes
+        {key: "Eagle 500KG Bomb", penetration: 9, properties: [Properties.Explosive, Properties.Eagle], probability: 100, toggle: true},
+        {key: "Orbital Gatling Barrage", penetration: 2, properties: [Properties.Orbital], probability: 100, toggle: true},
+        {key: "Eagle Airstrike", penetration: 9, properties: [Properties.Explosive, Properties.Eagle], probability: 100, toggle: true},
+        {key: "Orbital Walking Barrage", penetration: 9, properties: [Properties.Explosive, Properties.Orbital], probability: 100, toggle: true},
+        {key: "Eagle Strafing Run", penetration: 2, properties: [Properties.Explosive, Properties.Eagle], probability: 100, toggle: true},
+        {key: "Orbital EMS Strike", properties: [Properties.Stun, Properties.Orbital], probability: 100, toggle: true},
+        {key: "Eagle Smoke Strike", properties: [Properties.Smoke, Properties.Eagle], probability: 100, toggle: true},
+        {key: "Orbital Gas Strike", properties: [Properties.Orbital], probability: 100, toggle: true},
+        {key: "Orbital Railcannon Strike", penetration: 2, properties: [Properties.Orbital], probability: 100, toggle: true},
+        {key: "Eagle Cluster Bomb", penetration: 2, properties: [Properties.Explosive, Properties.Eagle], probability: 100, toggle: true},
+        {key: "Orbital Smoke Strike", properties: [Properties.Smoke, Properties.Orbital], probability: 100, toggle: true},
+        {key: "Orbital Airburst Strike", penetration: 2, properties: [Properties.Orbital], probability: 100, toggle: true},
+        {key: "Orbital Laser", penetration: 9, properties: [Properties.Explosive, Properties.Orbital], probability: 100, toggle: true},
+        {key: "Orbital Precision Strike", penetration: 9, properties: [Properties.Explosive, Properties.Orbital], probability: 100, toggle: true},
+        {key: "Orbital 380MM HE Barrage", penetration: 9, properties: [Properties.Explosive, Properties.Orbital], probability: 100, toggle: true},
+        {key: "Eagle Napalm Airstrike", penetration: 2, properties: [Properties.Eagle], probability: 100, toggle: true},
+        {key: "Orbital 120MM HE Barrage", penetration: 9, properties: [Properties.Explosive, Properties.Orbital], probability: 100, toggle: true},
+        {key: "Eagle 110MM Rocket Pods", penetration: 9, properties: [Properties.Explosive, Properties.Eagle], probability: 100, toggle: true},
+        
+
+        // Equipment
+        {key: "MLS-4X Commando", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep], probability: 100, toggle: true},
+        {key: "EX-049 Emancipator Exosuit", properties: [Properties.Explosive], probability: 100, toggle: true},
+        {key: "M-105 Stalwart", penetration: 2, properties: [Properties.Support_Wep], probability: 100, toggle: true},
+        {key: "AC-8 Autocannon", penetration: 4, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 100, toggle: true},
+        {key: "EX-045 Patriot Suit", properties: [Properties.Explosive], probability: 100, toggle: true},
+        {key: "MG-206 Heavy Machine Gun", penetration: 4, properties: [Properties.Support_Wep], probability: 100, toggle: true},
+        {key: "SH-32 Shield Generator", properties: [Properties.Backpack], probability: 100, toggle: true},
+        {key: "RL-77 Airburst Rocket Launcher", penetration: 3, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 100, toggle: true},
+        {key: "RS-422 Railgun", penetration: 5, properties: [Properties.Support_Wep], probability: 100, toggle: true},
+        {key: "LAS-98 Laser Cannon", penetration: 4, properties: [Properties.Support_Wep], probability: 100, toggle: true},
+        {key: "ARC-3 Arc Thrower", penetration: 7, properties: [Properties.Support_Wep], probability: 100, toggle: true},
+        {key: "AX/AR-23 Guard Dog", properties: [Properties.Backpack], probability: 100, toggle: true},
+        {key: "FAF-14 Spear", penetration: 8, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 100, toggle: true},
+        {key: "GL-21 Grenade Launcher", properties: [Properties.Explosive, Properties.Support_Wep], probability: 100, toggle: true},
+        {key: "MG-43 Machine Gun", penetration: 3, properties: [Properties.Support_Wep], probability: 100, toggle: true},
+        {key: "SH-20 Ballistic Shield Backpack", properties: [Properties.Backpack, Properties.One_Handed], probability: 100, toggle: true},
+        {key: "B-1 Supply Pack", properties: [Properties.Backpack], probability: 100, toggle: true},
+        {key: "FLAM-40 Flamethrower", properties: [Properties.Incendiary, Properties.Support_Wep], probability: 100, toggle: true},
+        {key: "AX/LAS-5 Guard Dog Rover", properties: [Properties.Backpack], probability: 100, toggle: true},
+        {key: "GR-8 Recoilless Rifle", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 100, toggle: true},
+        {key: "LIFT-850 Jump Pack", properties: [Properties.Backpack], probability: 100, toggle: true},
+        {key: "APW-1 Anti Material Rifle", penetration: 4, properties: [Properties.Support_Wep], probability: 100, toggle: true},
+        {key: "EAT-17 Expendable Anti-Tank", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep], probability: 100, toggle: true},
+        {key: "LAS-99 Quasar Cannon", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep], probability: 100, toggle: true},
+
+        
+        // Defensive buildings
+        {key: "FX-12 Shield Generator Relay", properties: [Properties.Fortification], probability: 100, toggle: true},
+        {key: "A/M-23 EMS Mortar Sentry", properties: [Properties.Sentry, Properties.Stun], probability: 100, toggle: true},
+        {key: "A/MLS-4X Rocket Sentry", properties: [Properties.Sentry, Properties.Explosive], probability: 100, toggle: true},
+        {key: "A/G-16 Gatling Sentry", properties: [Properties.Sentry], probability: 100, toggle: true},
+        {key: "A/ARC-3 Tesla Tower", properties: [Properties.Sentry], probability: 100, toggle: true},
+        {key: "A/M-12 Mortar Sentry", properties: [Properties.Sentry, Properties.Explosive], probability: 100, toggle: true},
+        {key: "MD-6 Anti-Personnel Minefield", properties: [Properties.Fortification], probability: 100, toggle: true},
+        {key: "A/MG-43 Machine Gun Sentry", properties: [Properties.Sentry], probability: 100, toggle: true},
+        {key: "A/AC-8 Autocannon Sentry", properties: [Properties.Sentry, Properties.Explosive], probability: 100, toggle: true},
+        {key: "MD-I4 Incendiary Mines", properties: [Properties.Fortification, Properties.Incendiary], probability: 100, toggle: true},
+        {key: "E/MG-101 HMG Emplacement", penetration: 4, properties: [Properties.Fortification], probability: 100, toggle: true}
+        
+    ]
+
+
+
+    /* GTFO content */
+    // Available main weapons
+
+    var main_weps=[
+        {key: "Pistol", probability: 100, toggle: true},
+        {key: "Burst pistol", probability: 100, toggle: true},
+        {key: "HEL Revolver", probability: 100, toggle: true},
+        {key: "Machine Pistol", probability: 100, toggle: true},
+        {key: "HEL Autopistol", probability: 100, toggle: true},
+        {key: "Bullpup Rifle", probability: 100, toggle: true},
+        {key: "SMG", probability: 100, toggle: true},
+        {key: "Heavy SMG", probability: 100, toggle: true},
+        {key: "Carbine", probability: 100, toggle: true},
+        {key: "DMR", probability: 100, toggle: true},
+        {key: "Double Tap Rifle", probability: 100, toggle: true},
+        {key: "Assault Rifle", probability: 100, toggle: true},
+        {key: "Burst Rifle", probability: 100, toggle: true},
+        {key: "Rifle", probability: 100, toggle: true},
+        {key: "Sawed-off Shotgun", probability: 100, toggle: true},
+        {key: "HEL Shotgun", probability: 100, toggle: true},
+        {key: "Slug Shotgun", probability: 100, toggle: true}
+    ];
+
+    const main_weps_clone=[
+        {key: "Pistol", probability: 100, toggle: true},
+        {key: "Burst pistol", probability: 100, toggle: true},
+        {key: "HEL Revolver", probability: 100, toggle: true},
+        {key: "Machine Pistol", probability: 100, toggle: true},
+        {key: "HEL Autopistol", probability: 100, toggle: true},
+        {key: "Bullpup Rifle", probability: 100, toggle: true},
+        {key: "SMG", probability: 100, toggle: true},
+        {key: "Heavy SMG", probability: 100, toggle: true},
+        {key: "Carbine", probability: 100, toggle: true},
+        {key: "DMR", probability: 100, toggle: true},
+        {key: "Double Tap Rifle", probability: 100, toggle: true},
+        {key: "Assault Rifle", probability: 100, toggle: true},
+        {key: "Burst Rifle", probability: 100, toggle: true},
+        {key: "Rifle", probability: 100, toggle: true},
+        {key: "Sawed-off Shotgun", probability: 100, toggle: true},
+        {key: "HEL Shotgun", probability: 100, toggle: true},
+        {key: "Slug Shotgun", probability: 100, toggle: true}
+    ];
+
+    // Available special weapons
+    var special_weps=[
+        {key: "Heavy Assault Rifle", probability: 100, toggle: true},
+        {key: "Short Rifle", probability: 100, toggle: true},
+        {key: "Shotgun", probability: 100, toggle: true},
+        {key: "Combat Shotgun", probability: 100, toggle: true},
+        {key: "Scattergun", probability: 100, toggle: true},
+        {key: "Choke Mod Shotgun", probability: 100, toggle: true},
+        {key: "Revolver", probability: 100, toggle: true},
+        {key: "Machine Gun V", probability: 100, toggle: true},
+        {key: "Machine Gun XII", probability: 100, toggle: true},
+        {key: "Burst Cannon", probability: 100, toggle: true},
+        {key: "HEL Gun", probability: 100, toggle: true},
+        {key: "High Cal Pistol", probability: 100, toggle: true},
+        {key: "Precision Rifle", probability: 100, toggle: true},
+        {key: "Sniper", probability: 100, toggle: true},
+        {key: "HEL Rifle", probability: 100, toggle: true}
+    ];
+
+    const special_weps_clone=[
+        {key: "Heavy Assault Rifle", probability: 100, toggle: true},
+        {key: "Short Rifle", probability: 100, toggle: true},
+        {key: "Shotgun", probability: 100, toggle: true},
+        {key: "Combat Shotgun", probability: 100, toggle: true},
+        {key: "Scattergun", probability: 100, toggle: true},
+        {key: "Choke Mod Shotgun", probability: 100, toggle: true},
+        {key: "Revolver", probability: 100, toggle: true},
+        {key: "Machine Gun V", probability: 100, toggle: true},
+        {key: "Machine Gun XII", probability: 100, toggle: true},
+        {key: "Burst Cannon", probability: 100, toggle: true},
+        {key: "HEL Gun", probability: 100, toggle: true},
+        {key: "High Cal Pistol", probability: 100, toggle: true},
+        {key: "Precision Rifle", probability: 100, toggle: true},
+        {key: "Sniper", probability: 100, toggle: true},
+        {key: "HEL Rifle", probability: 100, toggle: true}
+    ];
+
+    // Available tools
+    var tools=[
+        {key: "Bio Tracker", probability: 100, toggle: true},
+        {key: "C-Foam Launcher", probability: 100, toggle: true},
+        {key: "Mine Deployer", probability: 100, toggle: true},
+        {key: "Burst Sentry", probability: 100, toggle: true},
+        {key: "Shotgun Sentry", probability: 100, toggle: true},
+        {key: "Sniper Sentry", probability: 100, toggle: true},
+        {key: "HEL Auto Sentry", probability: 100, toggle: true}
+    ];
+
+    const tools_clone=[
+        {key: "Bio Tracker", probability: 100, toggle: true},
+        {key: "C-Foam Launcher", probability: 100, toggle: true},
+        {key: "Mine Deployer", probability: 100, toggle: true},
+        {key: "Burst Sentry", probability: 100, toggle: true},
+        {key: "Shotgun Sentry", probability: 100, toggle: true},
+        {key: "Sniper Sentry", probability: 100, toggle: true},
+        {key: "HEL Auto Sentry", probability: 100, toggle: true}
+    ];
+
+    // Available melee weapons
+    var melees=[
+        {key: "Santonian HDH", probability: 100, toggle: true},
+        {key: "Omneco Maul", probability: 100, toggle: true},
+        {key: "Mastaba Fixed Blade", probability: 100, toggle: true},
+        {key: "Wox Compact", probability: 100, toggle: true},
+        {key: "Kovac Peacekeeper", probability: 100, toggle: true},
+        {key: "Attroc Titanium", probability: 100, toggle: true},
+        {key: "Maco Drillhead", probability: 100, toggle: true},
+        {key: "Isoco Stinger", probability: 100, toggle: true},
+        {key: "Kovac Sledgehammer", probability: 100, toggle: true},
+        {key: "Santonian Mallet", probability: 100, toggle: true},
+        {key: "Maco Gavel", probability: 100, toggle: true}
+    ];
+
+    const melees_clone=[
+        {key: "Santonian HDH", probability: 100, toggle: true},
+        {key: "Omneco Maul", probability: 100, toggle: true},
+        {key: "Mastaba Fixed Blade", probability: 100, toggle: true},
+        {key: "Wox Compact", probability: 100, toggle: true},
+        {key: "Kovac Peacekeeper", probability: 100, toggle: true},
+        {key: "Attroc Titanium", probability: 100, toggle: true},
+        {key: "Maco Drillhead", probability: 100, toggle: true},
+        {key: "Isoco Stinger", probability: 100, toggle: true},
+        {key: "Kovac Sledgehammer", probability: 100, toggle: true},
+        {key: "Santonian Mallet", probability: 100, toggle: true},
+        {key: "Maco Gavel", probability: 100, toggle: true}
+    ]
+
+    // Each headgear cosmetic in GTFO
+    var head = Array(
+        "Flex Prow Mark I",
+        "HF Hypsibius C",
+        "HF Nematode",
+        "HF Decon First Response",
+        "HF Tardigrade C",
+        "HF Panther 90",
+        "HF Arbustum Mark I",
+        "HF Arbustum Mark II",
+        "Omneco Pro-Tech Mark I",
+        "Omneco Reparo",
+        "Santonian Skinwalker",
+        "Santonian Galea Mark I",
+        "Convex Breather Mark I",
+        "Convex Falcon Mark I",
+        "Convex Scorpion Mark I",
+        "Kovac Red Ranger",
+        "Kovac Green Guard",
+        "Kovac Smoke Viper",
+        "Kovac Typhoon Model I",
+        "Storax Rocker N",
+        "Storax Tegu Legacy",
+        "Storax Kimble Mark I",
+        "Storax Aranea Mark I",
+        "Storax Aranea Mark II",
+        "Qantex Dual Sacramento",
+        "Qantex Dual Jungle",
+        "Quantex Forge Red",
+        "Twin Barrel Blade Visor Mark I",
+        "Twin Barrel Blade Visor Mark II",
+        "Gunnar Dual Vision Rogue",
+        "Gunnar Twin Scepter II",
+        "Mammoth Darkeye Mark I",
+        "Darkeye V-Drum Mark I",
+        "Visor Probo Mark I",
+        "Inter Piranha Mark I",
+        "Oblique Tigris",
+        "Dogjaw Mod Kit 107",
+        "Spartacus MX-2",
+        "Argon Fenrir LG",
+        "Garuga Alloy T17",
+        "Snapjaw RX-A1 Herus",
+        "Woods' Mask",
+        "Dauda's Mask",
+        "Bishop's Mask",
+        "Hackett's Mask",
+        "Hackett's Wetworks"
+    );
+
+  // Each torso cosmetic in GTFO 
+        var torso = Array(
+        "Kovac Pro-Car Elite",
+        "Kovac Fortis Armis",
+        "Kovac Carrier Model I",
+        "Kovac Dragonscale Model I",
+        "Santonian Spartan Vest Model I",
+        "SMC Cut Model I",
+        "Qantex Canvas Gilet",
+        "Qantex Windbeater",
+        "Coarse Puffer Vest Model I",
+        "KDS Spartan Vest Model I",
+        "Primer Grid Model I",
+        "10 Nation HL Anorak",
+        "Commando Rhino Bush Vest",
+        "Braveer Pathfinder Model I",
+        "HF Oasis Model I",
+        "Nyxos Antora",
+    );
+
+    // Each legs cosmetic in GTFO 
+    var legs = Array(
+        "Nyxos Medlabs Oscar",
+        "Nyxos Waders",
+        "Kovac Fortis Crura",
+        "Burlap Dexterity",
+        "Rough Dexterity",
+        "Roughneck MDR Cargo",
+        "Rough Cut",
+        "Cargo Composite",
+        "Heavy Duty Pioneer",
+        "Left Behind",
+        "Sharp Teeth",
+        "Commando Mudcrawler Bush Pants",
+        "Model W Hyperseal",
+        "SMC Murk H",
+        "HF Oasis Rel",
+        "Braveer Pathfinder TR"
+    );
+
+    // Each backpack cosmetic in GTFO 
+    var back = Array(
+        "KDS Slim Survivalist",
+        "KDS Compact Survivalist",
+        "KDS Tri-Can Basic",
+        "KDS Ray Proto Cage",
+        "Kovac Praesidio",
+        "Santonian Apparatu",
+        "SMC Utility Kit",
+        "Utility Compact Pioneer",
+        "Utility Natural Pioneer",
+        "Insight Canteen Runner",
+        "Outwear Compact Utility",
+        "Braveer Compact Survivalist",
+        "HF Van Niel T1",
+        "Commando Brawler Bush Pack",
+        "Outwear PM8",
+        "D-TEK Compact WM",
+        "STRP Pack Mule",
+        "Outwear Demi Camo",
+        "Tacklebox 003 Ash",
+        "Kithauler Galaxy"
+    );
+
+    // Each palette in GTFO 
+    var pal = Array(
+        "Overalls",
+        "Early Adopter",
+        "Bark Half-Life",
+        "Nautical Dusk",
+        "Subterranean Moss",
+        "Beryl Restrained",
+        "Bone Relic",
+        "Artic Endurance",
+        "Miracle",
+        "Eightball",
+        "Longsword",
+        "Heat",
+        "Destination",
+        "Lugubrious",
+        "Overdive",
+        "Overload Six",
+        "Crimson Grit",
+        "Subterranean Garden",
+        "Onyx Corruption",
+        "Blush Safeguard",
+        "Viride Silva",
+        "Desertum",
+        "Santonian Vestis",
+        "Caerulus Grind",
+        "Roughneck Robigo",
+        "Salvos Underworld",
+        "Decem",
+        "Last Lazarus",
+        "Poison Lividus"
+    );
+
+    // List of the available maps for selection
+    var maps= [ 
+
+        // Rundown 1
+        [
+            {key: "R1A1", probability: 100, toggle: true},
+            {key: "R1B1", probability: 100, toggle: true},
+            {key: "R1B2", probability: 100, toggle: true},
+            {key: "R1C1", probability: 100, toggle: true},
+            {key: "R1C2", probability: 100, toggle: true},
+            {key: "R1D1", probability: 100, toggle: true}
+        ],
+
+        // Rundown 2
+        [
+            {key: "R2A1", probability: 100, toggle: true},
+            {key: "R2B1", probability: 100, toggle: true},
+            {key: "R2B2", probability: 100, toggle: true},
+            {key: "R2B3", probability: 100, toggle: true},
+            {key: "R2B4", probability: 100, toggle: true},
+            {key: "R2C1", probability: 100, toggle: true},
+            {key: "R2C2", probability: 100, toggle: true},
+            {key: "R2D1", probability: 100, toggle: true},
+            {key: "R2D2", probability: 100, toggle: true},
+            {key: "R2E1", probability: 100, toggle: true}
+        ],
+
+        // Rundown 3
+        [
+            {key: "R3A1", probability: 100, toggle: true},
+            {key: "R3A2", probability: 100, toggle: true},
+            {key: "R3A3", probability: 100, toggle: true},
+            {key: "R3B1", probability: 100, toggle: true},
+            {key: "R3B2", probability: 100, toggle: true},
+            {key: "R3C1", probability: 100, toggle: true},
+            {key: "R3D1", probability: 100, toggle: true}
+        ],
+
+        // Rundown 4
+        [
+            {key: "R4A1", probability: 100, toggle: true},
+            {key: "R4A2", probability: 100, toggle: true},
+            {key: "R4A3", probability: 100, toggle: true},
+            {key: "R4B1", probability: 100, toggle: true},
+            {key: "R4B2", probability: 100, toggle: true},
+            {key: "R4B3", probability: 100, toggle: true},
+            {key: "R4C1", probability: 100, toggle: true},
+            {key: "R4C2", probability: 100, toggle: true},
+            {key: "R4C3", probability: 100, toggle: true},
+            {key: "R4D1", probability: 100, toggle: true},
+            {key: "R4D2", probability: 100, toggle: true},
+            {key: "R4E1", probability: 100, toggle: true}
+        ],
+
+        // Rundown 5
+        [
+            {key: "R5A1", probability: 100, toggle: true},
+            {key: "R5A2", probability: 100, toggle: true},
+            {key: "R5A3", probability: 100, toggle: true},
+            {key: "R5B1", probability: 100, toggle: true},
+            {key: "R5B2", probability: 100, toggle: true},
+            {key: "R5B3", probability: 100, toggle: true},
+            {key: "R5B4", probability: 100, toggle: true},
+            {key: "R5C1", probability: 100, toggle: true},
+            {key: "R5C2", probability: 100, toggle: true},
+            {key: "R5C3", probability: 100, toggle: true},
+            {key: "R5D1", probability: 100, toggle: true},
+            {key: "R5D2", probability: 100, toggle: true},
+            {key: "R5E1", probability: 100, toggle: true}
+        ],
+
+        // Rundown 6
+        [
+            {key: "R6A1", probability: 100, toggle: true},
+            {key: "R6B1", probability: 100, toggle: true},
+            {key: "R6B2", probability: 100, toggle: true},
+            {key: "R6AX", probability: 100, toggle: true},
+            {key: "R6BX", probability: 100, toggle: true},
+            {key: "R6CX", probability: 100, toggle: true},
+            {key: "R6C1", probability: 100, toggle: true},
+            {key: "R6C2", probability: 100, toggle: true},
+            {key: "R6C3", probability: 100, toggle: true},
+            {key: "R6D1", probability: 100, toggle: true},
+            {key: "R6D2", probability: 100, toggle: true},
+            {key: "R6D3", probability: 100, toggle: true},
+            {key: "R6D4", probability: 100, toggle: true}
+
+        ],
+
+        // Rundown 7
+        [
+            {key: "R7A1", probability: 100, toggle: true},
+            {key: "R7B1", probability: 100, toggle: true},
+            {key: "R7B2", probability: 100, toggle: true},
+            {key: "R7B3", probability: 100, toggle: true},
+            {key: "R7C1", probability: 100, toggle: true},
+            {key: "R7C2", probability: 100, toggle: true},
+            {key: "R7C3", probability: 100, toggle: true},
+            {key: "R7D1", probability: 100, toggle: true},
+            {key: "R7D2", probability: 100, toggle: true},
+            {key: "R7E1", probability: 100, toggle: true}
+        ],
+
+        // Rundown 8
+        [
+            {key: "R8A1", probability: 100, toggle: true},
+            {key: "R8A2", probability: 100, toggle: true},
+            {key: "R8B1", probability: 100, toggle: true},
+            {key: "R8B2", probability: 100, toggle: true},
+            {key: "R8B3", probability: 100, toggle: true},
+            {key: "R8B4", probability: 100, toggle: true},
+            {key: "R8C1", probability: 100, toggle: true},
+            {key: "R8C2", probability: 100, toggle: true},
+            {key: "R8D1", probability: 100, toggle: true},
+            {key: "R8D2", probability: 100, toggle: true},
+            {key: "R8E1", probability: 100, toggle: true},
+            {key: "R8E2", probability: 100, toggle: true}
+        ]
+    ]
+    const maps_clone= [ 
+
+        // Rundown 1
+        [
+            {key: "R1A1", probability: 100, toggle: true},
+            {key: "R1B1", probability: 100, toggle: true},
+            {key: "R1B2", probability: 100, toggle: true},
+            {key: "R1C1", probability: 100, toggle: true},
+            {key: "R1C2", probability: 100, toggle: true},
+            {key: "R1D1", probability: 100, toggle: true}
+        ],
+
+        // Rundown 2
+        [
+            {key: "R2A1", probability: 100, toggle: true},
+            {key: "R2B1", probability: 100, toggle: true},
+            {key: "R2B2", probability: 100, toggle: true},
+            {key: "R2B3", probability: 100, toggle: true},
+            {key: "R2B4", probability: 100, toggle: true},
+            {key: "R2C1", probability: 100, toggle: true},
+            {key: "R2C2", probability: 100, toggle: true},
+            {key: "R2D1", probability: 100, toggle: true},
+            {key: "R2D2", probability: 100, toggle: true},
+            {key: "R2E1", probability: 100, toggle: true}
+        ],
+
+        // Rundown 3
+        [
+            {key: "R3A1", probability: 100, toggle: true},
+            {key: "R3A2", probability: 100, toggle: true},
+            {key: "R3A3", probability: 100, toggle: true},
+            {key: "R3B1", probability: 100, toggle: true},
+            {key: "R3B2", probability: 100, toggle: true},
+            {key: "R3C1", probability: 100, toggle: true},
+            {key: "R3D1", probability: 100, toggle: true}
+        ],
+
+        // Rundown 4
+        [
+            {key: "R4A1", probability: 100, toggle: true},
+            {key: "R4A2", probability: 100, toggle: true},
+            {key: "R4A3", probability: 100, toggle: true},
+            {key: "R4B1", probability: 100, toggle: true},
+            {key: "R4B2", probability: 100, toggle: true},
+            {key: "R4B3", probability: 100, toggle: true},
+            {key: "R4C1", probability: 100, toggle: true},
+            {key: "R4C2", probability: 100, toggle: true},
+            {key: "R4C3", probability: 100, toggle: true},
+            {key: "R4D1", probability: 100, toggle: true},
+            {key: "R4D2", probability: 100, toggle: true},
+            {key: "R4E1", probability: 100, toggle: true}
+        ],
+
+        // Rundown 5
+        [
+            {key: "R5A1", probability: 100, toggle: true},
+            {key: "R5A2", probability: 100, toggle: true},
+            {key: "R5A3", probability: 100, toggle: true},
+            {key: "R5B1", probability: 100, toggle: true},
+            {key: "R5B2", probability: 100, toggle: true},
+            {key: "R5B3", probability: 100, toggle: true},
+            {key: "R5B4", probability: 100, toggle: true},
+            {key: "R5C1", probability: 100, toggle: true},
+            {key: "R5C2", probability: 100, toggle: true},
+            {key: "R5C3", probability: 100, toggle: true},
+            {key: "R5D1", probability: 100, toggle: true},
+            {key: "R5D2", probability: 100, toggle: true},
+            {key: "R5E1", probability: 100, toggle: true}
+        ],
+
+        // Rundown 6
+        [
+            {key: "R6A1", probability: 100, toggle: true},
+            {key: "R6B1", probability: 100, toggle: true},
+            {key: "R6B2", probability: 100, toggle: true},
+            {key: "R6AX", probability: 100, toggle: true},
+            {key: "R6BX", probability: 100, toggle: true},
+            {key: "R6CX", probability: 100, toggle: true},
+            {key: "R6C1", probability: 100, toggle: true},
+            {key: "R6C2", probability: 100, toggle: true},
+            {key: "R6C3", probability: 100, toggle: true},
+            {key: "R6D1", probability: 100, toggle: true},
+            {key: "R6D2", probability: 100, toggle: true},
+            {key: "R6D3", probability: 100, toggle: true},
+            {key: "R6D4", probability: 100, toggle: true}
+
+        ],
+
+        // Rundown 7
+        [
+            {key: "R7A1", probability: 100, toggle: true},
+            {key: "R7B1", probability: 100, toggle: true},
+            {key: "R7B2", probability: 100, toggle: true},
+            {key: "R7B3", probability: 100, toggle: true},
+            {key: "R7C1", probability: 100, toggle: true},
+            {key: "R7C2", probability: 100, toggle: true},
+            {key: "R7C3", probability: 100, toggle: true},
+            {key: "R7D1", probability: 100, toggle: true},
+            {key: "R7D2", probability: 100, toggle: true},
+            {key: "R7E1", probability: 100, toggle: true}
+        ],
+
+        // Rundown 8
+        [
+            {key: "R8A1", probability: 100, toggle: true},
+            {key: "R8A2", probability: 100, toggle: true},
+            {key: "R8B1", probability: 100, toggle: true},
+            {key: "R8B2", probability: 100, toggle: true},
+            {key: "R8B3", probability: 100, toggle: true},
+            {key: "R8B4", probability: 100, toggle: true},
+            {key: "R8C1", probability: 100, toggle: true},
+            {key: "R8C2", probability: 100, toggle: true},
+            {key: "R8D1", probability: 100, toggle: true},
+            {key: "R8D2", probability: 100, toggle: true},
+            {key: "R8E1", probability: 100, toggle: true},
+            {key: "R8E2", probability: 100, toggle: true}
+        ]
+    ]
+
+    // Global variables for memory
+    var slot1, slot2, slot3, slot4, 
+    helldiver_slot1, helldiver_slot2, 
+    helldiver_slot3, helldiver_slot4, helldiver_slot5, helldiver_slot6, 
+    helldiver_slot7, helldiver_slot8, helldiver_slot9, helldiver_slot10;
+    var helldiver_temp_slot;
+    var backpack_max, support_max, support_force, backpack_exists, support_exists, pen_check, fac_check, fac_select, errors = 0, bestPen = 0;
+
+
+    // Helldivers section
+
+
+
+    // Function for updating the map selection screen for GTFO
+    function selectMapTab() {
+        var value = document.getElementById("maps_select_box_settings").selectedIndex;
+        var list = document.getElementsByClassName("mapsList_visible");
+        for(var i = 0; i < list.length; i++) {
+            list[i].className = "mapsList_invisible";
+        }
+        var mapId = "maps" + (value+1);
+        document.getElementById(mapId).className = "mapsList_visible";
+        rerenderButtons();
+    }
+
+    // Function for giving feedback and toggling an item on or off, depending on the button state.
+    // Key: Key value of the item to be toggled
+    // List: List the given key value belongs to
+    function toggleItem(key, list) {
+        var tempList = list.filter((item) => item.key == key);
+        var item;
+        if (tempList.length != 0) {
+            item = tempList[0];
+        }
+        else {
+            console.log("Error, item not found");
+            return;
+        }
+        item.toggle = !item.toggle;
+        list.splice(list.indexOf(tempList[0]), 1, item);
+        var buttons = document.getElementsByClassName("toggleButton_active");
+        var buttons2 = document.getElementsByClassName("toggleButton_inactive");
+        var found = false;
+
+        for (var i = 0; i < buttons.length;i++) {
+            if (buttons[i].textContent == key) {
+                buttons[i].className = " toggleButton_inactive";
+                found = true;
+            } 
+        }
+
+        if (!found) {
+            for (var i = 0; i < buttons2.length;i++) {
+                if (buttons2[i].textContent == key) {
+                    buttons2[i].className = " toggleButton_active";
+                } 
+            }
+        }
+        saveState();
+        rerenderButtons();
+    }
+
+    // Function to reset all data back to a stable state
+    function resetHelldiveRando() {
+        helldivers_main_weps = [].concat(helldivers_main_weps_clone);
+        helldivers_secondary_weps = [].concat(helldivers_secondary_weps_clone);
+        helldivers_grenades = [].concat(helldivers_grenades_clone);
+        helldivers_armour = [].concat(helldivers_armour_clone);
+        helldivers_strategems = [].concat(helldivers_strategems_clone);
+        console.log(helldivers_main_weps);
+        console.log(helldivers_secondary_weps);
+        console.log(helldivers_grenades);
+        console.log(helldivers_armour);
+        console.log(helldivers_strategems);
+
+        // temporary reset for gtfo as well
+        main_weps = [].concat(main_weps_clone);
+        special_weps = [].concat(special_weps_clone);
+        tools = [].concat(tools_clone);
+        melees = [].concat(melees_clone);
+        maps = [].concat(maps_clone);
+        saveState();
+        rerenderButtons();
+    }
+
+    // Function to save the current saved data to localstorage, also prints current savedata
+    function saveState() {
+        	localStorage.setItem("helldivers_main_weps", JSON.stringify(helldivers_main_weps));
+            localStorage.setItem("helldivers_secondary_weps", JSON.stringify(helldivers_secondary_weps));
+            localStorage.setItem("helldivers_grenades", JSON.stringify(helldivers_grenades));
+            localStorage.setItem("helldivers_armour", JSON.stringify(helldivers_armour));
+            localStorage.setItem("helldivers_strategems", JSON.stringify(helldivers_strategems));
+
+            localStorage.setItem("main_weps", JSON.stringify(main_weps));
+            localStorage.setItem("special_weps", JSON.stringify(special_weps));
+            localStorage.setItem("tools", JSON.stringify(tools));
+            localStorage.setItem("melees", JSON.stringify(melees));
+            localStorage.setItem("maps", JSON.stringify(maps));
+
+            console.log(" Current GTFO storage: ");
+            console.log(main_weps);
+            console.log(special_weps);
+            console.log(tools);
+            console.log(melees);
+            console.log(maps);
+
+            console.log(" Current Helldivers storage: ");
+            console.log(helldivers_main_weps);
+            console.log(helldivers_secondary_weps);
+            console.log(helldivers_grenades);
+            console.log(helldivers_armour);
+            console.log(helldivers_strategems);
+
+            
+            
+    }
+
+    // Function to load savedata on page load
+    function loadState() {
+        helldivers_main_weps = JSON.parse(localStorage.getItem("helldivers_main_weps"));
+        helldivers_secondary_weps = JSON.parse(localStorage.getItem("helldivers_secondary_weps"));
+        helldivers_grenades = JSON.parse(localStorage.getItem("helldivers_grenades"));
+        helldivers_armour = JSON.parse(localStorage.getItem("helldivers_armour"));
+        helldivers_strategems = JSON.parse(localStorage.getItem("helldivers_strategems"));
+        console.log(helldivers_main_weps);
+        console.log(helldivers_secondary_weps);
+        console.log(helldivers_grenades);
+        console.log(helldivers_armour);
+        console.log(helldivers_strategems);
+
+        main_weps = JSON.parse(localStorage.getItem("main_weps")) ?? main_weps;
+        special_weps = JSON.parse(localStorage.getItem("special_weps")) ?? special_weps;
+        tools = JSON.parse(localStorage.getItem("tools")) ?? tools;
+        melees = JSON.parse(localStorage.getItem("melees")) ?? melees;
+        maps = JSON.parse(localStorage.getItem("maps")) ?? maps;
+        console.log(main_weps);
+        console.log(special_weps);
+        console.log(tools);
+        console.log(melees);
+        console.log(maps);
+
+        // Check if loaded state matches current file
+        var continueing = true;
+        var checkList = [];
+        var checkList2 = [];
+
+        helldivers_main_weps.forEach(e => {
+            checkList.push(e.key);
+        });
+        helldivers_main_weps_clone.forEach(e => {
+            checkList2.push(e.key);
+        });
+
+        // console.log("hey");
+        if (continueing && (checkList.every(e => {checkList2.includes(e)}))) {
+            console.log("entered");
+            alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties and toggle states");
+            continueing = false;
+        }
+        // console.log(continueing);
+        // console.log(checkList.every(e => {checkList2.includes(e)}));
+
+        checkList = [];
+        checkList2 = [];
+        
+        helldivers_secondary_weps.forEach(e => {
+            checkList.push(e.key);
+        });
+        helldivers_secondary_weps_clone.forEach(e => {
+            checkList2.push(e.key);
+        });
+
+        if (continueing && (checkList.every(e => {checkList2.includes(e)}))) {
+            alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties and toggle states");
+            continueing = false;
+        }
+        // console.log(continueing);
+        // console.log(checkList.every(e => {checkList2.includes(e)}));
+
+        checkList = [];
+        checkList2 = [];
+        
+        helldivers_grenades.forEach(e => {
+            checkList.push(e.key);
+        });
+        helldivers_grenades_clone.forEach(e => {
+            checkList2.push(e.key);
+        });
+
+        if (continueing && (checkList.every(e => {checkList2.includes(e)}))) {
+            alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties and toggle states");
+            continueing = false;
+        }
+
+        // console.log(continueing);
+        // console.log(checkList.every(e => {checkList2.includes(e)}));
+
+        checkList = [];
+        checkList2 = [];
+        
+        helldivers_grenades.forEach(e => {
+            checkList.push(e.key);
+        });
+        helldivers_grenades_clone.forEach(e => {
+            checkList2.push(e.key);
+        });
+
+        if (continueing && (checkList.every(e => {checkList2.includes(e)}))) {
+            alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties and toggle states");
+            continueing = false;
+        }
+
+        // console.log(continueing);
+        // console.log(checkList.every(e => {checkList2.includes(e)}));
+
+        checkList = [];
+        checkList2 = [];
+        
+        helldivers_strategems.forEach(e => {
+            checkList.push(e.key);
+        });
+        helldivers_strategems_clone.forEach(e => {
+            checkList2.push(e.key);
+        });
+
+
+        if (continueing && (checkList.every(e => {checkList2.includes(e)}))) {
+            alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties and toggle states");
+            continueing = false;
+        }
+
+        // console.log(continueing);
+        // console.log(checkList.every(e => {checkList2.includes(e)}));
+
+        if (!continueing) {
+            resetHelldiveRando();
+        }
+    }
+
+    // Function to get the total probability stack of the provided list. 
+    // Adds all probabilities up to use in randomisation
+    // List: List to obtain the stack from
+    function getProbabilityStack(list) {
+        var value = 0;
+        var listCopy = list.filter((item) => item.toggle == true);
+        listCopy.forEach(e => {
+            if (e.probability) {
+                value+=e.probability;
+            }
+        })
+        return value;
+    }
+
+
+    // Function to solve backwards for the function "ax^length = b"
+    // Used to obtain a multiplier for updating probabilities, so that they'll go back to roughly 100% if everything else got used first
+    // a: probability multiplier
+    // length: list length until running out of options
+    function solveForX(a, length) {
+    // Define the tolerance for equality check
+        const tolerance = 1e-1;
+        
+        // Define the initial guess for x
+        let x = Math.pow(1/a, 1/length);
+        
+        // Newton's method to approximate the root
+        for (let i = 0; i < 100; i++) {
+            // Calculate the function value and its derivative at the current x
+            const fx = a * Math.pow(x, length) - 1;
+            const fpx = a * length * Math.pow(x, length - 1);
+            
+            // Update x using Newton's method
+            const newX = x - fx / fpx;
+            
+            // Check if the difference between current and new x is within tolerance
+            if (Math.abs(newX - x) < tolerance) {
+                return newX;
+            }
+            
+            x = newX;
+        }
+        
+        // If the loop doesn't converge, return undefined
+        return 1.15;
+    }
+
+    // Updates the probabilities of items in a list.
+    // List: List to be updated
+    // Items: Items that were picked and should be lowered. All other items get upped
+    function setProbabilities(list, items) {
+        var itemFound = false;
+        var listCopy = list.filter((item) => item.toggle == true);
+        var listLength = Math.floor(listCopy.length / items.length)-1;
+        var probabilityMultiPlier;
+        listCopy.forEach(e => {
+            if (e.probability) {
+                itemFound = false;
+                items.forEach(i => {
+                    var item
+                    if (i == e) {
+                        item = e;
+                        item.probability*=0.5;
+                        if (item.probability <= 1 ) {item.probability == 1}
+                        itemFound = true;
+                        list.splice(list.indexOf(e), 1, item)
+                        items.splice(items.indexOf(i), 1);
+                    }
+                });
+                if (!itemFound) {
+                        item = e;
+                        probabilityMultiPlier = solveForX(e.probability/100, listLength);
+                        item.probability*=(probabilityMultiPlier);
+                        if (item.probability >= 100 ) {
+                            item.probability = 100;
+                        }
+                        list.splice(list.indexOf(e), 1, item);
+                    }
+            }
+        });
+    }
+
+    // Function to select the list index based on the given probability stack
+    // List: List for item to be chosen from
+    // RandomProb: Stackvalue to subtract from
+    function determineItem(list, randomProb) {
+        var leftover = randomProb;
+        var value;
+        var listCopy = list.filter((item) => item.toggle == true);
+        listCopy.forEach(e => {
+            if (!value) {
+                leftover -= e.probability;
+                if (leftover <= 0) {
+                    value = e;
+                }
+            }
+            
+        });
+        return value;
+    }
+
+    // Generalised reroll function to be used by any slot
+    // List: List used to pick a random item from
+    // Slot: Slot in memory to write to and check from (in case force_new is enabled)
+    // force_new: Checkbox state to determine if old items need to be filtered out
+    // filterItems: Items to always filter out. This is primarily used for strategems, to avoid selecting the same one multiple times
+    // pen_check: Checkbox state to determine if the penetration value should be accounted for
+    // support_check: Checkbox state to determine if a support weapon should be enforced
+    function do_reroll(list, slot, force_new, filterItems, pen_check, support_check) {
+        var retry = true;
+        var pen;
+        var filterKeys = []
+        if (filterItems) { 
+            filterItems.forEach(e => { 
+            filterKeys.push(e.key)
+            });
+
+            // Extra check to disable patriot suit if one is active, since only one is allowed
+            if (filterKeys.includes("EX-049 Emancipator Exosuit")) {
+                filterKeys.push("EX-045 Patriot Suit");
+            }
+            else if (filterKeys.includes("EX-045 Patriot Suit")) {
+                filterKeys.push("EX-049 Emancipator Exosuit");
+            }
+        }
+        
+        var tempList = list.filter((item) => item.toggle == true && !filterKeys.includes(item.key));
+        if (force_new && slot) {
+            tempList = tempList.filter((item) => item.key != slot.key);
+            if (tempList.length == 0) {
+                alert("Error, force new enabled with a list that's too small, returning last item");
+                return slot;
+            }
+        }
+        var penList = [];
+
+        pen = helldiver_slot5 == helldivers_factions[1] ? 3 : 4;
+
+        if (pen_check && bestPen < pen) {
+
+            tempList.forEach(e => {
+                if (e.penetration >= pen) {
+                    penList.push(e);
+                }
+            })
+        }
+        
+        if (!penList.length == 0) {
+            tempList = penList;
+        }
+
+        if (support_check && support_force && !support_exists) {
+            tempList = tempList.filter((item) => item.properties && item.properties.includes(Properties.Support_Wep));
+        }
+        if (support_max && support_exists) {
+            tempList = tempList.filter((item) => item.properties && !item.properties.includes(Properties.Support_Wep));
+
+        }
+        if (backpack_max && backpack_exists) {
+            tempList = tempList.filter((item) => item.properties && !item.properties.includes(Properties.Backpack));
+
+        }
+
+        if (tempList.length == 0) {
+            alert("Error, something went wrong. List of choices managed to be empty. Attempting to return last working item");
+        }
+            var stack = getProbabilityStack(tempList);
+            var randomProb = Math.floor(Math.random()*stack);
+            helldiver_temp_slot = determineItem(tempList, randomProb);
+        return helldiver_temp_slot;
+    }
+
+    // Generalised reroll function for helldivers, checking memory and force new status if provided
+    function do_old_reroll(list, slot, force_new) {
+        var retry = true;
+
+        while(retry) {
+            helldiver_temp_slot = list[Math.floor(Math.random()*list.length)];
+            if (slot && force_new && slot == helldiver_temp_slot) {
+                if (force_new) {
+                }
+                continue;
+            }
+            else {
+                retry = false;
+            }
+        }
+        return helldiver_temp_slot;
+    }
+
+    // function validate_list_count(list, property) {
+    //     // // // console.log(list);
+    //     // // // console.log(property);
+    //     var count = 0;
+    //     list.forEach(
+    //             (e) => e.properties.forEach(
+    //                 (p) => p == property ? count++ : count = count)
+    //             );
+    //         // // // console.log(count);
+    //     return count
+    // }
+
+    // function validate_state(list) {
+    //     var state = true;
+    //     errors = 0;
+    //     if (state && backpack_max && list) {
+    //         state = validate_list_count(list, Properties.Backpack) <= 1;
+    //     }
+    //     if (state && support_max && list) {
+    //         state = validate_list_count(list, Properties.Support_Wep) <= 1;
+    //     }
+    //     if (support_force && list && list.length > 3) {
+    //         validate_list_count(list, Properties.Support_Wep) == 0 ? errors++ : errors = errors;
+            
+    //     }
+    //     if (pen_check && list && list.length > 3) {
+    //         var tempcount = 0;
+    //         if (helldiver_slot5 == helldivers_factions[1]) {
+    //             validate_list_count(list, Properties.Penetration.Heavy) == 0 ? tempcount++ : tempcount = tempcount;
+    //         }
+    //         validate_list_count(list, Properties.Penetration.Extreme) == 0 ? tempcount++ : tempcount = tempcount;
+    //         if (helldiver_slot5 == helldivers_factions[1] ? tempcount > 1 : tempcount > 0) {
+    //             errors++;
+    //         }
+    //     }
+    //     if (errors > 0) {
+    //             state = false;
+    //         }
+    //     return state;
+    // }
+
+    // Main logic function
+    function doHelldiverRando() {
+
+        // Try cactch block to determine if something went wrong and alert the user
+        console.log("\n");
+        console.log("\n");
+        console.log("Entering new Random cycle");
+        try {
+
+            // Reset stuff
+            backpack_exists = false;
+            support_exists = false;
+            
+
+            // Retrieve status checks
+            var force_new = document.getElementById("h_ch").checked;
+            backpack_max = document.getElementById("h_ch_bp_max").checked;
+            support_max = document.getElementById("h_ch_sup_max").checked;
+            support_force = document.getElementById("h_ch_sup").checked;
+            pen_check = document.getElementById("h_ch_pen").checked;
+            fac_check = document.getElementById("h_ch_fac").checked;
+            fac_select = document.getElementById("faction_select_box").value;
+
+            // Check if faction is not set to "Random"
+            if (fac_select != 2) {
+                fac_check = true;
+                helldiver_slot5 = helldivers_factions[fac_select];
+            }
+            
+            // standard designation for first 6 elements
+            helldiver_slot1 = do_reroll(helldivers_main_weps, helldiver_slot1, force_new);
+            checkProperties(helldiver_slot1);
+            document.getElementById("h_p1").textContent = helldiver_slot1.key;
+            helldiver_slot2 = do_reroll(helldivers_secondary_weps, helldiver_slot2, force_new);
+            checkProperties(helldiver_slot2);
+            document.getElementById("h_p2").textContent = helldiver_slot2.key;
+            helldiver_slot3 = do_reroll(helldivers_grenades, helldiver_slot3, force_new);
+            checkProperties(helldiver_slot3);
+            document.getElementById("h_p3").textContent = helldiver_slot3.key;
+            helldiver_slot4 = do_reroll(helldivers_armour, helldiver_slot4, force_new);
+            checkProperties(helldiver_slot4);
+            document.getElementById("h_p4").textContent = helldiver_slot4.key;
+
+            // Added detail to faction slot, since this is also based on the provided selection list
+            // If slot doesnt exist yet, reroll it. This is done first to avoid crashes
+            if (!helldiver_slot5) {
+                helldiver_slot5 = do_reroll(helldivers_factions, helldiver_slot5, force_new);
+            }
+
+            // If selection is not set to random, reroll slot.
+            if (!fac_check && helldiver_slot5) {
+                helldiver_slot5 = do_reroll(helldivers_factions, helldiver_slot5, force_new);
+            }
+
+            document.getElementById("h_p5").textContent = helldiver_slot5.key;
+            helldiver_slot6 = do_reroll(helldivers_difficulties, helldiver_slot6, force_new);
+            document.getElementById("h_p6").textContent = helldiver_slot6.key;
+
+            
+
+            // temp memory for doing logic to ensure no duplicates exist
+            var tempslot1, tempslot2, tempslot3, tempslot4;
+
+            // Nested while loops to ensure we keep going if the strategem setup is invalid
+            // while(!isValid4) {
+
+            //     while(!isValid3) {
+
+            //         while(!isValid2) {
+
+            //             // New added 4th loop due to force_new
+            //             while(!isValid1) {
+
+            //                 // Initial roll
+            //                 tempslot1 = do_reroll(helldivers_strategems, helldiver_slot7, force_new);
+
+            //                 // force_new check only since no other strategem has been chosen
+            //                 if (force_new && tempslot1 == helldiver_slot7 || tempslot1 == helldiver_slot8
+            //                     || tempslot1 == helldiver_slot9 || tempslot1 == helldiver_slot10) {
+
+            //                     // Continue to force the code to repeat if any slot was already taken
+            //                     continue;
+            //                 }
+
+            //                 // confirm validation to let code continue
+                            
+            //                 isValid1 = validate_state([tempslot1]);
+            //             }
+
+            //             // All other loops are the same except for general strategem check
+            //             tempslot2 = do_reroll(helldivers_strategems, helldiver_slot8, force_new);
+
+            //             if (force_new && tempslot2 == helldiver_slot7 || tempslot2 == helldiver_slot8
+            //                 || tempslot2 == helldiver_slot9 || tempslot2 == helldiver_slot10) {
+
+            //                 continue;
+            //             }
+
+            //             // Check if strategems aren't the same, as this isn't possible in the game
+            //             if (tempslot2 == tempslot1) {
+            //                 continue;
+            //             }
+                        
+            //             isValid2 = validate_state([tempslot1, tempslot2]);
+            //         }
+
+            //         tempslot3 = do_reroll(helldivers_strategems, helldiver_slot8, force_new);
+
+            //         if (force_new && tempslot3 == helldiver_slot7 || tempslot3 == helldiver_slot8
+            //             || tempslot3 == helldiver_slot9 || tempslot3 == helldiver_slot10) {
+
+            //             continue;
+            //         }
+            //         if (tempslot3 == tempslot1 || tempslot3 == tempslot2) {
+            //             continue;
+            //         }
+                    
+            //         isValid3 = validate_state([tempslot1, tempslot2, tempslot3]);
+            //     }
+
+            //     tempslot4 = do_reroll(helldivers_strategems, helldiver_slot8, force_new, pen_check);
+
+            //     if (force_new && tempslot4 == helldiver_slot7 || tempslot4 == helldiver_slot8
+            //         || tempslot4 == helldiver_slot9 || tempslot4 == helldiver_slot10) {
+
+            //         continue;
+            //     }
+            //     if (tempslot4 == tempslot1 || tempslot4 == tempslot2 || tempslot4 == tempslot3) {
+            //         continue;
+            //     }
+                
+            //     isValid4 = validate_state([tempslot1, tempslot2, tempslot3, tempslot4]);
+            //     if (!isValid4 && errors > 0) {
+            //         switch(errors) {
+            //             case 1: break;
+            //             case 2: isValid3 = false; break;
+            //             case 3: isValid2 = false; isValid3 = false; break;
+            //             default: isValid1 = false; isValid2 = false; isValid3 = false; break;
+            //         }
+            //     }
+            // }
+            
+            // Standard rerolls for strategems, with parameters to enforce the user settings
+            // empty list provided in filterItems so we can utilize other parameters
+            tempslot1 = do_reroll(helldivers_strategems, helldiver_slot7, force_new, [], false, support_force);
+            checkProperties(tempslot1);
+            // Add previous slot to filterItems to avoid duplicates
+            tempslot2 = do_reroll(helldivers_strategems, helldiver_slot8, force_new, [tempslot1], pen_check);
+            checkProperties(tempslot2);
+            tempslot3 = do_reroll(helldivers_strategems, helldiver_slot8, force_new, [tempslot1, tempslot2]);
+            checkProperties(tempslot3);
+            tempslot4 = do_reroll(helldivers_strategems, helldiver_slot8, force_new, [tempslot1, tempslot2, tempslot3]);
+            checkProperties(tempslot4);
+
+            
+
+
+
+            // Save to temporary memory
+            helldiver_slot7 = tempslot1;
+            helldiver_slot8 = tempslot2;
+            helldiver_slot9 = tempslot3;
+            helldiver_slot10 = tempslot4;
+
+            // Sort items
+            var tempList = sortList([helldiver_slot7, helldiver_slot8, helldiver_slot9, helldiver_slot10]);
+
+            // Set probabilities
+            setProbabilities(helldivers_main_weps, [helldiver_slot1]);
+            setProbabilities(helldivers_secondary_weps, [helldiver_slot2]);
+            setProbabilities(helldivers_grenades, [helldiver_slot3]);
+            setProbabilities(helldivers_armour, [helldiver_slot4]);
+            setProbabilities(helldivers_strategems, [helldiver_slot7, helldiver_slot8, helldiver_slot9, helldiver_slot10]);
+
+            // Write to view
+            document.getElementById("h_p7").textContent = tempList[0].key;
+            document.getElementById("h_p8").textContent = tempList[1].key;
+            document.getElementById("h_p9").textContent = tempList[2].key;
+            document.getElementById("h_p10").textContent = tempList[3].key;
+            bestPen = 0;
+
+            //Save probs
+            saveState();
+        }
+        catch(error) {
+            alert("Encountered a critical error. Stopping function. Cause: "+error);
+        }
+    }
+
+    // Generalized function to update memory to ensure the user settings work properly. This is used to filter out penetration, backpacks and support weapons
+    function checkProperties(slot) {
+        try {
+            if (slot.penetration) {
+                if (slot.penetration > bestPen) {
+                    bestPen = slot.penetration;
+                }
+            }
+            if (slot.properties) {
+                if (!backpack_exists && slot.properties.includes(Properties.Backpack)) {
+                    backpack_exists = true;
+                }
+                if (!support_exists && slot.properties.includes(Properties.Support_Wep)) {
+                    support_exists = true;
+                }
+            }
+        }
+        catch (error) {
+            alert("Encountered an error, attempting to continue functionality");
+        }
+
+    }
+
+    // function to iterate through list to determine index. This is used to display strategems in correct order
+    function sortList(items) {
+
+        // New list to avoid changing the original
+        var tempList = new Array();
+
+        // Iterate strategem list
+        helldivers_strategems.forEach(e => {
+            items.forEach(i => {
+                // If item is found in original list, push to new list.
+                if (e == i) {tempList.push(i);}
+            });
+        });
+        // Return sorted list
+        return tempList;
+    }
+
+
+    // Very simple function to randomly select one string from the array related to the element
+
+    function doRando() {
+
+        // init for conditions
+        var force_reroll = document.getElementById("ch0").checked;
+        var temp_slot1, temp_slot2, temp_slot3, temp_slot4;
+        var filteredList;
+        var randomProb;
+        var stackValue;
+
+        temp_slot1 = slot1;
+        filteredList = main_weps.filter((item) => item.toggle == true);
+        if (temp_slot1 && force_reroll) {
+            filteredList = main_weps.filter((item) => item != temp_slot1);
+        }
+        stackValue = getProbabilityStack(filteredList);
+        randomProb = Math.floor(Math.random()*stackValue);
+        temp_slot1 = determineItem(filteredList, randomProb);
+        console.log(temp_slot1);
+        document.getElementById("p1").textContent = temp_slot1.key;
+        slot1 = temp_slot1;
+
+        temp_slot2 = slot2;
+        filteredList = special_weps.filter((item) => item.toggle == true);
+        if (temp_slot2 && force_reroll) {
+            filteredList = special_weps.filter((item) => item != temp_slot2);
+        }
+        stackValue = getProbabilityStack(filteredList);
+        randomProb = Math.floor(Math.random()*stackValue);
+        temp_slot2 = determineItem(filteredList, randomProb);
+        console.log(temp_slot2);
+        document.getElementById("p2").textContent = temp_slot2.key;
+        slot2 = temp_slot2;
+
+        temp_slot3 = slot3;
+        filteredList = tools.filter((item) => item.toggle == true);
+        if (temp_slot3 && force_reroll) {
+            filteredList = tools.filter((item) => item != temp_slot3);
+        }
+        stackValue = getProbabilityStack(filteredList);
+        randomProb = Math.floor(Math.random()*stackValue);
+        temp_slot3 = determineItem(filteredList, randomProb);
+        console.log(temp_slot3);
+        document.getElementById("p3").textContent = temp_slot3.key;
+        slot3 = temp_slot3;
+
+        temp_slot4 = slot4;
+        filteredList = melees.filter((item) => item.toggle == true);
+        if (temp_slot4 && force_reroll) {
+            filteredList = melees.filter((item) => item != temp_slot4);
+        }
+        stackValue = getProbabilityStack(filteredList);
+        randomProb = Math.floor(Math.random()*stackValue);
+        temp_slot4 = determineItem(filteredList, randomProb);
+        console.log(temp_slot4);
+        document.getElementById("p4").textContent = temp_slot4.key;
+        slot4 = temp_slot4;
+
+        setProbabilities(main_weps, [slot1]);
+        setProbabilities(special_weps, [slot2]);
+        setProbabilities(tools, [slot3]);
+        setProbabilities(melees, [slot4]);
+        saveState();
+
+
+    }
+    // function doRando() {
+
+    //     //init for tools conditions
+    //     var tracker_on = false;
+    //     var foam_on = true;
+    //     var mine_on = true;
+    //     var tempOffset = 0;
+    //     var isValid = false;
+    //     //var temp_slot3 = "error";
+
+    //     // assign values based on user input
+    //     force_reroll = document.getElementById("ch0").checked;
+    //     tracker_on = !document.getElementById("ch1").checked;
+    //     foam_on = !document.getElementById("ch2").checked;
+    //     mine_on = !document.getElementById("ch3").checked;
+    //     var temp_slot1, temp_slot2, temp_slot3, temp_slot4;
+
+    //     // Contained rolls in do-while's for force_reroll check
+    //     do {
+    //        temp_slot1 = main_weps[Math.floor(Math.random()*main_weps.length)];
+    //        // Debug log
+    //        // // console.log("roll 1: " + temp_slot1);
+    //     } while(temp_slot1 === slot1 && force_reroll)
+    //     document.getElementById("p1").textContent = temp_slot1;
+
+    //     do {
+    //         temp_slot2 = special_weps[Math.floor(Math.random()*special_weps.length)];
+    //         // Debug log
+    //        // // console.log("roll 2: " + temp_slot2);
+    //     }
+    //     while (temp_slot2 === slot2 && force_reroll)
+    //     document.getElementById("p2").textContent = temp_slot2
+
+    //     // Hacky solution for repeating the roll if it's one of the disallowed values
+    //     do {
+    //         temp_slot3 = tools[Math.floor(Math.random()*tools.length)];
+    //         if (tracker_on && temp_slot3 == tools[0]) {isValid = false;}
+    //         else if (foam_on && temp_slot3 == tools[1]) {isValid = false;}
+    //         else if (mine_on && temp_slot3 == tools[2]) {isValid = false;}
+    //         else {
+    //             isValid = true;
+    //         }
+
+    //         if (force_reroll && slot3 == temp_slot3) {isValid = false;}
+    //         // Debug log
+    //         // // console.log("roll 3: " + temp_slot3);
+
+    //     } while(!isValid)
+
+    //     //temp_slot3 = tmp3Value;
+    //     document.getElementById("p3").textContent = temp_slot3;
+
+    //     do {
+    //          temp_slot4 = melees[Math.floor(Math.random()*melees.length)];
+
+    //          // Debug log
+    //         // // console.log("roll 4: " + temp_slot4);
+            
+    //     } while (temp_slot4 == slot4 && force_reroll)
+
+    //     document.getElementById("p4").textContent = temp_slot4;
+
+    //     // write values to global memory
+    //     slot1 = temp_slot1;
+    //     slot2 = temp_slot2;
+    //     slot3 = temp_slot3;
+    //     slot4 = temp_slot4;
+    // }
+
+    // Fill list of every subElement in map list
+    function fillList() {
+        var tempArray = [];
+        maps.forEach((element) => element.forEach((subElement) => tempArray.push(subElement)));
+        return tempArray;
+    }
+
+    // Simple function for selecting a map based on the select option selected
+
+    function doMapRando() {
+
+        // init
+        var selectedIndex = document.getElementById("maps_select_box").selectedIndex;
+        var outputValue;
+        var randomProb;
+        var stackValue;
+        var filteredList;
+
+        if (selectedIndex == 0) {
+            filteredList = [].concat(
+                maps[0].filter((item) => item.toggle == true),
+                maps[1].filter((item) => item.toggle == true),
+                maps[2].filter((item) => item.toggle == true),
+                maps[3].filter((item) => item.toggle == true),
+                maps[4].filter((item) => item.toggle == true),
+                maps[5].filter((item) => item.toggle == true),
+                maps[6].filter((item) => item.toggle == true),
+                maps[7].filter((item) => item.toggle == true)
+            )
+            stackValue = getProbabilityStack(filteredList);
+            randomProb = Math.floor(Math.random()*stackValue);
+            outputValue = determineItem(filteredList, randomProb);
+
+            for (var i = 0; i < maps.length; i++) {
+                setProbabilities(maps[i], [outputValue]);
+            }
+        }
+        else {
+            filteredList = [].concat(
+                maps[selectedIndex-1].filter((item) => item.toggle == true)
+            );
+            stackValue = getProbabilityStack(filteredList);
+            randomProb = Math.floor(Math.random()*stackValue);
+            outputValue = determineItem(filteredList, randomProb);
+
+            setProbabilities(maps[selectedIndex-1], [outputValue]);
+        }
+
+        document.getElementById("p5").textContent = outputValue.key;   
+        saveState();
+
+    }
+    // function doMapRando() {
+
+
+    //     // init
+    //     var outputValue = outputValue ?? "null";
+    //     var selectedIndex = document.getElementById("maps_select_box").selectedIndex;
+    //     var tempIndex = 0;
+    //     var weighted = false;
+    //     var weighted_list = weighted_list ?? fillList();
+        
+    //     // Retrieve weighted state
+    //     weighted = document.getElementById("maps_weighted_box").checked;
+
+    //     // if index 0, allow any map
+    //     if (selectedIndex == 0) {
+            
+    //         // If weighted, concat list elements before randomizing 
+    //         if (weighted) {
+    //             var debugNumber = Math.floor(Math.random()*weighted_list.length);
+    //             outputValue = weighted_list[debugNumber];
+    //         }
+
+
+    //         // Else pick random rundown first
+    //         else {
+    //             tempIndex = Math.floor(Math.random()*maps.length);
+    //             outputValue = maps[tempIndex][
+    //                 Math.floor(Math.random()*maps[tempIndex].length)
+    //             ];
+    //         }
+    //     }
+
+    //     // Specific rundown
+    //     else {
+    //         outputValue = maps[selectedIndex-1][
+    //             Math.floor(Math.random()*maps[selectedIndex-1].length)
+    //         ];
+    //     }
+        
+    //     // output value to user
+    //     document.getElementById("p5").textContent = outputValue
+    // }
+
+    // Cosmetic rando //
+
+    // Return a random item based on list size
+    function randomItem(list) {
+
+        return list[Math.floor(Math.random() * list.length)];
+
+    }
+
+    // Pounder's function
+    function randomize() {
+
+        document.getElementById('randomHead').value = randomItem(head);
+        document.getElementById('randomTorso').value = randomItem(torso);
+        document.getElementById('randomLegs').value = randomItem(legs);
+        document.getElementById('randomBack').value = randomItem(back);
+        document.getElementById('randomPal').value = randomItem(pal);
+        
+    }   
+
+    // Unload old elements and load new elements of a tab
+    function openTab(evt, tabName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    // init settings that I wish to be enabled on load
+    function init_sets() {
+        // Set tab focus state to look pretty
+        document.getElementById("default_tab_button").click();
+        document.getElementById("default_tab_button").focus();
+
+        // Load saved data and rerender buttons based on loaded data
+        loadState();
+        rerenderButtons();
+        
+    }
+
+    // Function to render the proper state of the buttons, based on the JS variable list
+    function rerenderButtons() {
+
+        // Concat full list since they're all editable
+        var totalList = [].concat(helldivers_main_weps, helldivers_secondary_weps, helldivers_grenades, helldivers_armour, helldivers_strategems
+                                 ,main_weps, special_weps, tools, melees
+        );
+        for (var i=0;i<maps.length;i++) {
+            totalList = totalList.concat(maps[i]);
+        }
+
+        // Filter lists since we need to edit by setting classes
+        var filteredList = totalList.filter((item) => item.toggle == false);
+        var filteredList2 = totalList.filter((item) => item.toggle == true);
+
+        // init for use later
+        var keyList = [];
+        var keyList2 = [];
+
+        filteredList.forEach(e => {
+            // Push key of element in key list if found
+            keyList.push(e.key);
+        });
+        filteredList2.forEach(e => {
+            // Push key of element in key list if found
+            keyList2.push(e.key);
+        });
+
+        // Create list of all toggleable buttons in either state
+        var buttonList = document.getElementsByClassName("toggleButton_active");
+        var buttonList2 = document.getElementsByClassName("toggleButton_inactive");
+
+        // Iterate loop of keys that are meant to be off
+        for (var i = 0; i < buttonList.length; i++) {
+            for (var j = 0; j < keyList.length; j++) {
+                if (keyList[j] == buttonList[i].textContent){
+                    // Turn button off
+                    buttonList[i].className = "toggleButton_inactive";
+                }
+            }
+        }
+
+        // Iterate loop of keys that are meant to be on
+        for (var i = 0; i < buttonList2.length; i++) {
+            for (var j = 0; j < keyList2.length; j++) {
+                if (keyList2[j] == buttonList2[i].textContent){
+                    buttonList2[i].className = "toggleButton_active";
+                }
+            }
+
+        }
+    }
+
+
+    // leftover cookie code
+
+    // function setCookie(cname,cvalue,exdays) {
+    //     const d = new Date();
+    //     d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    //     let expires = "expires="+ d.toUTCString();
+        
+    //     // // console.log("name: "+cname);
+    //     // // console.log("value: "+cvalue);
+    //     // // console.log("expires: "+expires);
+    //     // // console.log(cname + "=" + cvalue + ";" + expires + ";path=/")
+    //     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    // }
+    // function getCookie(name) {
+    //     var nameEQ = name + "=";
+    //     var ca = document.cookie.split(';');
+    //     // // console.log(ca);
+    //     for(var i=0;i < ca.length;i++) {
+    //         var c = ca[i];
+    //         while (c.charAt(0)==' ') c = c.substring(1,c.length);
+    //         if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    //     }
+    //     return null;
+    // }
+
+    // function eraseCookie(name) {   
+    //     document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    // }
+
+    // function save_equipment() {
+    //     setCookie("main_weps","test1",2000)
+    // }
+    // function get_equipment() {
+    //     // // console.log(getCookie("main_weps"));
+    // }
+</script>
+
+</body>
+</htmL>
