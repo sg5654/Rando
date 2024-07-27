@@ -1786,6 +1786,8 @@
         console.log(melees);
         console.log(maps);
 
+
+
         // Check if loaded state matches current file
         var continueing = true;
         var checkList = [];
@@ -1882,8 +1884,21 @@
         if (!continueing) {
             resetHelldiveRando();
         }
+        currentVer = JSON.parse(localStorage.getItem("Current_Version")) ?? null;
+        if (currentVer == null) {
+            alert("Welcome to my primary randomizer resource! \n This currently has a pretty in-depth rando for helldivers and a randomizer for GTFO. \n"
+                    + " For full instructions, see https://github.com/sg5654/Rando/blob/main/README.md \n for a full changelog, see https://github.com/sg5654/Rando/blob/main/CHANGELOG.md"
+            );
+        }
+        else if (currentVer != lastVer) {
+            alert("Welcome back! There has been at least one update since your last visit. \n For a full detailed list of changes, see https://github.com/sg5654/Rando/blob/main/CHANGELOG.md");
+        }
+        localStorage.setItem("Current_Version", JSON.stringify(lastVer));
+
     }
 
+    var currentVer = null;
+    var lastVer = "3.10";
     // Function to get the total probability stack of the provided list. 
     // Adds all probabilities up to use in randomisation
     // List: List to obtain the stack from
