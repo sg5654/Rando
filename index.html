@@ -1895,13 +1895,13 @@
         });
 
         // console.log("hey");
-        if (continueing && (checkList2.every(e => {checkList.includes(e)}))) {
+        if (continueing && !(checkList2.every(e => {checkList.includes(e)}))) {
             console.log("entered");
             alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties and toggle states");
             continueing = false;
         }
-        // console.log(continueing);
-        // console.log(checkList.every(e => {checkList2.includes(e)}));
+        console.log(continueing);
+        console.log(checkList.every(e => {checkList2.includes(e)}));
 
         checkList = [];
         checkList2 = [];
@@ -1913,7 +1913,7 @@
             checkList2.push(e.key);
         });
 
-        if (continueing && (checkList2.every(e => {checkList.includes(e)}))) {
+        if (continueing && !(checkList2.every(e => {checkList.includes(e)}))) {
             alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties and toggle states");
             continueing = false;
         }
@@ -1930,7 +1930,7 @@
             checkList2.push(e.key);
         });
 
-        if (continueing && (checkList2.every(e => {checkList.includes(e)}))) {
+        if (continueing && !(checkList2.every(e => {checkList.includes(e)}))) {
             alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties and toggle states");
             continueing = false;
         }
@@ -1948,7 +1948,7 @@
             checkList2.push(e.key);
         });
 
-        if (continueing && (checkList2.every(e => {checkList.includes(e)}))) {
+        if (continueing && !(checkList2.every(e => {checkList.includes(e)}))) {
             alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties and toggle states");
             continueing = false;
         }
@@ -1967,7 +1967,7 @@
         });
 
 
-        if (continueing && (checkList2.every(e => {checkList.includes(e)}))) {
+        if (continueing && !(checkList2.every(e => {checkList.includes(e)}))) {
             alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties and toggle states");
             continueing = false;
         }
