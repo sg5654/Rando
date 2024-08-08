@@ -1085,7 +1085,8 @@
         {key: "6", probability: 100, toggle: true},
         {key: "7", probability: 100, toggle: true},
         {key: "8", probability: 100, toggle: true},
-        {key: "9", probability: 100, toggle: true}
+        {key: "9", probability: 100, toggle: true},
+        {key: "10", probability: 100, toggle: true}
 
     ]
 
@@ -1894,6 +1895,7 @@
 
         // Check if loaded state matches current file
         var continueing = true;
+        var inconsistency = false;
         var checkList = [];
         var checkList2 = [];
 
@@ -1905,13 +1907,21 @@
         });
 
         // console.log("hey");
-        if (continueing && !(checkList2.every(e => {checkList.includes(e)}))) {
+        for (var i = 0; i < checkList2.length; i++) {
+            if (!(checkList[i].toString() == checkList2[i].toString())) {
+                console.log("checklist "+i+" is not equal to checkList2 "+i);
+                console.log(checkList[i]);
+                console.log(checkList2[i]);
+                inconsistency = true; break;
+            }
+        }
+        if (continueing && inconsistency) {
             console.log("entered");
             alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties and toggle states");
             continueing = false;
         }
         console.log(continueing);
-        console.log(checkList.every(e => {checkList2.includes(e)}));
+        console.log(checkList2.every(e => {checkList.includes(e)}));
 
         checkList = [];
         checkList2 = [];
@@ -1923,7 +1933,15 @@
             checkList2.push(e.key);
         });
 
-        if (continueing && !(checkList2.every(e => {checkList.includes(e)}))) {
+        for (var i = 0; i < checkList2.length; i++) {
+            if (!(checkList[i].toString() == checkList2[i].toString())) {
+                console.log("checklist "+i+" is not equal to checkList2 "+i);
+                console.log(checkList[i]);
+                console.log(checkList2[i]);
+                inconsistency = true; break;
+            }
+        }
+        if (continueing && inconsistency) {
             alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties and toggle states");
             continueing = false;
         }
@@ -1939,8 +1957,15 @@
         helldivers_grenades_clone.forEach(e => {
             checkList2.push(e.key);
         });
-
-        if (continueing && !(checkList2.every(e => {checkList.includes(e)}))) {
+        for (var i = 0; i < checkList2.length; i++) {
+            if (!(checkList[i].toString() == checkList2[i].toString())) {
+                console.log("checklist "+i+" is not equal to checkList2 "+i);
+                console.log(checkList[i]);
+                console.log(checkList2[i]);
+                inconsistency = true; break;
+            }
+        }
+        if (continueing && inconsistency) {
             alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties and toggle states");
             continueing = false;
         }
@@ -1957,8 +1982,15 @@
         helldivers_grenades_clone.forEach(e => {
             checkList2.push(e.key);
         });
-
-        if (continueing && !(checkList2.every(e => {checkList.includes(e)}))) {
+        for (var i = 0; i < checkList2.length; i++) {
+            if (!(checkList[i].toString() == checkList2[i].toString())) {
+                console.log("checklist "+i+" is not equal to checkList2 "+i);
+                console.log(checkList[i]);
+                console.log(checkList2[i]);
+                inconsistency = true; break;
+            }
+        }
+        if (continueing && inconsistency) {
             alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties and toggle states");
             continueing = false;
         }
@@ -1976,8 +2008,15 @@
             checkList2.push(e.key);
         });
 
-
-        if (continueing && !(checkList2.every(e => {checkList.includes(e)}))) {
+        for (var i = 0; i < checkList2.length; i++) {
+            if (!(checkList[i].toString() == checkList2[i].toString())) {
+                console.log("checklist "+i+" is not equal to checkList2 "+i);
+                console.log(checkList[i]);
+                console.log(checkList2[i]);
+                inconsistency = true; break;
+            }
+        }
+        if (continueing && inconsistency) {
             alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties and toggle states");
             continueing = false;
         }
