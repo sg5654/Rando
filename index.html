@@ -1085,7 +1085,8 @@
         {key: "6", probability: 100, toggle: true},
         {key: "7", probability: 100, toggle: true},
         {key: "8", probability: 100, toggle: true},
-        {key: "9", probability: 100, toggle: true}
+        {key: "9", probability: 100, toggle: true},
+        {key: "10", probability: 100, toggle: true}
 
     ]
 
@@ -1880,10 +1881,21 @@
         console.log(melees);
         console.log(maps);
 
-
+        // Compare current version
+        currentVer = JSON.parse(localStorage.getItem("Current_Version")) ?? null;
+        if (currentVer == null) {
+            alert("Welcome to my primary randomizer resource! \n This currently has a pretty in-depth rando for helldivers and a randomizer for GTFO. \n"
+                    + " For full instructions, see https://github.com/sg5654/Rando/blob/main/README.md \n for a full changelog, see https://github.com/sg5654/Rando/blob/main/CHANGELOG.md"
+            );
+        }
+        else if (currentVer != lastVer) {
+            alert("Welcome back! There has been at least one update since your last visit. \n For a full detailed list of changes, see https://github.com/sg5654/Rando/blob/main/CHANGELOG.md");
+        }
+        localStorage.setItem("Current_Version", JSON.stringify(lastVer));
 
         // Check if loaded state matches current file
         var continueing = true;
+        var inconsistency = false;
         var checkList = [];
         var checkList2 = [];
 
@@ -1895,13 +1907,21 @@
         });
 
         // console.log("hey");
-        if (continueing && (checkList.every(e => {checkList2.includes(e)}))) {
+        for (var i = 0; i < checkList2.length; i++) {
+            if (!(checkList[i].toString() == checkList2[i].toString())) {
+                console.log("checklist "+i+" is not equal to checkList2 "+i);
+                console.log(checkList[i]);
+                console.log(checkList2[i]);
+                inconsistency = true; break;
+            }
+        }
+        if (continueing && inconsistency) {
             console.log("entered");
             alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties and toggle states");
             continueing = false;
         }
-        // console.log(continueing);
-        // console.log(checkList.every(e => {checkList2.includes(e)}));
+        console.log(continueing);
+        console.log(checkList2.every(e => {checkList.includes(e)}));
 
         checkList = [];
         checkList2 = [];
@@ -1913,7 +1933,15 @@
             checkList2.push(e.key);
         });
 
-        if (continueing && (checkList.every(e => {checkList2.includes(e)}))) {
+        for (var i = 0; i < checkList2.length; i++) {
+            if (!(checkList[i].toString() == checkList2[i].toString())) {
+                console.log("checklist "+i+" is not equal to checkList2 "+i);
+                console.log(checkList[i]);
+                console.log(checkList2[i]);
+                inconsistency = true; break;
+            }
+        }
+        if (continueing && inconsistency) {
             alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties and toggle states");
             continueing = false;
         }
@@ -1929,8 +1957,15 @@
         helldivers_grenades_clone.forEach(e => {
             checkList2.push(e.key);
         });
-
-        if (continueing && (checkList.every(e => {checkList2.includes(e)}))) {
+        for (var i = 0; i < checkList2.length; i++) {
+            if (!(checkList[i].toString() == checkList2[i].toString())) {
+                console.log("checklist "+i+" is not equal to checkList2 "+i);
+                console.log(checkList[i]);
+                console.log(checkList2[i]);
+                inconsistency = true; break;
+            }
+        }
+        if (continueing && inconsistency) {
             alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties and toggle states");
             continueing = false;
         }
@@ -1947,8 +1982,15 @@
         helldivers_grenades_clone.forEach(e => {
             checkList2.push(e.key);
         });
-
-        if (continueing && (checkList.every(e => {checkList2.includes(e)}))) {
+        for (var i = 0; i < checkList2.length; i++) {
+            if (!(checkList[i].toString() == checkList2[i].toString())) {
+                console.log("checklist "+i+" is not equal to checkList2 "+i);
+                console.log(checkList[i]);
+                console.log(checkList2[i]);
+                inconsistency = true; break;
+            }
+        }
+        if (continueing && inconsistency) {
             alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties and toggle states");
             continueing = false;
         }
@@ -1966,8 +2008,15 @@
             checkList2.push(e.key);
         });
 
-
-        if (continueing && (checkList.every(e => {checkList2.includes(e)}))) {
+        for (var i = 0; i < checkList2.length; i++) {
+            if (!(checkList[i].toString() == checkList2[i].toString())) {
+                console.log("checklist "+i+" is not equal to checkList2 "+i);
+                console.log(checkList[i]);
+                console.log(checkList2[i]);
+                inconsistency = true; break;
+            }
+        }
+        if (continueing && inconsistency) {
             alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties and toggle states");
             continueing = false;
         }
@@ -1978,16 +2027,7 @@
         if (!continueing) {
             resetHelldiveRando();
         }
-        currentVer = JSON.parse(localStorage.getItem("Current_Version")) ?? null;
-        if (currentVer == null) {
-            alert("Welcome to my primary randomizer resource! \n This currently has a pretty in-depth rando for helldivers and a randomizer for GTFO. \n"
-                    + " For full instructions, see https://github.com/sg5654/Rando/blob/main/README.md \n for a full changelog, see https://github.com/sg5654/Rando/blob/main/CHANGELOG.md"
-            );
-        }
-        else if (currentVer != lastVer) {
-            alert("Welcome back! There has been at least one update since your last visit. \n For a full detailed list of changes, see https://github.com/sg5654/Rando/blob/main/CHANGELOG.md");
-        }
-        localStorage.setItem("Current_Version", JSON.stringify(lastVer));
+        
 
     }
 
