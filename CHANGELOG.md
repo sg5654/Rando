@@ -1,3 +1,4 @@
+v3.12   -   Added the Anti-Tank Mines, fixed a spelling error in "Legionnare"
 v3.11   -   Added the new warbond weapons and armour. Restructured some of the internal orders to more closely represent the current structure
 v3.10:  -   Added functionality for checking the current version
             Added an official Changelog file to link to within the version checking behaviour.

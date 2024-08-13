@@ -571,7 +571,7 @@
     <br>
     <button class ="toggleButton_active" onclick="toggleItem('FS-38 Eradicator (Light Armour)', helldivers_armour)">FS-38 Eradicator (Light Armour)</button>
     <button class ="toggleButton_active" onclick="toggleItem('EX-00 Prototype X (Light Armour)', helldivers_armour)">EX-00 Prototype X (Light Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('SC-37 LEgionnaire (Light Armour)', helldivers_armour)">SC-37 LEgionnaire (Light Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('SC-37 Legionnaire (Light Armour)', helldivers_armour)">SC-37 Legionnaire (Light Armour)</button>
     <br>
     <button class ="toggleButton_active" onclick="toggleItem('B-08 Light Gunner (Light Armour)', helldivers_armour)">B-08 Light Gunner (Light Armour)</button>
     <button class ="toggleButton_active" onclick="toggleItem('SC-30 Trailblazer Scout (Light Armour)', helldivers_armour)">SC-30 Trailblazer Scout (Light Armour)</button>
@@ -711,16 +711,17 @@
     Defensive
     <br>
     <br>
+    <button class ="toggleButton_active" onclick="toggleItem('Anti-Tank Mines', helldivers_strategems)">Anti-Tank Mines</button>
     <button class ="toggleButton_active" onclick="toggleItem('FX-12 Shield Generator Relay', helldivers_strategems)">FX-12 Shield Generator Relay</button>
     <button class ="toggleButton_active" onclick="toggleItem('A/M-23 EMS Mortar Sentry', helldivers_strategems)">A/M-23 EMS Mortar Sentry</button>
     <button class ="toggleButton_active" onclick="toggleItem('A/MLS-4X Rocket Sentry', helldivers_strategems)">A/MLS-4X Rocket Sentry</button>
-    <button class ="toggleButton_active" onclick="toggleItem('A/G-16 Gatling Sentry', helldivers_strategems)">A/G-16 Gatling Sentry</button>
     <br>
+    <button class ="toggleButton_active" onclick="toggleItem('A/G-16 Gatling Sentry', helldivers_strategems)">A/G-16 Gatling Sentry</button>
     <button class ="toggleButton_active" onclick="toggleItem('A/ARC-3 Tesla Tower', helldivers_strategems)">A/ARC-3 Tesla Tower</button>
     <button class ="toggleButton_active" onclick="toggleItem('A/M-12 Mortar Sentry', helldivers_strategems)">A/M-12 Mortar Sentry</button>
     <button class ="toggleButton_active" onclick="toggleItem('MD-6 Anti-Personnel Minefield', helldivers_strategems)">MD-6 Anti-Personnel Minefield</button>
-    <button class ="toggleButton_active" onclick="toggleItem('A/MG-43 Machine Gun Sentry', helldivers_strategems)">A/MG-43 Machine Gun Sentry</button>
     <br>
+    <button class ="toggleButton_active" onclick="toggleItem('A/MG-43 Machine Gun Sentry', helldivers_strategems)">A/MG-43 Machine Gun Sentry</button>
     <button class ="toggleButton_active" onclick="toggleItem('A/AC-8 Autocannon Sentry', helldivers_strategems)">A/AC-8 Autocannon Sentry</button>
     <button class ="toggleButton_active" onclick="toggleItem('MD-I4 Incendiary Mines', helldivers_strategems)">MD-I4 Incendiary Mines</button>
     <button class ="toggleButton_active" onclick="toggleItem('E/MG-101 HMG Emplacement', helldivers_strategems)">E/MG-101 HMG Emplacement</button>
@@ -925,7 +926,7 @@
         {key: "CE-07 Demolition Specialist (Light Armour)", probability: 100, toggle: true},
         {key: "FS-38 Eradicator (Light Armour)", probability: 100, toggle: true},
         {key: "EX-00 Prototype X (Light Armour)", probability: 100, toggle: true},
-        {key: "SC-37 LEgionnaire (Light Armour)", probability: 100, toggle: true}, 
+        {key: "SC-37 Legionnaire (Light Armour)", probability: 100, toggle: true}, 
         {key: "B-08 Light Gunner (Light Armour)", probability: 100, toggle: true}, 
         {key: "SC-30 Trailblazer Scout (Light Armour)", probability: 100, toggle: true},
         {key: "SC-34 Infiltrator (Light Armour)", probability: 100, toggle: true},
@@ -993,7 +994,7 @@
         {key: "CE-07 Demolition Specialist (Light Armour)", probability: 100, toggle: true},
         {key: "FS-38 Eradicator (Light Armour)", probability: 100, toggle: true},
         {key: "EX-00 Prototype X (Light Armour)", probability: 100, toggle: true},
-        {key: "SC-37 LEgionnaire (Light Armour)", probability: 100, toggle: true}, 
+        {key: "SC-37 Legionnaire (Light Armour)", probability: 100, toggle: true}, 
         {key: "B-08 Light Gunner (Light Armour)", probability: 100, toggle: true}, 
         {key: "SC-30 Trailblazer Scout (Light Armour)", probability: 100, toggle: true},
         {key: "SC-34 Infiltrator (Light Armour)", probability: 100, toggle: true},
@@ -1142,6 +1143,7 @@
 
         
         // Defensive buildings
+        {key: "Anti-Tank Mines", properties: [Properties.Fortification], probability: 100, toggle: true},
         {key: "FX-12 Shield Generator Relay", properties: [Properties.Fortification], probability: 100, toggle: true},
         {key: "A/M-23 EMS Mortar Sentry", properties: [Properties.Sentry, Properties.Stun], probability: 100, toggle: true},
         {key: "A/MLS-4X Rocket Sentry", properties: [Properties.Sentry, Properties.Explosive], probability: 100, toggle: true},
@@ -1209,6 +1211,7 @@
 
         
         // Defensive buildings
+        {key: "Anti-Tank Mines", properties: [Properties.Fortification], probability: 100, toggle: true},
         {key: "FX-12 Shield Generator Relay", properties: [Properties.Fortification], probability: 100, toggle: true},
         {key: "A/M-23 EMS Mortar Sentry", properties: [Properties.Sentry, Properties.Stun], probability: 100, toggle: true},
         {key: "A/MLS-4X Rocket Sentry", properties: [Properties.Sentry, Properties.Explosive], probability: 100, toggle: true},
@@ -2032,7 +2035,7 @@
     }
 
     var currentVer = null;
-    var lastVer = "3.11";
+    var lastVer = "3.12";
     // Function to get the total probability stack of the provided list. 
     // Adds all probabilities up to use in randomisation
     // List: List to obtain the stack from
