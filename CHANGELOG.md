@@ -1,3 +1,5 @@
+v3.13   -   Added functionality for maintaining toggle states between updates. Also fixed a bug where resetting buttons would occasionally cause a nullreference.
+            KNOWN BUG: There is one issue, where toggling buttons and then attempting to reset the list won't work properly. This is beyond the scope of this project, as JavaScript is somehow changing its own code and changing the constants used for repopulating the lists. It works after refreshing.
 v3.12   -   Added the Anti-Tank Mines, fixed a spelling error in "Legionnare"
 v3.11   -   Added the new warbond weapons and armour. Restructured some of the internal orders to more closely represent the current structure
 v3.10:  -   Added functionality for checking the current version
