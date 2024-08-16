@@ -446,7 +446,7 @@
     lock faction
     <input type="checkbox" id="h_ch_fac" checked>
     &nbsp;&nbsp;
-    <button id="helldiver_rando_reset" onclick="resetHelldiveRando()">reset lists</button>
+    <button id="helldiver_rando_reset" onclick="resetHelldiveRando(false)">reset lists</button>
     
     
 </div>
@@ -1806,12 +1806,81 @@
     }
 
     // Function to reset all data back to a stable state
-    function resetHelldiveRando() {
-        helldivers_main_weps = [].concat(helldivers_main_weps_clone);
-        helldivers_secondary_weps = [].concat(helldivers_secondary_weps_clone);
-        helldivers_grenades = [].concat(helldivers_grenades_clone);
-        helldivers_armour = [].concat(helldivers_armour_clone);
-        helldivers_strategems = [].concat(helldivers_strategems_clone);
+    function resetHelldiveRando(keepStates) {
+        var tempMain = [];
+        var tempSec  = [];
+        var tempGren = [];
+        var tempArm = [];
+        var tempStrat = [];
+        if (keepStates) {
+            helldivers_main_weps.forEach(e => {
+                if (e.toggle == false) tempMain.concat(e.key);
+            });
+            helldivers_secondary_weps.forEach(e => {
+                if (e.toggle == false) tempSec.concat(e.key);
+            });
+            helldivers_grenades.forEach(e => {
+                if (e.toggle == false) tempGren.concat(e.key);
+            });
+            helldivers_armour.forEach(e => {
+                if (e.toggle == false) tempArm.concat(e.key);
+            });
+            helldivers_strategems.forEach(e => {
+                if (e.toggle == false) TempStrat.concat(e.key);
+            });
+            helldivers_main_weps = [];
+            helldivers_secondary_weps = [];
+            helldivers_grenades = [];
+            helldivers_armour = [];
+            helldivers_strategems = [];
+            // console.log(tempMain);
+            helldivers_main_weps_clone.forEach(e => {
+                // console.log(e);
+                var temp = e;
+                // console.log(temp);
+                if (tempMain.find(((element) => element == e.key))) {
+                    temp.toggle = false;
+                    console.log(temp);
+                }
+                helldivers_main_weps = helldivers_main_weps.concat([temp]);
+                // console.log(helldivers_main_weps);
+            });
+            helldivers_secondary_weps_clone.forEach(e => {
+                var temp = e;
+                if (tempSec.find((element) => element == e.key)) {
+                    temp.toggle = false;
+                }
+                helldivers_secondary_weps = helldivers_secondary_weps.concat([temp]);
+            });
+            helldivers_grenades_clone.forEach(e => {
+                var temp = e;
+                if (tempGren.find((element) => element == e.key)) {
+                    temp.toggle = false;
+                }
+                helldivers_grenades = helldivers_grenades.concat([temp]);
+            });
+            helldivers_armour_clone.forEach(e => {
+                var temp = e;
+                if (tempArm.find((element) => element == e.key)) {
+                    temp.toggle = false;
+                }
+                helldivers_armour = helldivers_armour.concat([temp]);
+            });
+            helldivers_strategems_clone.forEach(e => {
+                var temp = e;
+                if (tempStrat.find((element) => element == e.key)) {
+                    temp.toggle = false;
+                }
+                helldivers_strategems = helldivers_strategems.concat([temp]);
+            });
+        }
+        else {
+            helldivers_main_weps = [].concat(helldivers_main_weps_clone);
+            helldivers_secondary_weps = [].concat(helldivers_secondary_weps_clone);
+            helldivers_grenades = [].concat(helldivers_grenades_clone);
+            helldivers_armour = [].concat(helldivers_armour_clone);
+            helldivers_strategems = [].concat(helldivers_strategems_clone);
+        }
         console.log(helldivers_main_weps);
         console.log(helldivers_secondary_weps);
         console.log(helldivers_grenades);
@@ -1920,7 +1989,7 @@
         }
         if (continueing && inconsistency) {
             console.log("entered");
-            alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties and toggle states");
+            alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties. Toggle states will remain");
             continueing = false;
         }
         console.log(continueing);
@@ -1945,7 +2014,7 @@
             }
         }
         if (continueing && inconsistency) {
-            alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties and toggle states");
+            alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties. Toggle states will remain");
             continueing = false;
         }
         // console.log(continueing);
@@ -1969,7 +2038,7 @@
             }
         }
         if (continueing && inconsistency) {
-            alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties and toggle states");
+            alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties. Toggle states will remain");
             continueing = false;
         }
 
@@ -1994,7 +2063,7 @@
             }
         }
         if (continueing && inconsistency) {
-            alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties and toggle states");
+            alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties. Toggle states will remain");
             continueing = false;
         }
 
@@ -2020,7 +2089,7 @@
             }
         }
         if (continueing && inconsistency) {
-            alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties and toggle states");
+            alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties. Toggle states will remain");
             continueing = false;
         }
 
@@ -2028,14 +2097,14 @@
         // console.log(checkList.every(e => {checkList2.includes(e)}));
 
         if (!continueing) {
-            resetHelldiveRando();
+            resetHelldiveRando(true);
         }
         
 
     }
 
     var currentVer = null;
-    var lastVer = "3.12";
+    var lastVer = "3.13";
     // Function to get the total probability stack of the provided list. 
     // Adds all probabilities up to use in randomisation
     // List: List to obtain the stack from
@@ -2817,7 +2886,7 @@
         // Iterate loop of keys that are meant to be off
         for (var i = 0; i < buttonList.length; i++) {
             for (var j = 0; j < keyList.length; j++) {
-                if (keyList[j] == buttonList[i].textContent){
+                if (keyList[j] && buttonList[i] && keyList[j] == buttonList[i].textContent){
                     // Turn button off
                     buttonList[i].className = "toggleButton_inactive";
                 }
@@ -2827,7 +2896,7 @@
         // Iterate loop of keys that are meant to be on
         for (var i = 0; i < buttonList2.length; i++) {
             for (var j = 0; j < keyList2.length; j++) {
-                if (keyList2[j] == buttonList2[i].textContent){
+                if (keyList2[j] && buttonList2[i] && keyList2[j] == buttonList2[i].textContent){
                     buttonList2[i].className = "toggleButton_active";
                 }
             }
