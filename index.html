@@ -1954,6 +1954,8 @@
         console.log(melees);
         console.log(maps);
 
+        var continueing = true;
+        var inconsistency = false;
         // Compare current version
         currentVer = JSON.parse(localStorage.getItem("Current_Version")) ?? null;
         if (currentVer == null) {
@@ -1964,11 +1966,16 @@
         else if (currentVer != lastVer) {
             alert("Welcome back! There has been at least one update since your last visit. \n For a full detailed list of changes, see https://github.com/sg5654/Rando/blob/main/CHANGELOG.md");
         }
+        if (currentVer != lastVer && force_update_list) {
+            alert("The new update requires your list data to be reset.");
+            inconsistency = true;
+            continueing = false;
+
+        }
         localStorage.setItem("Current_Version", JSON.stringify(lastVer));
 
         // Check if loaded state matches current file
-        var continueing = true;
-        var inconsistency = false;
+        
         var checkList = [];
         var checkList2 = [];
 
@@ -2105,7 +2112,12 @@
     }
 
     var currentVer = null;
-    var lastVer = "3.14";
+    var lastVer = "3.14.2";
+    // v3.14 forced a list update
+    // TODO: set as false for 3.15
+    var force_update_list = true;
+
+    
     // Function to get the total probability stack of the provided list. 
     // Adds all probabilities up to use in randomisation
     // List: List to obtain the stack from
