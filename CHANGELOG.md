@@ -1,3 +1,5 @@
+v3.14   -   Added functionality for determining if an item has limited range. Now you will always be guaranteed to have an item to be able to fight gunships. 
+            A new tag has been added for "Limited_Range" which will be added to any item that can't hit enemies in the air. Terminid behaviour is unchanged.
 v3.13   -   Added functionality for maintaining toggle states between updates. Also fixed a bug where resetting buttons would occasionally cause a nullreference.
             KNOWN BUG: There is one issue, where toggling buttons and then attempting to reset the list won't work properly. This is beyond the scope of this project, as JavaScript is somehow changing its own code and changing the constants used for repopulating the lists. It works after refreshing.
 v3.12   -   Added the Anti-Tank Mines, fixed a spelling error in "Legionnare"

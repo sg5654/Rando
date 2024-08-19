@@ -741,14 +741,15 @@
         Eagle: ("Eagle"),
         Orbital: ("Orbital"),
         Backpack: ("Backpack"),
-        Support_Wep: ("Support_Wep"),
+        Support_Wep: ("Support Wep"),
         Fortification: ("Fortification"),
         Sentry: ("Sentry"),
         Stun: ("Stun"),
         One_Handed: ("One Handed"),
         Incendiary: ("Incendiary"),
         Energy: ("Energy"),
-        Smoke: ("Smoke")
+        Smoke: ("Smoke"),
+        Limited_Range: ("Limited Range")
     }
 
     // Helldivers content
@@ -781,21 +782,21 @@
         {key: "SG-225SP Breaker Spray&Pray (Shotgun)", penetration: 2, probability: 100, toggle: true},
 
         // Explosive
-        {key: "CB-9 Exploding Crossbow (Explosive)", penetration: 3, properties: [Properties.Explosive], probability: 100, toggle: true},
-        {key: "Jar-5 Dominator (Explosive)", penetration: 3, probability: 100, toggle: true},
+        {key: "CB-9 Exploding Crossbow (Explosive)", penetration: 3, properties: [Properties.Explosive, Properties.Limited_Range], probability: 100, toggle: true},
+        {key: "Jar-5 Dominator (Explosive)", penetration: 3, properties: [Properties.Limited_Range], probability: 100, toggle: true},
         {key: "R-36 Eruptor (Explosive)", penetration: 3, properties: [Properties.Explosive], probability: 100, toggle: true},
         
 
         // energy
-        {key: "SG-8P Punisher Plasma (Energy-Based)", penetration: 3, properties: [Properties.Explosive], probability: 100, toggle: true},
-        {key: "ARC-12 Blitzer (Energy-Based)", penetration: 3, probability: 100, toggle: true},
+        {key: "SG-8P Punisher Plasma (Energy-Based)", penetration: 3, properties: [Properties.Explosive, Properties.Limited_Range], probability: 100, toggle: true},
+        {key: "ARC-12 Blitzer (Energy-Based)", penetration: 3, properties: [Properties.Limited_Range], probability: 100, toggle: true},
         {key: "LAS-5 Scythe (Energy-Based)", penetration: 2, properties: [Properties.Energy], probability: 100, toggle: true},
         {key: "LAS-16 Sickle (Energy-Based)", penetration: 2, properties: [Properties.Energy], probability: 100, toggle: true},
         {key: "Plas-1 Scorcher (Energy-Based)", penetration: 3, properties: [Properties.Energy], probability: 100, toggle: true},
         {key: "Plas-101 Purifier (Energy-Based)", penetration: 3, properties: [Properties.Energy, Properties.Explosive], probability: 100, toggle: true},
         
         // Special
-        {key: "FLAM-66 Torcher (Special)", penetration: 3, properties: [Properties.Incendiary], probability: 100, toggle: true}
+        {key: "FLAM-66 Torcher (Special)", penetration: 3, properties: [Properties.Incendiary, Properties.Limited_Range], probability: 100, toggle: true}
     ]
 
     
@@ -828,21 +829,21 @@
         {key: "SG-225SP Breaker Spray&Pray (Shotgun)", penetration: 2, probability: 100, toggle: true},
 
         // Explosive
-        {key: "CB-9 Exploding Crossbow (Explosive)", penetration: 3, properties: [Properties.Explosive], probability: 100, toggle: true},
-        {key: "Jar-5 Dominator (Explosive)", penetration: 3, probability: 100, toggle: true},
+        {key: "CB-9 Exploding Crossbow (Explosive)", penetration: 3, properties: [Properties.Explosive, Properties.Limited_Range], probability: 100, toggle: true},
+        {key: "Jar-5 Dominator (Explosive)", penetration: 3, properties: [Properties.Limited_Range], probability: 100, toggle: true},
         {key: "R-36 Eruptor (Explosive)", penetration: 3, properties: [Properties.Explosive], probability: 100, toggle: true},
         
 
         // energy
-        {key: "SG-8P Punisher Plasma (Energy-Based)", penetration: 3, properties: [Properties.Explosive], probability: 100, toggle: true},
-        {key: "ARC-12 Blitzer (Energy-Based)", penetration: 3, probability: 100, toggle: true},
+        {key: "SG-8P Punisher Plasma (Energy-Based)", penetration: 3, properties: [Properties.Explosive, Properties.Limited_Range], probability: 100, toggle: true},
+        {key: "ARC-12 Blitzer (Energy-Based)", penetration: 3, properties: [Properties.Limited_Range], probability: 100, toggle: true},
         {key: "LAS-5 Scythe (Energy-Based)", penetration: 2, properties: [Properties.Energy], probability: 100, toggle: true},
         {key: "LAS-16 Sickle (Energy-Based)", penetration: 2, properties: [Properties.Energy], probability: 100, toggle: true},
         {key: "Plas-1 Scorcher (Energy-Based)", penetration: 3, properties: [Properties.Energy], probability: 100, toggle: true},
         {key: "Plas-101 Purifier (Energy-Based)", penetration: 3, properties: [Properties.Energy, Properties.Explosive], probability: 100, toggle: true},
         
         // Special
-        {key: "FLAM-66 Torcher (Special)", penetration: 3, properties: [Properties.Incendiary], probability: 100, toggle: true}
+        {key: "FLAM-66 Torcher (Special)", penetration: 3, properties: [Properties.Incendiary, Properties.Limited_Range], probability: 100, toggle: true}
     ]
 
     var helldivers_secondary_weps = [
@@ -856,8 +857,8 @@
 
         // Special
         {key: "SG-22 Bushwhacker (Special)", penetration: 2, properties: [Properties.One_Handed], probability: 100, toggle: true},
-        {key: "P-72 Crisper (Special)", penetration: 3, properties: [Properties.One_Handed, Properties.Incendiary], probability: 100, toggle: true},
-        {key: "GP-31 Grenade Pistol (Special)", penetration: 3, properties: [Properties.Explosive, Properties.One_Handed], probability: 100, toggle: true},
+        {key: "P-72 Crisper (Special)", penetration: 3, properties: [Properties.One_Handed, Properties.Incendiary, Properties.Limited_Range], probability: 100, toggle: true},
+        {key: "GP-31 Grenade Pistol (Special)", penetration: 3, properties: [Properties.Explosive, Properties.One_Handed, Properties.Limited_Range], probability: 100, toggle: true},
         {key: "LAS-7 Dagger (Special)", penetration: 2, properties: [Properties.One_Handed], probability: 100, toggle: true}
 
     ]
@@ -873,8 +874,8 @@
 
         // Special
         {key: "SG-22 Bushwhacker (Special)", penetration: 2, properties: [Properties.One_Handed], probability: 100, toggle: true},
-        {key: "P-72 Crisper (Special)", penetration: 3, properties: [Properties.One_Handed, Properties.Incendiary], probability: 100, toggle: true},
-        {key: "GP-31 Grenade Pistol (Special)", penetration: 3, properties: [Properties.Explosive, Properties.One_Handed], probability: 100, toggle: true},
+        {key: "P-72 Crisper (Special)", penetration: 3, properties: [Properties.One_Handed, Properties.Incendiary, Properties.Limited_Range], probability: 100, toggle: true},
+        {key: "GP-31 Grenade Pistol (Special)", penetration: 3, properties: [Properties.Explosive, Properties.One_Handed, Properties.Limited_Range], probability: 100, toggle: true},
         {key: "LAS-7 Dagger (Special)", penetration: 2, properties: [Properties.One_Handed], probability: 100, toggle: true}
 
     ]
@@ -882,36 +883,36 @@
     var helldivers_grenades = [
 
         // Standard
-        {key: "C-6 Frag (Standard Throwable)", properties: [Properties.Explosive], probability: 100, toggle: true},
-        {key: "C-12 High Explosive (Standard Throwable)", properties: [Properties.Explosive], probability: 100, toggle: true},
-        {key: "G-10 Incendiary (Standard Throwable)", properties: [Properties.Explosive, Properties.Incendiary], probability: 100, toggle: true},
+        {key: "C-6 Frag (Standard Throwable)", properties: [Properties.Explosive, Properties.Limited_Range], probability: 100, toggle: true},
+        {key: "C-12 High Explosive (Standard Throwable)", properties: [Properties.Explosive, Properties.Limited_Range], probability: 100, toggle: true},
+        {key: "G-10 Incendiary (Standard Throwable)", properties: [Properties.Explosive, Properties.Incendiary, Properties.Limited_Range], probability: 100, toggle: true},
         
         // Special
-        {key: "G-16 Impact (Special Throwable)", properties: [Properties.Explosive], probability: 100, toggle: true},
-        {key: "G-13 Incendiary Impact (Special Throwable)", properties: [Properties.Explosive, Properties.Incendiary], probability: 100, toggle: true},
-        {key: "G-123 Thermite (Special Throwable)", properties: [Properties.Explosive, Properties.Incendiary], probability: 100, toggle: true},
+        {key: "G-16 Impact (Special Throwable)", properties: [Properties.Explosive, Properties.Limited_Range], probability: 100, toggle: true},
+        {key: "G-13 Incendiary Impact (Special Throwable)", properties: [Properties.Explosive, Properties.Incendiary, Properties.Limited_Range], probability: 100, toggle: true},
+        {key: "G-123 Thermite (Special Throwable)", properties: [Properties.Explosive, Properties.Incendiary, Properties.Limited_Range], probability: 100, toggle: true},
         
-        {key: "G-3 Smoke (Special Throwable)", properties: [Properties.Smoke], probability: 100, toggle: false},
-        {key: "G-23 Stun (Special Throwable)", properties: [Properties.Stun], probability: 100, toggle: false},
-        {key: "K-2 Throwing Knife (Special Throwable)", probability: 100, toggle: false}
+        {key: "G-3 Smoke (Special Throwable)", properties: [Properties.Smoke, Properties.Limited_Range], probability: 100, toggle: false},
+        {key: "G-23 Stun (Special Throwable)", properties: [Properties.Stun, Properties.Limited_Range], probability: 100, toggle: false},
+        {key: "K-2 Throwing Knife (Special Throwable)", probability: 100, properties: [Properties.Limited_Range], toggle: false}
         
     ]
 
     const helldivers_grenades_clone = [
 
         // Standard
-        {key: "C-6 Frag (Standard Throwable)", properties: [Properties.Explosive], probability: 100, toggle: true},
-        {key: "C-12 High Explosive (Standard Throwable)", properties: [Properties.Explosive], probability: 100, toggle: true},
-        {key: "G-10 Incendiary (Standard Throwable)", properties: [Properties.Explosive, Properties.Incendiary], probability: 100, toggle: true},
+        {key: "C-6 Frag (Standard Throwable)", properties: [Properties.Explosive, Properties.Limited_Range], probability: 100, toggle: true},
+        {key: "C-12 High Explosive (Standard Throwable)", properties: [Properties.Explosive, Properties.Limited_Range], probability: 100, toggle: true},
+        {key: "G-10 Incendiary (Standard Throwable)", properties: [Properties.Explosive, Properties.Incendiary, Properties.Limited_Range], probability: 100, toggle: true},
         
         // Special
-        {key: "G-16 Impact (Special Throwable)", properties: [Properties.Explosive], probability: 100, toggle: true},
-        {key: "G-13 Incendiary Impact (Special Throwable)", properties: [Properties.Explosive, Properties.Incendiary], probability: 100, toggle: true},
-        {key: "G-123 Thermite (Special Throwable)", properties: [Properties.Explosive, Properties.Incendiary], probability: 100, toggle: true},
+        {key: "G-16 Impact (Special Throwable)", properties: [Properties.Explosive, Properties.Limited_Range], probability: 100, toggle: true},
+        {key: "G-13 Incendiary Impact (Special Throwable)", properties: [Properties.Explosive, Properties.Incendiary, Properties.Limited_Range], probability: 100, toggle: true},
+        {key: "G-123 Thermite (Special Throwable)", properties: [Properties.Explosive, Properties.Incendiary, Properties.Limited_Range], probability: 100, toggle: true},
         
-        {key: "G-3 Smoke (Special Throwable)", properties: [Properties.Smoke], probability: 100, toggle: false},
-        {key: "G-23 Stun (Special Throwable)", properties: [Properties.Stun], probability: 100, toggle: false},
-        {key: "K-2 Throwing Knife (Special Throwable)", probability: 100, toggle: false}
+        {key: "G-3 Smoke (Special Throwable)", properties: [Properties.Smoke, Properties.Limited_Range], probability: 100, toggle: false},
+        {key: "G-23 Stun (Special Throwable)", properties: [Properties.Stun, Properties.Limited_Range], probability: 100, toggle: false},
+        {key: "K-2 Throwing Knife (Special Throwable)", probability: 100, properties: [Properties.Limited_Range], toggle: false}
         
     ]
 
@@ -1126,15 +1127,15 @@
         {key: "RL-77 Airburst Rocket Launcher", penetration: 3, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 100, toggle: true},
         {key: "RS-422 Railgun", penetration: 5, properties: [Properties.Support_Wep], probability: 100, toggle: true},
         {key: "LAS-98 Laser Cannon", penetration: 4, properties: [Properties.Support_Wep], probability: 100, toggle: true},
-        {key: "ARC-3 Arc Thrower", penetration: 7, properties: [Properties.Support_Wep], probability: 100, toggle: true},
-        {key: "AX/AR-23 Guard Dog", properties: [Properties.Backpack], probability: 100, toggle: true},
+        {key: "ARC-3 Arc Thrower", penetration: 7, properties: [Properties.Support_Wep, Properties.Limited_Range], probability: 100, toggle: true},
+        {key: "AX/AR-23 Guard Dog", properties: [Properties.Backpack, Properties.Limited_Range], probability: 100, toggle: true},
         {key: "FAF-14 Spear", penetration: 8, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 100, toggle: true},
         {key: "GL-21 Grenade Launcher", properties: [Properties.Explosive, Properties.Support_Wep], probability: 100, toggle: true},
         {key: "MG-43 Machine Gun", penetration: 3, properties: [Properties.Support_Wep], probability: 100, toggle: true},
         {key: "SH-20 Ballistic Shield Backpack", properties: [Properties.Backpack, Properties.One_Handed], probability: 100, toggle: true},
         {key: "B-1 Supply Pack", properties: [Properties.Backpack], probability: 100, toggle: true},
-        {key: "FLAM-40 Flamethrower", properties: [Properties.Incendiary, Properties.Support_Wep], probability: 100, toggle: true},
-        {key: "AX/LAS-5 Guard Dog Rover", properties: [Properties.Backpack], probability: 100, toggle: true},
+        {key: "FLAM-40 Flamethrower", properties: [Properties.Incendiary, Properties.Support_Wep, Properties.Limited_Range], probability: 100, toggle: true},
+        {key: "AX/LAS-5 Guard Dog Rover", properties: [Properties.Backpack, Properties.Limited_Range], probability: 100, toggle: true},
         {key: "GR-8 Recoilless Rifle", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 100, toggle: true},
         {key: "LIFT-850 Jump Pack", properties: [Properties.Backpack], probability: 100, toggle: true},
         {key: "APW-1 Anti Material Rifle", penetration: 4, properties: [Properties.Support_Wep], probability: 100, toggle: true},
@@ -1194,15 +1195,15 @@
         {key: "RL-77 Airburst Rocket Launcher", penetration: 3, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 100, toggle: true},
         {key: "RS-422 Railgun", penetration: 5, properties: [Properties.Support_Wep], probability: 100, toggle: true},
         {key: "LAS-98 Laser Cannon", penetration: 4, properties: [Properties.Support_Wep], probability: 100, toggle: true},
-        {key: "ARC-3 Arc Thrower", penetration: 7, properties: [Properties.Support_Wep], probability: 100, toggle: true},
-        {key: "AX/AR-23 Guard Dog", properties: [Properties.Backpack], probability: 100, toggle: true},
+        {key: "ARC-3 Arc Thrower", penetration: 7, properties: [Properties.Support_Wep, Properties.Limited_Range], probability: 100, toggle: true},
+        {key: "AX/AR-23 Guard Dog", properties: [Properties.Backpack, Properties.Limited_Range], probability: 100, toggle: true},
         {key: "FAF-14 Spear", penetration: 8, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 100, toggle: true},
         {key: "GL-21 Grenade Launcher", properties: [Properties.Explosive, Properties.Support_Wep], probability: 100, toggle: true},
         {key: "MG-43 Machine Gun", penetration: 3, properties: [Properties.Support_Wep], probability: 100, toggle: true},
         {key: "SH-20 Ballistic Shield Backpack", properties: [Properties.Backpack, Properties.One_Handed], probability: 100, toggle: true},
         {key: "B-1 Supply Pack", properties: [Properties.Backpack], probability: 100, toggle: true},
-        {key: "FLAM-40 Flamethrower", properties: [Properties.Incendiary, Properties.Support_Wep], probability: 100, toggle: true},
-        {key: "AX/LAS-5 Guard Dog Rover", properties: [Properties.Backpack], probability: 100, toggle: true},
+        {key: "FLAM-40 Flamethrower", properties: [Properties.Incendiary, Properties.Support_Wep, Properties.Limited_Range], probability: 100, toggle: true},
+        {key: "AX/LAS-5 Guard Dog Rover", properties: [Properties.Backpack, Properties.Limited_Range], probability: 100, toggle: true},
         {key: "GR-8 Recoilless Rifle", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 100, toggle: true},
         {key: "LIFT-850 Jump Pack", properties: [Properties.Backpack], probability: 100, toggle: true},
         {key: "APW-1 Anti Material Rifle", penetration: 4, properties: [Properties.Support_Wep], probability: 100, toggle: true},
@@ -2104,7 +2105,7 @@
     }
 
     var currentVer = null;
-    var lastVer = "3.13";
+    var lastVer = "3.14";
     // Function to get the total probability stack of the provided list. 
     // Adds all probabilities up to use in randomisation
     // List: List to obtain the stack from
@@ -2243,11 +2244,20 @@
 
         pen = helldiver_slot5 == helldivers_factions[1] ? 3 : 4;
 
-        if (pen_check && bestPen < pen) {
-
+        if (pen_check && bestPen < pen ) {
+            
             tempList.forEach(e => {
                 if (e.penetration >= pen) {
-                    penList.push(e);
+                    if (helldiver_slot5 == helldivers_factions[1] && e.properties && (e.properties.includes(Properties.Limited_Range) || e.properties.includes(Properties.Eagle) || e.properties.includes(Properties.Orbital)))
+                    {
+                        // Checks if player can use this to take down gunships
+                        // console.log("Skipping limited range item");
+                    }
+                    else {
+                        // Otherwise allow
+                        penList.push(e);
+                        // console.log("Allowed item: " + e.key);
+                    }
                 }
             })
         }
@@ -2364,6 +2374,16 @@
                 fac_check = true;
                 helldiver_slot5 = helldivers_factions[fac_select];
             }
+            // Added detail to faction slot, since this is also based on the provided selection list
+            // If slot doesnt exist yet, reroll it. This is done first to avoid crashes
+            if (!helldiver_slot5) {
+                helldiver_slot5 = do_reroll(helldivers_factions, helldiver_slot5, force_new);
+            }
+
+            // If selection is not set to random, reroll slot.
+            if (!fac_check && helldiver_slot5) {
+                helldiver_slot5 = do_reroll(helldivers_factions, helldiver_slot5, force_new);
+            }
             
             // standard designation for first 6 elements
             helldiver_slot1 = do_reroll(helldivers_main_weps, helldiver_slot1, force_new);
@@ -2379,16 +2399,7 @@
             checkProperties(helldiver_slot4);
             document.getElementById("h_p4").textContent = helldiver_slot4.key;
 
-            // Added detail to faction slot, since this is also based on the provided selection list
-            // If slot doesnt exist yet, reroll it. This is done first to avoid crashes
-            if (!helldiver_slot5) {
-                helldiver_slot5 = do_reroll(helldivers_factions, helldiver_slot5, force_new);
-            }
 
-            // If selection is not set to random, reroll slot.
-            if (!fac_check && helldiver_slot5) {
-                helldiver_slot5 = do_reroll(helldivers_factions, helldiver_slot5, force_new);
-            }
 
             document.getElementById("h_p5").textContent = helldiver_slot5.key;
             helldiver_slot6 = do_reroll(helldivers_difficulties, helldiver_slot6, force_new);
@@ -2530,8 +2541,17 @@
         try {
             if (slot.penetration) {
                 if (slot.penetration > bestPen) {
-                    bestPen = slot.penetration;
+                    // console.log("Debug for checkproprties:");
+                    // console.log(!helldiver_slot5 == helldivers_factions[1]);
+                    // console.log(slot.properties);
+                    if (slot.properties) console.log(!(slot.properties.includes(Properties.Limited_Range) || slot.properties.includes(Properties.Eagle) || slot.properties.includes(Properties.Orbital)));
+                    if (!helldiver_slot5 == helldivers_factions[1] || (slot.properties && !(slot.properties.includes(Properties.Limited_Range) || slot.properties.includes(Properties.Eagle) || slot.properties.includes(Properties.Orbital))))
+                    {
+                        bestPen = slot.penetration;
+                    }
                 }
+                // console.log("item: "+slot.key);
+                // console.log("bestpen: "+bestPen);
             }
             if (slot.properties) {
                 if (!backpack_exists && slot.properties.includes(Properties.Backpack)) {
@@ -2544,6 +2564,7 @@
         }
         catch (error) {
             alert("Encountered an error, attempting to continue functionality");
+            console.log(error);
         }
 
     }
