@@ -1,3 +1,4 @@
+v3.15   -   Changed the data persistence checks to a more sophisticated one. This will fix the issues in 3.14 and will allow changes in the future to be edited into the local storage without issues
 v3.14   -   Added functionality for determining if an item has limited range. Now you will always be guaranteed to have an item to be able to fight gunships. 
             A new tag has been added for "Limited_Range" which will be added to any item that can't hit enemies in the air. Terminid behaviour is unchanged.
 v3.13   -   Added functionality for maintaining toggle states between updates. Also fixed a bug where resetting buttons would occasionally cause a nullreference.

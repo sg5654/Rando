@@ -1815,19 +1815,34 @@
         var tempStrat = [];
         if (keepStates) {
             helldivers_main_weps.forEach(e => {
-                if (e.toggle == false) tempMain.concat(e.key);
+                if (e.toggle == false) {
+                    tempMain = tempMain.concat([e.key]);
+                    // console.log("adding "+ e.key);
+                }
             });
             helldivers_secondary_weps.forEach(e => {
-                if (e.toggle == false) tempSec.concat(e.key);
+                if (e.toggle == false) {
+                    tempSec = tempSec.concat([e.key]);
+                    // console.log("adding "+ e.key);
+                }
             });
             helldivers_grenades.forEach(e => {
-                if (e.toggle == false) tempGren.concat(e.key);
+                if (e.toggle == false) {
+                    tempGren = tempGren.concat([e.key]);
+                    // console.log("adding "+ e.key);
+                }
             });
             helldivers_armour.forEach(e => {
-                if (e.toggle == false) tempArm.concat(e.key);
+                if (e.toggle == false) {
+                    tempArm = tempArm.concat([e.key]);
+                    // console.log("adding "+ e.key);
+                }
             });
             helldivers_strategems.forEach(e => {
-                if (e.toggle == false) TempStrat.concat(e.key);
+                if (e.toggle == false) {
+                    tempStrat = tempStrat.concat([e.key]);
+                    // console.log("adding "+ e.key);
+                }
             });
             helldivers_main_weps = [];
             helldivers_secondary_weps = [];
@@ -1841,7 +1856,7 @@
                 // console.log(temp);
                 if (tempMain.find(((element) => element == e.key))) {
                     temp.toggle = false;
-                    console.log(temp);
+                    // console.log(temp);
                 }
                 helldivers_main_weps = helldivers_main_weps.concat([temp]);
                 // console.log(helldivers_main_weps);
@@ -1966,12 +1981,6 @@
         else if (currentVer != lastVer) {
             alert("Welcome back! There has been at least one update since your last visit. \n For a full detailed list of changes, see https://github.com/sg5654/Rando/blob/main/CHANGELOG.md");
         }
-        if (currentVer != lastVer && force_update_list) {
-            alert("The new update requires your list data to be reset.");
-            inconsistency = true;
-            continueing = false;
-
-        }
         localStorage.setItem("Current_Version", JSON.stringify(lastVer));
 
         // Check if loaded state matches current file
@@ -1980,48 +1989,173 @@
         var checkList2 = [];
 
         helldivers_main_weps.forEach(e => {
-            checkList.push(e.key);
+            checkList.push(e);
         });
         helldivers_main_weps_clone.forEach(e => {
-            checkList2.push(e.key);
+            checkList2.push(e);
         });
 
-        // console.log("hey");
-        for (var i = 0; i < checkList2.length; i++) {
-            if (!(checkList[i].toString() == checkList2[i].toString())) {
-                console.log("checklist "+i+" is not equal to checkList2 "+i);
-                console.log(checkList[i]);
-                console.log(checkList2[i]);
-                inconsistency = true; break;
+
+        if (inconsistency) {
+        }
+        else {
+            // console.log("Entering main...");
+            if (checkList.length != checkList2.length) {
+                console.log("Found inconsistency!");
+                console.log("Area: main weps");
+                console.log("Key: " + checkList[i].key);
+                inconsistency = true;
             }
+            else {            
+                for (var i = 0; i < checkList2.length; i++) {
+                    if (checkList2[i].key != checkList[i].key) {
+                        console.log("Found inconsistency!");
+                        console.log("Area: main weps");
+                        console.log("Key: " + checkList[i].key);
+                        inconsistency = true;
+                        break;
+                    }
+                    // console.log("Passed key check, entering properties..");
+                    if (checkList2[i].properties) {
+                        // console.log("item has properties: ");
+                        // console.log(checkList2[i].properties);
+                        if (checkList[i].properties) {
+                            // console.log("item has properties: ");
+                            // console.log(checkList[i].properties);
+                            // console.log(checkList2[i].properties[0] == checkList[i].properties[0]);
+                            for (j = 0;j < checkList2[i].properties.length; j++) {
+                                if (checkList2[i].properties[j] != checkList[i].properties[j]) {
+                                    console.log("Found inconsistency!");
+                                    console.log("Area: main weps");
+                                    console.log("Key: " + checkList[i].key);
+                                    inconsistency = true;
+                                    break;
+                                }
+                            }
+                            if (inconsistency) {
+                                break;
+                            }
+                        }
+                        else {
+                            console.log("Found inconsistency!");
+                            console.log("Area: main weps");
+                            console.log("Key: " + checkList[i].key);
+                            inconsistency = true;
+                            break;
+                        }
+                    }
+                    // console.log("Passed properties check, entering penetration..");
+                    if (checkList2.penetration) {
+                        if (checkList.penetration){
+                            if (checkList2[i].penetration != checkList[i].penetration) {
+                            console.log("Found inconsistency!");
+                            console.log("Area: main weps");
+                            console.log("Key: " + checkList[i].key);
+                            inconsistency = true;
+                    }
+                        }
+                        else {
+                            console.log("Found inconsistency!");
+                            console.log("Area: main weps");
+                            console.log("Key: " + checkList[i].key);
+                            inconsistency = true;
+                            break;
+                        }
+                    }
+                    // console.log("Passed all checks for item: "+ checkList[i].key);
+                }
+            }   
         }
         if (continueing && inconsistency) {
-            console.log("entered");
+            // console.log("entered");
             alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties. Toggle states will remain");
             continueing = false;
         }
-        console.log(continueing);
-        console.log(checkList2.every(e => {checkList.includes(e)}));
+        // console.log(continueing);
+        // console.log(checkList2.every(e => {checkList.includes(e)}));
 
         checkList = [];
         checkList2 = [];
         
         helldivers_secondary_weps.forEach(e => {
-            checkList.push(e.key);
+            checkList.push(e);
         });
         helldivers_secondary_weps_clone.forEach(e => {
-            checkList2.push(e.key);
+            checkList2.push(e);
         });
 
-        for (var i = 0; i < checkList2.length; i++) {
-            if (!(checkList[i].toString() == checkList2[i].toString())) {
-                console.log("checklist "+i+" is not equal to checkList2 "+i);
-                console.log(checkList[i]);
-                console.log(checkList2[i]);
-                inconsistency = true; break;
+        if (inconsistency) {
+        }
+        else {
+            // console.log("Entering main...");
+            if (checkList.length != checkList2.length) {
+                console.log("Found inconsistency!");
+                console.log("Area: secondary weps");
+                console.log("Key: " + checkList[i].key);
+                inconsistency = true;
             }
+            else {            
+                for (var i = 0; i < checkList2.length; i++) {
+                    if (checkList2[i].key != checkList[i].key) {
+                        console.log("Found inconsistency!");
+                        console.log("Area: secondary weps");
+                        console.log("Key: " + checkList[i].key);
+                        inconsistency = true;
+                        break;
+                    }
+                    // console.log("Passed key check, entering properties..");
+                    if (checkList2[i].properties) {
+                        // console.log("item has properties: ");
+                        // console.log(checkList2[i].properties);
+                        if (checkList[i].properties) {
+                            // console.log("item has properties: ");
+                            // console.log(checkList[i].properties);
+                            // console.log(checkList2[i].properties[0] == checkList[i].properties[0]);
+                            for (j = 0;j < checkList2[i].properties.length; j++) {
+                                if (checkList2[i].properties[j] != checkList[i].properties[j]) {
+                                    console.log("Found inconsistency!");
+                                    console.log("Area: secondary weps");
+                                    console.log("Key: " + checkList[i].key);
+                                    inconsistency = true;
+                                    break;
+                                }
+                            }
+                            if (inconsistency) {
+                                break;
+                            }
+                        }
+                        else {
+                            console.log("Found inconsistency!");
+                            console.log("Area: secondary weps");
+                            console.log("Key: " + checkList[i].key);
+                            inconsistency = true;
+                            break;
+                        }
+                    }
+                    // console.log("Passed properties check, entering penetration..");
+                    if (checkList2[i].penetration) {
+                        if (checkList[i].penetration){
+                            if (checkList2[i].penetration != checkList[i].penetration) {
+                            console.log("Found inconsistency!");
+                            console.log("Area: secondary weps");
+                            console.log("Key: " + checkList[i].key);
+                            inconsistency = true;
+                            }
+                        }
+                        else {
+                            console.log("Found inconsistency!");
+                            console.log("Area: secondary weps");
+                            console.log("Key: " + checkList[i].key);
+                            inconsistency = true;
+                            break;
+                        }
+                    }
+                    // console.log("Passed all checks for item: "+ checkList[i].key);
+                }
+            }   
         }
         if (continueing && inconsistency) {
+            // console.log("entered");
             alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties. Toggle states will remain");
             continueing = false;
         }
@@ -2032,20 +2166,84 @@
         checkList2 = [];
         
         helldivers_grenades.forEach(e => {
-            checkList.push(e.key);
+            checkList.push(e);
         });
         helldivers_grenades_clone.forEach(e => {
-            checkList2.push(e.key);
+            checkList2.push(e);
         });
-        for (var i = 0; i < checkList2.length; i++) {
-            if (!(checkList[i].toString() == checkList2[i].toString())) {
-                console.log("checklist "+i+" is not equal to checkList2 "+i);
-                console.log(checkList[i]);
-                console.log(checkList2[i]);
-                inconsistency = true; break;
+
+        if (inconsistency) {
+        }
+        else {
+            // console.log("Entering main...");
+            if (checkList.length != checkList2.length) {
+                console.log("Found inconsistency!");
+                console.log("Area: throwables");
+                console.log("Key: " + checkList[i].key);
+                inconsistency = true;
             }
+            else {            
+                for (var i = 0; i < checkList2.length; i++) {
+                    if (checkList2[i].key != checkList[i].key) {
+                        console.log("Found inconsistency!");
+                        console.log("Area: throwables");
+                        console.log("Key: " + checkList[i].key);
+                        inconsistency = true;
+                        break;
+                    }
+                    // console.log("Passed key check, entering properties..");
+                    if (checkList2[i].properties) {
+                        // console.log("item has properties: ");
+                        // console.log(checkList2[i].properties);
+                        if (checkList[i].properties) {
+                            // console.log("item has properties: ");
+                            // console.log(checkList[i].properties);
+                            // console.log(checkList2[i].properties[0] == checkList[i].properties[0]);
+                            for (j = 0;j < checkList2[i].properties.length; j++) {
+                                if (checkList2[i].properties[j] != checkList[i].properties[j]) {
+                                    console.log("Found inconsistency!");
+                                    console.log("Area: throwables");
+                                    console.log("Key: " + checkList[i].key);
+                                    inconsistency = true;
+                                    break;
+                                }
+                            }
+                            if (inconsistency) {
+                                break;
+                            }
+                        }
+                        else {
+                            console.log("Found inconsistency!");
+                            console.log("Area: throwables");
+                            console.log("Key: " + checkList[i].key);
+                            inconsistency = true;
+                            break;
+                        }
+                    }
+                    // console.log("Passed properties check, entering penetration..");
+                    if (checkList2[i].penetration) {
+                        if (checkList[i].penetration){
+                            if (checkList2[i].penetration != checkList[i].penetration) {
+                            console.log("Found inconsistency!");
+                            console.log("Area: throwables");
+                            console.log("Key: " + checkList[i].key);
+                            inconsistency = true;
+                    }
+                        }
+                        else {
+                            console.log("Found inconsistency!");
+                            console.log("Area: throwables");
+                            console.log("Key: " + checkList[i].key);
+                            inconsistency = true;
+                            break;
+                        }
+                    }
+                    // console.log("Passed all checks for item: "+ checkList[i].key);
+                }
+            }   
         }
         if (continueing && inconsistency) {
+            // console.log("entered");
             alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties. Toggle states will remain");
             continueing = false;
         }
@@ -2056,21 +2254,85 @@
         checkList = [];
         checkList2 = [];
         
-        helldivers_grenades.forEach(e => {
-            checkList.push(e.key);
+        helldivers_armour.forEach(e => {
+            checkList.push(e);
         });
-        helldivers_grenades_clone.forEach(e => {
-            checkList2.push(e.key);
+        helldivers_armour_clone.forEach(e => {
+            checkList2.push(e);
         });
-        for (var i = 0; i < checkList2.length; i++) {
-            if (!(checkList[i].toString() == checkList2[i].toString())) {
-                console.log("checklist "+i+" is not equal to checkList2 "+i);
-                console.log(checkList[i]);
-                console.log(checkList2[i]);
-                inconsistency = true; break;
+
+        if (inconsistency) {
+        }
+        else {
+            // console.log("Entering main...");
+            if (checkList.length != checkList2.length) {
+                console.log("Found inconsistency!");
+                console.log("Area: armour");
+                console.log("Key: " + checkList[i].key);
+                inconsistency = true;
             }
+            else {            
+                for (var i = 0; i < checkList2.length; i++) {
+                    if (checkList2[i].key != checkList[i].key) {
+                        console.log("Found inconsistency!");
+                        console.log("Area: armour");
+                        console.log("Key: " + checkList[i].key);
+                        inconsistency = true;
+                        break;
+                    }
+                    // console.log("Passed key check, entering properties..");
+                    if (checkList2[i].properties) {
+                        // console.log("item has properties: ");
+                        // console.log(checkList2[i].properties);
+                        if (checkList[i].properties) {
+                            // console.log("item has properties: ");
+                            // console.log(checkList[i].properties);
+                            // console.log(checkList2[i].properties[0] == checkList[i].properties[0]);
+                            for (j = 0;j < checkList2[i].properties.length; j++) {
+                                if (checkList2[i].properties[j] != checkList[i].properties[j]) {
+                                    console.log("Found inconsistency!");
+                                    console.log("Area: armour");
+                                    console.log("Key: " + checkList[i].key);
+                                    inconsistency = true;
+                                    break;
+                                }
+                            }
+                            if (inconsistency) {
+                                break;
+                            }
+                        }
+                        else {
+                            console.log("Found inconsistency!");
+                            console.log("Area: armour");
+                            console.log("Key: " + checkList[i].key);
+                            inconsistency = true;
+                            break;
+                        }
+                    }
+                    // console.log("Passed properties check, entering penetration..");
+                    if (checkList2[i].penetration) {
+                        if (checkList[i].penetration){
+                            if (checkList2[i].penetration != checkList[i].penetration) {
+                            console.log("Found inconsistency!");
+                            console.log("Area: armour");
+                            console.log("Key: " + checkList[i].key);
+                            inconsistency = true;
+                    }
+                        }
+                        else {
+                            console.log("Found inconsistency!");
+                            console.log("Area: armour");
+                            console.log("Key: " + checkList[i].key);
+                            inconsistency = true;
+                            break;
+                        }
+                    }
+                    // console.log("Passed all checks for item: "+ checkList[i].key);
+                }
+            }   
         }
         if (continueing && inconsistency) {
+            // console.log("entered");
             alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties. Toggle states will remain");
             continueing = false;
         }
@@ -2082,21 +2344,84 @@
         checkList2 = [];
         
         helldivers_strategems.forEach(e => {
-            checkList.push(e.key);
+            checkList.push(e);
         });
         helldivers_strategems_clone.forEach(e => {
-            checkList2.push(e.key);
+            checkList2.push(e);
         });
 
-        for (var i = 0; i < checkList2.length; i++) {
-            if (!(checkList[i].toString() == checkList2[i].toString())) {
-                console.log("checklist "+i+" is not equal to checkList2 "+i);
-                console.log(checkList[i]);
-                console.log(checkList2[i]);
-                inconsistency = true; break;
+        if (inconsistency) {
+        }
+        else {
+            // console.log("Entering main...");
+            if (checkList.length != checkList2.length) {
+                console.log("Found inconsistency!");
+                console.log("Area: strategems");
+                console.log("Key: " + checkList[i].key);
+                inconsistency = true;
             }
+            else {            
+                for (var i = 0; i < checkList2.length; i++) {
+                    if (checkList2[i].key != checkList[i].key) {
+                        console.log("Found inconsistency!");
+                        console.log("Area: strategems");
+                        console.log("Key: " + checkList[i].key);
+                        inconsistency = true;
+                        break;
+                    }
+                    // console.log("Passed key check, entering properties..");
+                    if (checkList2[i].properties) {
+                        // console.log("item has properties: ");
+                        // console.log(checkList2[i].properties);
+                        if (checkList[i].properties) {
+                            // console.log("item has properties: ");
+                            // console.log(checkList[i].properties);
+                            // console.log(checkList2[i].properties[0] == checkList[i].properties[0]);
+                            for (j = 0;j < checkList2[i].properties.length; j++) {
+                                if (checkList2[i].properties[j] != checkList[i].properties[j]) {
+                                    console.log("Found inconsistency!");
+                                    console.log("Area: strategems");
+                                    console.log("Key: " + checkList[i].key);
+                                    inconsistency = true;
+                                    break;
+                                }
+                            }
+                            if (inconsistency) {
+                                break;
+                            }
+                        }
+                        else {
+                            console.log("Found inconsistency!");
+                            console.log("Area: strategems");
+                            console.log("Key: " + checkList[i].key);
+                            inconsistency = true;
+                            break;
+                        }
+                    }
+                    // console.log("Passed properties check, entering penetration..");
+                    if (checkList2[i].penetration) {
+                        if (checkList[i].penetration){
+                            if (checkList2[i].penetration != checkList[i].penetration) {
+                            console.log("Found inconsistency!");
+                            console.log("Area: strategems");
+                            console.log("Key: " + checkList[i].key);
+                            inconsistency = true;
+                    }
+                        }
+                        else {
+                            console.log("Found inconsistency!");
+                            console.log("Area: strategems");
+                            console.log("Key: " + checkList[i].key);
+                            inconsistency = true;
+                            break;
+                        }
+                    }
+                    // console.log("Passed all checks for item: "+ checkList[i].key);
+                }
+            }   
         }
         if (continueing && inconsistency) {
+            // console.log("entered");
             alert("Inconsistency found in current file items and storage, updating list. \n Be aware this resets probabilties. Toggle states will remain");
             continueing = false;
         }
@@ -2112,10 +2437,7 @@
     }
 
     var currentVer = null;
-    var lastVer = "3.14.2";
-    // v3.14 forced a list update
-    // TODO: set as false for 3.15
-    var force_update_list = true;
+    var lastVer = "3.15";
 
     
     // Function to get the total probability stack of the provided list. 
