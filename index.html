@@ -663,11 +663,12 @@
     <button class ="toggleButton_active" onclick="toggleItem('Orbital Smoke Strike', helldivers_strategems)">Orbital Smoke Strike</button>
     <button class ="toggleButton_active" onclick="toggleItem('Orbital Airburst Strike', helldivers_strategems)">Orbital Airburst Strike</button>
     <br>
+    <button class ="toggleButton_active" onclick="toggleItem('Orbital Napalm Barrage', helldivers_strategems)">Orbital Napalm Barrage</button>
     <button class ="toggleButton_active" onclick="toggleItem('Orbital Laser', helldivers_strategems)">Orbital Laser</button>
     <button class ="toggleButton_active" onclick="toggleItem('Orbital Precision Strike', helldivers_strategems)">Orbital Precision Strike</button>
     <button class ="toggleButton_active" onclick="toggleItem('Orbital 380MM HE Barrage', helldivers_strategems)">Orbital 380MM HE Barrage</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Eagle Napalm Airstrike', helldivers_strategems)">Eagle Napalm Airstrike</button>
     <br>
+    <button class ="toggleButton_active" onclick="toggleItem('Eagle Napalm Airstrike', helldivers_strategems)">Eagle Napalm Airstrike</button>
     <button class ="toggleButton_active" onclick="toggleItem('Orbital 120MM HE Barrage', helldivers_strategems)">Orbital 120MM HE Barrage</button>
     <button class ="toggleButton_active" onclick="toggleItem('Eagle 110MM Rocket Pods', helldivers_strategems)">Eagle 110MM Rocket Pods</button>
     <br>
@@ -1108,6 +1109,7 @@
         {key: "Eagle Cluster Bomb", penetration: 2, properties: [Properties.Explosive, Properties.Eagle], probability: 100, toggle: true},
         {key: "Orbital Smoke Strike", properties: [Properties.Smoke, Properties.Orbital], probability: 100, toggle: true},
         {key: "Orbital Airburst Strike", penetration: 2, properties: [Properties.Orbital], probability: 100, toggle: true},
+        {key: "Orbital Napalm Barrage", penetration: 6, properties: [Properties.Explosive, Properties.Orbital], probability: 100, toggle: true},
         {key: "Orbital Laser", penetration: 9, properties: [Properties.Explosive, Properties.Orbital], probability: 100, toggle: true},
         {key: "Orbital Precision Strike", penetration: 9, properties: [Properties.Explosive, Properties.Orbital], probability: 100, toggle: true},
         {key: "Orbital 380MM HE Barrage", penetration: 9, properties: [Properties.Explosive, Properties.Orbital], probability: 100, toggle: true},
@@ -1163,69 +1165,70 @@
     const helldivers_strategems_clone = [
 
 
-        // Strikes
-        {key: "Eagle 500KG Bomb", penetration: 9, properties: [Properties.Explosive, Properties.Eagle], probability: 100, toggle: true},
-        {key: "Orbital Gatling Barrage", penetration: 2, properties: [Properties.Orbital], probability: 100, toggle: true},
-        {key: "Eagle Airstrike", penetration: 9, properties: [Properties.Explosive, Properties.Eagle], probability: 100, toggle: true},
-        {key: "Orbital Walking Barrage", penetration: 9, properties: [Properties.Explosive, Properties.Orbital], probability: 100, toggle: true},
-        {key: "Eagle Strafing Run", penetration: 2, properties: [Properties.Explosive, Properties.Eagle], probability: 100, toggle: true},
-        {key: "Orbital EMS Strike", properties: [Properties.Stun, Properties.Orbital], probability: 100, toggle: true},
-        {key: "Eagle Smoke Strike", properties: [Properties.Smoke, Properties.Eagle], probability: 100, toggle: true},
-        {key: "Orbital Gas Strike", properties: [Properties.Orbital], probability: 100, toggle: true},
-        {key: "Orbital Railcannon Strike", penetration: 2, properties: [Properties.Orbital], probability: 100, toggle: true},
-        {key: "Eagle Cluster Bomb", penetration: 2, properties: [Properties.Explosive, Properties.Eagle], probability: 100, toggle: true},
-        {key: "Orbital Smoke Strike", properties: [Properties.Smoke, Properties.Orbital], probability: 100, toggle: true},
-        {key: "Orbital Airburst Strike", penetration: 2, properties: [Properties.Orbital], probability: 100, toggle: true},
-        {key: "Orbital Laser", penetration: 9, properties: [Properties.Explosive, Properties.Orbital], probability: 100, toggle: true},
-        {key: "Orbital Precision Strike", penetration: 9, properties: [Properties.Explosive, Properties.Orbital], probability: 100, toggle: true},
-        {key: "Orbital 380MM HE Barrage", penetration: 9, properties: [Properties.Explosive, Properties.Orbital], probability: 100, toggle: true},
-        {key: "Eagle Napalm Airstrike", penetration: 2, properties: [Properties.Eagle], probability: 100, toggle: true},
-        {key: "Orbital 120MM HE Barrage", penetration: 9, properties: [Properties.Explosive, Properties.Orbital], probability: 100, toggle: true},
-        {key: "Eagle 110MM Rocket Pods", penetration: 9, properties: [Properties.Explosive, Properties.Eagle], probability: 100, toggle: true},
-        
+// Strikes
+{key: "Eagle 500KG Bomb", penetration: 9, properties: [Properties.Explosive, Properties.Eagle], probability: 100, toggle: true},
+{key: "Orbital Gatling Barrage", penetration: 2, properties: [Properties.Orbital], probability: 100, toggle: true},
+{key: "Eagle Airstrike", penetration: 9, properties: [Properties.Explosive, Properties.Eagle], probability: 100, toggle: true},
+{key: "Orbital Walking Barrage", penetration: 9, properties: [Properties.Explosive, Properties.Orbital], probability: 100, toggle: true},
+{key: "Eagle Strafing Run", penetration: 2, properties: [Properties.Explosive, Properties.Eagle], probability: 100, toggle: true},
+{key: "Orbital EMS Strike", properties: [Properties.Stun, Properties.Orbital], probability: 100, toggle: true},
+{key: "Eagle Smoke Strike", properties: [Properties.Smoke, Properties.Eagle], probability: 100, toggle: true},
+{key: "Orbital Gas Strike", properties: [Properties.Orbital], probability: 100, toggle: true},
+{key: "Orbital Railcannon Strike", penetration: 2, properties: [Properties.Orbital], probability: 100, toggle: true},
+{key: "Eagle Cluster Bomb", penetration: 2, properties: [Properties.Explosive, Properties.Eagle], probability: 100, toggle: true},
+{key: "Orbital Smoke Strike", properties: [Properties.Smoke, Properties.Orbital], probability: 100, toggle: true},
+{key: "Orbital Airburst Strike", penetration: 2, properties: [Properties.Orbital], probability: 100, toggle: true},
+{key: "Orbital Napalm Barrage", penetration: 6, properties: [Properties.Explosive, Properties.Orbital], probability: 100, toggle: true},
+{key: "Orbital Laser", penetration: 9, properties: [Properties.Explosive, Properties.Orbital], probability: 100, toggle: true},
+{key: "Orbital Precision Strike", penetration: 9, properties: [Properties.Explosive, Properties.Orbital], probability: 100, toggle: true},
+{key: "Orbital 380MM HE Barrage", penetration: 9, properties: [Properties.Explosive, Properties.Orbital], probability: 100, toggle: true},
+{key: "Eagle Napalm Airstrike", penetration: 2, properties: [Properties.Eagle], probability: 100, toggle: true},
+{key: "Orbital 120MM HE Barrage", penetration: 9, properties: [Properties.Explosive, Properties.Orbital], probability: 100, toggle: true},
+{key: "Eagle 110MM Rocket Pods", penetration: 9, properties: [Properties.Explosive, Properties.Eagle], probability: 100, toggle: true},
 
-        // Equipment
-        {key: "MLS-4X Commando", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep], probability: 100, toggle: true},
-        {key: "EX-049 Emancipator Exosuit", properties: [Properties.Explosive], probability: 100, toggle: true},
-        {key: "M-105 Stalwart", penetration: 2, properties: [Properties.Support_Wep], probability: 100, toggle: true},
-        {key: "AC-8 Autocannon", penetration: 4, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 100, toggle: true},
-        {key: "EX-045 Patriot Suit", properties: [Properties.Explosive], probability: 100, toggle: true},
-        {key: "MG-206 Heavy Machine Gun", penetration: 4, properties: [Properties.Support_Wep], probability: 100, toggle: true},
-        {key: "SH-32 Shield Generator", properties: [Properties.Backpack], probability: 100, toggle: true},
-        {key: "RL-77 Airburst Rocket Launcher", penetration: 3, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 100, toggle: true},
-        {key: "RS-422 Railgun", penetration: 5, properties: [Properties.Support_Wep], probability: 100, toggle: true},
-        {key: "LAS-98 Laser Cannon", penetration: 4, properties: [Properties.Support_Wep], probability: 100, toggle: true},
-        {key: "ARC-3 Arc Thrower", penetration: 7, properties: [Properties.Support_Wep, Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "AX/AR-23 Guard Dog", properties: [Properties.Backpack, Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "FAF-14 Spear", penetration: 8, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 100, toggle: true},
-        {key: "GL-21 Grenade Launcher", properties: [Properties.Explosive, Properties.Support_Wep], probability: 100, toggle: true},
-        {key: "MG-43 Machine Gun", penetration: 3, properties: [Properties.Support_Wep], probability: 100, toggle: true},
-        {key: "SH-20 Ballistic Shield Backpack", properties: [Properties.Backpack, Properties.One_Handed], probability: 100, toggle: true},
-        {key: "B-1 Supply Pack", properties: [Properties.Backpack], probability: 100, toggle: true},
-        {key: "FLAM-40 Flamethrower", properties: [Properties.Incendiary, Properties.Support_Wep, Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "AX/LAS-5 Guard Dog Rover", properties: [Properties.Backpack, Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "GR-8 Recoilless Rifle", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 100, toggle: true},
-        {key: "LIFT-850 Jump Pack", properties: [Properties.Backpack], probability: 100, toggle: true},
-        {key: "APW-1 Anti Material Rifle", penetration: 4, properties: [Properties.Support_Wep], probability: 100, toggle: true},
-        {key: "EAT-17 Expendable Anti-Tank", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep], probability: 100, toggle: true},
-        {key: "LAS-99 Quasar Cannon", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep], probability: 100, toggle: true},
 
-        
-        // Defensive buildings
-        {key: "Anti-Tank Mines", properties: [Properties.Fortification], probability: 100, toggle: true},
-        {key: "FX-12 Shield Generator Relay", properties: [Properties.Fortification], probability: 100, toggle: true},
-        {key: "A/M-23 EMS Mortar Sentry", properties: [Properties.Sentry, Properties.Stun], probability: 100, toggle: true},
-        {key: "A/MLS-4X Rocket Sentry", properties: [Properties.Sentry, Properties.Explosive], probability: 100, toggle: true},
-        {key: "A/G-16 Gatling Sentry", properties: [Properties.Sentry], probability: 100, toggle: true},
-        {key: "A/ARC-3 Tesla Tower", properties: [Properties.Sentry], probability: 100, toggle: true},
-        {key: "A/M-12 Mortar Sentry", properties: [Properties.Sentry, Properties.Explosive], probability: 100, toggle: true},
-        {key: "MD-6 Anti-Personnel Minefield", properties: [Properties.Fortification], probability: 100, toggle: true},
-        {key: "A/MG-43 Machine Gun Sentry", properties: [Properties.Sentry], probability: 100, toggle: true},
-        {key: "A/AC-8 Autocannon Sentry", properties: [Properties.Sentry, Properties.Explosive], probability: 100, toggle: true},
-        {key: "MD-I4 Incendiary Mines", properties: [Properties.Fortification, Properties.Incendiary], probability: 100, toggle: true},
-        {key: "E/MG-101 HMG Emplacement", penetration: 4, properties: [Properties.Fortification], probability: 100, toggle: true}
-        
-    ]
+// Equipment
+{key: "MLS-4X Commando", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep], probability: 100, toggle: true},
+{key: "EX-049 Emancipator Exosuit", properties: [Properties.Explosive], probability: 100, toggle: true},
+{key: "M-105 Stalwart", penetration: 2, properties: [Properties.Support_Wep], probability: 100, toggle: true},
+{key: "AC-8 Autocannon", penetration: 4, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 100, toggle: true},
+{key: "EX-045 Patriot Suit", properties: [Properties.Explosive], probability: 100, toggle: true},
+{key: "MG-206 Heavy Machine Gun", penetration: 4, properties: [Properties.Support_Wep], probability: 100, toggle: true},
+{key: "SH-32 Shield Generator", properties: [Properties.Backpack], probability: 100, toggle: true},
+{key: "RL-77 Airburst Rocket Launcher", penetration: 3, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 100, toggle: true},
+{key: "RS-422 Railgun", penetration: 5, properties: [Properties.Support_Wep], probability: 100, toggle: true},
+{key: "LAS-98 Laser Cannon", penetration: 4, properties: [Properties.Support_Wep], probability: 100, toggle: true},
+{key: "ARC-3 Arc Thrower", penetration: 7, properties: [Properties.Support_Wep, Properties.Limited_Range], probability: 100, toggle: true},
+{key: "AX/AR-23 Guard Dog", properties: [Properties.Backpack, Properties.Limited_Range], probability: 100, toggle: true},
+{key: "FAF-14 Spear", penetration: 8, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 100, toggle: true},
+{key: "GL-21 Grenade Launcher", properties: [Properties.Explosive, Properties.Support_Wep], probability: 100, toggle: true},
+{key: "MG-43 Machine Gun", penetration: 3, properties: [Properties.Support_Wep], probability: 100, toggle: true},
+{key: "SH-20 Ballistic Shield Backpack", properties: [Properties.Backpack, Properties.One_Handed], probability: 100, toggle: true},
+{key: "B-1 Supply Pack", properties: [Properties.Backpack], probability: 100, toggle: true},
+{key: "FLAM-40 Flamethrower", properties: [Properties.Incendiary, Properties.Support_Wep, Properties.Limited_Range], probability: 100, toggle: true},
+{key: "AX/LAS-5 Guard Dog Rover", properties: [Properties.Backpack, Properties.Limited_Range], probability: 100, toggle: true},
+{key: "GR-8 Recoilless Rifle", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 100, toggle: true},
+{key: "LIFT-850 Jump Pack", properties: [Properties.Backpack], probability: 100, toggle: true},
+{key: "APW-1 Anti Material Rifle", penetration: 4, properties: [Properties.Support_Wep], probability: 100, toggle: true},
+{key: "EAT-17 Expendable Anti-Tank", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep], probability: 100, toggle: true},
+{key: "LAS-99 Quasar Cannon", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep], probability: 100, toggle: true},
+
+
+// Defensive buildings
+{key: "Anti-Tank Mines", properties: [Properties.Fortification], probability: 100, toggle: true},
+{key: "FX-12 Shield Generator Relay", properties: [Properties.Fortification], probability: 100, toggle: true},
+{key: "A/M-23 EMS Mortar Sentry", properties: [Properties.Sentry, Properties.Stun], probability: 100, toggle: true},
+{key: "A/MLS-4X Rocket Sentry", properties: [Properties.Sentry, Properties.Explosive], probability: 100, toggle: true},
+{key: "A/G-16 Gatling Sentry", properties: [Properties.Sentry], probability: 100, toggle: true},
+{key: "A/ARC-3 Tesla Tower", properties: [Properties.Sentry], probability: 100, toggle: true},
+{key: "A/M-12 Mortar Sentry", properties: [Properties.Sentry, Properties.Explosive], probability: 100, toggle: true},
+{key: "MD-6 Anti-Personnel Minefield", properties: [Properties.Fortification], probability: 100, toggle: true},
+{key: "A/MG-43 Machine Gun Sentry", properties: [Properties.Sentry], probability: 100, toggle: true},
+{key: "A/AC-8 Autocannon Sentry", properties: [Properties.Sentry, Properties.Explosive], probability: 100, toggle: true},
+{key: "MD-I4 Incendiary Mines", properties: [Properties.Fortification, Properties.Incendiary], probability: 100, toggle: true},
+{key: "E/MG-101 HMG Emplacement", penetration: 4, properties: [Properties.Fortification], probability: 100, toggle: true}
+
+]
 
 
 
@@ -2437,7 +2440,7 @@
     }
 
     var currentVer = null;
-    var lastVer = "3.15";
+    var lastVer = "3.16";
 
     
     // Function to get the total probability stack of the provided list. 
