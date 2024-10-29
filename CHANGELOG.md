@@ -1,5 +1,10 @@
-v3.17   -   Added a bunch of newly added weaponry. This includes primarily the new gas based warbond and the liberty day additions. Also contains a bug fix that prevented updates from working properly if list sizes differed.
-            KNOWN ISSUE: The terminid armor revamp has made me wish to change the way the "min penetration for faction" works. In the future, this will be a system that checks if you have at least armor pen 3 available from either primary or support weapons.
+v3.19   -   Added another option to force a reliable method of blowing up fabricators and bug holes. This can be anything that is tagged as "Explosive" in my codebase. If none are found, a random grenade with
+            explosive tag will be selected
+v3.18   -   Revamped the "Minimum penetration for faction" (Or whatever I decide to rename it to later) option to now always check for the following condition:
+            The currently selected loadout must contain at least one primary or support weapon that is not constricted by limited range or supply and has at least penetration 3. This allows more reliable damage against scout striders and gunships.
+v3.17   -   Added a bunch of newly added weaponry. This includes primarily the new gas based warbond and the liberty day additions. Also contains a bug fix that prevented updates from working properly if list sizes 
+            differed.
+            KNOWN ISSUE: <-- Resolved The terminid armor revamp has made me wish to change the way the "min penetration for faction" works. In the future, this will be a system that checks if you have at least armor pen 3 available from either primary or support weapons.
 v3.16   -   Added the new Napalm Barrage Strategem
 v3.15   -   Changed the data persistence checks to a more sophisticated one. This will fix the issues in 3.14 and will allow changes in the future to be edited into the local storage without issues
 v3.14   -   Added functionality for determining if an item has limited range. Now you will always be guaranteed to have an item to be able to fight gunships. 
