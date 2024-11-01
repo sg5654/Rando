@@ -1,3 +1,4 @@
+v3.20   -   Added the new items from the "Truth Enforcers" Warbond
 v3.19   -   Added another option to force a reliable method of blowing up fabricators and bug holes. This can be anything that is tagged as "Explosive" in my codebase. If none are found, a random grenade with
             explosive tag will be selected
 v3.18   -   Revamped the "Minimum penetration for faction" (Or whatever I decide to rename it to later) option to now always check for the following condition:

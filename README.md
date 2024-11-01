@@ -1,5 +1,5 @@
 Simple Randomizer based on text output for games I commonly play. Currently supports GTFO and Helldivers 2.
-I have no clue what the different updates added anymore, but it should be up-to-date with all the current items in both games as of 27-10-2024
+I have no clue what the different updates added anymore, but it should be up-to-date with all the current items in both games as of 31-10-2024
 
 Current features:
 
