@@ -1,3 +1,4 @@
+     .1 -   Updated some tags that didn't feel right. Most orbitals and eagles are now no longer considered reliable explosives (for fabricators and bug holes), Sterilizer is now tagged as limited range.
 v3.20   -   Added the new items from the "Truth Enforcers" Warbond
 v3.19   -   Added another option to force a reliable method of blowing up fabricators and bug holes. This can be anything that is tagged as "Explosive" in my codebase. If none are found, a random grenade with
             explosive tag will be selected
