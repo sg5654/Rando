@@ -1,3 +1,4 @@
+     .3 -   Changed the priority system to prioritize penetration stat over support weapons. This prevents an empty list bug and makes more sense in general.
      .2 -   Updated some tags that were included in the copy data set but not the live dataset that could cause logical inconsistancies, also updated some pen stats
      .1 -   Updated some tags that didn't feel right. Most orbitals and eagles are now no longer considered reliable explosives (for fabricators and bug holes), Sterilizer is now tagged as limited range.
 v3.20   -   Added the new items from the "Truth Enforcers" Warbond
