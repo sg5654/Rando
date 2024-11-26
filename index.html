@@ -2890,10 +2890,10 @@
             
             // Standard rerolls for strategems, with parameters to enforce the user settings
             // empty list provided in filterItems so we can utilize other parameters
-            tempslot1 = do_reroll(helldivers_strategems, helldiver_slot7, force_new, [], false, support_force);
+            tempslot1 = do_reroll(helldivers_strategems, helldiver_slot7, force_new, [], pen_check);
             checkProperties(tempslot1);
             // Add previous slot to filterItems to avoid duplicates
-            tempslot2 = do_reroll(helldivers_strategems, helldiver_slot8, force_new, [tempslot1], pen_check);
+            tempslot2 = do_reroll(helldivers_strategems, helldiver_slot8, force_new, [tempslot1], false, support_force);
             checkProperties(tempslot2);
             tempslot3 = do_reroll(helldivers_strategems, helldiver_slot8, force_new, [tempslot1, tempslot2]);
             checkProperties(tempslot3);
