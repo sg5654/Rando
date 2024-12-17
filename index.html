@@ -537,6 +537,13 @@
     <button class ="toggleButton_active" onclick="toggleItem('P-4 Senator (Pistol)', helldivers_secondary_weps)">P-4 Senator (Pistol)</button>
     <br>
     <br>
+    Melee
+    <br>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('CQC-19 Stun Lance (Melee)', helldivers_secondary_weps)">CQC-19 Stun Lance (Melee)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('CQC-30 Stun Baton (Melee)', helldivers_secondary_weps)">CQC-30 Stun Baton (Melee)</button>
+    <br>
+    <br>
     Special
     <br>
     <br>
@@ -595,7 +602,9 @@
     <br>
     <button class ="toggleButton_active" onclick="toggleItem('AF-50 Noxious Ranger (Light Armour)', helldivers_armour)">AF-50 Noxious Ranger (Light Armour)</button>
     <button class ="toggleButton_active" onclick="toggleItem('UF-16 Inspector (Light Armour)', helldivers_armour)">UF-16 Inspector (Light Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('SR-24 Street Scout (Light Armour)', helldivers_armour)">SR-24 Street Scout (Light Armour)</button>
     <button class ="toggleButton_active" onclick="toggleItem('PH-9 Predator (Light Armour)', helldivers_armour)">PH-9 Predator (Light Armour)</button>
+    <br>
     <button class ="toggleButton_active" onclick="toggleItem('I-09 Heatseeker (Light Armour)', helldivers_armour)">I-09 Heatseeker (Light Armour)</button> 
     <br>
     <br>
@@ -661,8 +670,10 @@
     <button class ="toggleButton_active" onclick="toggleItem('CE-64 Grenadier (Heavy Armour)', helldivers_armour)">CE-64 Grenadier (Heavy Armour)</button>
     <button class ="toggleButton_active" onclick="toggleItem('PH-202 Twigsnapper (Heavy Armour)', helldivers_armour)">PH-202 Twigsnapper (Heavy Armour)</button>
     <br>
+    <button class ="toggleButton_active" onclick="toggleItem('SR-18 RoadBlock (Heavy Armour)', helldivers_armour)">SR-18 RoadBlock (Heavy Armour)</button>
     <button class ="toggleButton_active" onclick="toggleItem('FS-23 Battle Master (Heavy Armour)', helldivers_armour)">FS-23 Battle Master (Heavy Armour)</button>
     <button class ="toggleButton_active" onclick="toggleItem('CM-36 Winter Warrior (Heavy Armour)', helldivers_armour)">CM-36 Winter Warrior (Heavy Armour)</button>
+    <br>
     <button class ="toggleButton_active" onclick="toggleItem('I-44 Salamander (Heavy Armour)', helldivers_armour)">I-44 Salamander (Heavy Armour)</button>
 
 </div>
@@ -728,7 +739,7 @@
     <br>
     <button class ="toggleButton_active" onclick="toggleItem('GR-8 Recoilless Rifle', helldivers_strategems)">GR-8 Recoilless Rifle</button>
     <button class ="toggleButton_active" onclick="toggleItem('LIFT-850 Jump Pack', helldivers_strategems)">LIFT-850 Jump Pack</button>
-    <button class ="toggleButton_active" onclick="toggleItem('APW-1 Anti Material Rifle', helldivers_strategems)">APW-1 Anti Material Rifle</button>
+    <button class ="toggleButton_active" onclick="toggleItem('APW-1 Anti Materiel Rifle', helldivers_strategems)">APW-1 Anti Materiel Rifle</button>
     <button class ="toggleButton_active" onclick="toggleItem('AX/TX-13 Guard Dog Dog Breath', helldivers_strategems)">AX/TX-13 Guard Dog Dog Breath</button>
     <br>
     <button class ="toggleButton_active" onclick="toggleItem('EAT-17 Expendable Anti-Tank', helldivers_strategems)">EAT-17 Expendable Anti-Tank</button>
@@ -739,18 +750,21 @@
     Defensive
     <br>
     <br>
+    <button class ="toggleButton_active" onclick="toggleItem('A/Flam-40 Flame sentry', helldivers_strategems)">A/Flam-40 Flame sentry</button>
+    <button class ="toggleButton_active" onclick="toggleItem('E/AT-12 Anti-Tank Emplacement', helldivers_strategems)">E/AT-12 Anti-Tank Emplacement</button>
     <button class ="toggleButton_active" onclick="toggleItem('Anti-Tank Mines', helldivers_strategems)">Anti-Tank Mines</button>
     <button class ="toggleButton_active" onclick="toggleItem('FX-12 Shield Generator Relay', helldivers_strategems)">FX-12 Shield Generator Relay</button>
+    <br>
     <button class ="toggleButton_active" onclick="toggleItem('A/M-23 EMS Mortar Sentry', helldivers_strategems)">A/M-23 EMS Mortar Sentry</button>
     <button class ="toggleButton_active" onclick="toggleItem('A/MLS-4X Rocket Sentry', helldivers_strategems)">A/MLS-4X Rocket Sentry</button>
-    <br>
     <button class ="toggleButton_active" onclick="toggleItem('A/G-16 Gatling Sentry', helldivers_strategems)">A/G-16 Gatling Sentry</button>
     <button class ="toggleButton_active" onclick="toggleItem('A/ARC-3 Tesla Tower', helldivers_strategems)">A/ARC-3 Tesla Tower</button>
+    <br>
     <button class ="toggleButton_active" onclick="toggleItem('A/M-12 Mortar Sentry', helldivers_strategems)">A/M-12 Mortar Sentry</button>
     <button class ="toggleButton_active" onclick="toggleItem('MD-6 Anti-Personnel Minefield', helldivers_strategems)">MD-6 Anti-Personnel Minefield</button>
-    <br>
     <button class ="toggleButton_active" onclick="toggleItem('A/MG-43 Machine Gun Sentry', helldivers_strategems)">A/MG-43 Machine Gun Sentry</button>
     <button class ="toggleButton_active" onclick="toggleItem('A/AC-8 Autocannon Sentry', helldivers_strategems)">A/AC-8 Autocannon Sentry</button>
+    <br>
     <button class ="toggleButton_active" onclick="toggleItem('MD-I4 Incendiary Mines', helldivers_strategems)">MD-I4 Incendiary Mines</button>
     <button class ="toggleButton_active" onclick="toggleItem('E/MG-101 HMG Emplacement', helldivers_strategems)">E/MG-101 HMG Emplacement</button>
 
@@ -785,118 +799,120 @@
     var helldivers_main_weps = [
 
         // assault rifles
-        {key: "AR-23 Liberator (Assault Rifle)", penetration: 2, probability: 100, toggle: true},
-        {key: "AR-23P Liberator Penetrator (Assault Rifle)", penetration: 3, probability: 100, toggle: true},
-        {key: "AR-23C Liberator Concussive (Assault Rifle)", penetration: 2, properties: [Properties.Stun], probability: 100, toggle: true},
-        {key: "AR-23A Liberator Carbine (Assault Rifle)", penetration: 2, probability: 100, toggle: true},
-        {key: "AR-61 Tenderizer (Assault Rifle)", penetration: 2, probability: 100, toggle: true},
-        {key: "BR-14 Adjudicator (Assault Rifle)", penetration: 3, probability: 100, toggle: true},
+        {key: "AR-23 Liberator (Assault Rifle)", penetration: 2, probability: 50, toggle: true},
+        {key: "AR-23P Liberator Penetrator (Assault Rifle)", penetration: 3, probability: 50, toggle: true},
+        {key: "AR-23C Liberator Concussive (Assault Rifle)", penetration: 2, properties: [Properties.Stun], probability: 50, toggle: true},
+        {key: "AR-23A Liberator Carbine (Assault Rifle)", penetration: 2, probability: 50, toggle: true},
+        {key: "AR-61 Tenderizer (Assault Rifle)", penetration: 2, probability: 50, toggle: true},
+        {key: "BR-14 Adjudicator (Assault Rifle)", penetration: 3, probability: 50, toggle: true},
         
         // rifles
         
-        {key: "R-2124 Constitution (Marksman Rifle)", penetration: 3, probability: 100, toggle: true},
-        {key: "R-63 Diligence (Marksman Rifle)", penetration: 2, probability: 100, toggle: true},
-        {key: "R-63 Diligence Counter Sniper (Marksman Rifle)", penetration: 3, probability: 100, toggle: true},       
+        {key: "R-2124 Constitution (Marksman Rifle)", penetration: 3, probability: 50, toggle: true},
+        {key: "R-63 Diligence (Marksman Rifle)", penetration: 2, probability: 50, toggle: true},
+        {key: "R-63 Diligence Counter Sniper (Marksman Rifle)", penetration: 3, probability: 50, toggle: true},       
 
         // smg
-        {key: "SMG-32 Reprimand (Submachine Gun)", penetration: 3, probability: 100, toggle: true},
-        {key: "SMG-37 Defender (Submachine Gun)", penetration: 2, properties: [Properties.One_Handed], probability: 100, toggle: true},
-        {key: "SMG-72 Pummeler (Submachine Gun)", penetration: 2, properties: [Properties.One_Handed, Properties.Stun], probability: 100, toggle: true},
+        {key: "SMG-32 Reprimand (Submachine Gun)", penetration: 3, probability: 50, toggle: true},
+        {key: "SMG-37 Defender (Submachine Gun)", penetration: 2, properties: [Properties.One_Handed], probability: 50, toggle: true},
+        {key: "SMG-72 Pummeler (Submachine Gun)", penetration: 2, properties: [Properties.One_Handed, Properties.Stun], probability: 50, toggle: true},
         
 
         // shotgun
-        {key: "SG-8 Punisher (Shotgun)", penetration: 2, probability: 100, toggle: true},
-        {key: "SG-8S Slugger (Shotgun)", penetration: 3, probability: 100, toggle: true},
-        {key: "SG-20 Halt (Shotgun)", penetration: 3, properties: [Properties.Stun], probability: 100, toggle: true},
-        {key: "SG-451 Cookout (Shotgun)", penetration: 2, properties: [Properties.Incendiary], probability: 100, toggle: true},
-        {key: "SG-225 Breaker (Shotgun)", penetration: 2, probability: 100, toggle: true},
-        {key: "SG-225IE Breaker Incendiary (Shotgun)", penetration: 2, properties: [Properties.Incendiary], probability: 100, toggle: true},
-        {key: "SG-225SP Breaker Spray&Pray (Shotgun)", penetration: 2, probability: 100, toggle: true},
+        {key: "SG-8 Punisher (Shotgun)", penetration: 2, probability: 50, toggle: true},
+        {key: "SG-8S Slugger (Shotgun)", penetration: 3, probability: 50, toggle: true},
+        {key: "SG-20 Halt (Shotgun)", penetration: 3, properties: [Properties.Stun], probability: 50, toggle: true},
+        {key: "SG-451 Cookout (Shotgun)", penetration: 2, properties: [Properties.Incendiary], probability: 50, toggle: true},
+        {key: "SG-225 Breaker (Shotgun)", penetration: 2, probability: 50, toggle: true},
+        {key: "SG-225IE Breaker Incendiary (Shotgun)", penetration: 2, properties: [Properties.Incendiary], probability: 50, toggle: true},
+        {key: "SG-225SP Breaker Spray&Pray (Shotgun)", penetration: 2, probability: 50, toggle: true},
 
         // Explosive
-        {key: "CB-9 Exploding Crossbow (Explosive)", penetration: 3, properties: [Properties.Explosive, Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "R-36 Eruptor (Explosive)", penetration: 3, properties: [Properties.Explosive], probability: 100, toggle: true},
+        {key: "CB-9 Exploding Crossbow (Explosive)", penetration: 3, properties: [Properties.Explosive, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "R-36 Eruptor (Explosive)", penetration: 3, properties: [Properties.Explosive], probability: 50, toggle: true},
         
 
         // energy
-        {key: "SG-8P Punisher Plasma (Energy-Based)", penetration: 3, properties: [Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "ARC-12 Blitzer (Energy-Based)", penetration: 3, properties: [Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "LAS-5 Scythe (Energy-Based)", penetration: 2, properties: [Properties.Energy], probability: 100, toggle: true},
-        {key: "LAS-16 Sickle (Energy-Based)", penetration: 2, properties: [Properties.Energy], probability: 100, toggle: true},
-        {key: "Plas-1 Scorcher (Energy-Based)", penetration: 3, properties: [Properties.Energy], probability: 100, toggle: true},
-        {key: "Plas-101 Purifier (Energy-Based)", penetration: 3, properties: [Properties.Energy], probability: 100, toggle: true},
+        {key: "SG-8P Punisher Plasma (Energy-Based)", penetration: 3, properties: [Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "ARC-12 Blitzer (Energy-Based)", penetration: 3, properties: [Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "LAS-5 Scythe (Energy-Based)", penetration: 2, properties: [Properties.Energy], probability: 50, toggle: true},
+        {key: "LAS-16 Sickle (Energy-Based)", penetration: 2, properties: [Properties.Energy], probability: 50, toggle: true},
+        {key: "Plas-1 Scorcher (Energy-Based)", penetration: 3, properties: [Properties.Energy], probability: 50, toggle: true},
+        {key: "Plas-101 Purifier (Energy-Based)", penetration: 3, properties: [Properties.Energy], probability: 50, toggle: true},
         
         // Special
-        {key: "FLAM-66 Torcher (Special)", penetration: 3, properties: [Properties.Incendiary, Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "Jar-5 Dominator (Explosive)", penetration: 3, properties: [Properties.Limited_Range], probability: 100, toggle: true}
+        {key: "FLAM-66 Torcher (Special)", penetration: 3, properties: [Properties.Incendiary, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "Jar-5 Dominator (Explosive)", penetration: 3, properties: [Properties.Limited_Range], probability: 50, toggle: true}
     ]
 
     
     const helldivers_main_weps_clone = [
 
         // assault rifles
-        {key: "AR-23 Liberator (Assault Rifle)", penetration: 2, probability: 100, toggle: true},
-        {key: "AR-23P Liberator Penetrator (Assault Rifle)", penetration: 3, probability: 100, toggle: true},
-        {key: "AR-23C Liberator Concussive (Assault Rifle)", penetration: 2, properties: [Properties.Stun], probability: 100, toggle: true},
-        {key: "AR-23A Liberator Carbine (Assault Rifle)", penetration: 2, probability: 100, toggle: true},
-        {key: "AR-61 Tenderizer (Assault Rifle)", penetration: 2, probability: 100, toggle: true},
-        {key: "BR-14 Adjudicator (Assault Rifle)", penetration: 3, probability: 100, toggle: true},
+        {key: "AR-23 Liberator (Assault Rifle)", penetration: 2, probability: 50, toggle: true},
+        {key: "AR-23P Liberator Penetrator (Assault Rifle)", penetration: 3, probability: 50, toggle: true},
+        {key: "AR-23C Liberator Concussive (Assault Rifle)", penetration: 2, properties: [Properties.Stun], probability: 50, toggle: true},
+        {key: "AR-23A Liberator Carbine (Assault Rifle)", penetration: 2, probability: 50, toggle: true},
+        {key: "AR-61 Tenderizer (Assault Rifle)", penetration: 2, probability: 50, toggle: true},
+        {key: "BR-14 Adjudicator (Assault Rifle)", penetration: 3, probability: 50, toggle: true},
         
         // rifles
         
-        {key: "R-2124 Constitution (Marksman Rifle)", penetration: 3, probability: 100, toggle: true},
-        {key: "R-63 Diligence (Marksman Rifle)", penetration: 2, probability: 100, toggle: true},
-        {key: "R-63 Diligence Counter Sniper (Marksman Rifle)", penetration: 3, probability: 100, toggle: true},       
+        {key: "R-2124 Constitution (Marksman Rifle)", penetration: 3, probability: 50, toggle: true},
+        {key: "R-63 Diligence (Marksman Rifle)", penetration: 2, probability: 50, toggle: true},
+        {key: "R-63 Diligence Counter Sniper (Marksman Rifle)", penetration: 3, probability: 50, toggle: true},       
 
         // smg
-        {key: "SMG-32 Reprimand (Submachine Gun)", penetration: 3, probability: 100, toggle: true},
-        {key: "SMG-37 Defender (Submachine Gun)", penetration: 2, properties: [Properties.One_Handed], probability: 100, toggle: true},
-        {key: "SMG-72 Pummeler (Submachine Gun)", penetration: 2, properties: [Properties.One_Handed, Properties.Stun], probability: 100, toggle: true},
+        {key: "SMG-32 Reprimand (Submachine Gun)", penetration: 3, probability: 50, toggle: true},
+        {key: "SMG-37 Defender (Submachine Gun)", penetration: 2, properties: [Properties.One_Handed], probability: 50, toggle: true},
+        {key: "SMG-72 Pummeler (Submachine Gun)", penetration: 2, properties: [Properties.One_Handed, Properties.Stun], probability: 50, toggle: true},
         
 
         // shotgun
-        {key: "SG-8 Punisher (Shotgun)", penetration: 2, probability: 100, toggle: true},
-        {key: "SG-8S Slugger (Shotgun)", penetration: 3, probability: 100, toggle: true},
-        {key: "SG-20 Halt (Shotgun)", penetration: 3, properties: [Properties.Stun], probability: 100, toggle: true},
-        {key: "SG-451 Cookout (Shotgun)", penetration: 2, properties: [Properties.Incendiary], probability: 100, toggle: true},
-        {key: "SG-225 Breaker (Shotgun)", penetration: 2, probability: 100, toggle: true},
-        {key: "SG-225IE Breaker Incendiary (Shotgun)", penetration: 2, properties: [Properties.Incendiary], probability: 100, toggle: true},
-        {key: "SG-225SP Breaker Spray&Pray (Shotgun)", penetration: 2, probability: 100, toggle: true},
+        {key: "SG-8 Punisher (Shotgun)", penetration: 2, probability: 50, toggle: true},
+        {key: "SG-8S Slugger (Shotgun)", penetration: 3, probability: 50, toggle: true},
+        {key: "SG-20 Halt (Shotgun)", penetration: 3, properties: [Properties.Stun], probability: 50, toggle: true},
+        {key: "SG-451 Cookout (Shotgun)", penetration: 2, properties: [Properties.Incendiary], probability: 50, toggle: true},
+        {key: "SG-225 Breaker (Shotgun)", penetration: 2, probability: 50, toggle: true},
+        {key: "SG-225IE Breaker Incendiary (Shotgun)", penetration: 2, properties: [Properties.Incendiary], probability: 50, toggle: true},
+        {key: "SG-225SP Breaker Spray&Pray (Shotgun)", penetration: 2, probability: 50, toggle: true},
 
         // Explosive
-        {key: "CB-9 Exploding Crossbow (Explosive)", penetration: 3, properties: [Properties.Explosive, Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "R-36 Eruptor (Explosive)", penetration: 3, properties: [Properties.Explosive], probability: 100, toggle: true},
+        {key: "CB-9 Exploding Crossbow (Explosive)", penetration: 3, properties: [Properties.Explosive, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "R-36 Eruptor (Explosive)", penetration: 3, properties: [Properties.Explosive], probability: 50, toggle: true},
         
 
         // energy
-        {key: "SG-8P Punisher Plasma (Energy-Based)", penetration: 3, properties: [Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "ARC-12 Blitzer (Energy-Based)", penetration: 3, properties: [Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "LAS-5 Scythe (Energy-Based)", penetration: 2, properties: [Properties.Energy], probability: 100, toggle: true},
-        {key: "LAS-16 Sickle (Energy-Based)", penetration: 2, properties: [Properties.Energy], probability: 100, toggle: true},
-        {key: "Plas-1 Scorcher (Energy-Based)", penetration: 3, properties: [Properties.Energy], probability: 100, toggle: true},
-        {key: "Plas-101 Purifier (Energy-Based)", penetration: 3, properties: [Properties.Energy], probability: 100, toggle: true},
+        {key: "SG-8P Punisher Plasma (Energy-Based)", penetration: 3, properties: [Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "ARC-12 Blitzer (Energy-Based)", penetration: 3, properties: [Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "LAS-5 Scythe (Energy-Based)", penetration: 2, properties: [Properties.Energy], probability: 50, toggle: true},
+        {key: "LAS-16 Sickle (Energy-Based)", penetration: 2, properties: [Properties.Energy], probability: 50, toggle: true},
+        {key: "Plas-1 Scorcher (Energy-Based)", penetration: 3, properties: [Properties.Energy], probability: 50, toggle: true},
+        {key: "Plas-101 Purifier (Energy-Based)", penetration: 3, properties: [Properties.Energy], probability: 50, toggle: true},
         
         // Special
-        {key: "FLAM-66 Torcher (Special)", penetration: 3, properties: [Properties.Incendiary, Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "Jar-5 Dominator (Explosive)", penetration: 3, properties: [Properties.Limited_Range], probability: 100, toggle: true}
+        {key: "FLAM-66 Torcher (Special)", penetration: 3, properties: [Properties.Incendiary, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "Jar-5 Dominator (Explosive)", penetration: 3, properties: [Properties.Limited_Range], probability: 50, toggle: true}
     ]
 
     var helldivers_secondary_weps = [
 
         // Pistol
         
-        {key: "P-2 Peacemaker (Pistol)", penetration: 2, properties: [Properties.One_Handed], probability: 100, toggle: true},
-        {key: "P-19 Redeemer (Pistol)", penetration: 2, properties: [Properties.One_Handed], probability: 100, toggle: true},
-        {key: "P-113 Verdict (Pistol)", penetration: 3, properties: [Properties.One_Handed], probability: 100, toggle: true},
-        {key: "P-4 Senator (Pistol)", penetration: 4, properties: [Properties.One_Handed], probability: 100, toggle: true},
+        {key: "P-2 Peacemaker (Pistol)", penetration: 2, properties: [Properties.One_Handed], probability: 50, toggle: true},
+        {key: "P-19 Redeemer (Pistol)", penetration: 2, properties: [Properties.One_Handed], probability: 50, toggle: true},
+        {key: "P-113 Verdict (Pistol)", penetration: 3, properties: [Properties.One_Handed], probability: 50, toggle: true},
+        {key: "P-4 Senator (Pistol)", penetration: 4, properties: [Properties.One_Handed], probability: 50, toggle: true},
 
+        {key: "CQC-19 Stun Lance (Melee)", penetration: 2, properties: [Properties.One_Handed], probability: 50, toggle: true},
+        {key: "CQC-30 Stun Baton (Melee)", penetration: 2, properties: [Properties.One_Handed], probability: 50, toggle: true},
         // Special
-        {key: "P-11 Stim Pistol (Special)", properties: [Properties.One_Handed], probability: 100, toggle: true},
-        {key: "SG-22 Bushwhacker (Special)", penetration: 2, properties: [Properties.One_Handed], probability: 100, toggle: true},
-        {key: "P-72 Crisper (Special)", penetration: 4, properties: [Properties.One_Handed, Properties.Incendiary, Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "GP-31 Grenade Pistol (Special)", penetration: 3, properties: [Properties.Explosive, Properties.One_Handed, Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "LAS-7 Dagger (Special)", penetration: 2, properties: [Properties.One_Handed], probability: 100, toggle: true},
-        {key: "PLAS-15 Loyalist (Special)", penetration: 3, properties: [Properties.One_Handed], probability: 100, toggle: true}
+        {key: "P-11 Stim Pistol (Special)", properties: [Properties.One_Handed], probability: 50, toggle: true},
+        {key: "SG-22 Bushwhacker (Special)", penetration: 2, properties: [Properties.One_Handed], probability: 50, toggle: true},
+        {key: "P-72 Crisper (Special)", penetration: 4, properties: [Properties.One_Handed, Properties.Incendiary, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "GP-31 Grenade Pistol (Special)", penetration: 3, properties: [Properties.Explosive, Properties.One_Handed, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "LAS-7 Dagger (Special)", penetration: 2, properties: [Properties.One_Handed], probability: 50, toggle: true},
+        {key: "PLAS-15 Loyalist (Special)", penetration: 3, properties: [Properties.One_Handed], probability: 50, toggle: true}
 
     ]
 
@@ -904,249 +920,257 @@
 
         // Pistol
         
-        {key: "P-2 Peacemaker (Pistol)", penetration: 2, properties: [Properties.One_Handed], probability: 100, toggle: true},
-        {key: "P-19 Redeemer (Pistol)", penetration: 2, properties: [Properties.One_Handed], probability: 100, toggle: true},
-        {key: "P-113 Verdict (Pistol)", penetration: 3, properties: [Properties.One_Handed], probability: 100, toggle: true},
-        {key: "P-4 Senator (Pistol)", penetration: 4, properties: [Properties.One_Handed], probability: 100, toggle: true},
+        {key: "P-2 Peacemaker (Pistol)", penetration: 2, properties: [Properties.One_Handed], probability: 50, toggle: true},
+        {key: "P-19 Redeemer (Pistol)", penetration: 2, properties: [Properties.One_Handed], probability: 50, toggle: true},
+        {key: "P-113 Verdict (Pistol)", penetration: 3, properties: [Properties.One_Handed], probability: 50, toggle: true},
+        {key: "P-4 Senator (Pistol)", penetration: 4, properties: [Properties.One_Handed], probability: 50, toggle: true},
 
+        {key: "CQC-19 Stun Lance (Melee)", penetration: 2, properties: [Properties.One_Handed], probability: 50, toggle: true},
+        {key: "CQC-30 Stun Baton (Melee)", penetration: 2, properties: [Properties.One_Handed], probability: 50, toggle: true},
         // Special
-        {key: "P-11 Stim Pistol (Special)", properties: [Properties.One_Handed], probability: 100, toggle: true},
-        {key: "SG-22 Bushwhacker (Special)", penetration: 2, properties: [Properties.One_Handed], probability: 100, toggle: true},
-        {key: "P-72 Crisper (Special)", penetration: 4, properties: [Properties.One_Handed, Properties.Incendiary, Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "GP-31 Grenade Pistol (Special)", penetration: 3, properties: [Properties.Explosive, Properties.One_Handed, Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "LAS-7 Dagger (Special)", penetration: 2, properties: [Properties.One_Handed], probability: 100, toggle: true},
-        {key: "PLAS-15 Loyalist (Special)", penetration: 3, properties: [Properties.One_Handed], probability: 100, toggle: true}
+        {key: "P-11 Stim Pistol (Special)", properties: [Properties.One_Handed], probability: 50, toggle: true},
+        {key: "SG-22 Bushwhacker (Special)", penetration: 2, properties: [Properties.One_Handed], probability: 50, toggle: true},
+        {key: "P-72 Crisper (Special)", penetration: 4, properties: [Properties.One_Handed, Properties.Incendiary, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "GP-31 Grenade Pistol (Special)", penetration: 3, properties: [Properties.Explosive, Properties.One_Handed, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "LAS-7 Dagger (Special)", penetration: 2, properties: [Properties.One_Handed], probability: 50, toggle: true},
+        {key: "PLAS-15 Loyalist (Special)", penetration: 3, properties: [Properties.One_Handed], probability: 50, toggle: true}
 
     ]
 
     var helldivers_grenades = [
 
         // Standard
-        {key: "C-6 Frag (Standard Throwable)", properties: [Properties.Explosive, Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "C-12 High Explosive (Standard Throwable)", properties: [Properties.Explosive, Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "G-10 Incendiary (Standard Throwable)", properties: [Properties.Explosive, Properties.Incendiary, Properties.Limited_Range], probability: 100, toggle: true},
+        {key: "C-6 Frag (Standard Throwable)", properties: [Properties.Explosive, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "C-12 High Explosive (Standard Throwable)", properties: [Properties.Explosive, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "G-10 Incendiary (Standard Throwable)", properties: [Properties.Explosive, Properties.Incendiary, Properties.Limited_Range], probability: 50, toggle: true},
         
         // Special
-        {key: "G-16 Impact (Special Throwable)", properties: [Properties.Explosive, Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "G-13 Incendiary Impact (Special Throwable)", properties: [Properties.Explosive, Properties.Incendiary, Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "G-123 Thermite (Special Throwable)", properties: [Properties.Explosive, Properties.Incendiary, Properties.Limited_Range], probability: 100, toggle: true},
+        {key: "G-16 Impact (Special Throwable)", properties: [Properties.Explosive, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "G-13 Incendiary Impact (Special Throwable)", properties: [Properties.Explosive, Properties.Incendiary, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "G-123 Thermite (Special Throwable)", properties: [Properties.Explosive, Properties.Incendiary, Properties.Limited_Range], probability: 50, toggle: true},
         
-        {key: "G-3 Smoke (Special Throwable)", properties: [Properties.Smoke, Properties.Limited_Range], probability: 100, toggle: false},
-        {key: "G-23 Stun (Special Throwable)", properties: [Properties.Stun, Properties.Limited_Range], probability: 100, toggle: false},
-        {key: "G-4 Gas (Special Throwable)", probability: 100, toggle: false},
+        {key: "G-3 Smoke (Special Throwable)", properties: [Properties.Smoke, Properties.Limited_Range], probability: 50, toggle: false},
+        {key: "G-23 Stun (Special Throwable)", properties: [Properties.Stun, Properties.Limited_Range], probability: 50, toggle: false},
+        {key: "G-4 Gas (Special Throwable)", probability: 50, toggle: false},
 
-        {key: "K-2 Throwing Knife (Special Throwable)", probability: 100, properties: [Properties.Limited_Range], toggle: false}
+        {key: "K-2 Throwing Knife (Special Throwable)", probability: 50, properties: [Properties.Limited_Range], toggle: false}
         
     ]
 
     const helldivers_grenades_clone = [
 
         // Standard
-        {key: "C-6 Frag (Standard Throwable)", properties: [Properties.Explosive, Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "C-12 High Explosive (Standard Throwable)", properties: [Properties.Explosive, Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "G-10 Incendiary (Standard Throwable)", properties: [Properties.Explosive, Properties.Incendiary, Properties.Limited_Range], probability: 100, toggle: true},
+        {key: "C-6 Frag (Standard Throwable)", properties: [Properties.Explosive, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "C-12 High Explosive (Standard Throwable)", properties: [Properties.Explosive, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "G-10 Incendiary (Standard Throwable)", properties: [Properties.Explosive, Properties.Incendiary, Properties.Limited_Range], probability: 50, toggle: true},
         
         // Special
-        {key: "G-16 Impact (Special Throwable)", properties: [Properties.Explosive, Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "G-13 Incendiary Impact (Special Throwable)", properties: [Properties.Explosive, Properties.Incendiary, Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "G-123 Thermite (Special Throwable)", properties: [Properties.Explosive, Properties.Incendiary, Properties.Limited_Range], probability: 100, toggle: true},
+        {key: "G-16 Impact (Special Throwable)", properties: [Properties.Explosive, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "G-13 Incendiary Impact (Special Throwable)", properties: [Properties.Explosive, Properties.Incendiary, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "G-123 Thermite (Special Throwable)", properties: [Properties.Explosive, Properties.Incendiary, Properties.Limited_Range], probability: 50, toggle: true},
         
-        {key: "G-3 Smoke (Special Throwable)", properties: [Properties.Smoke, Properties.Limited_Range], probability: 100, toggle: false},
-        {key: "G-23 Stun (Special Throwable)", properties: [Properties.Stun, Properties.Limited_Range], probability: 100, toggle: false},
-        {key: "G-4 Gas (Special Throwable)", probability: 100, toggle: false},
+        {key: "G-3 Smoke (Special Throwable)", properties: [Properties.Smoke, Properties.Limited_Range], probability: 50, toggle: false},
+        {key: "G-23 Stun (Special Throwable)", properties: [Properties.Stun, Properties.Limited_Range], probability: 50, toggle: false},
+        {key: "G-4 Gas (Special Throwable)", probability: 50, toggle: false},
 
-        {key: "K-2 Throwing Knife (Special Throwable)", probability: 100, properties: [Properties.Limited_Range], toggle: false}
+        {key: "K-2 Throwing Knife (Special Throwable)", probability: 50, properties: [Properties.Limited_Range], toggle: false}
         
     ]
 
     var helldivers_armour = [
 
         // light
-        {key: "FS/37 Ravager (Light Armour)", probability: 100, toggle: true},
-        {key: "CW-4 Arctic Ranger (Light Armour)", probability: 100, toggle: true},
-        {key: "CE-74 Breaker (Light Armour)", probability: 100, toggle: true},
-        {key: "CE-67 Titan (Light Armour)", probability: 100, toggle: true},
-        {key: "CM-21 Trench Paramedic (Light Armour)", probability: 100, toggle: true},
-        {key: "CE-07 Demolition Specialist (Light Armour)", probability: 100, toggle: true},
-        {key: "FS-38 Eradicator (Light Armour)", probability: 100, toggle: true},
-        {key: "EX-00 Prototype X (Light Armour)", probability: 100, toggle: true},
-        {key: "SC-37 Legionnaire (Light Armour)", probability: 100, toggle: true}, 
-        {key: "B-08 Light Gunner (Light Armour)", probability: 100, toggle: true}, 
-        {key: "SC-30 Trailblazer Scout (Light Armour)", probability: 100, toggle: true},
-        {key: "SC-34 Infiltrator (Light Armour)", probability: 100, toggle: true},
-        {key: "AF-50 Noxious Ranger (Light Armour)", probability: 100, toggle: true},
-        {key: "UF-16 Inspector (Light Armour)", probability: 100, toggle: true},
-        {key: "PH-9 Predator (Light Armour)", probability: 100, toggle: true},
-        {key: "I-09 Heatseeker (Light Armour)", probability: 100, toggle: true},
+        {key: "FS/37 Ravager (Light Armour)", probability: 50, toggle: true},
+        {key: "CW-4 Arctic Ranger (Light Armour)", probability: 50, toggle: true},
+        {key: "CE-74 Breaker (Light Armour)", probability: 50, toggle: true},
+        {key: "CE-67 Titan (Light Armour)", probability: 50, toggle: true},
+        {key: "CM-21 Trench Paramedic (Light Armour)", probability: 50, toggle: true},
+        {key: "CE-07 Demolition Specialist (Light Armour)", probability: 50, toggle: true},
+        {key: "FS-38 Eradicator (Light Armour)", probability: 50, toggle: true},
+        {key: "EX-00 Prototype X (Light Armour)", probability: 50, toggle: true},
+        {key: "SC-37 Legionnaire (Light Armour)", probability: 50, toggle: true}, 
+        {key: "B-08 Light Gunner (Light Armour)", probability: 50, toggle: true}, 
+        {key: "SC-30 Trailblazer Scout (Light Armour)", probability: 50, toggle: true},
+        {key: "SC-34 Infiltrator (Light Armour)", probability: 50, toggle: true},
+        {key: "AF-50 Noxious Ranger (Light Armour)", probability: 50, toggle: true},
+        {key: "UF-16 Inspector (Light Armour)", probability: 50, toggle: true},
+        {key: "SR-24 Street Scout (Light Armour)", probability: 50, toggle: true},
+        {key: "PH-9 Predator (Light Armour)", probability: 50, toggle: true},
+        {key: "I-09 Heatseeker (Light Armour)", probability: 50, toggle: true},
         
 
 
 
         // medium
-        {key: "SA-25 Steel Trooper (Medium Armour)", probability: 100, toggle: true},
-        {key: "SA-12 Servo Assisted (Medium Armour)", probability: 100, toggle: true},
-        {key: "DP-00 Tactical (Medium Armour)", probability: 100, toggle: true},
-        {key: "CE-35 Trench Engineer (Medium Armour)", probability: 100, toggle: true},
-        {key: "CE-27 Ground Breaker (Medium Armour)", probability: 100, toggle: true},
-        {key: "CM-09 Bonesnapper (Medium Armour)", probability: 100, toggle: true},
-        {key: "CM-10 Clinician (Medium Armour)", probability: 100, toggle: true},
-        {key: "SC-15 Drone Master (Medium Armour)", probability: 100, toggle: true},
-        {key: "EX-03 Prototype 3 (Medium Armour)", probability: 100, toggle: true},
-        {key: "EX-16 Prototype 16 (Medium Armour)", probability: 100, toggle: true},
-        {key: "FS-34 Exterminator (Medium Armour)", probability: 100, toggle: true},
-        {key: "DP-40 Hero of the federation (Medium Armour)", probability: 100, toggle: true},
-        {key: "DP-11 Champion of the people (Medium Armour)", probability: 100, toggle: true},
-        {key: "CM-14 Physician (Medium Armour)", probability: 100, toggle: true},
-        {key: "CE-81 Juggernaut (Medium Armour)", probability: 100, toggle: true},
-        {key: "B-24 Enforcer (Medium Armour)", probability: 100, toggle: true},
-        {key: "B-01 Tactical (Medium Armour) (1)", probability: 100, toggle: true},
-        {key: "B-01 Tactical (Medium Armour) (2)", probability: 100, toggle: true},
-        {key: "B-01 Tactical (Medium Armour) (3)", probability: 100, toggle: true},
-        {key: "B-01 Tactical (Medium Armour) (4)", probability: 100, toggle: true},
-        {key: "TR-40 Gold Eagle (Medium Armour)", probability: 100, toggle: true},
-        {key: "AF-91 Field Chemist (Medium Armour)", probability: 100, toggle: true},
-        {key: "UF-84 Doubt Killer (Medium Armour)", probability: 100, toggle: true},
-        {key: "CW-9 White Wolf (Medium Armour)", probability: 100, toggle: true},
-        {key: "PH-56 Jaguar (Medium Armour)", probability: 100, toggle: true},
-        {key: "I-92 Fire Fighter (Medium Armour)", probability: 100, toggle: true},
-        {key: "SA-04 Combat Technician (Medium Armour)", probability: 100, toggle: true},
-        {key: "AF-02 Haz-Master (Medium Armour)", probability: 100, toggle: true},
-        {key: "UF-50 Bloodhound (Medium Armour)", probability: 100, toggle: true},
-        {key: "I-102 Draconaught (Medium Armour)", probability: 100, toggle: true},
+        {key: "SA-25 Steel Trooper (Medium Armour)", probability: 50, toggle: true},
+        {key: "SA-12 Servo Assisted (Medium Armour)", probability: 50, toggle: true},
+        {key: "DP-00 Tactical (Medium Armour)", probability: 50, toggle: true},
+        {key: "CE-35 Trench Engineer (Medium Armour)", probability: 50, toggle: true},
+        {key: "CE-27 Ground Breaker (Medium Armour)", probability: 50, toggle: true},
+        {key: "CM-09 Bonesnapper (Medium Armour)", probability: 50, toggle: true},
+        {key: "CM-10 Clinician (Medium Armour)", probability: 50, toggle: true},
+        {key: "SC-15 Drone Master (Medium Armour)", probability: 50, toggle: true},
+        {key: "EX-03 Prototype 3 (Medium Armour)", probability: 50, toggle: true},
+        {key: "EX-16 Prototype 16 (Medium Armour)", probability: 50, toggle: true},
+        {key: "FS-34 Exterminator (Medium Armour)", probability: 50, toggle: true},
+        {key: "DP-40 Hero of the federation (Medium Armour)", probability: 50, toggle: true},
+        {key: "DP-11 Champion of the people (Medium Armour)", probability: 50, toggle: true},
+        {key: "CM-14 Physician (Medium Armour)", probability: 50, toggle: true},
+        {key: "CE-81 Juggernaut (Medium Armour)", probability: 50, toggle: true},
+        {key: "B-24 Enforcer (Medium Armour)", probability: 50, toggle: true},
+        {key: "B-01 Tactical (Medium Armour) (1)", probability: 50, toggle: true},
+        {key: "B-01 Tactical (Medium Armour) (2)", probability: 50, toggle: true},
+        {key: "B-01 Tactical (Medium Armour) (3)", probability: 50, toggle: true},
+        {key: "B-01 Tactical (Medium Armour) (4)", probability: 50, toggle: true},
+        {key: "TR-40 Gold Eagle (Medium Armour)", probability: 50, toggle: true},
+        {key: "AF-91 Field Chemist (Medium Armour)", probability: 50, toggle: true},
+        {key: "UF-84 Doubt Killer (Medium Armour)", probability: 50, toggle: true},
+        {key: "CW-9 White Wolf (Medium Armour)", probability: 50, toggle: true},
+        {key: "PH-56 Jaguar (Medium Armour)", probability: 50, toggle: true},
+        {key: "I-92 Fire Fighter (Medium Armour)", probability: 50, toggle: true},
+        {key: "SA-04 Combat Technician (Medium Armour)", probability: 50, toggle: true},
+        {key: "AF-02 Haz-Master (Medium Armour)", probability: 50, toggle: true},
+        {key: "UF-50 Bloodhound (Medium Armour)", probability: 50, toggle: true},
+        {key: "I-102 Draconaught (Medium Armour)", probability: 50, toggle: true},
 
 
         // heavy
-        {key: "FS-55 Devastator (Heavy Armour)", probability: 100, toggle: true},
-        {key: "CW-22 Kodiak (Heavy Armour)", probability: 100, toggle: true},
-        {key: "SA-32 Dynamo (Heavy Armour)", probability: 100, toggle: true},
-        {key: "CM-17 Butcher (Heavy Armour)", probability: 100, toggle: true},
-        {key: "FS/61 Dreadnought (Heavy Armour)", probability: 100, toggle: true},
-        {key: "B-27 Fortified Commando (Heavy Armour)", probability: 100, toggle: true},
-        {key: "FS-05 Marksman (Heavy Armour)", probability: 100, toggle: true},
-        {key: "FS-11 Executioner (Heavy Armour)", probability: 100, toggle: true},
-        {key: "AF-52 Lockdown (Heavy Armour)", probability: 100, toggle: true},
-        {key: "CE-64 Grenadier (Heavy Armour)", probability: 100, toggle: true},
-        {key: "CE-101 Guerilla Gorilla (Heavy Armour)", probability: 100, toggle: true},
-        {key: "I-44 Salamander (Heavy Armour)", probability: 100, toggle: true},
-        {key: "PH-202 Twigsnapper (Heavy Armour)", probability: 100, toggle: true},
-        {key: "FS-23 Battle Master (Heavy Armour)", probability: 100, toggle: true},
-        {key: "CM-36 Winter Warrior (Heavy Armour)", probability: 100, toggle: true}
+        {key: "FS-55 Devastator (Heavy Armour)", probability: 50, toggle: true},
+        {key: "CW-22 Kodiak (Heavy Armour)", probability: 50, toggle: true},
+        {key: "SA-32 Dynamo (Heavy Armour)", probability: 50, toggle: true},
+        {key: "CM-17 Butcher (Heavy Armour)", probability: 50, toggle: true},
+        {key: "FS/61 Dreadnought (Heavy Armour)", probability: 50, toggle: true},
+        {key: "B-27 Fortified Commando (Heavy Armour)", probability: 50, toggle: true},
+        {key: "FS-05 Marksman (Heavy Armour)", probability: 50, toggle: true},
+        {key: "FS-11 Executioner (Heavy Armour)", probability: 50, toggle: true},
+        {key: "AF-52 Lockdown (Heavy Armour)", probability: 50, toggle: true},
+        {key: "CE-64 Grenadier (Heavy Armour)", probability: 50, toggle: true},
+        {key: "CE-101 Guerilla Gorilla (Heavy Armour)", probability: 50, toggle: true},
+        {key: "I-44 Salamander (Heavy Armour)", probability: 50, toggle: true},
+        {key: "PH-202 Twigsnapper (Heavy Armour)", probability: 50, toggle: true},
+        {key: "SR-18 RoadBlock (Heavy Armour)", probability: 50, toggle: true},
+        {key: "FS-23 Battle Master (Heavy Armour)", probability: 50, toggle: true},
+        {key: "CM-36 Winter Warrior (Heavy Armour)", probability: 50, toggle: true}
+
+        
 
     ]
 
     const helldivers_armour_clone = [
 
         // light
-        {key: "FS/37 Ravager (Light Armour)", probability: 100, toggle: true},
-        {key: "CW-4 Arctic Ranger (Light Armour)", probability: 100, toggle: true},
-        {key: "CE-74 Breaker (Light Armour)", probability: 100, toggle: true},
-        {key: "CE-67 Titan (Light Armour)", probability: 100, toggle: true},
-        {key: "CM-21 Trench Paramedic (Light Armour)", probability: 100, toggle: true},
-        {key: "CE-07 Demolition Specialist (Light Armour)", probability: 100, toggle: true},
-        {key: "FS-38 Eradicator (Light Armour)", probability: 100, toggle: true},
-        {key: "EX-00 Prototype X (Light Armour)", probability: 100, toggle: true},
-        {key: "SC-37 Legionnaire (Light Armour)", probability: 100, toggle: true}, 
-        {key: "B-08 Light Gunner (Light Armour)", probability: 100, toggle: true}, 
-        {key: "SC-30 Trailblazer Scout (Light Armour)", probability: 100, toggle: true},
-        {key: "SC-34 Infiltrator (Light Armour)", probability: 100, toggle: true},
-        {key: "AF-50 Noxious Ranger (Light Armour)", probability: 100, toggle: true},
-        {key: "UF-16 Inspector (Light Armour)", probability: 100, toggle: true},
-        {key: "PH-9 Predator (Light Armour)", probability: 100, toggle: true},
-        {key: "I-09 Heatseeker (Light Armour)", probability: 100, toggle: true},
+        {key: "FS/37 Ravager (Light Armour)", probability: 50, toggle: true},
+        {key: "CW-4 Arctic Ranger (Light Armour)", probability: 50, toggle: true},
+        {key: "CE-74 Breaker (Light Armour)", probability: 50, toggle: true},
+        {key: "CE-67 Titan (Light Armour)", probability: 50, toggle: true},
+        {key: "CM-21 Trench Paramedic (Light Armour)", probability: 50, toggle: true},
+        {key: "CE-07 Demolition Specialist (Light Armour)", probability: 50, toggle: true},
+        {key: "FS-38 Eradicator (Light Armour)", probability: 50, toggle: true},
+        {key: "EX-00 Prototype X (Light Armour)", probability: 50, toggle: true},
+        {key: "SC-37 Legionnaire (Light Armour)", probability: 50, toggle: true}, 
+        {key: "B-08 Light Gunner (Light Armour)", probability: 50, toggle: true}, 
+        {key: "SC-30 Trailblazer Scout (Light Armour)", probability: 50, toggle: true},
+        {key: "SC-34 Infiltrator (Light Armour)", probability: 50, toggle: true},
+        {key: "AF-50 Noxious Ranger (Light Armour)", probability: 50, toggle: true},
+        {key: "UF-16 Inspector (Light Armour)", probability: 50, toggle: true},
+        {key: "SR-24 Street Scout (Light Armour)", probability: 50, toggle: true},
+        {key: "PH-9 Predator (Light Armour)", probability: 50, toggle: true},
+        {key: "I-09 Heatseeker (Light Armour)", probability: 50, toggle: true},
         
 
 
 
         // medium
-        {key: "SA-25 Steel Trooper (Medium Armour)", probability: 100, toggle: true},
-        {key: "SA-12 Servo Assisted (Medium Armour)", probability: 100, toggle: true},
-        {key: "DP-00 Tactical (Medium Armour)", probability: 100, toggle: true},
-        {key: "CE-35 Trench Engineer (Medium Armour)", probability: 100, toggle: true},
-        {key: "CE-27 Ground Breaker (Medium Armour)", probability: 100, toggle: true},
-        {key: "CM-09 Bonesnapper (Medium Armour)", probability: 100, toggle: true},
-        {key: "CM-10 Clinician (Medium Armour)", probability: 100, toggle: true},
-        {key: "SC-15 Drone Master (Medium Armour)", probability: 100, toggle: true},
-        {key: "EX-03 Prototype 3 (Medium Armour)", probability: 100, toggle: true},
-        {key: "EX-16 Prototype 16 (Medium Armour)", probability: 100, toggle: true},
-        {key: "FS-34 Exterminator (Medium Armour)", probability: 100, toggle: true},
-        {key: "DP-40 Hero of the federation (Medium Armour)", probability: 100, toggle: true},
-        {key: "DP-11 Champion of the people (Medium Armour)", probability: 100, toggle: true},
-        {key: "CM-14 Physician (Medium Armour)", probability: 100, toggle: true},
-        {key: "CE-81 Juggernaut (Medium Armour)", probability: 100, toggle: true},
-        {key: "B-24 Enforcer (Medium Armour)", probability: 100, toggle: true},
-        {key: "B-01 Tactical (Medium Armour) (1)", probability: 100, toggle: true},
-        {key: "B-01 Tactical (Medium Armour) (2)", probability: 100, toggle: true},
-        {key: "B-01 Tactical (Medium Armour) (3)", probability: 100, toggle: true},
-        {key: "B-01 Tactical (Medium Armour) (4)", probability: 100, toggle: true},
-        {key: "TR-40 Gold Eagle (Medium Armour)", probability: 100, toggle: true},
-        {key: "AF-91 Field Chemist (Medium Armour)", probability: 100, toggle: true},
-        {key: "UF-84 Doubt Killer (Medium Armour)", probability: 100, toggle: true},
-        {key: "CW-9 White Wolf (Medium Armour)", probability: 100, toggle: true},
-        {key: "PH-56 Jaguar (Medium Armour)", probability: 100, toggle: true},
-        {key: "I-92 Fire Fighter (Medium Armour)", probability: 100, toggle: true},
-        {key: "SA-04 Combat Technician (Medium Armour)", probability: 100, toggle: true},
-        {key: "AF-02 Haz-Master (Medium Armour)", probability: 100, toggle: true},
-        {key: "UF-50 Bloodhound (Medium Armour)", probability: 100, toggle: true},
-        {key: "I-102 Draconaught (Medium Armour)", probability: 100, toggle: true},
+        {key: "SA-25 Steel Trooper (Medium Armour)", probability: 50, toggle: true},
+        {key: "SA-12 Servo Assisted (Medium Armour)", probability: 50, toggle: true},
+        {key: "DP-00 Tactical (Medium Armour)", probability: 50, toggle: true},
+        {key: "CE-35 Trench Engineer (Medium Armour)", probability: 50, toggle: true},
+        {key: "CE-27 Ground Breaker (Medium Armour)", probability: 50, toggle: true},
+        {key: "CM-09 Bonesnapper (Medium Armour)", probability: 50, toggle: true},
+        {key: "CM-10 Clinician (Medium Armour)", probability: 50, toggle: true},
+        {key: "SC-15 Drone Master (Medium Armour)", probability: 50, toggle: true},
+        {key: "EX-03 Prototype 3 (Medium Armour)", probability: 50, toggle: true},
+        {key: "EX-16 Prototype 16 (Medium Armour)", probability: 50, toggle: true},
+        {key: "FS-34 Exterminator (Medium Armour)", probability: 50, toggle: true},
+        {key: "DP-40 Hero of the federation (Medium Armour)", probability: 50, toggle: true},
+        {key: "DP-11 Champion of the people (Medium Armour)", probability: 50, toggle: true},
+        {key: "CM-14 Physician (Medium Armour)", probability: 50, toggle: true},
+        {key: "CE-81 Juggernaut (Medium Armour)", probability: 50, toggle: true},
+        {key: "B-24 Enforcer (Medium Armour)", probability: 50, toggle: true},
+        {key: "B-01 Tactical (Medium Armour) (1)", probability: 50, toggle: true},
+        {key: "B-01 Tactical (Medium Armour) (2)", probability: 50, toggle: true},
+        {key: "B-01 Tactical (Medium Armour) (3)", probability: 50, toggle: true},
+        {key: "B-01 Tactical (Medium Armour) (4)", probability: 50, toggle: true},
+        {key: "TR-40 Gold Eagle (Medium Armour)", probability: 50, toggle: true},
+        {key: "AF-91 Field Chemist (Medium Armour)", probability: 50, toggle: true},
+        {key: "UF-84 Doubt Killer (Medium Armour)", probability: 50, toggle: true},
+        {key: "CW-9 White Wolf (Medium Armour)", probability: 50, toggle: true},
+        {key: "PH-56 Jaguar (Medium Armour)", probability: 50, toggle: true},
+        {key: "I-92 Fire Fighter (Medium Armour)", probability: 50, toggle: true},
+        {key: "SA-04 Combat Technician (Medium Armour)", probability: 50, toggle: true},
+        {key: "AF-02 Haz-Master (Medium Armour)", probability: 50, toggle: true},
+        {key: "UF-50 Bloodhound (Medium Armour)", probability: 50, toggle: true},
+        {key: "I-102 Draconaught (Medium Armour)", probability: 50, toggle: true},
 
 
         // heavy
-        {key: "FS-55 Devastator (Heavy Armour)", probability: 100, toggle: true},
-        {key: "CW-22 Kodiak (Heavy Armour)", probability: 100, toggle: true},
-        {key: "SA-32 Dynamo (Heavy Armour)", probability: 100, toggle: true},
-        {key: "CM-17 Butcher (Heavy Armour)", probability: 100, toggle: true},
-        {key: "FS/61 Dreadnought (Heavy Armour)", probability: 100, toggle: true},
-        {key: "B-27 Fortified Commando (Heavy Armour)", probability: 100, toggle: true},
-        {key: "FS-05 Marksman (Heavy Armour)", probability: 100, toggle: true},
-        {key: "FS-11 Executioner (Heavy Armour)", probability: 100, toggle: true},
-        {key: "AF-52 Lockdown (Heavy Armour)", probability: 100, toggle: true},
-        {key: "CE-64 Grenadier (Heavy Armour)", probability: 100, toggle: true},
-        {key: "CE-101 Guerilla Gorilla (Heavy Armour)", probability: 100, toggle: true},
-        {key: "I-44 Salamander (Heavy Armour)", probability: 100, toggle: true},
-        {key: "PH-202 Twigsnapper (Heavy Armour)", probability: 100, toggle: true},
-        {key: "FS-23 Battle Master (Heavy Armour)", probability: 100, toggle: true},
-        {key: "CM-36 Winter Warrior (Heavy Armour)", probability: 100, toggle: true}
+        {key: "FS-55 Devastator (Heavy Armour)", probability: 50, toggle: true},
+        {key: "CW-22 Kodiak (Heavy Armour)", probability: 50, toggle: true},
+        {key: "SA-32 Dynamo (Heavy Armour)", probability: 50, toggle: true},
+        {key: "CM-17 Butcher (Heavy Armour)", probability: 50, toggle: true},
+        {key: "FS/61 Dreadnought (Heavy Armour)", probability: 50, toggle: true},
+        {key: "B-27 Fortified Commando (Heavy Armour)", probability: 50, toggle: true},
+        {key: "FS-05 Marksman (Heavy Armour)", probability: 50, toggle: true},
+        {key: "FS-11 Executioner (Heavy Armour)", probability: 50, toggle: true},
+        {key: "AF-52 Lockdown (Heavy Armour)", probability: 50, toggle: true},
+        {key: "CE-64 Grenadier (Heavy Armour)", probability: 50, toggle: true},
+        {key: "CE-101 Guerilla Gorilla (Heavy Armour)", probability: 50, toggle: true},
+        {key: "I-44 Salamander (Heavy Armour)", probability: 50, toggle: true},
+        {key: "PH-202 Twigsnapper (Heavy Armour)", probability: 50, toggle: true},
+        {key: "SR-18 RoadBlock (Heavy Armour)", probability: 50, toggle: true},
+        {key: "FS-23 Battle Master (Heavy Armour)", probability: 50, toggle: true},
+        {key: "CM-36 Winter Warrior (Heavy Armour)", probability: 50, toggle: true}
 
 
     ]
 
     var helldivers_factions = [
-        {key: "Terminids", probability: 100, toggle: true},
-        {key: "Automatons", probability: 100, toggle: true}
+        {key: "Terminids", probability: 50, toggle: true},
+        {key: "Automatons", probability: 50, toggle: true}
         
     ]    
 
     const helldivers_factions_clone = [
-        {key: "Terminids", probability: 100, toggle: true},
-        {key: "Automatons", probability: 100, toggle: true}
+        {key: "Terminids", probability: 50, toggle: true},
+        {key: "Automatons", probability: 50, toggle: true}
         
     ]
 
     var helldivers_difficulties = [
-        {key: "1", probability: 100, toggle: true},
-        {key: "2", probability: 100, toggle: true},
-        {key: "3", probability: 100, toggle: true},
-        {key: "4", probability: 100, toggle: true},
-        {key: "5", probability: 100, toggle: true},
-        {key: "6", probability: 100, toggle: true},
-        {key: "7", probability: 100, toggle: true},
-        {key: "8", probability: 100, toggle: true},
-        {key: "9", probability: 100, toggle: true},
-        {key: "10", probability: 100, toggle: true}
+        {key: "1", probability: 50, toggle: true},
+        {key: "2", probability: 50, toggle: true},
+        {key: "3", probability: 50, toggle: true},
+        {key: "4", probability: 50, toggle: true},
+        {key: "5", probability: 50, toggle: true},
+        {key: "6", probability: 50, toggle: true},
+        {key: "7", probability: 50, toggle: true},
+        {key: "8", probability: 50, toggle: true},
+        {key: "9", probability: 50, toggle: true},
+        {key: "10", probability: 50, toggle: true}
 
     ]
 
         const helldivers_difficulties_clone = [
-        {key: "1", probability: 100, toggle: true},
-        {key: "2", probability: 100, toggle: true},
-        {key: "3", probability: 100, toggle: true},
-        {key: "4", probability: 100, toggle: true},
-        {key: "5", probability: 100, toggle: true},
-        {key: "6", probability: 100, toggle: true},
-        {key: "7", probability: 100, toggle: true},
-        {key: "8", probability: 100, toggle: true},
-        {key: "9", probability: 100, toggle: true},
-        {key: "10", probability: 100, toggle: true}
+        {key: "1", probability: 50, toggle: true},
+        {key: "2", probability: 50, toggle: true},
+        {key: "3", probability: 50, toggle: true},
+        {key: "4", probability: 50, toggle: true},
+        {key: "5", probability: 50, toggle: true},
+        {key: "6", probability: 50, toggle: true},
+        {key: "7", probability: 50, toggle: true},
+        {key: "8", probability: 50, toggle: true},
+        {key: "9", probability: 50, toggle: true},
+        {key: "10", probability: 50, toggle: true}
 
     ]
 
@@ -1154,141 +1178,147 @@
 
 
         // Strikes
-        {key: "Eagle 500KG Bomb", penetration: 9, properties: [Properties.Explosive, Properties.Eagle], probability: 100, toggle: true},
-        {key: "Orbital Gatling Barrage", penetration: 2, properties: [Properties.Orbital], probability: 100, toggle: true},
-        {key: "Eagle Airstrike", penetration: 9, properties: [Properties.Explosive, Properties.Eagle], probability: 100, toggle: true},
-        {key: "Orbital Walking Barrage", penetration: 9, properties: [Properties.Orbital], probability: 100, toggle: true},
-        {key: "Eagle Strafing Run", penetration: 2, properties: [Properties.Explosive, Properties.Eagle], probability: 100, toggle: true},
-        {key: "Orbital EMS Strike", properties: [Properties.Stun, Properties.Orbital], probability: 100, toggle: true},
-        {key: "Eagle Smoke Strike", properties: [Properties.Smoke, Properties.Eagle], probability: 100, toggle: true},
-        {key: "Orbital Gas Strike", properties: [Properties.Orbital], probability: 100, toggle: true},
-        {key: "Orbital Railcannon Strike", penetration: 2, properties: [Properties.Orbital], probability: 100, toggle: true},
-        {key: "Eagle Cluster Bomb", penetration: 2, properties: [Properties.Eagle], probability: 100, toggle: true},
-        {key: "Orbital Smoke Strike", properties: [Properties.Smoke, Properties.Orbital], probability: 100, toggle: true},
-        {key: "Orbital Airburst Strike", penetration: 2, properties: [Properties.Orbital], probability: 100, toggle: true},
-        {key: "Orbital Napalm Barrage", penetration: 6, properties: [Properties.Orbital], probability: 100, toggle: true},
-        {key: "Orbital Laser", penetration: 9, properties: [Properties.Explosive, Properties.Orbital, Properties.Limited_Supply], probability: 100, toggle: true},
-        {key: "Orbital Precision Strike", penetration: 9, properties: [Properties.Explosive, Properties.Orbital], probability: 100, toggle: true},
-        {key: "Orbital 380MM HE Barrage", penetration: 9, properties: [Properties.Orbital], probability: 100, toggle: true},
-        {key: "Eagle Napalm Airstrike", penetration: 2, properties: [Properties.Eagle], probability: 100, toggle: true},
-        {key: "Orbital 120MM HE Barrage", penetration: 9, properties: [Properties.Orbital], probability: 100, toggle: true},
-        {key: "Eagle 110MM Rocket Pods", penetration: 9, properties: [Properties.Eagle], probability: 100, toggle: true},
+        {key: "Eagle 500KG Bomb", penetration: 9, properties: [Properties.Explosive, Properties.Eagle], probability: 50, toggle: true},
+        {key: "Orbital Gatling Barrage", penetration: 2, properties: [Properties.Orbital], probability: 50, toggle: true},
+        {key: "Eagle Airstrike", penetration: 9, properties: [Properties.Explosive, Properties.Eagle], probability: 50, toggle: true},
+        {key: "Orbital Walking Barrage", penetration: 9, properties: [Properties.Orbital], probability: 50, toggle: true},
+        {key: "Eagle Strafing Run", penetration: 2, properties: [Properties.Explosive, Properties.Eagle], probability: 50, toggle: true},
+        {key: "Orbital EMS Strike", properties: [Properties.Stun, Properties.Orbital], probability: 50, toggle: true},
+        {key: "Eagle Smoke Strike", properties: [Properties.Smoke, Properties.Eagle], probability: 50, toggle: true},
+        {key: "Orbital Gas Strike", properties: [Properties.Orbital], probability: 50, toggle: true},
+        {key: "Orbital Railcannon Strike", penetration: 2, properties: [Properties.Orbital], probability: 50, toggle: true},
+        {key: "Eagle Cluster Bomb", penetration: 2, properties: [Properties.Eagle], probability: 50, toggle: true},
+        {key: "Orbital Smoke Strike", properties: [Properties.Smoke, Properties.Orbital], probability: 50, toggle: true},
+        {key: "Orbital Airburst Strike", penetration: 2, properties: [Properties.Orbital], probability: 50, toggle: true},
+        {key: "Orbital Napalm Barrage", penetration: 6, properties: [Properties.Orbital], probability: 50, toggle: true},
+        {key: "Orbital Laser", penetration: 9, properties: [Properties.Explosive, Properties.Orbital, Properties.Limited_Supply], probability: 50, toggle: true},
+        {key: "Orbital Precision Strike", penetration: 9, properties: [Properties.Explosive, Properties.Orbital], probability: 50, toggle: true},
+        {key: "Orbital 380MM HE Barrage", penetration: 9, properties: [Properties.Orbital], probability: 50, toggle: true},
+        {key: "Eagle Napalm Airstrike", penetration: 2, properties: [Properties.Eagle], probability: 50, toggle: true},
+        {key: "Orbital 120MM HE Barrage", penetration: 9, properties: [Properties.Orbital], probability: 50, toggle: true},
+        {key: "Eagle 110MM Rocket Pods", penetration: 9, properties: [Properties.Eagle], probability: 50, toggle: true},
         
 
         // Equipment
-        {key: "MLS-4X Commando", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep], probability: 100, toggle: true},
-        {key: "EX-049 Emancipator Exosuit", properties: [Properties.Explosive, Properties.Limited_Supply], probability: 100, toggle: true},
-        {key: "M-105 Stalwart", penetration: 2, properties: [Properties.Support_Wep], probability: 100, toggle: true},
-        {key: "AC-8 Autocannon", penetration: 4, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 100, toggle: true},
-        {key: "EX-045 Patriot Suit", properties: [Properties.Explosive, Properties.Limited_Supply], probability: 100, toggle: true},
-        {key: "MG-206 Heavy Machine Gun", penetration: 4, properties: [Properties.Support_Wep], probability: 100, toggle: true},
-        {key: "SH-32 Shield Generator", properties: [Properties.Backpack], probability: 100, toggle: true},
-        {key: "RL-77 Airburst Rocket Launcher", penetration: 3, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 100, toggle: true},
-        {key: "RS-422 Railgun", penetration: 5, properties: [Properties.Support_Wep], probability: 100, toggle: true},
-        {key: "TX-41 Sterilizer", penetration: 3, properties: [Properties.Support_Wep, Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "LAS-98 Laser Cannon", penetration: 4, properties: [Properties.Support_Wep], probability: 100, toggle: true},
-        {key: "ARC-3 Arc Thrower", penetration: 7, properties: [Properties.Support_Wep, Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "AX/AR-23 Guard Dog", penetration: 3, properties: [Properties.Backpack, Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "FAF-14 Spear", penetration: 8, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 100, toggle: true},
-        {key: "GL-21 Grenade Launcher", penetration: 3, properties: [Properties.Explosive, Properties.Support_Wep], probability: 100, toggle: true},
-        {key: "MG-43 Machine Gun", penetration: 3, properties: [Properties.Support_Wep], probability: 100, toggle: true},
-        {key: "SH-20 Ballistic Shield Backpack", properties: [Properties.Backpack, Properties.One_Handed], probability: 100, toggle: true},
-        {key: "B-1 Supply Pack", properties: [Properties.Backpack], probability: 100, toggle: true},
-        {key: "FLAM-40 Flamethrower", penetration: 3, properties: [Properties.Incendiary, Properties.Support_Wep, Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "AX/LAS-5 Guard Dog Rover", penetration: 2, properties: [Properties.Backpack, Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "GR-8 Recoilless Rifle", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 100, toggle: true},
-        {key: "LIFT-850 Jump Pack", properties: [Properties.Backpack], probability: 100, toggle: true},
-        {key: "APW-1 Anti Material Rifle", penetration: 4, properties: [Properties.Support_Wep], probability: 100, toggle: true},
-        {key: "AX/TX-13 Guard Dog Dog Breath", penetration: 3, properties: [Properties.Backpack, Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "EAT-17 Expendable Anti-Tank", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep], probability: 100, toggle: true},
-        {key: "LAS-99 Quasar Cannon", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep], probability: 100, toggle: true},
+        {key: "MLS-4X Commando", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep], probability: 50, toggle: true},
+        {key: "EX-049 Emancipator Exosuit", properties: [Properties.Explosive, Properties.Limited_Supply], probability: 50, toggle: true},
+        {key: "M-105 Stalwart", penetration: 2, properties: [Properties.Support_Wep], probability: 50, toggle: true},
+        {key: "AC-8 Autocannon", penetration: 4, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 50, toggle: true},
+        {key: "EX-045 Patriot Suit", properties: [Properties.Explosive, Properties.Limited_Supply], probability: 50, toggle: true},
+        {key: "MG-206 Heavy Machine Gun", penetration: 4, properties: [Properties.Support_Wep], probability: 50, toggle: true},
+        {key: "SH-32 Shield Generator", properties: [Properties.Backpack], probability: 50, toggle: true},
+        {key: "RL-77 Airburst Rocket Launcher", penetration: 3, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 50, toggle: true},
+        {key: "RS-422 Railgun", penetration: 5, properties: [Properties.Support_Wep], probability: 50, toggle: true},
+        {key: "TX-41 Sterilizer", penetration: 3, properties: [Properties.Support_Wep, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "LAS-98 Laser Cannon", penetration: 4, properties: [Properties.Support_Wep], probability: 50, toggle: true},
+        {key: "SH-51 Directional Shield", properties: [Properties.Backpack], probability: 50, toggle: true},
+        {key: "ARC-3 Arc Thrower", penetration: 7, properties: [Properties.Support_Wep, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "AX/AR-23 Guard Dog", penetration: 3, properties: [Properties.Backpack, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "FAF-14 Spear", penetration: 8, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 50, toggle: true},
+        {key: "GL-21 Grenade Launcher", penetration: 3, properties: [Properties.Explosive, Properties.Support_Wep], probability: 50, toggle: true},
+        {key: "MG-43 Machine Gun", penetration: 3, properties: [Properties.Support_Wep], probability: 50, toggle: true},
+        {key: "SH-20 Ballistic Shield Backpack", properties: [Properties.Backpack, Properties.One_Handed], probability: 50, toggle: true},
+        {key: "B-1 Supply Pack", properties: [Properties.Backpack], probability: 50, toggle: true},
+        {key: "FLAM-40 Flamethrower", penetration: 3, properties: [Properties.Incendiary, Properties.Support_Wep, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "AX/LAS-5 Guard Dog Rover", penetration: 2, properties: [Properties.Backpack, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "GR-8 Recoilless Rifle", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 50, toggle: true},
+        {key: "LIFT-850 Jump Pack", properties: [Properties.Backpack], probability: 50, toggle: true},
+        {key: "APW-1 Anti Materiel Rifle", penetration: 4, properties: [Properties.Support_Wep], probability: 50, toggle: true},
+        {key: "AX/TX-13 Guard Dog Dog Breath", penetration: 3, properties: [Properties.Backpack, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "EAT-17 Expendable Anti-Tank", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep], probability: 50, toggle: true},
+        {key: "LAS-99 Quasar Cannon", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep], probability: 50, toggle: true},
 
         
         // Defensive buildings
-        {key: "MD-17 Anti-Tank Mines", properties: [Properties.Fortification], probability: 100, toggle: true},
-        {key: "FX-12 Shield Generator Relay", properties: [Properties.Fortification], probability: 100, toggle: true},
-        {key: "A/M-23 EMS Mortar Sentry", properties: [Properties.Sentry, Properties.Stun], probability: 100, toggle: true},
-        {key: "A/MLS-4X Rocket Sentry", properties: [Properties.Sentry], probability: 100, toggle: true},
-        {key: "A/G-16 Gatling Sentry", properties: [Properties.Sentry], probability: 100, toggle: true},
-        {key: "A/ARC-3 Tesla Tower", properties: [Properties.Sentry], probability: 100, toggle: true},
-        {key: "A/M-12 Mortar Sentry", properties: [Properties.Sentry], probability: 100, toggle: true},
-        {key: "MD-6 Anti-Personnel Minefield", properties: [Properties.Fortification], probability: 100, toggle: true},
-        {key: "A/MG-43 Machine Gun Sentry", properties: [Properties.Sentry], probability: 100, toggle: true},
-        {key: "A/AC-8 Autocannon Sentry", properties: [Properties.Sentry], probability: 100, toggle: true},
-        {key: "MD-I4 Incendiary Mines", properties: [Properties.Fortification, Properties.Incendiary], probability: 100, toggle: true},
-        {key: "E/MG-101 HMG Emplacement", properties: [Properties.Fortification], probability: 100, toggle: true}
+        {key: "A/Flam-40 Flame sentry", properties: [Properties.Fortification], probability: 50, toggle: true},
+        {key: "E/AT-12 Anti-Tank Emplacement", properties: [Properties.Fortification], probability: 50, toggle: true},
+        {key: "MD-17 Anti-Tank Mines", properties: [Properties.Fortification], probability: 50, toggle: true},
+        {key: "FX-12 Shield Generator Relay", properties: [Properties.Fortification], probability: 50, toggle: true},
+        {key: "A/M-23 EMS Mortar Sentry", properties: [Properties.Sentry, Properties.Stun], probability: 50, toggle: true},
+        {key: "A/MLS-4X Rocket Sentry", properties: [Properties.Sentry], probability: 50, toggle: true},
+        {key: "A/G-16 Gatling Sentry", properties: [Properties.Sentry], probability: 50, toggle: true},
+        {key: "A/ARC-3 Tesla Tower", properties: [Properties.Sentry], probability: 50, toggle: true},
+        {key: "A/M-12 Mortar Sentry", properties: [Properties.Sentry], probability: 50, toggle: true},
+        {key: "MD-6 Anti-Personnel Minefield", properties: [Properties.Fortification], probability: 50, toggle: true},
+        {key: "A/MG-43 Machine Gun Sentry", properties: [Properties.Sentry], probability: 50, toggle: true},
+        {key: "A/AC-8 Autocannon Sentry", properties: [Properties.Sentry], probability: 50, toggle: true},
+        {key: "MD-I4 Incendiary Mines", properties: [Properties.Fortification, Properties.Incendiary], probability: 50, toggle: true},
+        {key: "E/MG-101 HMG Emplacement", properties: [Properties.Fortification], probability: 50, toggle: true}
         
     ]
 
     
+
     const helldivers_strategems_clone = [
 
 
         // Strikes
-        {key: "Eagle 500KG Bomb", penetration: 9, properties: [Properties.Explosive, Properties.Eagle], probability: 100, toggle: true},
-        {key: "Orbital Gatling Barrage", penetration: 2, properties: [Properties.Orbital], probability: 100, toggle: true},
-        {key: "Eagle Airstrike", penetration: 9, properties: [Properties.Explosive, Properties.Eagle], probability: 100, toggle: true},
-        {key: "Orbital Walking Barrage", penetration: 9, properties: [Properties.Orbital], probability: 100, toggle: true},
-        {key: "Eagle Strafing Run", penetration: 2, properties: [Properties.Explosive, Properties.Eagle], probability: 100, toggle: true},
-        {key: "Orbital EMS Strike", properties: [Properties.Stun, Properties.Orbital], probability: 100, toggle: true},
-        {key: "Eagle Smoke Strike", properties: [Properties.Smoke, Properties.Eagle], probability: 100, toggle: true},
-        {key: "Orbital Gas Strike", properties: [Properties.Orbital], probability: 100, toggle: true},
-        {key: "Orbital Railcannon Strike", penetration: 2, properties: [Properties.Orbital], probability: 100, toggle: true},
-        {key: "Eagle Cluster Bomb", penetration: 2, properties: [Properties.Eagle], probability: 100, toggle: true},
-        {key: "Orbital Smoke Strike", properties: [Properties.Smoke, Properties.Orbital], probability: 100, toggle: true},
-        {key: "Orbital Airburst Strike", penetration: 2, properties: [Properties.Orbital], probability: 100, toggle: true},
-        {key: "Orbital Napalm Barrage", penetration: 6, properties: [Properties.Orbital], probability: 100, toggle: true},
-        {key: "Orbital Laser", penetration: 9, properties: [Properties.Explosive, Properties.Orbital, Properties.Limited_Supply], probability: 100, toggle: true},
-        {key: "Orbital Precision Strike", penetration: 9, properties: [Properties.Explosive, Properties.Orbital], probability: 100, toggle: true},
-        {key: "Orbital 380MM HE Barrage", penetration: 9, properties: [Properties.Orbital], probability: 100, toggle: true},
-        {key: "Eagle Napalm Airstrike", penetration: 2, properties: [Properties.Eagle], probability: 100, toggle: true},
-        {key: "Orbital 120MM HE Barrage", penetration: 9, properties: [Properties.Orbital], probability: 100, toggle: true},
-        {key: "Eagle 110MM Rocket Pods", penetration: 9, properties: [Properties.Eagle], probability: 100, toggle: true},
+        {key: "Eagle 500KG Bomb", penetration: 9, properties: [Properties.Explosive, Properties.Eagle], probability: 50, toggle: true},
+        {key: "Orbital Gatling Barrage", penetration: 2, properties: [Properties.Orbital], probability: 50, toggle: true},
+        {key: "Eagle Airstrike", penetration: 9, properties: [Properties.Explosive, Properties.Eagle], probability: 50, toggle: true},
+        {key: "Orbital Walking Barrage", penetration: 9, properties: [Properties.Orbital], probability: 50, toggle: true},
+        {key: "Eagle Strafing Run", penetration: 2, properties: [Properties.Explosive, Properties.Eagle], probability: 50, toggle: true},
+        {key: "Orbital EMS Strike", properties: [Properties.Stun, Properties.Orbital], probability: 50, toggle: true},
+        {key: "Eagle Smoke Strike", properties: [Properties.Smoke, Properties.Eagle], probability: 50, toggle: true},
+        {key: "Orbital Gas Strike", properties: [Properties.Orbital], probability: 50, toggle: true},
+        {key: "Orbital Railcannon Strike", penetration: 2, properties: [Properties.Orbital], probability: 50, toggle: true},
+        {key: "Eagle Cluster Bomb", penetration: 2, properties: [Properties.Eagle], probability: 50, toggle: true},
+        {key: "Orbital Smoke Strike", properties: [Properties.Smoke, Properties.Orbital], probability: 50, toggle: true},
+        {key: "Orbital Airburst Strike", penetration: 2, properties: [Properties.Orbital], probability: 50, toggle: true},
+        {key: "Orbital Napalm Barrage", penetration: 6, properties: [Properties.Orbital], probability: 50, toggle: true},
+        {key: "Orbital Laser", penetration: 9, properties: [Properties.Explosive, Properties.Orbital, Properties.Limited_Supply], probability: 50, toggle: true},
+        {key: "Orbital Precision Strike", penetration: 9, properties: [Properties.Explosive, Properties.Orbital], probability: 50, toggle: true},
+        {key: "Orbital 380MM HE Barrage", penetration: 9, properties: [Properties.Orbital], probability: 50, toggle: true},
+        {key: "Eagle Napalm Airstrike", penetration: 2, properties: [Properties.Eagle], probability: 50, toggle: true},
+        {key: "Orbital 120MM HE Barrage", penetration: 9, properties: [Properties.Orbital], probability: 50, toggle: true},
+        {key: "Eagle 110MM Rocket Pods", penetration: 9, properties: [Properties.Eagle], probability: 50, toggle: true},
         
 
         // Equipment
-        {key: "MLS-4X Commando", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep], probability: 100, toggle: true},
-        {key: "EX-049 Emancipator Exosuit", properties: [Properties.Explosive, Properties.Limited_Supply], probability: 100, toggle: true},
-        {key: "M-105 Stalwart", penetration: 2, properties: [Properties.Support_Wep], probability: 100, toggle: true},
-        {key: "AC-8 Autocannon", penetration: 4, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 100, toggle: true},
-        {key: "EX-045 Patriot Suit", properties: [Properties.Explosive, Properties.Limited_Supply], probability: 100, toggle: true},
-        {key: "MG-206 Heavy Machine Gun", penetration: 4, properties: [Properties.Support_Wep], probability: 100, toggle: true},
-        {key: "SH-32 Shield Generator", properties: [Properties.Backpack], probability: 100, toggle: true},
-        {key: "RL-77 Airburst Rocket Launcher", penetration: 3, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 100, toggle: true},
-        {key: "RS-422 Railgun", penetration: 5, properties: [Properties.Support_Wep], probability: 100, toggle: true},
-        {key: "TX-41 Sterilizer", penetration: 3, properties: [Properties.Support_Wep, Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "LAS-98 Laser Cannon", penetration: 4, properties: [Properties.Support_Wep], probability: 100, toggle: true},
-        {key: "ARC-3 Arc Thrower", penetration: 7, properties: [Properties.Support_Wep, Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "AX/AR-23 Guard Dog", penetration: 3, properties: [Properties.Backpack, Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "FAF-14 Spear", penetration: 8, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 100, toggle: true},
-        {key: "GL-21 Grenade Launcher", penetration: 3, properties: [Properties.Explosive, Properties.Support_Wep], probability: 100, toggle: true},
-        {key: "MG-43 Machine Gun", penetration: 3, properties: [Properties.Support_Wep], probability: 100, toggle: true},
-        {key: "SH-20 Ballistic Shield Backpack", properties: [Properties.Backpack, Properties.One_Handed], probability: 100, toggle: true},
-        {key: "B-1 Supply Pack", properties: [Properties.Backpack], probability: 100, toggle: true},
-        {key: "FLAM-40 Flamethrower", penetration: 3, properties: [Properties.Incendiary, Properties.Support_Wep, Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "AX/LAS-5 Guard Dog Rover", penetration: 2, properties: [Properties.Backpack, Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "GR-8 Recoilless Rifle", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 100, toggle: true},
-        {key: "LIFT-850 Jump Pack", properties: [Properties.Backpack], probability: 100, toggle: true},
-        {key: "APW-1 Anti Material Rifle", penetration: 4, properties: [Properties.Support_Wep], probability: 100, toggle: true},
-        {key: "AX/TX-13 Guard Dog Dog Breath", penetration: 3, properties: [Properties.Backpack, Properties.Limited_Range], probability: 100, toggle: true},
-        {key: "EAT-17 Expendable Anti-Tank", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep], probability: 100, toggle: true},
-        {key: "LAS-99 Quasar Cannon", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep], probability: 100, toggle: true},
+        {key: "MLS-4X Commando", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep], probability: 50, toggle: true},
+        {key: "EX-049 Emancipator Exosuit", properties: [Properties.Explosive, Properties.Limited_Supply], probability: 50, toggle: true},
+        {key: "M-105 Stalwart", penetration: 2, properties: [Properties.Support_Wep], probability: 50, toggle: true},
+        {key: "AC-8 Autocannon", penetration: 4, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 50, toggle: true},
+        {key: "EX-045 Patriot Suit", properties: [Properties.Explosive, Properties.Limited_Supply], probability: 50, toggle: true},
+        {key: "MG-206 Heavy Machine Gun", penetration: 4, properties: [Properties.Support_Wep], probability: 50, toggle: true},
+        {key: "SH-32 Shield Generator", properties: [Properties.Backpack], probability: 50, toggle: true},
+        {key: "RL-77 Airburst Rocket Launcher", penetration: 3, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 50, toggle: true},
+        {key: "RS-422 Railgun", penetration: 5, properties: [Properties.Support_Wep], probability: 50, toggle: true},
+        {key: "TX-41 Sterilizer", penetration: 3, properties: [Properties.Support_Wep, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "LAS-98 Laser Cannon", penetration: 4, properties: [Properties.Support_Wep], probability: 50, toggle: true},
+        {key: "SH-51 Directional Shield", properties: [Properties.Backpack], probability: 50, toggle: true},
+        {key: "ARC-3 Arc Thrower", penetration: 7, properties: [Properties.Support_Wep, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "AX/AR-23 Guard Dog", penetration: 3, properties: [Properties.Backpack, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "FAF-14 Spear", penetration: 8, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 50, toggle: true},
+        {key: "GL-21 Grenade Launcher", penetration: 3, properties: [Properties.Explosive, Properties.Support_Wep], probability: 50, toggle: true},
+        {key: "MG-43 Machine Gun", penetration: 3, properties: [Properties.Support_Wep], probability: 50, toggle: true},
+        {key: "SH-20 Ballistic Shield Backpack", properties: [Properties.Backpack, Properties.One_Handed], probability: 50, toggle: true},
+        {key: "B-1 Supply Pack", properties: [Properties.Backpack], probability: 50, toggle: true},
+        {key: "FLAM-40 Flamethrower", penetration: 3, properties: [Properties.Incendiary, Properties.Support_Wep, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "AX/LAS-5 Guard Dog Rover", penetration: 2, properties: [Properties.Backpack, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "GR-8 Recoilless Rifle", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 50, toggle: true},
+        {key: "LIFT-850 Jump Pack", properties: [Properties.Backpack], probability: 50, toggle: true},
+        {key: "APW-1 Anti Materiel Rifle", penetration: 4, properties: [Properties.Support_Wep], probability: 50, toggle: true},
+        {key: "AX/TX-13 Guard Dog Dog Breath", penetration: 3, properties: [Properties.Backpack, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "EAT-17 Expendable Anti-Tank", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep], probability: 50, toggle: true},
+        {key: "LAS-99 Quasar Cannon", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep], probability: 50, toggle: true},
 
         
         // Defensive buildings
-        {key: "MD-17 Anti-Tank Mines", properties: [Properties.Fortification], probability: 100, toggle: true},
-        {key: "FX-12 Shield Generator Relay", properties: [Properties.Fortification], probability: 100, toggle: true},
-        {key: "A/M-23 EMS Mortar Sentry", properties: [Properties.Sentry, Properties.Stun], probability: 100, toggle: true},
-        {key: "A/MLS-4X Rocket Sentry", properties: [Properties.Sentry], probability: 100, toggle: true},
-        {key: "A/G-16 Gatling Sentry", properties: [Properties.Sentry], probability: 100, toggle: true},
-        {key: "A/ARC-3 Tesla Tower", properties: [Properties.Sentry], probability: 100, toggle: true},
-        {key: "A/M-12 Mortar Sentry", properties: [Properties.Sentry], probability: 100, toggle: true},
-        {key: "MD-6 Anti-Personnel Minefield", properties: [Properties.Fortification], probability: 100, toggle: true},
-        {key: "A/MG-43 Machine Gun Sentry", properties: [Properties.Sentry], probability: 100, toggle: true},
-        {key: "A/AC-8 Autocannon Sentry", properties: [Properties.Sentry], probability: 100, toggle: true},
-        {key: "MD-I4 Incendiary Mines", properties: [Properties.Fortification, Properties.Incendiary], probability: 100, toggle: true},
-        {key: "E/MG-101 HMG Emplacement", properties: [Properties.Fortification], probability: 100, toggle: true}
-
+        {key: "A/Flam-40 Flame sentry", properties: [Properties.Fortification], probability: 50, toggle: true},
+        {key: "E/AT-12 Anti-Tank Emplacement", properties: [Properties.Fortification], probability: 50, toggle: true},
+        {key: "MD-17 Anti-Tank Mines", properties: [Properties.Fortification], probability: 50, toggle: true},
+        {key: "FX-12 Shield Generator Relay", properties: [Properties.Fortification], probability: 50, toggle: true},
+        {key: "A/M-23 EMS Mortar Sentry", properties: [Properties.Sentry, Properties.Stun], probability: 50, toggle: true},
+        {key: "A/MLS-4X Rocket Sentry", properties: [Properties.Sentry], probability: 50, toggle: true},
+        {key: "A/G-16 Gatling Sentry", properties: [Properties.Sentry], probability: 50, toggle: true},
+        {key: "A/ARC-3 Tesla Tower", properties: [Properties.Sentry], probability: 50, toggle: true},
+        {key: "A/M-12 Mortar Sentry", properties: [Properties.Sentry], probability: 50, toggle: true},
+        {key: "MD-6 Anti-Personnel Minefield", properties: [Properties.Fortification], probability: 50, toggle: true},
+        {key: "A/MG-43 Machine Gun Sentry", properties: [Properties.Sentry], probability: 50, toggle: true},
+        {key: "A/AC-8 Autocannon Sentry", properties: [Properties.Sentry], probability: 50, toggle: true},
+        {key: "MD-I4 Incendiary Mines", properties: [Properties.Fortification, Properties.Incendiary], probability: 50, toggle: true},
+        {key: "E/MG-101 HMG Emplacement", properties: [Properties.Fortification], probability: 50, toggle: true}
 ]
 
 
@@ -1297,130 +1327,130 @@
     // Available main weapons
 
     var main_weps=[
-        {key: "Pistol", probability: 100, toggle: true},
-        {key: "Burst pistol", probability: 100, toggle: true},
-        {key: "HEL Revolver", probability: 100, toggle: true},
-        {key: "Machine Pistol", probability: 100, toggle: true},
-        {key: "HEL Autopistol", probability: 100, toggle: true},
-        {key: "Bullpup Rifle", probability: 100, toggle: true},
-        {key: "SMG", probability: 100, toggle: true},
-        {key: "Heavy SMG", probability: 100, toggle: true},
-        {key: "Carbine", probability: 100, toggle: true},
-        {key: "DMR", probability: 100, toggle: true},
-        {key: "Double Tap Rifle", probability: 100, toggle: true},
-        {key: "Assault Rifle", probability: 100, toggle: true},
-        {key: "Burst Rifle", probability: 100, toggle: true},
-        {key: "Rifle", probability: 100, toggle: true},
-        {key: "Sawed-off Shotgun", probability: 100, toggle: true},
-        {key: "HEL Shotgun", probability: 100, toggle: true},
-        {key: "Slug Shotgun", probability: 100, toggle: true}
+        {key: "Pistol", probability: 50, toggle: true},
+        {key: "Burst pistol", probability: 50, toggle: true},
+        {key: "HEL Revolver", probability: 50, toggle: true},
+        {key: "Machine Pistol", probability: 50, toggle: true},
+        {key: "HEL Autopistol", probability: 50, toggle: true},
+        {key: "Bullpup Rifle", probability: 50, toggle: true},
+        {key: "SMG", probability: 50, toggle: true},
+        {key: "Heavy SMG", probability: 50, toggle: true},
+        {key: "Carbine", probability: 50, toggle: true},
+        {key: "DMR", probability: 50, toggle: true},
+        {key: "Double Tap Rifle", probability: 50, toggle: true},
+        {key: "Assault Rifle", probability: 50, toggle: true},
+        {key: "Burst Rifle", probability: 50, toggle: true},
+        {key: "Rifle", probability: 50, toggle: true},
+        {key: "Sawed-off Shotgun", probability: 50, toggle: true},
+        {key: "HEL Shotgun", probability: 50, toggle: true},
+        {key: "Slug Shotgun", probability: 50, toggle: true}
     ];
 
     const main_weps_clone=[
-        {key: "Pistol", probability: 100, toggle: true},
-        {key: "Burst pistol", probability: 100, toggle: true},
-        {key: "HEL Revolver", probability: 100, toggle: true},
-        {key: "Machine Pistol", probability: 100, toggle: true},
-        {key: "HEL Autopistol", probability: 100, toggle: true},
-        {key: "Bullpup Rifle", probability: 100, toggle: true},
-        {key: "SMG", probability: 100, toggle: true},
-        {key: "Heavy SMG", probability: 100, toggle: true},
-        {key: "Carbine", probability: 100, toggle: true},
-        {key: "DMR", probability: 100, toggle: true},
-        {key: "Double Tap Rifle", probability: 100, toggle: true},
-        {key: "Assault Rifle", probability: 100, toggle: true},
-        {key: "Burst Rifle", probability: 100, toggle: true},
-        {key: "Rifle", probability: 100, toggle: true},
-        {key: "Sawed-off Shotgun", probability: 100, toggle: true},
-        {key: "HEL Shotgun", probability: 100, toggle: true},
-        {key: "Slug Shotgun", probability: 100, toggle: true}
+        {key: "Pistol", probability: 50, toggle: true},
+        {key: "Burst pistol", probability: 50, toggle: true},
+        {key: "HEL Revolver", probability: 50, toggle: true},
+        {key: "Machine Pistol", probability: 50, toggle: true},
+        {key: "HEL Autopistol", probability: 50, toggle: true},
+        {key: "Bullpup Rifle", probability: 50, toggle: true},
+        {key: "SMG", probability: 50, toggle: true},
+        {key: "Heavy SMG", probability: 50, toggle: true},
+        {key: "Carbine", probability: 50, toggle: true},
+        {key: "DMR", probability: 50, toggle: true},
+        {key: "Double Tap Rifle", probability: 50, toggle: true},
+        {key: "Assault Rifle", probability: 50, toggle: true},
+        {key: "Burst Rifle", probability: 50, toggle: true},
+        {key: "Rifle", probability: 50, toggle: true},
+        {key: "Sawed-off Shotgun", probability: 50, toggle: true},
+        {key: "HEL Shotgun", probability: 50, toggle: true},
+        {key: "Slug Shotgun", probability: 50, toggle: true}
     ];
 
     // Available special weapons
     var special_weps=[
-        {key: "Heavy Assault Rifle", probability: 100, toggle: true},
-        {key: "Short Rifle", probability: 100, toggle: true},
-        {key: "Shotgun", probability: 100, toggle: true},
-        {key: "Combat Shotgun", probability: 100, toggle: true},
-        {key: "Scattergun", probability: 100, toggle: true},
-        {key: "Choke Mod Shotgun", probability: 100, toggle: true},
-        {key: "Revolver", probability: 100, toggle: true},
-        {key: "Machine Gun V", probability: 100, toggle: true},
-        {key: "Machine Gun XII", probability: 100, toggle: true},
-        {key: "Burst Cannon", probability: 100, toggle: true},
-        {key: "HEL Gun", probability: 100, toggle: true},
-        {key: "High Cal Pistol", probability: 100, toggle: true},
-        {key: "Precision Rifle", probability: 100, toggle: true},
-        {key: "Sniper", probability: 100, toggle: true},
-        {key: "HEL Rifle", probability: 100, toggle: true}
+        {key: "Heavy Assault Rifle", probability: 50, toggle: true},
+        {key: "Short Rifle", probability: 50, toggle: true},
+        {key: "Shotgun", probability: 50, toggle: true},
+        {key: "Combat Shotgun", probability: 50, toggle: true},
+        {key: "Scattergun", probability: 50, toggle: true},
+        {key: "Choke Mod Shotgun", probability: 50, toggle: true},
+        {key: "Revolver", probability: 50, toggle: true},
+        {key: "Machine Gun V", probability: 50, toggle: true},
+        {key: "Machine Gun XII", probability: 50, toggle: true},
+        {key: "Burst Cannon", probability: 50, toggle: true},
+        {key: "HEL Gun", probability: 50, toggle: true},
+        {key: "High Cal Pistol", probability: 50, toggle: true},
+        {key: "Precision Rifle", probability: 50, toggle: true},
+        {key: "Sniper", probability: 50, toggle: true},
+        {key: "HEL Rifle", probability: 50, toggle: true}
     ];
 
     const special_weps_clone=[
-        {key: "Heavy Assault Rifle", probability: 100, toggle: true},
-        {key: "Short Rifle", probability: 100, toggle: true},
-        {key: "Shotgun", probability: 100, toggle: true},
-        {key: "Combat Shotgun", probability: 100, toggle: true},
-        {key: "Scattergun", probability: 100, toggle: true},
-        {key: "Choke Mod Shotgun", probability: 100, toggle: true},
-        {key: "Revolver", probability: 100, toggle: true},
-        {key: "Machine Gun V", probability: 100, toggle: true},
-        {key: "Machine Gun XII", probability: 100, toggle: true},
-        {key: "Burst Cannon", probability: 100, toggle: true},
-        {key: "HEL Gun", probability: 100, toggle: true},
-        {key: "High Cal Pistol", probability: 100, toggle: true},
-        {key: "Precision Rifle", probability: 100, toggle: true},
-        {key: "Sniper", probability: 100, toggle: true},
-        {key: "HEL Rifle", probability: 100, toggle: true}
+        {key: "Heavy Assault Rifle", probability: 50, toggle: true},
+        {key: "Short Rifle", probability: 50, toggle: true},
+        {key: "Shotgun", probability: 50, toggle: true},
+        {key: "Combat Shotgun", probability: 50, toggle: true},
+        {key: "Scattergun", probability: 50, toggle: true},
+        {key: "Choke Mod Shotgun", probability: 50, toggle: true},
+        {key: "Revolver", probability: 50, toggle: true},
+        {key: "Machine Gun V", probability: 50, toggle: true},
+        {key: "Machine Gun XII", probability: 50, toggle: true},
+        {key: "Burst Cannon", probability: 50, toggle: true},
+        {key: "HEL Gun", probability: 50, toggle: true},
+        {key: "High Cal Pistol", probability: 50, toggle: true},
+        {key: "Precision Rifle", probability: 50, toggle: true},
+        {key: "Sniper", probability: 50, toggle: true},
+        {key: "HEL Rifle", probability: 50, toggle: true}
     ];
 
     // Available tools
     var tools=[
-        {key: "Bio Tracker", probability: 100, toggle: true},
-        {key: "C-Foam Launcher", probability: 100, toggle: true},
-        {key: "Mine Deployer", probability: 100, toggle: true},
-        {key: "Burst Sentry", probability: 100, toggle: true},
-        {key: "Shotgun Sentry", probability: 100, toggle: true},
-        {key: "Sniper Sentry", probability: 100, toggle: true},
-        {key: "HEL Auto Sentry", probability: 100, toggle: true}
+        {key: "Bio Tracker", probability: 50, toggle: true},
+        {key: "C-Foam Launcher", probability: 50, toggle: true},
+        {key: "Mine Deployer", probability: 50, toggle: true},
+        {key: "Burst Sentry", probability: 50, toggle: true},
+        {key: "Shotgun Sentry", probability: 50, toggle: true},
+        {key: "Sniper Sentry", probability: 50, toggle: true},
+        {key: "HEL Auto Sentry", probability: 50, toggle: true}
     ];
 
     const tools_clone=[
-        {key: "Bio Tracker", probability: 100, toggle: true},
-        {key: "C-Foam Launcher", probability: 100, toggle: true},
-        {key: "Mine Deployer", probability: 100, toggle: true},
-        {key: "Burst Sentry", probability: 100, toggle: true},
-        {key: "Shotgun Sentry", probability: 100, toggle: true},
-        {key: "Sniper Sentry", probability: 100, toggle: true},
-        {key: "HEL Auto Sentry", probability: 100, toggle: true}
+        {key: "Bio Tracker", probability: 50, toggle: true},
+        {key: "C-Foam Launcher", probability: 50, toggle: true},
+        {key: "Mine Deployer", probability: 50, toggle: true},
+        {key: "Burst Sentry", probability: 50, toggle: true},
+        {key: "Shotgun Sentry", probability: 50, toggle: true},
+        {key: "Sniper Sentry", probability: 50, toggle: true},
+        {key: "HEL Auto Sentry", probability: 50, toggle: true}
     ];
 
     // Available melee weapons
     var melees=[
-        {key: "Santonian HDH", probability: 100, toggle: true},
-        {key: "Omneco Maul", probability: 100, toggle: true},
-        {key: "Mastaba Fixed Blade", probability: 100, toggle: true},
-        {key: "Wox Compact", probability: 100, toggle: true},
-        {key: "Kovac Peacekeeper", probability: 100, toggle: true},
-        {key: "Attroc Titanium", probability: 100, toggle: true},
-        {key: "Maco Drillhead", probability: 100, toggle: true},
-        {key: "Isoco Stinger", probability: 100, toggle: true},
-        {key: "Kovac Sledgehammer", probability: 100, toggle: true},
-        {key: "Santonian Mallet", probability: 100, toggle: true},
-        {key: "Maco Gavel", probability: 100, toggle: true}
+        {key: "Santonian HDH", probability: 50, toggle: true},
+        {key: "Omneco Maul", probability: 50, toggle: true},
+        {key: "Mastaba Fixed Blade", probability: 50, toggle: true},
+        {key: "Wox Compact", probability: 50, toggle: true},
+        {key: "Kovac Peacekeeper", probability: 50, toggle: true},
+        {key: "Attroc Titanium", probability: 50, toggle: true},
+        {key: "Maco Drillhead", probability: 50, toggle: true},
+        {key: "Isoco Stinger", probability: 50, toggle: true},
+        {key: "Kovac Sledgehammer", probability: 50, toggle: true},
+        {key: "Santonian Mallet", probability: 50, toggle: true},
+        {key: "Maco Gavel", probability: 50, toggle: true}
     ];
 
     const melees_clone=[
-        {key: "Santonian HDH", probability: 100, toggle: true},
-        {key: "Omneco Maul", probability: 100, toggle: true},
-        {key: "Mastaba Fixed Blade", probability: 100, toggle: true},
-        {key: "Wox Compact", probability: 100, toggle: true},
-        {key: "Kovac Peacekeeper", probability: 100, toggle: true},
-        {key: "Attroc Titanium", probability: 100, toggle: true},
-        {key: "Maco Drillhead", probability: 100, toggle: true},
-        {key: "Isoco Stinger", probability: 100, toggle: true},
-        {key: "Kovac Sledgehammer", probability: 100, toggle: true},
-        {key: "Santonian Mallet", probability: 100, toggle: true},
-        {key: "Maco Gavel", probability: 100, toggle: true}
+        {key: "Santonian HDH", probability: 50, toggle: true},
+        {key: "Omneco Maul", probability: 50, toggle: true},
+        {key: "Mastaba Fixed Blade", probability: 50, toggle: true},
+        {key: "Wox Compact", probability: 50, toggle: true},
+        {key: "Kovac Peacekeeper", probability: 50, toggle: true},
+        {key: "Attroc Titanium", probability: 50, toggle: true},
+        {key: "Maco Drillhead", probability: 50, toggle: true},
+        {key: "Isoco Stinger", probability: 50, toggle: true},
+        {key: "Kovac Sledgehammer", probability: 50, toggle: true},
+        {key: "Santonian Mallet", probability: 50, toggle: true},
+        {key: "Maco Gavel", probability: 50, toggle: true}
     ]
 
     // Each headgear cosmetic in GTFO
@@ -1575,236 +1605,236 @@
 
         // Rundown 1
         [
-            {key: "R1A1", probability: 100, toggle: true},
-            {key: "R1B1", probability: 100, toggle: true},
-            {key: "R1B2", probability: 100, toggle: true},
-            {key: "R1C1", probability: 100, toggle: true},
-            {key: "R1C2", probability: 100, toggle: true},
-            {key: "R1D1", probability: 100, toggle: true}
+            {key: "R1A1", probability: 50, toggle: true},
+            {key: "R1B1", probability: 50, toggle: true},
+            {key: "R1B2", probability: 50, toggle: true},
+            {key: "R1C1", probability: 50, toggle: true},
+            {key: "R1C2", probability: 50, toggle: true},
+            {key: "R1D1", probability: 50, toggle: true}
         ],
 
         // Rundown 2
         [
-            {key: "R2A1", probability: 100, toggle: true},
-            {key: "R2B1", probability: 100, toggle: true},
-            {key: "R2B2", probability: 100, toggle: true},
-            {key: "R2B3", probability: 100, toggle: true},
-            {key: "R2B4", probability: 100, toggle: true},
-            {key: "R2C1", probability: 100, toggle: true},
-            {key: "R2C2", probability: 100, toggle: true},
-            {key: "R2D1", probability: 100, toggle: true},
-            {key: "R2D2", probability: 100, toggle: true},
-            {key: "R2E1", probability: 100, toggle: true}
+            {key: "R2A1", probability: 50, toggle: true},
+            {key: "R2B1", probability: 50, toggle: true},
+            {key: "R2B2", probability: 50, toggle: true},
+            {key: "R2B3", probability: 50, toggle: true},
+            {key: "R2B4", probability: 50, toggle: true},
+            {key: "R2C1", probability: 50, toggle: true},
+            {key: "R2C2", probability: 50, toggle: true},
+            {key: "R2D1", probability: 50, toggle: true},
+            {key: "R2D2", probability: 50, toggle: true},
+            {key: "R2E1", probability: 50, toggle: true}
         ],
 
         // Rundown 3
         [
-            {key: "R3A1", probability: 100, toggle: true},
-            {key: "R3A2", probability: 100, toggle: true},
-            {key: "R3A3", probability: 100, toggle: true},
-            {key: "R3B1", probability: 100, toggle: true},
-            {key: "R3B2", probability: 100, toggle: true},
-            {key: "R3C1", probability: 100, toggle: true},
-            {key: "R3D1", probability: 100, toggle: true}
+            {key: "R3A1", probability: 50, toggle: true},
+            {key: "R3A2", probability: 50, toggle: true},
+            {key: "R3A3", probability: 50, toggle: true},
+            {key: "R3B1", probability: 50, toggle: true},
+            {key: "R3B2", probability: 50, toggle: true},
+            {key: "R3C1", probability: 50, toggle: true},
+            {key: "R3D1", probability: 50, toggle: true}
         ],
 
         // Rundown 4
         [
-            {key: "R4A1", probability: 100, toggle: true},
-            {key: "R4A2", probability: 100, toggle: true},
-            {key: "R4A3", probability: 100, toggle: true},
-            {key: "R4B1", probability: 100, toggle: true},
-            {key: "R4B2", probability: 100, toggle: true},
-            {key: "R4B3", probability: 100, toggle: true},
-            {key: "R4C1", probability: 100, toggle: true},
-            {key: "R4C2", probability: 100, toggle: true},
-            {key: "R4C3", probability: 100, toggle: true},
-            {key: "R4D1", probability: 100, toggle: true},
-            {key: "R4D2", probability: 100, toggle: true},
-            {key: "R4E1", probability: 100, toggle: true}
+            {key: "R4A1", probability: 50, toggle: true},
+            {key: "R4A2", probability: 50, toggle: true},
+            {key: "R4A3", probability: 50, toggle: true},
+            {key: "R4B1", probability: 50, toggle: true},
+            {key: "R4B2", probability: 50, toggle: true},
+            {key: "R4B3", probability: 50, toggle: true},
+            {key: "R4C1", probability: 50, toggle: true},
+            {key: "R4C2", probability: 50, toggle: true},
+            {key: "R4C3", probability: 50, toggle: true},
+            {key: "R4D1", probability: 50, toggle: true},
+            {key: "R4D2", probability: 50, toggle: true},
+            {key: "R4E1", probability: 50, toggle: true}
         ],
 
         // Rundown 5
         [
-            {key: "R5A1", probability: 100, toggle: true},
-            {key: "R5A2", probability: 100, toggle: true},
-            {key: "R5A3", probability: 100, toggle: true},
-            {key: "R5B1", probability: 100, toggle: true},
-            {key: "R5B2", probability: 100, toggle: true},
-            {key: "R5B3", probability: 100, toggle: true},
-            {key: "R5B4", probability: 100, toggle: true},
-            {key: "R5C1", probability: 100, toggle: true},
-            {key: "R5C2", probability: 100, toggle: true},
-            {key: "R5C3", probability: 100, toggle: true},
-            {key: "R5D1", probability: 100, toggle: true},
-            {key: "R5D2", probability: 100, toggle: true},
-            {key: "R5E1", probability: 100, toggle: true}
+            {key: "R5A1", probability: 50, toggle: true},
+            {key: "R5A2", probability: 50, toggle: true},
+            {key: "R5A3", probability: 50, toggle: true},
+            {key: "R5B1", probability: 50, toggle: true},
+            {key: "R5B2", probability: 50, toggle: true},
+            {key: "R5B3", probability: 50, toggle: true},
+            {key: "R5B4", probability: 50, toggle: true},
+            {key: "R5C1", probability: 50, toggle: true},
+            {key: "R5C2", probability: 50, toggle: true},
+            {key: "R5C3", probability: 50, toggle: true},
+            {key: "R5D1", probability: 50, toggle: true},
+            {key: "R5D2", probability: 50, toggle: true},
+            {key: "R5E1", probability: 50, toggle: true}
         ],
 
         // Rundown 6
         [
-            {key: "R6A1", probability: 100, toggle: true},
-            {key: "R6B1", probability: 100, toggle: true},
-            {key: "R6B2", probability: 100, toggle: true},
-            {key: "R6AX", probability: 100, toggle: true},
-            {key: "R6BX", probability: 100, toggle: true},
-            {key: "R6CX", probability: 100, toggle: true},
-            {key: "R6C1", probability: 100, toggle: true},
-            {key: "R6C2", probability: 100, toggle: true},
-            {key: "R6C3", probability: 100, toggle: true},
-            {key: "R6D1", probability: 100, toggle: true},
-            {key: "R6D2", probability: 100, toggle: true},
-            {key: "R6D3", probability: 100, toggle: true},
-            {key: "R6D4", probability: 100, toggle: true}
+            {key: "R6A1", probability: 50, toggle: true},
+            {key: "R6B1", probability: 50, toggle: true},
+            {key: "R6B2", probability: 50, toggle: true},
+            {key: "R6AX", probability: 50, toggle: true},
+            {key: "R6BX", probability: 50, toggle: true},
+            {key: "R6CX", probability: 50, toggle: true},
+            {key: "R6C1", probability: 50, toggle: true},
+            {key: "R6C2", probability: 50, toggle: true},
+            {key: "R6C3", probability: 50, toggle: true},
+            {key: "R6D1", probability: 50, toggle: true},
+            {key: "R6D2", probability: 50, toggle: true},
+            {key: "R6D3", probability: 50, toggle: true},
+            {key: "R6D4", probability: 50, toggle: true}
 
         ],
 
         // Rundown 7
         [
-            {key: "R7A1", probability: 100, toggle: true},
-            {key: "R7B1", probability: 100, toggle: true},
-            {key: "R7B2", probability: 100, toggle: true},
-            {key: "R7B3", probability: 100, toggle: true},
-            {key: "R7C1", probability: 100, toggle: true},
-            {key: "R7C2", probability: 100, toggle: true},
-            {key: "R7C3", probability: 100, toggle: true},
-            {key: "R7D1", probability: 100, toggle: true},
-            {key: "R7D2", probability: 100, toggle: true},
-            {key: "R7E1", probability: 100, toggle: true}
+            {key: "R7A1", probability: 50, toggle: true},
+            {key: "R7B1", probability: 50, toggle: true},
+            {key: "R7B2", probability: 50, toggle: true},
+            {key: "R7B3", probability: 50, toggle: true},
+            {key: "R7C1", probability: 50, toggle: true},
+            {key: "R7C2", probability: 50, toggle: true},
+            {key: "R7C3", probability: 50, toggle: true},
+            {key: "R7D1", probability: 50, toggle: true},
+            {key: "R7D2", probability: 50, toggle: true},
+            {key: "R7E1", probability: 50, toggle: true}
         ],
 
         // Rundown 8
         [
-            {key: "R8A1", probability: 100, toggle: true},
-            {key: "R8A2", probability: 100, toggle: true},
-            {key: "R8B1", probability: 100, toggle: true},
-            {key: "R8B2", probability: 100, toggle: true},
-            {key: "R8B3", probability: 100, toggle: true},
-            {key: "R8B4", probability: 100, toggle: true},
-            {key: "R8C1", probability: 100, toggle: true},
-            {key: "R8C2", probability: 100, toggle: true},
-            {key: "R8D1", probability: 100, toggle: true},
-            {key: "R8D2", probability: 100, toggle: true},
-            {key: "R8E1", probability: 100, toggle: true},
-            {key: "R8E2", probability: 100, toggle: true}
+            {key: "R8A1", probability: 50, toggle: true},
+            {key: "R8A2", probability: 50, toggle: true},
+            {key: "R8B1", probability: 50, toggle: true},
+            {key: "R8B2", probability: 50, toggle: true},
+            {key: "R8B3", probability: 50, toggle: true},
+            {key: "R8B4", probability: 50, toggle: true},
+            {key: "R8C1", probability: 50, toggle: true},
+            {key: "R8C2", probability: 50, toggle: true},
+            {key: "R8D1", probability: 50, toggle: true},
+            {key: "R8D2", probability: 50, toggle: true},
+            {key: "R8E1", probability: 50, toggle: true},
+            {key: "R8E2", probability: 50, toggle: true}
         ]
     ]
     const maps_clone= [ 
 
         // Rundown 1
         [
-            {key: "R1A1", probability: 100, toggle: true},
-            {key: "R1B1", probability: 100, toggle: true},
-            {key: "R1B2", probability: 100, toggle: true},
-            {key: "R1C1", probability: 100, toggle: true},
-            {key: "R1C2", probability: 100, toggle: true},
-            {key: "R1D1", probability: 100, toggle: true}
+            {key: "R1A1", probability: 50, toggle: true},
+            {key: "R1B1", probability: 50, toggle: true},
+            {key: "R1B2", probability: 50, toggle: true},
+            {key: "R1C1", probability: 50, toggle: true},
+            {key: "R1C2", probability: 50, toggle: true},
+            {key: "R1D1", probability: 50, toggle: true}
         ],
 
         // Rundown 2
         [
-            {key: "R2A1", probability: 100, toggle: true},
-            {key: "R2B1", probability: 100, toggle: true},
-            {key: "R2B2", probability: 100, toggle: true},
-            {key: "R2B3", probability: 100, toggle: true},
-            {key: "R2B4", probability: 100, toggle: true},
-            {key: "R2C1", probability: 100, toggle: true},
-            {key: "R2C2", probability: 100, toggle: true},
-            {key: "R2D1", probability: 100, toggle: true},
-            {key: "R2D2", probability: 100, toggle: true},
-            {key: "R2E1", probability: 100, toggle: true}
+            {key: "R2A1", probability: 50, toggle: true},
+            {key: "R2B1", probability: 50, toggle: true},
+            {key: "R2B2", probability: 50, toggle: true},
+            {key: "R2B3", probability: 50, toggle: true},
+            {key: "R2B4", probability: 50, toggle: true},
+            {key: "R2C1", probability: 50, toggle: true},
+            {key: "R2C2", probability: 50, toggle: true},
+            {key: "R2D1", probability: 50, toggle: true},
+            {key: "R2D2", probability: 50, toggle: true},
+            {key: "R2E1", probability: 50, toggle: true}
         ],
 
         // Rundown 3
         [
-            {key: "R3A1", probability: 100, toggle: true},
-            {key: "R3A2", probability: 100, toggle: true},
-            {key: "R3A3", probability: 100, toggle: true},
-            {key: "R3B1", probability: 100, toggle: true},
-            {key: "R3B2", probability: 100, toggle: true},
-            {key: "R3C1", probability: 100, toggle: true},
-            {key: "R3D1", probability: 100, toggle: true}
+            {key: "R3A1", probability: 50, toggle: true},
+            {key: "R3A2", probability: 50, toggle: true},
+            {key: "R3A3", probability: 50, toggle: true},
+            {key: "R3B1", probability: 50, toggle: true},
+            {key: "R3B2", probability: 50, toggle: true},
+            {key: "R3C1", probability: 50, toggle: true},
+            {key: "R3D1", probability: 50, toggle: true}
         ],
 
         // Rundown 4
         [
-            {key: "R4A1", probability: 100, toggle: true},
-            {key: "R4A2", probability: 100, toggle: true},
-            {key: "R4A3", probability: 100, toggle: true},
-            {key: "R4B1", probability: 100, toggle: true},
-            {key: "R4B2", probability: 100, toggle: true},
-            {key: "R4B3", probability: 100, toggle: true},
-            {key: "R4C1", probability: 100, toggle: true},
-            {key: "R4C2", probability: 100, toggle: true},
-            {key: "R4C3", probability: 100, toggle: true},
-            {key: "R4D1", probability: 100, toggle: true},
-            {key: "R4D2", probability: 100, toggle: true},
-            {key: "R4E1", probability: 100, toggle: true}
+            {key: "R4A1", probability: 50, toggle: true},
+            {key: "R4A2", probability: 50, toggle: true},
+            {key: "R4A3", probability: 50, toggle: true},
+            {key: "R4B1", probability: 50, toggle: true},
+            {key: "R4B2", probability: 50, toggle: true},
+            {key: "R4B3", probability: 50, toggle: true},
+            {key: "R4C1", probability: 50, toggle: true},
+            {key: "R4C2", probability: 50, toggle: true},
+            {key: "R4C3", probability: 50, toggle: true},
+            {key: "R4D1", probability: 50, toggle: true},
+            {key: "R4D2", probability: 50, toggle: true},
+            {key: "R4E1", probability: 50, toggle: true}
         ],
 
         // Rundown 5
         [
-            {key: "R5A1", probability: 100, toggle: true},
-            {key: "R5A2", probability: 100, toggle: true},
-            {key: "R5A3", probability: 100, toggle: true},
-            {key: "R5B1", probability: 100, toggle: true},
-            {key: "R5B2", probability: 100, toggle: true},
-            {key: "R5B3", probability: 100, toggle: true},
-            {key: "R5B4", probability: 100, toggle: true},
-            {key: "R5C1", probability: 100, toggle: true},
-            {key: "R5C2", probability: 100, toggle: true},
-            {key: "R5C3", probability: 100, toggle: true},
-            {key: "R5D1", probability: 100, toggle: true},
-            {key: "R5D2", probability: 100, toggle: true},
-            {key: "R5E1", probability: 100, toggle: true}
+            {key: "R5A1", probability: 50, toggle: true},
+            {key: "R5A2", probability: 50, toggle: true},
+            {key: "R5A3", probability: 50, toggle: true},
+            {key: "R5B1", probability: 50, toggle: true},
+            {key: "R5B2", probability: 50, toggle: true},
+            {key: "R5B3", probability: 50, toggle: true},
+            {key: "R5B4", probability: 50, toggle: true},
+            {key: "R5C1", probability: 50, toggle: true},
+            {key: "R5C2", probability: 50, toggle: true},
+            {key: "R5C3", probability: 50, toggle: true},
+            {key: "R5D1", probability: 50, toggle: true},
+            {key: "R5D2", probability: 50, toggle: true},
+            {key: "R5E1", probability: 50, toggle: true}
         ],
 
         // Rundown 6
         [
-            {key: "R6A1", probability: 100, toggle: true},
-            {key: "R6B1", probability: 100, toggle: true},
-            {key: "R6B2", probability: 100, toggle: true},
-            {key: "R6AX", probability: 100, toggle: true},
-            {key: "R6BX", probability: 100, toggle: true},
-            {key: "R6CX", probability: 100, toggle: true},
-            {key: "R6C1", probability: 100, toggle: true},
-            {key: "R6C2", probability: 100, toggle: true},
-            {key: "R6C3", probability: 100, toggle: true},
-            {key: "R6D1", probability: 100, toggle: true},
-            {key: "R6D2", probability: 100, toggle: true},
-            {key: "R6D3", probability: 100, toggle: true},
-            {key: "R6D4", probability: 100, toggle: true}
+            {key: "R6A1", probability: 50, toggle: true},
+            {key: "R6B1", probability: 50, toggle: true},
+            {key: "R6B2", probability: 50, toggle: true},
+            {key: "R6AX", probability: 50, toggle: true},
+            {key: "R6BX", probability: 50, toggle: true},
+            {key: "R6CX", probability: 50, toggle: true},
+            {key: "R6C1", probability: 50, toggle: true},
+            {key: "R6C2", probability: 50, toggle: true},
+            {key: "R6C3", probability: 50, toggle: true},
+            {key: "R6D1", probability: 50, toggle: true},
+            {key: "R6D2", probability: 50, toggle: true},
+            {key: "R6D3", probability: 50, toggle: true},
+            {key: "R6D4", probability: 50, toggle: true}
 
         ],
 
         // Rundown 7
         [
-            {key: "R7A1", probability: 100, toggle: true},
-            {key: "R7B1", probability: 100, toggle: true},
-            {key: "R7B2", probability: 100, toggle: true},
-            {key: "R7B3", probability: 100, toggle: true},
-            {key: "R7C1", probability: 100, toggle: true},
-            {key: "R7C2", probability: 100, toggle: true},
-            {key: "R7C3", probability: 100, toggle: true},
-            {key: "R7D1", probability: 100, toggle: true},
-            {key: "R7D2", probability: 100, toggle: true},
-            {key: "R7E1", probability: 100, toggle: true}
+            {key: "R7A1", probability: 50, toggle: true},
+            {key: "R7B1", probability: 50, toggle: true},
+            {key: "R7B2", probability: 50, toggle: true},
+            {key: "R7B3", probability: 50, toggle: true},
+            {key: "R7C1", probability: 50, toggle: true},
+            {key: "R7C2", probability: 50, toggle: true},
+            {key: "R7C3", probability: 50, toggle: true},
+            {key: "R7D1", probability: 50, toggle: true},
+            {key: "R7D2", probability: 50, toggle: true},
+            {key: "R7E1", probability: 50, toggle: true}
         ],
 
         // Rundown 8
         [
-            {key: "R8A1", probability: 100, toggle: true},
-            {key: "R8A2", probability: 100, toggle: true},
-            {key: "R8B1", probability: 100, toggle: true},
-            {key: "R8B2", probability: 100, toggle: true},
-            {key: "R8B3", probability: 100, toggle: true},
-            {key: "R8B4", probability: 100, toggle: true},
-            {key: "R8C1", probability: 100, toggle: true},
-            {key: "R8C2", probability: 100, toggle: true},
-            {key: "R8D1", probability: 100, toggle: true},
-            {key: "R8D2", probability: 100, toggle: true},
-            {key: "R8E1", probability: 100, toggle: true},
-            {key: "R8E2", probability: 100, toggle: true}
+            {key: "R8A1", probability: 50, toggle: true},
+            {key: "R8A2", probability: 50, toggle: true},
+            {key: "R8B1", probability: 50, toggle: true},
+            {key: "R8B2", probability: 50, toggle: true},
+            {key: "R8B3", probability: 50, toggle: true},
+            {key: "R8B4", probability: 50, toggle: true},
+            {key: "R8C1", probability: 50, toggle: true},
+            {key: "R8C2", probability: 50, toggle: true},
+            {key: "R8D1", probability: 50, toggle: true},
+            {key: "R8D2", probability: 50, toggle: true},
+            {key: "R8E1", probability: 50, toggle: true},
+            {key: "R8E2", probability: 50, toggle: true}
         ]
     ]
 
@@ -2501,7 +2531,7 @@
     }
 
     var currentVer = null;
-    var lastVer = "3.20.3";
+    var lastVer = "3.21";
 
     
     // Function to get the total probability stack of the provided list. 
