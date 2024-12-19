@@ -1,3 +1,6 @@
+V3.22   -   Added the Killzone weapons and armour that were given to all helldivers for free. Added a piece of armour that was in the data set but didn't have an associated button due to an oversight.
+            Also made some consistency changes for conventions that weren't being followed. This version also introduces some additional consistency checks that should've already existed. 
+            This should now properly override data related to properties and pen stats in all scenario's.
      .1 -   Quick patch to add the StA-52 Assault Rifle
 v3.21   -   Illuminate update! Adds the strategems and armour from the Urban Legends warbond, along with some slight tweaks to probabilities. The default is now a value of 50 and the max 100.
      .3 -   Changed the priority system to prioritize penetration stat over support weapons. This prevents an empty list bug and makes more sense in general.

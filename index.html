@@ -69,13 +69,12 @@
 
 <!-- Setting up the tabbar at the top -->
 <div class="tab">
-    <button class=tablinks onclick="openTab(event, 'randomizer_tab')" id="default_tab_button">GTFO Rando</button>
+    <button class=tablinks onclick="openTab(event, 'helldiver_tab')" id="default_tab_button">Helldivers Rando</button>
+    <button class=tablinks onclick="openTab(event, 'helldiver_loadout_tab')">Helldivers Loadout</button>
+    <button class=tablinks onclick="openTab(event, 'strategems_tab')">Helldivers Strategems</button>
+    <button class=tablinks onclick="openTab(event, 'randomizer_tab')">GTFO Rando</button>
     <button class=tablinks onclick="openTab(event, 'loadout_tab')">GTFO Loadout</button>
-    <button class=tablinks onclick="openTab(event, 'maps_tab')">Maps</button>
-    <button class=tablinks onclick="openTab(event, 'helldiver_tab')">Helldivers</button>
-    <button class=tablinks onclick="openTab(event, 'helldiver_loadout_tab')">Helldiver Loadout</button>
-    <button class=tablinks onclick="openTab(event, 'strategems_tab')">Strategems</button>
-    
+    <button class=tablinks onclick="openTab(event, 'maps_tab')">GTFO Maps</button> 
 </div>
 
 <!-- Main tab for actually doing logic -->
@@ -482,12 +481,19 @@
     <button class ="toggleButton_active" onclick="toggleItem('R-63 Diligence Counter Sniper (Marksman Rifle)', helldivers_main_weps)">R-63 Diligence Counter Sniper (Marksman Rifle)</button>
     <br>
     <br>
+    Sniper Rifles
+    <br>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('PLAS-39 Accelerator Rifle (Sniper Rifle)', helldivers_main_weps)">PLAS-39 Accelerator Rifle (Sniper Rifle)</button>
+    <br>
+    <br>
     Submachine Guns
     <br>
     <br>
+    <button class ="toggleButton_active" onclick="toggleItem('StA-11 SMG (Submachine Gun)', helldivers_main_weps)">StA-11 SMG (Submachine Gun)</button>
     <button class ="toggleButton_active" onclick="toggleItem('SMG-32 Reprimand (Submachine Gun)', helldivers_main_weps)">SMG-32 Reprimand (Submachine Gun)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('SMG-37 Defender (Submachine Gun)', helldivers_main_weps)">SMG-37 Defender (Submachine Gun)</button>
     <br>
+    <button class ="toggleButton_active" onclick="toggleItem('SMG-37 Defender (Submachine Gun)', helldivers_main_weps)">SMG-37 Defender (Submachine Gun)</button>
     <button class ="toggleButton_active" onclick="toggleItem('SMG-72 Pummeler (Submachine Gun)', helldivers_main_weps)">SMG-72 Pummeler (Submachine Gun)</button>
     <br>
     <br>
@@ -524,8 +530,8 @@
     <button class ="toggleButton_active" onclick="toggleItem('LAS-5 Scythe (Energy-Based)', helldivers_main_weps)">LAS-5 Scythe (Energy-Based)</button>
     <button class ="toggleButton_active" onclick="toggleItem('LAS-16 Sickle (Energy-Based)', helldivers_main_weps)">LAS-16 Sickle (Energy-Based)</button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('Plas-1 Scorcher (Energy-Based)', helldivers_main_weps)">Plas-1 Scorcher (Energy-Based)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Plas-101 Purifier (Energy-Based)', helldivers_main_weps)">Plas-101 Purifier (Energy-Based)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('PLAS-1 Scorcher (Energy-Based)', helldivers_main_weps)">PLAS-1 Scorcher (Energy-Based)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('PLAS-101 Purifier (Energy-Based)', helldivers_main_weps)">PLAS-101 Purifier (Energy-Based)</button>
     <br>
     <br>
     <br>
@@ -605,9 +611,10 @@
     <button class ="toggleButton_active" onclick="toggleItem('AF-50 Noxious Ranger (Light Armour)', helldivers_armour)">AF-50 Noxious Ranger (Light Armour)</button>
     <button class ="toggleButton_active" onclick="toggleItem('UF-16 Inspector (Light Armour)', helldivers_armour)">UF-16 Inspector (Light Armour)</button>
     <button class ="toggleButton_active" onclick="toggleItem('SR-24 Street Scout (Light Armour)', helldivers_armour)">SR-24 Street Scout (Light Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('PH-9 Predator (Light Armour)', helldivers_armour)">PH-9 Predator (Light Armour)</button>
     <br>
+    <button class ="toggleButton_active" onclick="toggleItem('PH-9 Predator (Light Armour)', helldivers_armour)">PH-9 Predator (Light Armour)</button>
     <button class ="toggleButton_active" onclick="toggleItem('I-09 Heatseeker (Light Armour)', helldivers_armour)">I-09 Heatseeker (Light Armour)</button> 
+    <button class ="toggleButton_active" onclick="toggleItem('AC-2 Obedient (Light Armour)', helldivers_armour)">AC-2 Obedient (Light Armour)</button> 
     <br>
     <br>
     Medium Armour
@@ -641,14 +648,15 @@
     <button class ="toggleButton_active" onclick="toggleItem('B-01 Tactical (Medium Armour) (4)', helldivers_armour)">B-01 Tactical (Medium Armour) (4)</button>
     <button class ="toggleButton_active" onclick="toggleItem('TR-40 Gold Eagle (Medium Armour)', helldivers_armour)">TR-40 Gold Eagle (Medium Armour)</button>
     <br>
+    <button class ="toggleButton_active" onclick="toggleItem('AF-91 Field Chemist (Medium Armour)', helldivers_armour)">AF-91 Field Chemist (Medium Armour)</button>
     <button class ="toggleButton_active" onclick="toggleItem('UF-84 Doubt Killer (Medium Armour)', helldivers_armour)">UF-84 Doubt Killer (Medium Armour)</button>
     <button class ="toggleButton_active" onclick="toggleItem('CW-9 White Wolf (Medium Armour)', helldivers_armour)">CW-9 White Wolf (Medium Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('PH-56 Jaguar (Medium Armour)', helldivers_armour)">PH-56 Jaguar (Medium Armour)</button>
     <br>
+    <button class ="toggleButton_active" onclick="toggleItem('PH-56 Jaguar (Medium Armour)', helldivers_armour)">PH-56 Jaguar (Medium Armour)</button>
     <button class ="toggleButton_active" onclick="toggleItem('I-92 Fire Fighter (Medium Armour)', helldivers_armour)">I-92 Fire Fighter (Medium Armour)</button>
     <button class ="toggleButton_active" onclick="toggleItem('SA-04 Combat Technician (Medium Armour)', helldivers_armour)">SA-04 Combat Technician (Medium Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('AF-02 Haz-Master (Medium Armour)', helldivers_armour)">AF-02 Haz-Master (Medium Armour)</button>
     <br>
+    <button class ="toggleButton_active" onclick="toggleItem('AF-02 Haz-Master (Medium Armour)', helldivers_armour)">AF-02 Haz-Master (Medium Armour)</button>
     <button class ="toggleButton_active" onclick="toggleItem('UF-50 Bloodhound (Medium Armour)', helldivers_armour)">UF-50 Bloodhound (Medium Armour)</button>
     <button class ="toggleButton_active" onclick="toggleItem('I-102 Draconaught (Medium Armour)', helldivers_armour)">I-102 Draconaught (Medium Armour)</button>
     <br>
@@ -815,7 +823,11 @@
         {key: "R-63 Diligence (Marksman Rifle)", penetration: 2, probability: 50, toggle: true},
         {key: "R-63 Diligence Counter Sniper (Marksman Rifle)", penetration: 3, probability: 50, toggle: true},       
 
+        // Sniper Rifle
+        {key: "PLAS-39 Accelerator Rifle (Sniper Rifle)", penetration: 3, probability: 50, toggle: true}, 
+
         // smg
+        {key: "StA-11 SMG (Submachine Gun)", penetration: 2, probability: 50, toggle: true},
         {key: "SMG-32 Reprimand (Submachine Gun)", penetration: 3, probability: 50, toggle: true},
         {key: "SMG-37 Defender (Submachine Gun)", penetration: 2, properties: [Properties.One_Handed], probability: 50, toggle: true},
         {key: "SMG-72 Pummeler (Submachine Gun)", penetration: 2, properties: [Properties.One_Handed, Properties.Stun], probability: 50, toggle: true},
@@ -840,8 +852,8 @@
         {key: "ARC-12 Blitzer (Energy-Based)", penetration: 3, properties: [Properties.Limited_Range], probability: 50, toggle: true},
         {key: "LAS-5 Scythe (Energy-Based)", penetration: 2, properties: [Properties.Energy], probability: 50, toggle: true},
         {key: "LAS-16 Sickle (Energy-Based)", penetration: 2, properties: [Properties.Energy], probability: 50, toggle: true},
-        {key: "Plas-1 Scorcher (Energy-Based)", penetration: 3, properties: [Properties.Energy], probability: 50, toggle: true},
-        {key: "Plas-101 Purifier (Energy-Based)", penetration: 3, properties: [Properties.Energy], probability: 50, toggle: true},
+        {key: "PLAS-1 Scorcher (Energy-Based)", penetration: 3, properties: [Properties.Energy], probability: 50, toggle: true},
+        {key: "PLAS-101 Purifier (Energy-Based)", penetration: 3, properties: [Properties.Energy], probability: 50, toggle: true},
         
         // Special
         {key: "FLAM-66 Torcher (Special)", penetration: 3, properties: [Properties.Incendiary, Properties.Limited_Range], probability: 50, toggle: true},
@@ -866,7 +878,11 @@
         {key: "R-63 Diligence (Marksman Rifle)", penetration: 2, probability: 50, toggle: true},
         {key: "R-63 Diligence Counter Sniper (Marksman Rifle)", penetration: 3, probability: 50, toggle: true},       
 
+        // Sniper Rifle
+        {key: "PLAS-39 Accelerator Rifle (Sniper Rifle)", penetration: 3, probability: 50, toggle: true}, 
+
         // smg
+        {key: "StA-11 SMG (Submachine Gun)", penetration: 2, probability: 50, toggle: true},
         {key: "SMG-32 Reprimand (Submachine Gun)", penetration: 3, probability: 50, toggle: true},
         {key: "SMG-37 Defender (Submachine Gun)", penetration: 2, properties: [Properties.One_Handed], probability: 50, toggle: true},
         {key: "SMG-72 Pummeler (Submachine Gun)", penetration: 2, properties: [Properties.One_Handed, Properties.Stun], probability: 50, toggle: true},
@@ -891,8 +907,8 @@
         {key: "ARC-12 Blitzer (Energy-Based)", penetration: 3, properties: [Properties.Limited_Range], probability: 50, toggle: true},
         {key: "LAS-5 Scythe (Energy-Based)", penetration: 2, properties: [Properties.Energy], probability: 50, toggle: true},
         {key: "LAS-16 Sickle (Energy-Based)", penetration: 2, properties: [Properties.Energy], probability: 50, toggle: true},
-        {key: "Plas-1 Scorcher (Energy-Based)", penetration: 3, properties: [Properties.Energy], probability: 50, toggle: true},
-        {key: "Plas-101 Purifier (Energy-Based)", penetration: 3, properties: [Properties.Energy], probability: 50, toggle: true},
+        {key: "PLAS-1 Scorcher (Energy-Based)", penetration: 3, properties: [Properties.Energy], probability: 50, toggle: true},
+        {key: "PLAS-101 Purifier (Energy-Based)", penetration: 3, properties: [Properties.Energy], probability: 50, toggle: true},
         
         // Special
         {key: "FLAM-66 Torcher (Special)", penetration: 3, properties: [Properties.Incendiary, Properties.Limited_Range], probability: 50, toggle: true},
@@ -953,11 +969,11 @@
         {key: "G-13 Incendiary Impact (Special Throwable)", properties: [Properties.Explosive, Properties.Incendiary, Properties.Limited_Range], probability: 50, toggle: true},
         {key: "G-123 Thermite (Special Throwable)", properties: [Properties.Explosive, Properties.Incendiary, Properties.Limited_Range], probability: 50, toggle: true},
         
-        {key: "G-3 Smoke (Special Throwable)", properties: [Properties.Smoke, Properties.Limited_Range], probability: 50, toggle: false},
-        {key: "G-23 Stun (Special Throwable)", properties: [Properties.Stun, Properties.Limited_Range], probability: 50, toggle: false},
-        {key: "G-4 Gas (Special Throwable)", probability: 50, toggle: false},
+        {key: "G-3 Smoke (Special Throwable)", properties: [Properties.Smoke, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "G-23 Stun (Special Throwable)", properties: [Properties.Stun, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "G-4 Gas (Special Throwable)", properties: [Properties.Explosive], probability: 50, toggle: true},
 
-        {key: "K-2 Throwing Knife (Special Throwable)", probability: 50, properties: [Properties.Limited_Range], toggle: false}
+        {key: "K-2 Throwing Knife (Special Throwable)", probability: 50, properties: [Properties.Limited_Range], toggle: true}
         
     ]
 
@@ -973,11 +989,11 @@
         {key: "G-13 Incendiary Impact (Special Throwable)", properties: [Properties.Explosive, Properties.Incendiary, Properties.Limited_Range], probability: 50, toggle: true},
         {key: "G-123 Thermite (Special Throwable)", properties: [Properties.Explosive, Properties.Incendiary, Properties.Limited_Range], probability: 50, toggle: true},
         
-        {key: "G-3 Smoke (Special Throwable)", properties: [Properties.Smoke, Properties.Limited_Range], probability: 50, toggle: false},
-        {key: "G-23 Stun (Special Throwable)", properties: [Properties.Stun, Properties.Limited_Range], probability: 50, toggle: false},
-        {key: "G-4 Gas (Special Throwable)", probability: 50, toggle: false},
+        {key: "G-3 Smoke (Special Throwable)", properties: [Properties.Smoke, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "G-23 Stun (Special Throwable)", properties: [Properties.Stun, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "G-4 Gas (Special Throwable)", properties: [Properties.Explosive], probability: 50, toggle: true},
 
-        {key: "K-2 Throwing Knife (Special Throwable)", probability: 50, properties: [Properties.Limited_Range], toggle: false}
+        {key: "K-2 Throwing Knife (Special Throwable)", probability: 50, properties: [Properties.Limited_Range], toggle: true}
         
     ]
 
@@ -2114,6 +2130,12 @@
                         break;
                     }
                     // console.log("Passed key check, entering properties..");
+                    if (checkList2[i].properties && !checkList[i].properties ) {
+                        inconsistency = true;
+                    }
+                    if (!checkList2[i].properties && checkList[i].properties) {
+                        inconsistency = true;
+                    }
                     if (checkList2[i].properties) {
                         // console.log("item has properties: ");
                         // console.log(checkList2[i].properties);
@@ -2202,6 +2224,12 @@
                         break;
                     }
                     // console.log("Passed key check, entering properties..");
+                    if (checkList2[i].properties && !checkList[i].properties ) {
+                        inconsistency = true;
+                    }
+                    if (!checkList2[i].properties && checkList[i].properties) {
+                        inconsistency = true;
+                    }
                     if (checkList2[i].properties) {
                         // console.log("item has properties: ");
                         // console.log(checkList2[i].properties);
@@ -2231,6 +2259,12 @@
                         }
                     }
                     // console.log("Passed properties check, entering penetration..");
+                    if (checkList2[i].penetration && !checkList[i].penetration ) {
+                        inconsistency = true;
+                    }
+                    if (!checkList2[i].penetration && checkList[i].penetration) {
+                        inconsistency = true;
+                    }
                     if (checkList2[i].penetration) {
                         if (checkList[i].penetration){
                             if (checkList2[i].penetration != checkList[i].penetration) {
@@ -2290,6 +2324,12 @@
                         break;
                     }
                     // console.log("Passed key check, entering properties..");
+                    if (checkList2[i].properties && !checkList[i].properties ) {
+                        inconsistency = true;
+                    }
+                    if (!checkList2[i].properties && checkList[i].properties) {
+                        inconsistency = true;
+                    }
                     if (checkList2[i].properties) {
                         // console.log("item has properties: ");
                         // console.log(checkList2[i].properties);
@@ -2319,6 +2359,12 @@
                         }
                     }
                     // console.log("Passed properties check, entering penetration..");
+                    if (checkList2[i].penetration && !checkList[i].penetration ) {
+                        inconsistency = true;
+                    }
+                    if (!checkList2[i].penetration && checkList[i].penetration) {
+                        inconsistency = true;
+                    }
                     if (checkList2[i].penetration) {
                         if (checkList[i].penetration){
                             if (checkList2[i].penetration != checkList[i].penetration) {
@@ -2379,6 +2425,12 @@
                         break;
                     }
                     // console.log("Passed key check, entering properties..");
+                    if (checkList2[i].properties && !checkList[i].properties ) {
+                        inconsistency = true;
+                    }
+                    if (!checkList2[i].properties && checkList[i].properties) {
+                        inconsistency = true;
+                    }
                     if (checkList2[i].properties) {
                         // console.log("item has properties: ");
                         // console.log(checkList2[i].properties);
@@ -2408,6 +2460,12 @@
                         }
                     }
                     // console.log("Passed properties check, entering penetration..");
+                    if (checkList2[i].penetration && !checkList[i].penetration ) {
+                        inconsistency = true;
+                    }
+                    if (!checkList2[i].penetration && checkList[i].penetration) {
+                        inconsistency = true;
+                    }
                     if (checkList2[i].penetration) {
                         if (checkList[i].penetration){
                             if (checkList2[i].penetration != checkList[i].penetration) {
@@ -2468,6 +2526,12 @@
                         break;
                     }
                     // console.log("Passed key check, entering properties..");
+                    if (checkList2[i].properties && !checkList[i].properties ) {
+                        inconsistency = true;
+                    }
+                    if (!checkList2[i].properties && checkList[i].properties) {
+                        inconsistency = true;
+                    }
                     if (checkList2[i].properties) {
                         // console.log("item has properties: ");
                         // console.log(checkList2[i].properties);
@@ -2497,6 +2561,12 @@
                         }
                     }
                     // console.log("Passed properties check, entering penetration..");
+                    if (checkList2[i].penetration && !checkList[i].penetration ) {
+                        inconsistency = true;
+                    }
+                    if (!checkList2[i].penetration && checkList[i].penetration) {
+                        inconsistency = true;
+                    }
                     if (checkList2[i].penetration) {
                         if (checkList[i].penetration){
                             if (checkList2[i].penetration != checkList[i].penetration) {
@@ -2535,7 +2605,7 @@
     }
 
     var currentVer = null;
-    var lastVer = "3.21.1";
+    var lastVer = "3.22";
 
     
     // Function to get the total probability stack of the provided list. 
