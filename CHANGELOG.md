@@ -1,3 +1,4 @@
+     .1 -   Added the new vehicle strategem, minor fix for directional shield missing a toggleButton
 V3.22   -   Added the Killzone weapons and armour that were given to all helldivers for free. Added a piece of armour that was in the data set but didn't have an associated button due to an oversight.
             Also made some consistency changes for conventions that weren't being followed. This version also introduces some additional consistency checks that should've already existed. 
             This should now properly override data related to properties and pen stats in all scenario's.
