@@ -1,3 +1,4 @@
+     .3 -   Illuminate patched in as possible faction, no further implmenetation for logic yet.
      .2 -   Added the W.A.S.P. Launcher to available strategems.
      .1 -   Added the new vehicle strategem, minor fix for directional shield missing a toggleButton
 V3.22   -   Added the Killzone weapons and armour that were given to all helldivers for free. Added a piece of armour that was in the data set but didn't have an associated button due to an oversight.
