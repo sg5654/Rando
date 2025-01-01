@@ -412,7 +412,8 @@
     <h6>Faction:     <select name="factions" id="faction_select_box" >
         <option value="0">Terminids</option>
         <option value="1">Automatons</option>
-        <option value="2" selected="selected">Random</option>
+        <option value="2">Illuminate</option> 
+        <option value="3" selected="selected">Random</option>
     </select>
 </h6>
     <p id="h_p5">Faction</p>
@@ -1162,13 +1163,15 @@
 
     var helldivers_factions = [
         {key: "Terminids", probability: 50, toggle: true},
-        {key: "Automatons", probability: 50, toggle: true}
+        {key: "Automatons", probability: 50, toggle: true},
+        {key: "Illuminate", probability: 50, toggle: true}
         
     ]    
 
     const helldivers_factions_clone = [
         {key: "Terminids", probability: 50, toggle: true},
-        {key: "Automatons", probability: 50, toggle: true}
+        {key: "Automatons", probability: 50, toggle: true},
+        {key: "Illuminate", probability: 50, toggle: true}
         
     ]
 
@@ -2617,7 +2620,7 @@
     }
 
     var currentVer = null;
-    var lastVer = "3.22.2";
+    var lastVer = "3.22.3";
 
     
     // Function to get the total probability stack of the provided list. 
@@ -2885,7 +2888,7 @@
             expl_force = document.getElementById("h_ch_expl").checked;
 
             // Check if faction is not set to "Random"
-            if (fac_select != 2) {
+            if (fac_select != 3) {
                 fac_check = true;
                 helldiver_slot5 = helldivers_factions[fac_select];
             }
