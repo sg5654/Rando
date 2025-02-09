@@ -588,6 +588,7 @@
     <br>
     <button class ="toggleButton_active" onclick="toggleItem('G-3 Smoke (Special Throwable)', helldivers_grenades)">G-3 Smoke (Special Throwable)</button>
     <button class ="toggleButton_active" onclick="toggleItem('G-23 Stun (Special Throwable)', helldivers_grenades)">G-23 Stun (Special Throwable)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('G-50 Seeker (Special Throwable)', helldivers_grenades)">G-50 Seeker (Special Throwable)</button>
     <button class ="toggleButton_active" onclick="toggleItem('G-4 Gas (Special Throwable)', helldivers_grenades)">G-4 Gas (Special Throwable)</button>
     <br>
     <button class ="toggleButton_active" onclick="toggleItem('K-2 Throwing Knife (Special Throwable)', helldivers_grenades)">K-2 Throwing Knife (Special Throwable)</button>
@@ -992,7 +993,9 @@
         
         {key: "G-3 Smoke (Special Throwable)", properties: [Properties.Smoke, Properties.Limited_Range], probability: 50, toggle: true},
         {key: "G-23 Stun (Special Throwable)", properties: [Properties.Stun, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "G-50 Seeker (Special Throwable)", properties: [Properties.Explosive], probability: 50, toggle: true},
         {key: "G-4 Gas (Special Throwable)", properties: [Properties.Explosive], probability: 50, toggle: true},
+        
 
         {key: "K-2 Throwing Knife (Special Throwable)", probability: 50, properties: [Properties.Limited_Range], toggle: true}
         
@@ -1012,6 +1015,7 @@
         
         {key: "G-3 Smoke (Special Throwable)", properties: [Properties.Smoke, Properties.Limited_Range], probability: 50, toggle: true},
         {key: "G-23 Stun (Special Throwable)", properties: [Properties.Stun, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "G-50 Seeker (Special Throwable)", properties: [Properties.Explosive], probability: 50, toggle: true},
         {key: "G-4 Gas (Special Throwable)", properties: [Properties.Explosive], probability: 50, toggle: true},
 
         {key: "K-2 Throwing Knife (Special Throwable)", probability: 50, properties: [Properties.Limited_Range], toggle: true}
@@ -2645,7 +2649,7 @@
     }
 
     var currentVer = null;
-    var lastVer = "3.23";
+    var lastVer = "3.23.1";
 
     
     // Function to get the total probability stack of the provided list. 
