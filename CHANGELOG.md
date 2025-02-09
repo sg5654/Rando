@@ -1,3 +1,5 @@
+     .1 -   Seeker grenade
+V3.23   -   Added some of the missing armour choices and started the warbond
      .4 -   Added TR-117, no idea why this was added to the game.
      .3 -   Illuminate patched in as possible faction, no further implmenetation for logic yet.
      .2 -   Added the W.A.S.P. Launcher to available strategems.
