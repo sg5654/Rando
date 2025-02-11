@@ -762,13 +762,14 @@
     <button class ="toggleButton_active" onclick="toggleItem('M-102 Fast Recon Vehicle', helldivers_strategems)">M-102 Fast Recon Vehicle</button>
     <button class ="toggleButton_active" onclick="toggleItem('FLAM-40 Flamethrower', helldivers_strategems)">FLAM-40 Flamethrower</button>
     <button class ="toggleButton_active" onclick="toggleItem('AX/LAS-5 Guard Dog Rover', helldivers_strategems)">AX/LAS-5 Guard Dog Rover</button>
-    <button class ="toggleButton_active" onclick="toggleItem('GR-8 Recoilless Rifle', helldivers_strategems)">GR-8 Recoilless Rifle</button>
+    <button class ="toggleButton_active" onclick="toggleItem('B-100 Portable Hellbomb', helldivers_strategems)">B-100 Portable Hellbomb</button>
     <br>
+    <button class ="toggleButton_active" onclick="toggleItem('GR-8 Recoilless Rifle', helldivers_strategems)">GR-8 Recoilless Rifle</button>
     <button class ="toggleButton_active" onclick="toggleItem('LIFT-850 Jump Pack', helldivers_strategems)">LIFT-850 Jump Pack</button>
     <button class ="toggleButton_active" onclick="toggleItem('APW-1 Anti Materiel Rifle', helldivers_strategems)">APW-1 Anti Materiel Rifle</button>
     <button class ="toggleButton_active" onclick="toggleItem('AX/TX-13 Guard Dog Dog Breath', helldivers_strategems)">AX/TX-13 Guard Dog Dog Breath</button>
-    <button class ="toggleButton_active" onclick="toggleItem('EAT-17 Expendable Anti-Tank', helldivers_strategems)">EAT-17 Expendable Anti-Tank</button>
     <br>
+    <button class ="toggleButton_active" onclick="toggleItem('EAT-17 Expendable Anti-Tank', helldivers_strategems)">EAT-17 Expendable Anti-Tank</button>
     <button class ="toggleButton_active" onclick="toggleItem('LAS-99 Quasar Cannon', helldivers_strategems)">LAS-99 Quasar Cannon</button>
     
     <br>
@@ -1281,6 +1282,7 @@
         {key: "M-102 Fast Recon Vehicle", properties: [Properties.Vehicle], probability: 50, toggle: true},
         {key: "FLAM-40 Flamethrower", penetration: 3, properties: [Properties.Incendiary, Properties.Support_Wep, Properties.Limited_Range], probability: 50, toggle: true},
         {key: "AX/LAS-5 Guard Dog Rover", penetration: 2, properties: [Properties.Backpack, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "B-100 Portable Hellbomb", penetration: 10, properties: [Properties.Backpack, Properties.Explosive, Properties.Limited_Supply], probability: 50, toggle: true},
         {key: "GR-8 Recoilless Rifle", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 50, toggle: true},
         {key: "LIFT-850 Jump Pack", properties: [Properties.Backpack], probability: 50, toggle: true},
         {key: "APW-1 Anti Materiel Rifle", penetration: 4, properties: [Properties.Support_Wep], probability: 50, toggle: true},
@@ -1359,6 +1361,7 @@
         {key: "M-102 Fast Recon Vehicle", properties: [Properties.Vehicle], probability: 50, toggle: true},
         {key: "FLAM-40 Flamethrower", penetration: 3, properties: [Properties.Incendiary, Properties.Support_Wep, Properties.Limited_Range], probability: 50, toggle: true},
         {key: "AX/LAS-5 Guard Dog Rover", penetration: 2, properties: [Properties.Backpack, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "B-100 Portable Hellbomb", penetration: 10, properties: [Properties.Backpack, Properties.Explosive, Properties.Limited_Supply], probability: 50, toggle: true},
         {key: "GR-8 Recoilless Rifle", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 50, toggle: true},
         {key: "LIFT-850 Jump Pack", properties: [Properties.Backpack], probability: 50, toggle: true},
         {key: "APW-1 Anti Materiel Rifle", penetration: 4, properties: [Properties.Support_Wep], probability: 50, toggle: true},
@@ -2649,7 +2652,7 @@
     }
 
     var currentVer = null;
-    var lastVer = "3.23.1";
+    var lastVer = "3.23.2";
 
     
     // Function to get the total probability stack of the provided list. 
