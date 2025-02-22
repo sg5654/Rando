@@ -1,3 +1,4 @@
+     .3 -   Removed Explosive attribute on Seeker grenade
      .2 -   Portable Hellbomb
      .1 -   Seeker grenade
 V3.23   -   Added some of the missing armour choices and started the warbond
