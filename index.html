@@ -790,17 +790,19 @@
     <button class ="toggleButton_active" onclick="toggleItem('FX-12 Shield Generator Relay', helldivers_strategems)">FX-12 Shield Generator Relay</button>
     <br>
     <button class ="toggleButton_active" onclick="toggleItem('A/M-23 EMS Mortar Sentry', helldivers_strategems)">A/M-23 EMS Mortar Sentry</button>
+    <button class ="toggleButton_active" onclick="toggleItem('MD-8 Gas Mines', helldivers_strategems)">"MD-8 Gas Mines"</button>
     <button class ="toggleButton_active" onclick="toggleItem('A/MLS-4X Rocket Sentry', helldivers_strategems)">A/MLS-4X Rocket Sentry</button>
     <button class ="toggleButton_active" onclick="toggleItem('A/G-16 Gatling Sentry', helldivers_strategems)">A/G-16 Gatling Sentry</button>
-    <button class ="toggleButton_active" onclick="toggleItem('A/ARC-3 Tesla Tower', helldivers_strategems)">A/ARC-3 Tesla Tower</button>
     <br>
+    <button class ="toggleButton_active" onclick="toggleItem('A/ARC-3 Tesla Tower', helldivers_strategems)">A/ARC-3 Tesla Tower</button>
     <button class ="toggleButton_active" onclick="toggleItem('A/M-12 Mortar Sentry', helldivers_strategems)">A/M-12 Mortar Sentry</button>
     <button class ="toggleButton_active" onclick="toggleItem('MD-6 Anti-Personnel Minefield', helldivers_strategems)">MD-6 Anti-Personnel Minefield</button>
     <button class ="toggleButton_active" onclick="toggleItem('A/MG-43 Machine Gun Sentry', helldivers_strategems)">A/MG-43 Machine Gun Sentry</button>
-    <button class ="toggleButton_active" onclick="toggleItem('A/AC-8 Autocannon Sentry', helldivers_strategems)">A/AC-8 Autocannon Sentry</button>
     <br>
+    <button class ="toggleButton_active" onclick="toggleItem('A/AC-8 Autocannon Sentry', helldivers_strategems)">A/AC-8 Autocannon Sentry</button>
     <button class ="toggleButton_active" onclick="toggleItem('MD-I4 Incendiary Mines', helldivers_strategems)">MD-I4 Incendiary Mines</button>
     <button class ="toggleButton_active" onclick="toggleItem('E/MG-101 HMG Emplacement', helldivers_strategems)">E/MG-101 HMG Emplacement</button>
+    
 
 </div>
 
@@ -1320,7 +1322,8 @@
         {key: "A/MG-43 Machine Gun Sentry", properties: [Properties.Sentry], probability: 50, toggle: true},
         {key: "A/AC-8 Autocannon Sentry", properties: [Properties.Sentry], probability: 50, toggle: true},
         {key: "MD-I4 Incendiary Mines", properties: [Properties.Fortification, Properties.Incendiary], probability: 50, toggle: true},
-        {key: "E/MG-101 HMG Emplacement", properties: [Properties.Fortification], probability: 50, toggle: true}
+        {key: "E/MG-101 HMG Emplacement", properties: [Properties.Fortification], probability: 50, toggle: true},
+        {key: "MD-8 Gas Mines", properties: [Properties.Fortification], probability: 50, toggle: true}
         
     ]
 
@@ -1399,7 +1402,8 @@
         {key: "A/MG-43 Machine Gun Sentry", properties: [Properties.Sentry], probability: 50, toggle: true},
         {key: "A/AC-8 Autocannon Sentry", properties: [Properties.Sentry], probability: 50, toggle: true},
         {key: "MD-I4 Incendiary Mines", properties: [Properties.Fortification, Properties.Incendiary], probability: 50, toggle: true},
-        {key: "E/MG-101 HMG Emplacement", properties: [Properties.Fortification], probability: 50, toggle: true}
+        {key: "E/MG-101 HMG Emplacement", properties: [Properties.Fortification], probability: 50, toggle: true},
+        {key: "MD-8 Gas Mines", properties: [Properties.Fortification], probability: 50, toggle: true}
 ]
 
 
@@ -2666,7 +2670,7 @@
     }
 
     var currentVer = null;
-    var lastVer = "3.23.3";
+    var lastVer = "3.23.4";
 
     
     // Function to get the total probability stack of the provided list. 
