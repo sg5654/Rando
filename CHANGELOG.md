@@ -1,3 +1,4 @@
+     .5 -   Restructure of Strategems
      .4 -   Added MD-8 Gas Mines
      .3 -   Removed Explosive attribute on Seeker grenade
      .2 -   Portable Hellbomb
