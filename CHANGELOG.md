@@ -1,3 +1,5 @@
+V3.24.3 -   Buttons for special category
+     .2 -   Fixed stuff
      .1 -   Armours related to warbond
 V3.24   -   Borderline of justice Warbond items
      .5 -   Restructure of Strategems
