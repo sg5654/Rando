@@ -518,8 +518,6 @@
     <br>
     <br>
     <button class ="toggleButton_active" onclick="toggleItem('CB-9 Exploding Crossbow (Explosive)', helldivers_main_weps)">CB-9 Exploding Crossbow (Explosive)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Jar-5 Dominator (Explosive)', helldivers_main_weps)">Jar-5 Dominator (Explosive)</button>
-    <br>
     <button class ="toggleButton_active" onclick="toggleItem('R-36 Eruptor (Explosive)', helldivers_main_weps)">R-36 Eruptor (Explosive)</button>
     <br>
     <br>
@@ -536,6 +534,13 @@
     <button class ="toggleButton_active" onclick="toggleItem('PLAS-1 Scorcher (Energy-Based)', helldivers_main_weps)">PLAS-1 Scorcher (Energy-Based)</button>
     <br>
     <button class ="toggleButton_active" onclick="toggleItem('PLAS-101 Purifier (Energy-Based)', helldivers_main_weps)">PLAS-101 Purifier (Energy-Based)</button>
+    <br>
+    <br>
+    Special
+    <br>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('FLAM-66 Torcher (Special)', helldivers_main_weps)">FLAM-66 Torcher (Special)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Jar-5 Dominator (Special)', helldivers_main_weps)">Jar-5 Dominator (Special)</button>
     <br>
     <br>
     <br>
@@ -894,7 +899,7 @@
         
         // Special
         {key: "FLAM-66 Torcher (Special)", penetration: 3, properties: [Properties.Incendiary, Properties.Limited_Range], probability: 50, toggle: true},
-        {key: "Jar-5 Dominator (Explosive)", penetration: 3, properties: [Properties.Limited_Range], probability: 50, toggle: true}
+        {key: "Jar-5 Dominator (Special)", penetration: 3, properties: [Properties.Limited_Range], probability: 50, toggle: true}
     ]
 
     
@@ -951,7 +956,7 @@
         
         // Special
         {key: "FLAM-66 Torcher (Special)", penetration: 3, properties: [Properties.Incendiary, Properties.Limited_Range], probability: 50, toggle: true},
-        {key: "Jar-5 Dominator (Explosive)", penetration: 3, properties: [Properties.Limited_Range], probability: 50, toggle: true}
+        {key: "Jar-5 Dominator (Special)", penetration: 3, properties: [Properties.Limited_Range], probability: 50, toggle: true}
     ]
 
     var helldivers_secondary_weps = [
@@ -2689,7 +2694,7 @@
     }
 
     var currentVer = null;
-    var lastVer = "3.24.2";
+    var lastVer = "3.24.3";
 
     
     // Function to get the total probability stack of the provided list. 
