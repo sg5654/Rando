@@ -498,6 +498,8 @@
     <button class ="toggleButton_active" onclick="toggleItem('SMG-37 Defender (Submachine Gun)', helldivers_main_weps)">SMG-37 Defender (Submachine Gun)</button>
     <button class ="toggleButton_active" onclick="toggleItem('SMG-72 Pummeler (Submachine Gun)', helldivers_main_weps)">SMG-72 Pummeler (Submachine Gun)</button>
     <br>
+    <button class ="toggleButton_active" onclick="toggleItem('MP-98 Knight (Submachine Gun)', helldivers_main_weps)">MP-98 Knight (Submachine Gun)</button>
+    <br>
     <br>
     Shotguns
     <br>
@@ -687,6 +689,7 @@
     <br>
     <button class ="toggleButton_active" onclick="toggleItem('GS-17 Frontier Marshal (Medium Armour)', helldivers_armour)">GS-17 Frontier Marshal (Medium Armour)</button>
     <button class ="toggleButton_active" onclick="toggleItem('I-102 Draconaught (Medium Armour)', helldivers_armour)">I-102 Draconaught (Medium Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('DP-53 Savior Of The Free (Medium Armour)', helldivers_armour)">DP-53 Savior Of The Free (Medium Armour)</button>
     <br>
     <br>
     Heavy Armour
@@ -848,8 +851,8 @@
     // Helldivers content
     var helldivers_main_weps = [
 
-        // assault rifles
-        {key: "AR-23 Liberator (Assault Rifle)", penetration: 2, probability: 50, toggle: true},
+         // assault rifles
+         {key: "AR-23 Liberator (Assault Rifle)", penetration: 2, probability: 50, toggle: true},
         {key: "AR-23P Liberator Penetrator (Assault Rifle)", penetration: 3, probability: 50, toggle: true},
         {key: "AR-23C Liberator Concussive (Assault Rifle)", penetration: 2, properties: [Properties.Stun], probability: 50, toggle: true},
         {key: "StA-52 Assault Rifle (Assault Rifle)", penetration: 2, probability: 50, toggle: true},
@@ -872,7 +875,7 @@
         {key: "SMG-32 Reprimand (Submachine Gun)", penetration: 3, probability: 50, toggle: true},
         {key: "SMG-37 Defender (Submachine Gun)", penetration: 2, properties: [Properties.One_Handed], probability: 50, toggle: true},
         {key: "SMG-72 Pummeler (Submachine Gun)", penetration: 2, properties: [Properties.One_Handed, Properties.Stun], probability: 50, toggle: true},
-        
+        {key: "MP-98 Knight (Submachine Gun)", penetration: 2, properties: [Properties.One_Handed], probability: 50, toggle: true},
 
         // shotgun
         {key: "SG-8 Punisher (Shotgun)", penetration: 2, probability: 50, toggle: true},
@@ -929,7 +932,7 @@
         {key: "SMG-32 Reprimand (Submachine Gun)", penetration: 3, probability: 50, toggle: true},
         {key: "SMG-37 Defender (Submachine Gun)", penetration: 2, properties: [Properties.One_Handed], probability: 50, toggle: true},
         {key: "SMG-72 Pummeler (Submachine Gun)", penetration: 2, properties: [Properties.One_Handed, Properties.Stun], probability: 50, toggle: true},
-        
+        {key: "MP-98 Knight (Submachine Gun)", penetration: 2, properties: [Properties.One_Handed], probability: 50, toggle: true},
 
         // shotgun
         {key: "SG-8 Punisher (Shotgun)", penetration: 2, probability: 50, toggle: true},
@@ -1118,7 +1121,7 @@
         {key: "IE-12 Righteous (Medium Armour)", probability: 50, toggle: true},
         {key: "GS-17 Frontier Marshal (Medium Armour)", probability: 50, toggle: true},
         {key: "I-102 Draconaught (Medium Armour)", probability: 50, toggle: true},
-
+        {key: "DP-53 Savior Of The Free (Medium Armour)", probability: 50, toggle: true},
 
         // heavy
         {key: "FS-55 Devastator (Heavy Armour)", probability: 50, toggle: true},
@@ -1207,7 +1210,7 @@
         {key: "IE-12 Righteous (Medium Armour)", probability: 50, toggle: true},
         {key: "GS-17 Frontier Marshal (Medium Armour)", probability: 50, toggle: true},
         {key: "I-102 Draconaught (Medium Armour)", probability: 50, toggle: true},
-
+        {key: "DP-53 Savior Of The Free (Medium Armour)", probability: 50, toggle: true},
 
         // heavy
         {key: "FS-55 Devastator (Heavy Armour)", probability: 50, toggle: true},
@@ -2694,7 +2697,7 @@
     }
 
     var currentVer = null;
-    var lastVer = "3.24.3";
+    var lastVer = "3.24.4";
 
     
     // Function to get the total probability stack of the provided list. 
