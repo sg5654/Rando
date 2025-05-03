@@ -1,3 +1,4 @@
+V3.25   -   Added a coordinate randomizer
      .4 -   Expensive ass DLC stuff
      .3 -   Buttons for special category
      .2 -   Fixed stuff
