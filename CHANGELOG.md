@@ -1,3 +1,4 @@
+V3.26   -   Added a Booster randomizer, fixed up some of the styling since more space was needed
 V3.25   -   Added a coordinate randomizer
      .4 -   Expensive ass DLC stuff
      .3 -   Buttons for special category
