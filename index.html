@@ -62,6 +62,14 @@
     .mapsList_visible {
         display: block;
     }
+    .container {
+        display: flex !important;  /* Force override if needed */
+        flex-direction: row;
+    }
+    .box {
+        display: block;
+
+    }
 
 </style>
 </head>
@@ -72,6 +80,7 @@
     <button class=tablinks onclick="openTab(event, 'helldiver_tab')" id="default_tab_button">Helldivers Rando</button>
     <button class=tablinks onclick="openTab(event, 'helldiver_loadout_tab')">Helldivers Loadout</button>
     <button class=tablinks onclick="openTab(event, 'strategems_tab')">Helldivers Strategems</button>
+    <button class=tablinks onclick="openTab(event, 'booster_tab')">Helldivers Boosters</button>
     <button class=tablinks onclick="openTab(event, 'randomizer_tab')">GTFO Rando</button>
     <button class=tablinks onclick="openTab(event, 'loadout_tab')">GTFO Loadout</button>
     <button class=tablinks onclick="openTab(event, 'maps_tab')">GTFO Maps</button> 
@@ -392,9 +401,12 @@
     
 </div>
 
-<div id="helldiver_tab" class="tabcontent" style="display: block">
+<div id="helldiver_tab" class="tabcontent">
 
-    <!-- Equipment -->
+    <div id="encompassing_tab"></div>
+    <div class="container">
+    <div id="left_helldiver_tab" class="box" style="width:50%;">
+            <!-- Equipment -->
     <h6>Main:</h6>
     <p id="h_p1">Main weapon</p>
     <h6>Secondary:</h6>
@@ -408,13 +420,14 @@
     <!-- Divider -->
 
     <!-- Etc -->
-    <h6>Faction:     <select name="factions" id="faction_select_box" >
-        <option value="0">Terminids</option>
-        <option value="1">Automatons</option>
-        <option value="2">Illuminate</option> 
-        <option value="3" selected="selected">Random</option>
-    </select>
-</h6>
+    <h6>Faction:     
+        <select name="factions" id="faction_select_box" >
+            <option value="0">Terminids</option>
+            <option value="1">Automatons</option>
+            <option value="2">Illuminate</option> 
+            <option value="3" selected="selected">Random</option>
+        </select>
+    </h6>
     <p id="h_p5">Faction</p>
     <h6>Difficulty:</h6>
     <p id="h_p6">Difficulty</p>
@@ -426,9 +439,18 @@
     <p id="h_p9">strat3</p>
     <h6>Strategem 4:</h6>
     <p id="h_p10">strat4</p>
+
+    </div>
+
+    <div id="right_helldiver_tab" class="box" style="width:50%">
+
     <h6>Drop Location: (based on grid)</h6><div id="coord1">[coordinate]</div>
     <br>
+    <h6>Booster: </h6>
+    <p id="h_p11">[booster]</p>
 
+    </div>
+    </div>
     <!-- User input -->
     <button id="helldiver_rando_button" onclick="doHelldiverRando()">Randomize</button>
     force reroll?
@@ -453,9 +475,10 @@
     <input type="checkbox" id="h_ch_expl" checked>
     &nbsp;&nbsp;
     <button id="helldiver_rando_reset" onclick="resetHelldiveRando(false)">reset lists</button>
+    </div>
     
-    
-</div>
+    </div>
+
 
 <!-- Massive tab for all the buttons. Organized in the way they would be in-game -->
 <div id="helldiver_loadout_tab" class="tabcontent">
@@ -821,6 +844,30 @@
     <button class ="toggleButton_active" onclick="toggleItem('MD-I4 Incendiary Mines', helldivers_strategems)">MD-I4 Incendiary Mines</button>
     
 
+</div>
+<div id="booster_tab" class="tabcontent">
+    Active Boosters:
+    <br>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('Vitality Enhancement', helldivers_boosters)">Vitality Enhancement</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Stamina Enhancement', helldivers_boosters)">Stamina Enhancement</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Muscle Enhancement', helldivers_boosters)">Muscle Enhancement</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('UAV Recon Booster', helldivers_boosters)">UAV Recon Booster</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Increased Reinforcement Budget', helldivers_boosters)">Increased Reinforcement Budget</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Flexible Reinforcement Budget', helldivers_boosters)">Flexible Reinforcement Budget</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('Hellpod Space Optimization', helldivers_boosters)">Hellpod Space Optimization</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Localization Confusion', helldivers_boosters)">Localization Confusion</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Expert Extraction Pilot', helldivers_boosters)">Expert Extraction Pilot</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('Motivational Shocks', helldivers_boosters)">Motivational Shocks</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Experimental Infusion', helldivers_boosters)">Experimental Infusion</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Firebomb Hellpods', helldivers_boosters)">Firebomb Hellpods</button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('Dead Sprint', helldivers_boosters)">Dead Sprint</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Armed Resupply Pods', helldivers_boosters)">Armed Resupply Pods</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Sample Extractor', helldivers_boosters)">Sample Extractor</button>
 </div>
 
 
@@ -1434,6 +1481,43 @@
         {key: "MD-I4 Incendiary Mines", properties: [Properties.Fortification, Properties.Incendiary], probability: 50, toggle: true}
 ]
 
+    var helldivers_boosters = [
+        {key: "Vitality Enhancement", probability: 50, toggle: true},
+        {key: "Stamina Enhancement", probability: 50, toggle: true},
+        {key: "Muscle Enhancement", probability: 50, toggle: true},
+        {key: "UAV Recon Booster", probability: 50, toggle: true},
+        {key: "Increased Reinforcement Budget", probability: 50, toggle: true},
+        {key: "Flexible Reinforcement Budget", probability: 50, toggle: true},
+        {key: "Hellpod Space Optimization", probability: 50, toggle: true},
+        {key: "Localization Confusion", probability: 50, toggle: true},
+        {key: "Expert Extraction Pilot", probability: 50, toggle: true},
+        {key: "Motivational Shocks", probability: 50, toggle: true},
+        {key: "Experimental Infusion", probability: 50, toggle: true},
+        {key: "Firebomb Hellpods", probability: 50, toggle: true},
+        {key: "Dead Sprint", probability: 50, toggle: true},
+        {key: "Armed Resupply Pods", probability: 50, toggle: true},
+        {key: "Sample Extractor", probability: 50, toggle: true}
+
+    ];
+
+    const helldivers_boosters_backup = [
+    {key: "Vitality Enhancement", probability: 50, toggle: true},
+        {key: "Stamina Enhancement", probability: 50, toggle: true},
+        {key: "Muscle Enhancement", probability: 50, toggle: true},
+        {key: "UAV Recon Booster", probability: 50, toggle: true},
+        {key: "Increased Reinforcement Budget", probability: 50, toggle: true},
+        {key: "Flexible Reinforcement Budget", probability: 50, toggle: true},
+        {key: "Hellpod Space Optimization", probability: 50, toggle: true},
+        {key: "Localization Confusion", probability: 50, toggle: true},
+        {key: "Expert Extraction Pilot", probability: 50, toggle: true},
+        {key: "Motivational Shocks", probability: 50, toggle: true},
+        {key: "Experimental Infusion", probability: 50, toggle: true},
+        {key: "Firebomb Hellpods", probability: 50, toggle: true},
+        {key: "Dead Sprint", probability: 50, toggle: true},
+        {key: "Armed Resupply Pods", probability: 50, toggle: true},
+        {key: "Sample Extractor", probability: 50, toggle: true}
+    ];
+
 
 
     /* GTFO content */
@@ -1955,7 +2039,7 @@
     var slot1, slot2, slot3, slot4, 
     helldiver_slot1, helldiver_slot2, 
     helldiver_slot3, helldiver_slot4, helldiver_slot5, helldiver_slot6, 
-    helldiver_slot7, helldiver_slot8, helldiver_slot9, helldiver_slot10;
+    helldiver_slot7, helldiver_slot8, helldiver_slot9, helldiver_slot10, helldiver_slot11;
     var helldiver_temp_slot;
     var backpack_max, support_max, support_force, backpack_exists, support_exists, pen_check, fac_check, fac_select, errors = 0, bestPen = 0;
 
@@ -2020,6 +2104,7 @@
         var tempGren = [];
         var tempArm = [];
         var tempStrat = [];
+        var tempBoost = [];
         if (keepStates) {
             helldivers_main_weps.forEach(e => {
                 if (e.toggle == false) {
@@ -2051,11 +2136,18 @@
                     // console.log("adding "+ e.key);
                 }
             });
+            helldivers_boosters.forEach(e => {
+                if (e.toggle == false) {
+                    tempBoost = tempBoost.concat([e.key]);
+                    // console.log("adding "+ e.key);
+                }
+            });
             helldivers_main_weps = [];
             helldivers_secondary_weps = [];
             helldivers_grenades = [];
             helldivers_armour = [];
             helldivers_strategems = [];
+            helldivers_boosters = [];
             // console.log(tempMain);
             helldivers_main_weps_clone.forEach(e => {
                 // console.log(e);
@@ -2096,6 +2188,13 @@
                 }
                 helldivers_strategems = helldivers_strategems.concat([temp]);
             });
+            helldivers_boosters_backup.forEach(e => {
+                var temp = e;
+                if (tempBoost.find((element) => element == e.key)) {
+                    temp.toggle = false;
+                }
+                helldivers_boosters = helldivers_boosters.concat([temp]);
+            });
         }
         else {
             helldivers_main_weps = [].concat(helldivers_main_weps_clone);
@@ -2103,12 +2202,14 @@
             helldivers_grenades = [].concat(helldivers_grenades_clone);
             helldivers_armour = [].concat(helldivers_armour_clone);
             helldivers_strategems = [].concat(helldivers_strategems_clone);
+            helldivers_boosters = [].concat(helldivers_boosters_backup);
         }
         console.log(helldivers_main_weps);
         console.log(helldivers_secondary_weps);
         console.log(helldivers_grenades);
         console.log(helldivers_armour);
         console.log(helldivers_strategems);
+        console.log(helldivers_boosters);
 
         // temporary reset for gtfo as well
         main_weps = [].concat(main_weps_clone);
@@ -2127,6 +2228,7 @@
             localStorage.setItem("helldivers_grenades", JSON.stringify(helldivers_grenades));
             localStorage.setItem("helldivers_armour", JSON.stringify(helldivers_armour));
             localStorage.setItem("helldivers_strategems", JSON.stringify(helldivers_strategems));
+            localStorage.setItem("helldivers_boosters", JSON.stringify(helldivers_boosters));
 
             localStorage.setItem("main_weps", JSON.stringify(main_weps));
             localStorage.setItem("special_weps", JSON.stringify(special_weps));
@@ -2147,6 +2249,7 @@
             console.log(helldivers_grenades);
             console.log(helldivers_armour);
             console.log(helldivers_strategems);
+            console.log(helldivers_boosters);
 
             
             
@@ -2159,11 +2262,13 @@
         helldivers_grenades = JSON.parse(localStorage.getItem("helldivers_grenades")) ?? helldivers_grenades;
         helldivers_armour = JSON.parse(localStorage.getItem("helldivers_armour")) ?? helldivers_armour;
         helldivers_strategems = JSON.parse(localStorage.getItem("helldivers_strategems"))?? helldivers_strategems;
+        helldivers_boosters = JSON.parse(localStorage.getItem("helldivers_boosters"))?? helldivers_boosters;
         console.log(helldivers_main_weps);
         console.log(helldivers_secondary_weps);
         console.log(helldivers_grenades);
         console.log(helldivers_armour);
         console.log(helldivers_strategems);
+        console.log(helldivers_boosters);
 
         main_weps = JSON.parse(localStorage.getItem("main_weps")) ?? main_weps;
         special_weps = JSON.parse(localStorage.getItem("special_weps")) ?? special_weps;
@@ -2698,7 +2803,7 @@
     }
 
     var currentVer = null;
-    var lastVer = "3.24.4";
+    var lastVer = "3.26";
 
     
     // Function to get the total probability stack of the provided list. 
@@ -2810,6 +2915,8 @@
     // pen_check: Checkbox state to determine if the penetration value should be accounted for
     // support_check: Checkbox state to determine if a support weapon should be enforced
     function do_reroll(list, slot, force_new, filterItems, pen_check, support_check) {
+        // console.log("Rerolling for: ");
+        // console.log(list);
         var retry = true;
         var pen;
         var filterKeys = []
@@ -2836,6 +2943,7 @@
             }
         }
         var penList = [];
+        //console.log(tempList);
 
         pen = 3;
 
@@ -2864,11 +2972,11 @@
         if (support_check && support_force && !support_exists) {
             tempList = tempList.filter((item) => item.properties && item.properties.includes(Properties.Support_Wep));
         }
-        if (support_max && support_exists) {
+        if (support_max && support_exists && list == helldivers_strategems) {
             tempList = tempList.filter((item) => item.properties && !item.properties.includes(Properties.Support_Wep));
 
         }
-        if (backpack_max && backpack_exists) {
+        if (backpack_max && backpack_exists && list == helldivers_strategems) {
             tempList = tempList.filter((item) => item.properties && !item.properties.includes(Properties.Backpack));
 
         }
@@ -3110,12 +3218,17 @@
             // Sort items
             var tempList = sortList([helldiver_slot7, helldiver_slot8, helldiver_slot9, helldiver_slot10]);
 
+            helldiver_slot11 = do_reroll(helldivers_boosters, helldiver_slot11, force_new);
+            //console.log(helldiver_slot11)
+            checkProperties(helldiver_slot11);
+
             // Set probabilities
             setProbabilities(helldivers_main_weps, [helldiver_slot1]);
             setProbabilities(helldivers_secondary_weps, [helldiver_slot2]);
             setProbabilities(helldivers_grenades, [helldiver_slot3]);
             setProbabilities(helldivers_armour, [helldiver_slot4]);
             setProbabilities(helldivers_strategems, [helldiver_slot7, helldiver_slot8, helldiver_slot9, helldiver_slot10]);
+            setProbabilities(helldivers_boosters, [helldiver_slot11]);
 
             // Write to view
             document.getElementById("h_p7").textContent = tempList[0].key;
@@ -3145,6 +3258,9 @@
                 }
             }
             document.getElementById("coord1").textContent = viableCoordMatrix[Math.floor(Math.random()*viableCoordMatrix.length)];
+            document.getElementById("h_p11").textContent = helldiver_slot11.key;
+
+            
             //Save probs
             saveState();
         }
@@ -3209,7 +3325,7 @@
                     // console.log("Debug for checkproprties:");
                     // console.log(!helldiver_slot5 == helldivers_factions[1]);
                     // console.log(slot.properties);
-                    if (slot.properties) console.log(!(slot.properties.includes(Properties.Limited_Range) || slot.properties.includes(Properties.Eagle) || slot.properties.includes(Properties.Orbital)));
+                    //if (slot.properties) console.log(!(slot.properties.includes(Properties.Limited_Range) || slot.properties.includes(Properties.Eagle) || slot.properties.includes(Properties.Orbital)));
                     if (!helldiver_slot5 == helldivers_factions[1] || (slot.properties && !(slot.properties.includes(Properties.Limited_Range) || slot.properties.includes(Properties.Eagle) || slot.properties.includes(Properties.Orbital))))
                     {
                         bestPen = slot.penetration;
