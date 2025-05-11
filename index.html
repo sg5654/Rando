@@ -448,6 +448,9 @@
     <br>
     <h6>Booster: </h6>
     <p id="h_p11">[booster]</p>
+    <p id="h_p12">[booster]</p>
+    <p id="h_p13">[booster]</p>
+    <p id="h_p14">[booster]</p>
 
     </div>
     </div>
@@ -2803,7 +2806,7 @@
     }
 
     var currentVer = null;
-    var lastVer = "3.26";
+    var lastVer = "3.26.1";
 
     
     // Function to get the total probability stack of the provided list. 
@@ -3219,8 +3222,13 @@
             var tempList = sortList([helldiver_slot7, helldiver_slot8, helldiver_slot9, helldiver_slot10]);
 
             helldiver_slot11 = do_reroll(helldivers_boosters, helldiver_slot11, force_new);
-            //console.log(helldiver_slot11)
             checkProperties(helldiver_slot11);
+            helldiver_slot12 = do_reroll(helldivers_boosters, helldiver_slot11, force_new, [helldiver_slot11]);
+            checkProperties(helldiver_slot12);
+            helldiver_slot13 = do_reroll(helldivers_boosters, helldiver_slot11, force_new, [helldiver_slot11, helldiver_slot12]);
+            checkProperties(helldiver_slot13);
+            helldiver_slot14 = do_reroll(helldivers_boosters, helldiver_slot11, force_new, [helldiver_slot11, helldiver_slot12, helldiver_slot13]);
+            checkProperties(helldiver_slot14);
 
             // Set probabilities
             setProbabilities(helldivers_main_weps, [helldiver_slot1]);
@@ -3228,7 +3236,7 @@
             setProbabilities(helldivers_grenades, [helldiver_slot3]);
             setProbabilities(helldivers_armour, [helldiver_slot4]);
             setProbabilities(helldivers_strategems, [helldiver_slot7, helldiver_slot8, helldiver_slot9, helldiver_slot10]);
-            setProbabilities(helldivers_boosters, [helldiver_slot11]);
+            
 
             // Write to view
             document.getElementById("h_p7").textContent = tempList[0].key;
@@ -3259,6 +3267,11 @@
             }
             document.getElementById("coord1").textContent = viableCoordMatrix[Math.floor(Math.random()*viableCoordMatrix.length)];
             document.getElementById("h_p11").textContent = helldiver_slot11.key;
+            document.getElementById("h_p12").textContent = helldiver_slot12.key;
+            document.getElementById("h_p13").textContent = helldiver_slot13.key;
+            document.getElementById("h_p14").textContent = helldiver_slot14.key;
+
+            setProbabilities(helldivers_boosters, [helldiver_slot11, helldiver_slot12, helldiver_slot13, helldiver_slot14]);
 
             
             //Save probs
