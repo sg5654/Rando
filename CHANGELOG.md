@@ -1,3 +1,4 @@
+V3.27   -   New Warbond items, fixed button interactions on boosters not rerendering properly.
      .1 -   Added multiple boosters to be selected. This allows you to pick one in order from top to bottom depending on what your team is bringing
 V3.26   -   Added a Booster randomizer, fixed up some of the styling since more space was needed
 V3.25   -   Added a coordinate randomizer
