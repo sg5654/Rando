@@ -1,3 +1,4 @@
+     .2 -   Greatly reduced the likelyhood of receiving the same item twice in a row. Every item will now be set to a 2% chance after each use
      .1 -   Reduced reduction penalty on boosters, there should now be more variety for top priority boosters
 V3.27   -   New Warbond items, fixed button interactions on boosters not rerendering properly.
      .1 -   Added multiple boosters to be selected. This allows you to pick one in order from top to bottom depending on what your team is bringing

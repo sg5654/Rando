@@ -2825,7 +2825,7 @@
     }
 
     var currentVer = null;
-    var lastVer = "3.27.1";
+    var lastVer = "3.27.2";
 
     
     // Function to get the total probability stack of the provided list. 
@@ -2890,8 +2890,7 @@
                     var item
                     if (i == e) {
                         item = e;
-                        item.probability*=0.5;
-                        if (item.probability <= 1 ) {item.probability == 1}
+                        item.probability = 2;
                         itemFound = true;
                         list.splice(list.indexOf(e), 1, item)
                         items.splice(items.indexOf(i), 1);
