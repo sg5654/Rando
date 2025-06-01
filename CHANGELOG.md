@@ -1,3 +1,4 @@
+v3.28   -   Implemented a system to save your last loadout, to be reproduced upon closing the rando or refreshing
      .2 -   Greatly reduced the likelyhood of receiving the same item twice in a row. Every item will now be set to a 2% chance after each use
      .1 -   Reduced reduction penalty on boosters, there should now be more variety for top priority boosters
 V3.27   -   New Warbond items, fixed button interactions on boosters not rerendering properly.
