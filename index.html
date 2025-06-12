@@ -578,10 +578,12 @@
     Pistol
     <br>
     <br>
+    <button class ="toggleButton_active" onclick="toggleItem('P-92 Warrant (Pistol)', helldivers_secondary_weps)">P-92 Warrant (Pistol)</button>
     <button class ="toggleButton_active" onclick="toggleItem('P-2 Peacemaker (Pistol)', helldivers_secondary_weps)">P-2 Peacemaker (Pistol)</button>
+
     <button class ="toggleButton_active" onclick="toggleItem('P-19 Redeemer (Pistol)', helldivers_secondary_weps)">P-19 Redeemer (Pistol)</button>
-    <br>
     <button class ="toggleButton_active" onclick="toggleItem('P-113 Verdict (Pistol)', helldivers_secondary_weps)">P-113 Verdict (Pistol)</button>
+    <br>
     <button class ="toggleButton_active" onclick="toggleItem('P-4 Senator (Pistol)', helldivers_secondary_weps)">P-4 Senator (Pistol)</button>
     <br>
     <br>
@@ -1027,6 +1029,7 @@
 
         // Pistol
         
+        {key: "P-92 Warrant (Pistol)", penetration: 3, properties: [Properties.One_Handed], probability: 50, toggle: true},
         {key: "P-2 Peacemaker (Pistol)", penetration: 2, properties: [Properties.One_Handed], probability: 50, toggle: true},
         {key: "P-19 Redeemer (Pistol)", penetration: 2, properties: [Properties.One_Handed], probability: 50, toggle: true},
         {key: "P-113 Verdict (Pistol)", penetration: 3, properties: [Properties.One_Handed], probability: 50, toggle: true},
@@ -1052,7 +1055,8 @@
     const helldivers_secondary_weps_clone = [
 
         // Pistol
-        
+
+        {key: "P-92 Warrant (Pistol)", penetration: 3, properties: [Properties.One_Handed], probability: 50, toggle: true},
         {key: "P-2 Peacemaker (Pistol)", penetration: 2, properties: [Properties.One_Handed], probability: 50, toggle: true},
         {key: "P-19 Redeemer (Pistol)", penetration: 2, properties: [Properties.One_Handed], probability: 50, toggle: true},
         {key: "P-113 Verdict (Pistol)", penetration: 3, properties: [Properties.One_Handed], probability: 50, toggle: true},
@@ -2853,7 +2857,7 @@
     }
 
     var currentVer = null;
-    var lastVer = "3.27.2";
+    var lastVer = "3.29";
 
     
     // Function to get the total probability stack of the provided list. 
