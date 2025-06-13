@@ -1,3 +1,4 @@
+     .1 -   Addition of all remaining warbond and superstore items. Placements still have to be updated
 V3.29   -   Beginning of new Warbond implementations, P-92 Warrant
 v3.28   -   Implemented a system to save your last loadout, to be reproduced upon closing the rando or refreshing
      .2 -   Greatly reduced the likelyhood of receiving the same item twice in a row. Every item will now be set to a 2% chance after each use
