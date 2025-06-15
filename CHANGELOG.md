@@ -1,3 +1,4 @@
+     .2 -   Addition of RE-824 Armour
      .1 -   Addition of all remaining warbond and superstore items. Placements still have to be updated
 V3.29   -   Beginning of new Warbond implementations, P-92 Warrant
 v3.28   -   Implemented a system to save your last loadout, to be reproduced upon closing the rando or refreshing
