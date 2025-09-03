@@ -1,3 +1,4 @@
+V3.30   -   Addition of the HALO based warbond items
      .2 -   Addition of RE-824 Armour
      .1 -   Addition of all remaining warbond and superstore items. Placements still have to be updated
 V3.29   -   Beginning of new Warbond implementations, P-92 Warrant
