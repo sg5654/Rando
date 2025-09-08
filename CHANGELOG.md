@@ -1,3 +1,5 @@
+     .2 -   Adding button for superstore item
+     .1 -   Bugfix for loading errors
 V3.31   -   Addition of the Dust Devils Warbond items
 V3.30   -   Addition of the HALO based warbond items
      .2 -   Addition of RE-824 Armour
