@@ -84,6 +84,7 @@
     <button class=tablinks onclick="openTab(event, 'randomizer_tab')">GTFO Rando</button>
     <button class=tablinks onclick="openTab(event, 'loadout_tab')">GTFO Loadout</button>
     <button class=tablinks onclick="openTab(event, 'maps_tab')">GTFO Maps</button> 
+    <button class=tablinks onclick="openTab(event, 'cosm_tab')">GTFO Cosmetic 'Loadout'</button>
 </div>
 
 <!-- Main tab for actually doing logic -->
@@ -137,34 +138,6 @@
     <!-- Weighted option (for Any Rundown option) -->
     <input type="checkbox" id="maps_weighted_box" value="maps_weighted" checked>
     <label for="maps_weighted_box">Weighted randomisation? (For Any Rundown option)</label> &nbsp;&nbsp;
-
-
-    <!-- Seperate cosmetic randomizer, not made by me -->
-    <h6>Cosmetics</h6>
-    <p>Headgear:</p>
-      <div>
-          <input name="randomHead" id="randomHead">
-        </div>
-        <p>Torso:</p>
-      <div>
-          <input name="randomTorso" id="randomTorso">
-      </div>
-        <p>Legs:</p>
-        <div>
-          <input name="randomLegs" id="randomLegs">
-        </div>
-        <p>Backpack:</p>
-        <div>
-          <input name="randomBack" id="randomBack">
-        </div>
-        <p>Palette:</p>
-        <div>
-          <input name="randomPal" id="randomPal">
-      </div>
-        <br><br>
-        <div>
-          <button type="random" onclick="randomize()">Get full drip</button>
-    </div>
 
 </div>
 
@@ -920,9 +893,173 @@
     <button class ="toggleButton_active" onclick="toggleItem('Stun Pods', helldivers_boosters)">Stun Pods</button>
 </div>
 
+<div id="cosm_tab" class="tabcontent">
 
-
-
+<br>
+<br>
+<h6>helmets</h6>
+<button class="toggleButton_active" onclick="CosmToggle('Flex Prow Mark I', cosm_headgear)">Flex Prow Mark I"</button>
+<button class="toggleButton_active" onclick="CosmToggle('HF Hypsibius C', cosm_headgear)">HF Hypsibius C</button>
+<button class="toggleButton_active" onclick="CosmToggle('HF Nematode', cosm_headgear)">HF Nematode</button>
+<button class="toggleButton_active" onclick="CosmToggle('HF Decon First Response', cosm_headgear)">HF Decon First Response</button>
+<button class="toggleButton_active" onclick="CosmToggle('HF Tardigrade C', cosm_headgear)">HF Tardigrade C</button>
+<button class="toggleButton_active" onclick="CosmToggle('HF Panther 90', cosm_headgear)">HF Panther 90</button>
+<button class="toggleButton_active" onclick="CosmToggle('HF Arbustum Mark I', cosm_headgear)">HF Arbustum Mark I</button>
+<button class="toggleButton_active" onclick="CosmToggle('HF Arbustum Mark II', cosm_headgear)">HF Arbustum Mark II</button>
+<button class="toggleButton_active" onclick="CosmToggle('Omneco Pro-Tech Mark I', cosm_headgear)">Omneco Pro-Tech Mark I</button>
+<button class="toggleButton_active" onclick="CosmToggle('Omneco Reparo', cosm_headgear)">Omneco Reparo</button>
+<button class="toggleButton_active" onclick="CosmToggle('Santonian Skinwalker', cosm_headgear)">Santonian Skinwalker</button>
+<button class="toggleButton_active" onclick="CosmToggle('Santonian Galea Mark I', cosm_headgear)">Santonian Galea Mark I</button>
+<button class="toggleButton_active" onclick="CosmToggle('Convex Breather Mark I', cosm_headgear)">Convex Breather Mark I</button>
+<button class="toggleButton_active" onclick="CosmToggle('Convex Falcon Mark I', cosm_headgear)">Convex Falcon Mark I</button>
+<button class="toggleButton_active" onclick="CosmToggle('Convex Scorpion Mark I', cosm_headgear)">Convex Scorpion Mark I</button>
+<button class="toggleButton_active" onclick="CosmToggle('Kovac Red Ranger', cosm_headgear)">Kovac Red Ranger</button>
+<button class="toggleButton_active" onclick="CosmToggle('Kovac Green Guard', cosm_headgear)">Kovac Green Guard</button>
+<button class="toggleButton_active" onclick="CosmToggle('Kovac Smoke Viper', cosm_headgear)">Kovac Smoke Viper</button>
+<button class="toggleButton_active" onclick="CosmToggle('Kovac Typhoon Model I', cosm_headgear)">Kovac Typhoon Model I</button>
+<button class="toggleButton_active" onclick="CosmToggle('Storax Rocker N', cosm_headgear)">Storax Rocker N</button>
+<button class="toggleButton_active" onclick="CosmToggle('Storax Tegu Legacy', cosm_headgear)">Storax Tegu Legacy</button>
+<button class="toggleButton_active" onclick="CosmToggle('Storax Kimble Mark I', cosm_headgear)">Storax Kimble Mark I</button>
+<button class="toggleButton_active" onclick="CosmToggle('Storax Aranea Mark I', cosm_headgear)">Storax Aranea Mark I</button>
+<button class="toggleButton_active" onclick="CosmToggle('Storax Aranea Mark II', cosm_headgear)">Storax Aranea Mark II</button>
+<button class="toggleButton_active" onclick="CosmToggle('Qantex Dual Sacramento', cosm_headgear)">Qantex Dual Sacramento</button>
+<button class="toggleButton_active" onclick="CosmToggle('Qantex Dual Jungle', cosm_headgear)">Qantex Dual Jungle</button>
+<button class="toggleButton_active" onclick="CosmToggle('Quantex Forge Red', cosm_headgear)">Quantex Forge Red</button>
+<button class="toggleButton_active" onclick="CosmToggle('Twin Barrel Blade Visor Mark I', cosm_headgear)">Twin Barrel Blade Visor Mark I</button>
+<button class="toggleButton_active" onclick="CosmToggle('Twin Barrel Blade Visor Mark II', cosm_headgear)">Twin Barrel Blade Visor Mark II</button>
+<button class="toggleButton_active" onclick="CosmToggle('Gunnar Dual Vision Rogue', cosm_headgear)">Gunnar Dual Vision Rogue</button>
+<button class="toggleButton_active" onclick="CosmToggle('Gunnar Twin Scepter II', cosm_headgear)">Gunnar Twin Scepter II</button>
+<button class="toggleButton_active" onclick="CosmToggle('Mammoth Darkeye Mark I', cosm_headgear)">Mammoth Darkeye Mark I</button>
+<button class="toggleButton_active" onclick="CosmToggle('Darkeye V-Drum Mark I', cosm_headgear)">Darkeye V-Drum Mark I</button>
+<button class="toggleButton_active" onclick="CosmToggle('Visor Probo Mark I', cosm_headgear)">Visor Probo Mark I</button>
+<button class="toggleButton_active" onclick="CosmToggle('Inter Piranha Mark I', cosm_headgear)">Inter Piranha Mark I</button>
+<button class="toggleButton_active" onclick="CosmToggle('Oblique Tigris', cosm_headgear)">Oblique Tigris</button>
+<button class="toggleButton_active" onclick="CosmToggle('Dogjaw Mod Kit 107', cosm_headgear)">Dogjaw Mod Kit 107</button>
+<button class="toggleButton_active" onclick="CosmToggle('Spartacus MX-2', cosm_headgear)">Spartacus MX-2</button>
+<button class="toggleButton_active" onclick="CosmToggle('Argon Fenrir LG', cosm_headgear)">Argon Fenrir LG</button>
+<button class="toggleButton_active" onclick="CosmToggle('Garuga Alloy T17', cosm_headgear)">Garuga Alloy T17</button>
+<button class="toggleButton_active" onclick="CosmToggle('Snapjaw RX-A1 Herus', cosm_headgear)">Snapjaw RX-A1 Herus</button>
+<button class="toggleButton_active" onclick="CosmToggle('Woods Mask', cosm_headgear)">Woods' Mask</button>
+<button class="toggleButton_active" onclick="CosmToggle('Daudas Mask', cosm_headgear)">Dauda's Mask</button>
+<button class="toggleButton_active" onclick="CosmToggle('Bishops Mask', cosm_headgear)">Bishop's Mask</button>
+<button class="toggleButton_active" onclick="CosmToggle('Hacketts Mask', cosm_headgear)">Hackett's Mask</button>
+<button class="toggleButton_active" onclick="CosmToggle('Hacketts Wetworks', cosm_headgear)">Hackett's Wetworks</button>
+<br>
+<h6>Torso</h6>
+<button class="toggleButton_active" onclick="CosmToggle('Kovac Pro-Car Elite', cosm_torso)">Kovac Pro-Car Elite"</button>
+<button class="toggleButton_active" onclick="CosmToggle('Kovac Fortis Armis', cosm_torso)">Kovac Fortis Armis</button>
+<button class="toggleButton_active" onclick="CosmToggle('Kovac Carrier Model I', cosm_torso)">Kovac Carrier Model I</button>
+<button class="toggleButton_active" onclick="CosmToggle('Kovac Dragonscale Model I', cosm_torso)">Kovac Dragonscale Model I</button>
+<button class="toggleButton_active" onclick="CosmToggle('Santonian Spartan Vest Model I', cosm_torso)">Santonian Spartan Vest Model I</button>
+<button class="toggleButton_active" onclick="CosmToggle('SMC Cut Model I', cosm_torso)">SMC Cut Model I</button>
+<button class="toggleButton_active" onclick="CosmToggle('Qantex Canvas Gilet', cosm_torso)">Qantex Canvas Gilet</button>
+<button class="toggleButton_active" onclick="CosmToggle('Qantex Windbeater', cosm_torso)">Qantex Windbeater</button>
+<button class="toggleButton_active" onclick="CosmToggle('Coarse Puffer Vest Model I', cosm_torso)">Coarse Puffer Vest Model I</button>
+<button class="toggleButton_active" onclick="CosmToggle('KDS Spartan Vest Model I', cosm_torso)">KDS Spartan Vest Model I</button>
+<button class="toggleButton_active" onclick="CosmToggle('Primer Grid Model I', cosm_torso)">Primer Grid Model I</button>
+<button class="toggleButton_active" onclick="CosmToggle('10 Nation HL Anorak', cosm_torso)">10 Nation HL Anorak</button>
+<button class="toggleButton_active" onclick="CosmToggle('Commando Rhino Bush Vest', cosm_torso)">Commando Rhino Bush Vest</button>
+<button class="toggleButton_active" onclick="CosmToggle('Braveer Pathfinder Model I', cosm_torso)">Braveer Pathfinder Model I</button>
+<button class="toggleButton_active" onclick="CosmToggle('HF Oasis Model I', cosm_torso)">HF Oasis Model I</button>
+<button class="toggleButton_active" onclick="CosmToggle('Nyxos Antora', cosm_torso)">Nyxos Antora</button>
+<br>
+<h6>Legs</h6>
+<button class="toggleButton_active" onclick="CosmToggle('Nyxos Medlabs Oscar', cosm_legs)">Nyxos Medlabs Oscar"</button>
+<button class="toggleButton_active" onclick="CosmToggle('Nyxos Waders', cosm_legs)">Nyxos Waders</button>
+<button class="toggleButton_active" onclick="CosmToggle('Kovac Fortis Crura', cosm_legs)">Kovac Fortis Crura</button>
+<button class="toggleButton_active" onclick="CosmToggle('Burlap Dexterity', cosm_legs)">Burlap Dexterity</button>
+<button class="toggleButton_active" onclick="CosmToggle('Rough Dexterity', cosm_legs)">Rough Dexterity</button>
+<button class="toggleButton_active" onclick="CosmToggle('Roughneck MDR Cargo', cosm_legs)">Roughneck MDR Cargo</button>
+<button class="toggleButton_active" onclick="CosmToggle('Rough Cut', cosm_legs)">Rough Cut</button>
+<button class="toggleButton_active" onclick="CosmToggle('Cargo Composite', cosm_legs)">Cargo Composite</button>
+<button class="toggleButton_active" onclick="CosmToggle('Heavy Duty Pioneer', cosm_legs)">Heavy Duty Pioneer</button>
+<button class="toggleButton_active" onclick="CosmToggle('Left Behind', cosm_legs)">Left Behind</button>
+<button class="toggleButton_active" onclick="CosmToggle('Sharp Teeth', cosm_legs)">Sharp Teeth</button>
+<button class="toggleButton_active" onclick="CosmToggle('Commando Mudcrawler Bush Pants', cosm_legs)">Commando Mudcrawler Bush Pants</button>
+<button class="toggleButton_active" onclick="CosmToggle('Model W Hyperseal', cosm_legs)">Model W Hyperseal</button>
+<button class="toggleButton_active" onclick="CosmToggle('SMC Murk H', cosm_legs)">SMC Murk H</button>
+<button class="toggleButton_active" onclick="CosmToggle('HF Oasis Rel', cosm_legs)">HF Oasis Rel</button>
+<button class="toggleButton_active" onclick="CosmToggle('Braveer Pathfinder TR', cosm_legs)">Braveer Pathfinder TR</button>
+<br>
+<h6>Backpacks</h6>
+<button class="toggleButton_active" onclick="CosmToggle('KDS Slim Survivalist', cosm_back)">KDS Slim Survivalist"</button>
+<button class="toggleButton_active" onclick="CosmToggle('KDS Compact Survivalist', cosm_back)">KDS Compact Survivalist</button>
+<button class="toggleButton_active" onclick="CosmToggle('KDS Tri-Can Basic', cosm_back)">KDS Tri-Can Basic</button>
+<button class="toggleButton_active" onclick="CosmToggle('KDS Ray Proto Cage', cosm_back)">KDS Ray Proto Cage</button>
+<button class="toggleButton_active" onclick="CosmToggle('Kovac Praesidio', cosm_back)">Kovac Praesidio</button>
+<button class="toggleButton_active" onclick="CosmToggle('Santonian Apparatu', cosm_back)">Santonian Apparatu</button>
+<button class="toggleButton_active" onclick="CosmToggle('SMC Utility Kit', cosm_back)">SMC Utility Kit</button>
+<button class="toggleButton_active" onclick="CosmToggle('Utility Compact Pioneer', cosm_back)">Utility Compact Pioneer</button>
+<button class="toggleButton_active" onclick="CosmToggle('Utility Natural Pioneer', cosm_back)">Utility Natural Pioneer</button>
+<button class="toggleButton_active" onclick="CosmToggle('Insight Canteen Runner', cosm_back)">Insight Canteen Runner</button>
+<button class="toggleButton_active" onclick="CosmToggle('Outwear Compact Utility', cosm_back)">Outwear Compact Utility</button>
+<button class="toggleButton_active" onclick="CosmToggle('Braveer Compact Survivalist', cosm_back)">Braveer Compact Survivalist</button>
+<button class="toggleButton_active" onclick="CosmToggle('HF Van Niel T1', cosm_back)">HF Van Niel T1</button>
+<button class="toggleButton_active" onclick="CosmToggle('Commando Brawler Bush Pack', cosm_back)">Commando Brawler Bush Pack</button>
+<button class="toggleButton_active" onclick="CosmToggle('Outwear PM8', cosm_back)">Outwear PM8</button>
+<button class="toggleButton_active" onclick="CosmToggle('D-TEK Compact WM', cosm_back)">D-TEK Compact WM</button>
+<button class="toggleButton_active" onclick="CosmToggle('STRP Pack Mule', cosm_back)">STRP Pack Mule</button>
+<button class="toggleButton_active" onclick="CosmToggle('Outwear Demi Camo', cosm_back)">Outwear Demi Camo</button>
+<button class="toggleButton_active" onclick="CosmToggle('Tacklebox 003 Ash', cosm_back)">Tacklebox 003 Ash</button>
+<button class="toggleButton_active" onclick="CosmToggle('Kithauler Galaxy', cosm_back)">Kithauler Galaxy</button>
+<br>
+<h6>Palletes</h6>
+<button class="toggleButton_active" onclick="CosmToggle('Overalls', cosm_palettes)">Overalls</button>
+<button class="toggleButton_active" onclick="CosmToggle('Early Adopter', cosm_palettes)">Early Adopter</button>
+<button class="toggleButton_active" onclick="CosmToggle('Bark Half-Life', cosm_palettes)">Bark Half-Life</button>
+<button class="toggleButton_active" onclick="CosmToggle('Nautical Dusk', cosm_palettes)">Nautical Dusk</button>
+<button class="toggleButton_active" onclick="CosmToggle('Subterranean Moss', cosm_palettes)">Subterranean Moss</button>
+<button class="toggleButton_active" onclick="CosmToggle('Beryl Restrained', cosm_palettes)">Beryl Restrained</button>
+<button class="toggleButton_active" onclick="CosmToggle('Bone Relic', cosm_palettes)">Bone Relic</button>
+<button class="toggleButton_active" onclick="CosmToggle('Artic Endurance', cosm_palettes)">Artic Endurance</button>
+<button class="toggleButton_active" onclick="CosmToggle('Miracle', cosm_palettes)">Miracle</button>
+<button class="toggleButton_active" onclick="CosmToggle('Eightball', cosm_palettes)">Eightball</button>
+<button class="toggleButton_active" onclick="CosmToggle('Longsword', cosm_palettes)">Longsword</button>
+<button class="toggleButton_active" onclick="CosmToggle('Heat', cosm_palettes)">Heat</button>
+<button class="toggleButton_active" onclick="CosmToggle('Destination', cosm_palettes)">Destination</button>
+<button class="toggleButton_active" onclick="CosmToggle('Lugubrious', cosm_palettes)">Lugubrious</button>
+<button class="toggleButton_active" onclick="CosmToggle('Overdive', cosm_palettes   )">Overdive</button>
+<button class="toggleButton_active" onclick="CosmToggle('Overload Six', cosm_palettes)">Overload Six</button>
+<button class="toggleButton_active" onclick="CosmToggle('Crimson Grit', cosm_palettes)">Crimson Grit</button>
+<button class="toggleButton_active" onclick="CosmToggle('Subterranean Garden', cosm_palettes)">Subterranean Garden</button>
+<button class="toggleButton_active" onclick="CosmToggle('Onyx Corruption', cosm_palettes)">Onyx Corruption</button>
+<button class="toggleButton_active" onclick="CosmToggle('Blush Safeguard', cosm_palettes)">Blush Safeguard</button>
+<button class="toggleButton_active" onclick="CosmToggle('Viride Silva', cosm_palettes)">Viride Silva</button>
+<button class="toggleButton_active" onclick="CosmToggle('Desertum', cosm_palettes)">Desertum</button>
+<button class="toggleButton_active" onclick="CosmToggle('Santonian Vestis', cosm_palettes)">Santonian Vestis</button>
+<button class="toggleButton_active" onclick="CosmToggle('Caerulus Grind', cosm_palettes)">Caerulus Grind</button>
+<button class="toggleButton_active" onclick="CosmToggle('Roughneck Robigo', cosm_palettes)">Roughneck Robigo</button>
+<button class="toggleButton_active" onclick="CosmToggle('Salvos Underworld', cosm_palettes)">Salvos Underworld</button>
+<button class="toggleButton_active" onclick="CosmToggle('Decem', cosm_palettes)">Decem</button>
+<button class="toggleButton_active" onclick="CosmToggle('Last Lazarus', cosm_palettes)">Last Lazarus</button>
+<button class="toggleButton_active" onclick="CosmToggle('Poison Lividus', cosm_palettes)">Poison Lividus</button>
+<br>
+    <h6>Cosmetics</h6>
+    <p>Headgear:</p>
+      <div>
+          <input name="randomHead" id="randomHead">
+        </div>
+        <p>Torso:</p>
+      <div>
+          <input name="randomTorso" id="randomTorso">
+      </div>
+        <p>Legs:</p>
+        <div>
+          <input name="randomLegs" id="randomLegs">
+        </div>
+        <p>Backpack:</p>
+        <div>
+          <input name="randomBack" id="randomBack">
+        </div>
+        <p>Palette:</p>
+        <div>
+          <input name="randomPal" id="randomPal">
+      </div>
+        <br><br>
+        <div>
+          <button type="random" onclick="randomize()">Get full drip</button>
+    </div>
+</div>
 
 <script>
 
@@ -1862,8 +1999,7 @@
         {key: "Maco Gavel", probability: 50, toggle: true}
     ]
 
-    // Each headgear cosmetic in GTFO
-    var head = Array(
+    let cosm_headgear = [
         "Flex Prow Mark I",
         "HF Hypsibius C",
         "HF Nematode",
@@ -1910,10 +2046,9 @@
         "Bishop's Mask",
         "Hackett's Mask",
         "Hackett's Wetworks"
-    );
+    ];
 
-  // Each torso cosmetic in GTFO 
-        var torso = Array(
+    let cosm_torso = [
         "Kovac Pro-Car Elite",
         "Kovac Fortis Armis",
         "Kovac Carrier Model I",
@@ -1930,10 +2065,9 @@
         "Braveer Pathfinder Model I",
         "HF Oasis Model I",
         "Nyxos Antora",
-    );
+    ];
 
-    // Each legs cosmetic in GTFO 
-    var legs = Array(
+    let cosm_legs= [
         "Nyxos Medlabs Oscar",
         "Nyxos Waders",
         "Kovac Fortis Crura",
@@ -1950,10 +2084,9 @@
         "SMC Murk H",
         "HF Oasis Rel",
         "Braveer Pathfinder TR"
-    );
+    ];
 
-    // Each backpack cosmetic in GTFO 
-    var back = Array(
+    let cosm_back = [
         "KDS Slim Survivalist",
         "KDS Compact Survivalist",
         "KDS Tri-Can Basic",
@@ -1974,10 +2107,9 @@
         "Outwear Demi Camo",
         "Tacklebox 003 Ash",
         "Kithauler Galaxy"
-    );
+    ];
 
-    // Each palette in GTFO 
-    var pal = Array(
+    let cosm_palettes = [
         "Overalls",
         "Early Adopter",
         "Bark Half-Life",
@@ -2007,7 +2139,8 @@
         "Decem",
         "Last Lazarus",
         "Poison Lividus"
-    );
+    ];
+
 
     // List of the available maps for selection
     var maps= [ 
@@ -2466,6 +2599,33 @@
             console.log(helldivers_armour);
             console.log(helldivers_strategems);
             console.log(helldivers_boosters);
+            // Save cosmetic button states
+            try {
+                const cosmButtons = document.querySelectorAll('#cosm_tab button');
+                const re = /CosmToggle\(\s*(['"])(.*?)\1\s*,\s*([a-zA-Z0-9_]+)\s*\)/;
+                const cosmState = {
+                    cosm_headgear: [],
+                    cosm_torso: [],
+                    cosm_legs: [],
+                    cosm_back: [],
+                    cosm_palettes: []
+                };
+                cosmButtons.forEach(btn => {
+                    const onclick = btn.getAttribute('onclick') || '';
+                    const m = onclick.match(re);
+                    if (m) {
+                        const arrName = m[3];
+                        const label = m[2];
+                        if (btn.classList.contains('toggleButton_active')) {
+                            if (!cosmState[arrName]) cosmState[arrName] = [];
+                            cosmState[arrName].push(label);
+                        }
+                    }
+                });
+                localStorage.setItem('cosm_state', JSON.stringify(cosmState));
+            } catch (e) {
+                console.warn('Could not save cosmetic state:', e);
+            }
 
             
             
@@ -2517,6 +2677,33 @@
         console.log(tools);
         console.log(melees);
         console.log(maps);
+
+        try {
+            const cosmStateRaw = localStorage.getItem('cosm_state');
+            if (cosmStateRaw) {
+                const cosmState = JSON.parse(cosmStateRaw);
+                const buttons = document.querySelectorAll('#cosm_tab button');
+                const re = /CosmToggle\(\s*(['"])(.*?)\1\s*,\s*([a-zA-Z0-9_]+)\s*\)/;
+                buttons.forEach(btn => {
+                    const onclick = btn.getAttribute('onclick') || '';
+                    const m = onclick.match(re);
+                    if (m) {
+                        const arrName = m[3];
+                        const label = m[2];
+                        const activeList = cosmState[arrName];
+                        if (Array.isArray(activeList) && activeList.indexOf(label) !== -1) {
+                            btn.classList.remove('toggleButton_inactive');
+                            btn.classList.add('toggleButton_active');
+                        } else {
+                            btn.classList.remove('toggleButton_active');
+                            btn.classList.add('toggleButton_inactive');
+                        }
+                    }
+                });
+            }
+        } catch (e) {
+            console.warn('Could not restore cosmetic state:', e);
+        }
 
         var continueing = true;
         var inconsistency = false;
@@ -3873,15 +4060,92 @@
     }
 
     // Pounder's function
-    function randomize() {
+function randomize() {
+    function getActiveOptions(arr) {
+        let arrName = null;
+        if (arr === cosm_headgear) arrName = 'cosm_headgear';
+        else if (arr === cosm_torso) arrName = 'cosm_torso';
+        else if (arr === cosm_legs) arrName = 'cosm_legs';
+        else if (arr === cosm_back) arrName = 'cosm_back';
+        else if (arr === cosm_palettes) arrName = 'cosm_palettes';
 
-        document.getElementById('randomHead').value = randomItem(head);
-        document.getElementById('randomTorso').value = randomItem(torso);
-        document.getElementById('randomLegs').value = randomItem(legs);
-        document.getElementById('randomBack').value = randomItem(back);
-        document.getElementById('randomPal').value = randomItem(pal);
-        
-    }   
+        const buttons = document.querySelectorAll('#cosm_tab button');
+        const pool = [];
+        // regex: CosmToggle('label', cosm_array)
+        const re = /CosmToggle\(\s*(['"])(.*?)\1\s*,\s*([a-zA-Z0-9_]+)\s*\)/;
+        buttons.forEach(btn => {
+            const onclick = btn.getAttribute('onclick') || '';
+            const m = onclick.match(re);
+            if (m && m[3] === arrName && btn.classList.contains('toggleButton_active')) {
+                // m[2] contains the exact label used in the onclick argument
+                pool.push(m[2]);
+            }
+        });
+
+        if (pool.length === 0) return arr.slice();
+        return pool;
+
+
+    }
+
+    const headPool = getActiveOptions(cosm_headgear);
+    const torsoPool = getActiveOptions(cosm_torso);
+    const legsPool = getActiveOptions(cosm_legs);
+    const backPool = getActiveOptions(cosm_back);
+    const palPool = getActiveOptions(cosm_palettes);
+
+    const head = headPool[Math.floor(Math.random() * headPool.length)];
+    const torso = torsoPool[Math.floor(Math.random() * torsoPool.length)];
+    const legs = legsPool[Math.floor(Math.random() * legsPool.length)];
+    const back = backPool[Math.floor(Math.random() * backPool.length)];
+    const pal = palPool[Math.floor(Math.random() * palPool.length)];
+
+    document.getElementById("randomHead").value = head;
+    document.getElementById("randomTorso").value = torso;
+    document.getElementById("randomLegs").value = legs;
+    document.getElementById("randomBack").value = back;
+    document.getElementById("randomPal").value = pal;
+
+}
+
+function CosmToggle(item, array) {
+    let arrName = null;
+    if (array === cosm_headgear) arrName = 'cosm_headgear';
+    else if (array === cosm_torso) arrName = 'cosm_torso';
+    else if (array === cosm_legs) arrName = 'cosm_legs';
+    else if (array === cosm_back) arrName = 'cosm_back';
+    else if (array === cosm_palettes) arrName = 'cosm_palettes';
+
+    if (!arrName) {
+        console.error('Unknown cosmetic array passed to CosmToggle');
+        return;
+    }
+
+    const buttons = document.querySelectorAll('#cosm_tab button');
+    let found = false;
+    const re = /CosmToggle\(\s*(['"])(.*?)\1\s*,\s*([a-zA-Z0-9_]+)\s*\)/;
+    buttons.forEach(btn => {
+        const onclick = btn.getAttribute('onclick') || '';
+        const m = onclick.match(re);
+        if (m && m[3] === arrName && m[2] === item) {
+            found = true;
+            if (btn.classList.contains('toggleButton_active')) {
+                btn.classList.remove('toggleButton_active');
+                btn.classList.add('toggleButton_inactive');
+            } else {
+                btn.classList.remove('toggleButton_inactive');
+                btn.classList.add('toggleButton_active');
+            }
+        }
+    });
+
+    if (!found) console.error('Cosmic button not found for', item);
+
+    saveState();
+}
+
+
+
 
     // Unload old elements and load new elements of a tab
     function openTab(evt, tabName) {
