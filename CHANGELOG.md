@@ -1,3 +1,4 @@
+     .1 -   Massive UI overhaul for the item toggle buttons, re-structured the render code for the buttons to make it easier to unify. Added images to make the purpose of the buttons more clear.
 V3.32   -   GTFO Cosmetic randomizer has been rewritten, UI overhaul on the way
      .3 -   Fixed spacing issues, changed min-pen to 4 due to newer enemies causing issues
      .2 -   Adding button for superstore item

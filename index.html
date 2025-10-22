@@ -49,11 +49,65 @@
     }
 
     .toggleButton_inactive {
+        /* padding: 8px 12px; */
+        justify-content: space-between;
+        /* gap: 8px; */
+        padding-right:30px;
+        position: relative;
+        /* padding-right: 50px; Make space for the image */
         background-color: #777;
+        max-width:250px;
+        min-width:250px;
+        min-height:40px;
+        max-height:40px;
+        vertical-align: middle;
     }
 
     .toggleButton_active {
-        background-color: #FFF;
+        /* padding: 8px 12px; */
+        /* justify-content: space-between; ensures content spreads to both sides */
+        /* gap: 8px; */
+        padding-right:30px;
+        background-color: #74bb74;
+        max-width:250px;
+        min-width:250px;
+        min-height:40px;
+        max-height:40px;
+        position: relative;
+        line-height: 1;
+        vertical-align: middle;
+        /* padding-right: 50px; Make space for the image */
+    }
+
+    /* button img {
+        background-color:transparent;
+        width: 16px;
+        height: 16px;
+    } */
+
+    .icon-right_active {
+        position: absolute; 
+        bottom:50%;
+        top:20%;
+        right: 5%;
+        /* top: 50%; */
+        /* transform: translateY(-50%); */
+        height: 16px;
+        width: 16px;
+        pointer-events: none; /* optional, so it doesn't block clicks */
+    }
+
+    .icon-right_inactive {
+        position: absolute;
+        bottom:50%;
+        top:20%;
+        vertical-align: middle;
+        right:5%;
+        /* top: 50%; */
+        /* transform: translateY(-50%); */
+        height: 16px;
+        width: 16px;
+        pointer-events: none; /* optional, so it doesn't block clicks */
     }
 
     .mapsList_invisible {
@@ -143,76 +197,176 @@
 
 <!-- Massive tab for all the buttons. Organized in the way they would be in the armory -->
 <div id="loadout_tab" class="tabcontent" style="display: block">
-    <button class ="toggleButton_active" onclick="toggleItem('Pistol', main_weps)">Pistol</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Burst pistol', main_weps)">Burst pistol</button>
-    <button class ="toggleButton_active" onclick="toggleItem('HEL Revolver', main_weps)">HEL Revolver</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Pistol', main_weps)">Pistol
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Burst pistol', main_weps)">Burst pistol
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('HEL Revolver', main_weps)">HEL Revolver
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('Machine Pistol', main_weps)">Machine Pistol</button>
-    <button class ="toggleButton_active" onclick="toggleItem('HEL Autopistol', main_weps)">HEL Autopistol</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Bullpup Rifle', main_weps)">Bullpup Rifle</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Machine Pistol', main_weps)">Machine Pistol
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('HEL Autopistol', main_weps)">HEL Autopistol
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Bullpup Rifle', main_weps)">Bullpup Rifle
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('SMG', main_weps)">SMG</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Heavy SMG', main_weps)">Heavy SMG</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Carbine', main_weps)">Carbine</button>
+    <button class ="toggleButton_active" onclick="toggleItem('SMG', main_weps)">SMG
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Heavy SMG', main_weps)">Heavy SMG
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Carbine', main_weps)">Carbine
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('DMR', main_weps)">DMR</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Double Tap Rifle', main_weps)">Double Tap Rifle</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Assault Rifle', main_weps)">Assault Rifle</button>
+    <button class ="toggleButton_active" onclick="toggleItem('DMR', main_weps)">DMR
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Double Tap Rifle', main_weps)">Double Tap Rifle
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Assault Rifle', main_weps)">Assault Rifle
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('Burst Rifle', main_weps)">Burst Rifle</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Rifle', main_weps)">Rifle</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Sawed-off Shotgun', main_weps)">Sawed-off Shotgun</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Burst Rifle', main_weps)">Burst Rifle
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Rifle', main_weps)">Rifle
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Sawed-off Shotgun', main_weps)">Sawed-off Shotgun
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('HEL Shotgun', main_weps)">HEL Shotgun</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Slug Shotgun', main_weps)">Slug Shotgun</button>
-    <br>
-    <br>
-    <button class ="toggleButton_active" onclick="toggleItem('Heavy Assault Rifle', special_weps)">Heavy Assault Rifle</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Short Rifle', special_weps)">Short Rifle</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Shotgun', special_weps)">Shotgun</button>
-    <br>
-    <button class ="toggleButton_active" onclick="toggleItem('Combat Shotgun', special_weps)">Combat Shotgun</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Scattergun', special_weps)">Scattergun</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Choke Mod Shotgun', special_weps)">Choke Mod Shotgun</button>
-    <br>
-    <button class ="toggleButton_active" onclick="toggleItem('Revolver', special_weps)">Revolver</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Machine Gun V', special_weps)">Machine Gun V</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Machine Gun XII', special_weps)">Machine Gun XII</button>
-    <br>
-    <button class ="toggleButton_active" onclick="toggleItem('Burst Cannon', special_weps)">Burst Cannon</button>
-    <button class ="toggleButton_active" onclick="toggleItem('HEL Gun', special_weps)">HEL Gun</button>
-    <button class ="toggleButton_active" onclick="toggleItem('High Cal Pistol', special_weps)">High Cal Pistol</button>
-    <br>
-    <button class ="toggleButton_active" onclick="toggleItem('Precision Rifle', special_weps)">Precision Rifle</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Sniper', special_weps)">Sniper</button>
-    <button class ="toggleButton_active" onclick="toggleItem('HEL Rifle', special_weps)">HEL Rifle</button>
-    <br>
-    <br>
-    <button class ="toggleButton_active" onclick="toggleItem('Bio Tracker', tools)">Bio Tracker</button>
-    <button class ="toggleButton_active" onclick="toggleItem('C-Foam Launcher', tools)">C-Foam Launcher</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Mine Deployer', tools)">Mine Deployer</button>
-    <br>
-    <button class ="toggleButton_active" onclick="toggleItem('Burst Sentry', tools)">Burst Sentry</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Shotgun Sentry', tools)">Shotgun Sentry</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Sniper Sentry', tools)">Sniper Sentry</button>
-    <br>
-    <button class ="toggleButton_active" onclick="toggleItem('HEL Auto Sentry', tools)">HEL Auto Sentry</button>
+    <button class ="toggleButton_active" onclick="toggleItem('HEL Shotgun', main_weps)">HEL Shotgun
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Slug Shotgun', main_weps)">Slug Shotgun
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('Santonian HDH', melees)">Santonian HDH</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Omneco Maul', melees)">Omneco Maul</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Mastaba Fixed Blade', melees)">Mastaba Fixed Blade</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Heavy Assault Rifle', special_weps)">Heavy Assault Rifle
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Short Rifle', special_weps)">Short Rifle
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Shotgun', special_weps)">Shotgun
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('Wox Compact', melees)">Wox Compact</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Kovac Peacekeeper', melees)">Kovac Peacekeeper</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Attroc Titanium', melees)">Attroc Titanium</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Combat Shotgun', special_weps)">Combat Shotgun
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Scattergun', special_weps)">Scattergun
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Choke Mod Shotgun', special_weps)">Choke Mod Shotgun
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('Maco Drillhead', melees)">Maco Drillhead</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Isoco Stinger', melees)">Isoco Stinger</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Kovac Sledgehammer', melees)">Kovac Sledgehammer</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Revolver', special_weps)">Revolver
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Machine Gun V', special_weps)">Machine Gun V
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Machine Gun XII', special_weps)">Machine Gun XII
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('Santonian Mallet', melees)">Santonian Mallet</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Maco Gavel', melees)">Maco Gavel</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Burst Cannon', special_weps)">Burst Cannon
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('HEL Gun', special_weps)">HEL Gun
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('High Cal Pistol', special_weps)">High Cal Pistol
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('Precision Rifle', special_weps)">Precision Rifle
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Sniper', special_weps)">Sniper
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('HEL Rifle', special_weps)">HEL Rifle
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <br>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('Bio Tracker', tools)">Bio Tracker
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('C-Foam Launcher', tools)">C-Foam Launcher
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Mine Deployer', tools)">Mine Deployer
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('Burst Sentry', tools)">Burst Sentry
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Shotgun Sentry', tools)">Shotgun Sentry
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Sniper Sentry', tools)">Sniper Sentry
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('HEL Auto Sentry', tools)">HEL Auto Sentry
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <br>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('Santonian HDH', melees)">Santonian HDH
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Omneco Maul', melees)">Omneco Maul
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Mastaba Fixed Blade', melees)">Mastaba Fixed Blade
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('Wox Compact', melees)">Wox Compact
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Kovac Peacekeeper', melees)">Kovac Peacekeeper
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Attroc Titanium', melees)">Attroc Titanium
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('Maco Drillhead', melees)">Maco Drillhead
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Isoco Stinger', melees)">Isoco Stinger
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Kovac Sledgehammer', melees)">Kovac Sledgehammer
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <br>
+    <button class ="toggleButton_active" onclick="toggleItem('Santonian Mallet', melees)">Santonian Mallet
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Maco Gavel', melees)">Maco Gavel
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
 </div>
 
 <!-- Tab related to map settings -->
@@ -233,139 +387,305 @@
     <br>
 
     <div id="maps1" class="mapsList_visible">
-        <button class ="toggleButton_active" onclick="toggleItem('R1A1', maps[0])">R1A1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R1A1', maps[0])">R1A1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
         <br>
-        <button class ="toggleButton_active" onclick="toggleItem('R1B1', maps[0])">R1B1</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R1B2', maps[0])">R1B2</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R1B1', maps[0])">R1B1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R1B2', maps[0])">R1B2
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
         <br>
-        <button class ="toggleButton_active" onclick="toggleItem('R1C1', maps[0])">R1C1</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R1C2', maps[0])">R1C2</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R1C1', maps[0])">R1C1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R1C2', maps[0])">R1C2
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
         <br>
-        <button class ="toggleButton_active" onclick="toggleItem('R1D1', maps[0])">R1D1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R1D1', maps[0])">R1D1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     </div>
 
     <div id="maps2" class="mapsList_invisible">
-        <button class ="toggleButton_active" onclick="toggleItem('R2A1', maps[1])">R2A1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R2A1', maps[1])">R2A1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
         <br>
-        <button class ="toggleButton_active" onclick="toggleItem('R2B1', maps[1])">R2B1</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R2B2', maps[1])">R2B2</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R2B3', maps[1])">R2B3</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R2B4', maps[1])">R2B4</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R2B1', maps[1])">R2B1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R2B2', maps[1])">R2B2
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R2B3', maps[1])">R2B3
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R2B4', maps[1])">R2B4
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
         <br>
-        <button class ="toggleButton_active" onclick="toggleItem('R2C1', maps[1])">R2C1</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R2C2', maps[1])">R2C2</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R2C1', maps[1])">R2C1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R2C2', maps[1])">R2C2
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
         <br>
-        <button class ="toggleButton_active" onclick="toggleItem('R2D1', maps[1])">R2D1</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R2D2', maps[1])">R2D2</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R2D1', maps[1])">R2D1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R2D2', maps[1])">R2D2
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
         <br>
-        <button class ="toggleButton_active" onclick="toggleItem('R2E1', maps[1])">R2E1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R2E1', maps[1])">R2E1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     </div>
 
     <div id="maps3" class="mapsList_invisible">
-        <button class ="toggleButton_active" onclick="toggleItem('R3A1', maps[2])">R3A1</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R3A2', maps[2])">R3A2</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R3A3', maps[2])">R3A3</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R3A1', maps[2])">R3A1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R3A2', maps[2])">R3A2
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R3A3', maps[2])">R3A3
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
         <br>
-        <button class ="toggleButton_active" onclick="toggleItem('R3B1', maps[2])">R3B1</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R3B2', maps[2])">R3B2</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R3B1', maps[2])">R3B1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R3B2', maps[2])">R3B2
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
         <br>
-        <button class ="toggleButton_active" onclick="toggleItem('R3C1', maps[2])">R3C1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R3C1', maps[2])">R3C1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
         <br>
-        <button class ="toggleButton_active" onclick="toggleItem('R3D1', maps[2])">R3D1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R3D1', maps[2])">R3D1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     </div>
 
     <div id="maps4" class="mapsList_invisible">
-        <button class ="toggleButton_active" onclick="toggleItem('R4A1', maps[3])">R4A1</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R4A2', maps[3])">R4A2</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R4A3', maps[3])">R4A3</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R4A1', maps[3])">R4A1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R4A2', maps[3])">R4A2
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R4A3', maps[3])">R4A3
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
         <br>
-        <button class ="toggleButton_active" onclick="toggleItem('R4B1', maps[3])">R4B1</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R4B2', maps[3])">R4B2</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R4B3', maps[3])">R4B3</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R4B1', maps[3])">R4B1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R4B2', maps[3])">R4B2
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R4B3', maps[3])">R4B3
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
         <br>
-        <button class ="toggleButton_active" onclick="toggleItem('R4C1', maps[3])">R4C1</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R4C2', maps[3])">R4C2</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R4C3', maps[3])">R4C3</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R4C1', maps[3])">R4C1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R4C2', maps[3])">R4C2
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R4C3', maps[3])">R4C3
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
         <br>
-        <button class ="toggleButton_active" onclick="toggleItem('R4D1', maps[3])">R4D1</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R4D2', maps[3])">R4D2</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R4D1', maps[3])">R4D1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R4D2', maps[3])">R4D2
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
         <br>
-        <button class ="toggleButton_active" onclick="toggleItem('R4E1', maps[3])">R4E1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R4E1', maps[3])">R4E1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     </div>
 
     <div id="maps5" class="mapsList_invisible">
-        <button class ="toggleButton_active" onclick="toggleItem('R5A1', maps[4])">R5A1</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R5A2', maps[4])">R5A2</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R5A3', maps[4])">R5A3</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R5A1', maps[4])">R5A1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R5A2', maps[4])">R5A2
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R5A3', maps[4])">R5A3
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
         <br>
-        <button class ="toggleButton_active" onclick="toggleItem('R5B1', maps[4])">R5B1</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R5B2', maps[4])">R5B2</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R5B3', maps[4])">R5B3</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R5B4', maps[4])">R5B4</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R5B1', maps[4])">R5B1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R5B2', maps[4])">R5B2
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R5B3', maps[4])">R5B3
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R5B4', maps[4])">R5B4
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
         <br>
-        <button class ="toggleButton_active" onclick="toggleItem('R5C1', maps[4])">R5C1</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R5C2', maps[4])">R5C2</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R5C3', maps[4])">R5C3</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R5C1', maps[4])">R5C1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R5C2', maps[4])">R5C2
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R5C3', maps[4])">R5C3
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
         <br>
-        <button class ="toggleButton_active" onclick="toggleItem('R5D1', maps[4])">R5D1</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R5D2', maps[4])">R5D2</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R5D1', maps[4])">R5D1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R5D2', maps[4])">R5D2
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
         <br>
-        <button class ="toggleButton_active" onclick="toggleItem('R5E1', maps[4])">R5E1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R5E1', maps[4])">R5E1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     </div>
 
     <div id="maps6" class="mapsList_invisible">
-        <button class ="toggleButton_active" onclick="toggleItem('R6A1', maps[5])">R6A1</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R6AX', maps[5])">R6AX</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R6A1', maps[5])">R6A1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R6AX', maps[5])">R6AX
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
         <br>
-        <button class ="toggleButton_active" onclick="toggleItem('R6B1', maps[5])">R6B1</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R6B2', maps[5])">R6B2</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R6BX', maps[5])">R6BX</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R6B1', maps[5])">R6B1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R6B2', maps[5])">R6B2
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R6BX', maps[5])">R6BX
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
         <br>
-        <button class ="toggleButton_active" onclick="toggleItem('R6C1', maps[5])">R6C1</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R6C2', maps[5])">R6C2</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R6C3', maps[5])">R6C3</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R6CX', maps[5])">R6CX</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R6C1', maps[5])">R6C1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R6C2', maps[5])">R6C2
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R6C3', maps[5])">R6C3
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R6CX', maps[5])">R6CX
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
         <br>
-        <button class ="toggleButton_active" onclick="toggleItem('R6D1', maps[5])">R6D1</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R6D2', maps[5])">R6D2</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R6D3', maps[5])">R6D3</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R6D4', maps[5])">R6D4</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R6D1', maps[5])">R6D1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R6D2', maps[5])">R6D2
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R6D3', maps[5])">R6D3
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R6D4', maps[5])">R6D4
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     </div>
 
     <div id="maps7" class="mapsList_invisible">
-        <button class ="toggleButton_active" onclick="toggleItem('R7A1', maps[6])">R7A1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R7A1', maps[6])">R7A1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
         <br>
-        <button class ="toggleButton_active" onclick="toggleItem('R7B1', maps[6])">R7B1</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R7B2', maps[6])">R7B2</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R7B3', maps[6])">R7B3</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R7B1', maps[6])">R7B1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R7B2', maps[6])">R7B2
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R7B3', maps[6])">R7B3
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
         <br>
-        <button class ="toggleButton_active" onclick="toggleItem('R7C1', maps[6])">R7C1</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R7C2', maps[6])">R7C2</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R7C3', maps[6])">R7C3</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R7C1', maps[6])">R7C1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R7C2', maps[6])">R7C2
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R7C3', maps[6])">R7C3
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
         <br>
-        <button class ="toggleButton_active" onclick="toggleItem('R7D1', maps[6])">R7D1</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R7D2', maps[6])">R7D2</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R7D1', maps[6])">R7D1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R7D2', maps[6])">R7D2
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
         <br>
-        <button class ="toggleButton_active" onclick="toggleItem('R7E1', maps[6])">R7E1</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R7E1', maps[6])">R7E1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     </div>
 
     <div id="maps8" class="mapsList_invisible">
-        <button class ="toggleButton_active" onclick="toggleItem('R8A1', maps[7])">R8A1</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R8A2', maps[7])">R8A2</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R8A1', maps[7])">R8A1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R8A2', maps[7])">R8A2
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
         <br>
-        <button class ="toggleButton_active" onclick="toggleItem('R8B1', maps[7])">R8B1</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R8B2', maps[7])">R8B2</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R8B3', maps[7])">R8B3</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R8B4', maps[7])">R8B4</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R8B1', maps[7])">R8B1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R8B2', maps[7])">R8B2
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R8B3', maps[7])">R8B3
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R8B4', maps[7])">R8B4
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
         <br>
-        <button class ="toggleButton_active" onclick="toggleItem('R8C1', maps[7])">R8C1</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R8C2', maps[7])">R8C2</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R8C1', maps[7])">R8C1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R8C2', maps[7])">R8C2
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
         <br>
-        <button class ="toggleButton_active" onclick="toggleItem('R8D1', maps[7])">R8D1</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R8D2', maps[7])">R8D2</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R8D1', maps[7])">R8D1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R8D2', maps[7])">R8D2
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
         <br>
-        <button class ="toggleButton_active" onclick="toggleItem('R8E1', maps[7])">R8E1</button>
-        <button class ="toggleButton_active" onclick="toggleItem('R8E2', maps[7])">R8E2</button>
+        <button class ="toggleButton_active" onclick="toggleItem('R8E1', maps[7])">R8E1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+        <button class ="toggleButton_active" onclick="toggleItem('R8E2', maps[7])">R8E2
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     </div>
 
 
@@ -461,93 +781,177 @@
     Assault Rifles
     <br>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('AR-23 Liberator (Assault Rifle)', helldivers_main_weps)">AR-23 Liberator (Assault Rifle)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('AR-23P Liberator Penetrator (Assault Rifle)', helldivers_main_weps)">AR-23P Liberator Penetrator (Assault Rifle)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('AR-23 Liberator (Assault Rifle)', helldivers_main_weps)">AR-23 Liberator (Assault Rifle)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('AR-23P Liberator Penetrator (Assault Rifle)', helldivers_main_weps)">AR-23P Liberator Penetrator (Assault Rifle)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('AR-23C Liberator Concussive (Assault Rifle)', helldivers_main_weps)">AR-23C Liberator Concussive (Assault Rifle)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('StA-52 Assault Rifle (Assault Rifle)', helldivers_main_weps)">StA-52 Assault Rifle (Assault Rifle)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('AR-23C Liberator Concussive (Assault Rifle)', helldivers_main_weps)">AR-23C Liberator Concussive (Assault Rifle)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('StA-52 Assault Rifle (Assault Rifle)', helldivers_main_weps)">StA-52 Assault Rifle (Assault Rifle)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('AR-32 Pacifier (Assault Rifle)', helldivers_main_weps)">AR-32 Pacifier (Assault Rifle)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('AR-2 Coyote (Assault Rifle)', helldivers_main_weps)">AR-2 Coyote (Assault Rifle)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('AR-32 Pacifier (Assault Rifle)', helldivers_main_weps)">AR-32 Pacifier (Assault Rifle)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('AR-2 Coyote (Assault Rifle)', helldivers_main_weps)">AR-2 Coyote (Assault Rifle)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('MA5C Assault Rifle (Assault Rifle)', helldivers_main_weps)">MA5C Assault Rifle (Assault Rifle)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('AR-23A Liberator Carbine (Assault Rifle)', helldivers_main_weps)">AR-23A Liberator Carbine (Assault Rifle)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('MA5C Assault Rifle (Assault Rifle)', helldivers_main_weps)">MA5C Assault Rifle (Assault Rifle)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('AR-23A Liberator Carbine (Assault Rifle)', helldivers_main_weps)">AR-23A Liberator Carbine (Assault Rifle)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('AR-61 Tenderizer (Assault Rifle)', helldivers_main_weps)">AR-61 Tenderizer (Assault Rifle)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('BR-14 Adjudicator (Assault Rifle)', helldivers_main_weps)">BR-14 Adjudicator (Assault Rifle)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('AR-61 Tenderizer (Assault Rifle)', helldivers_main_weps)">AR-61 Tenderizer (Assault Rifle)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('BR-14 Adjudicator (Assault Rifle)', helldivers_main_weps)">BR-14 Adjudicator (Assault Rifle)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
     <br>
     Marksman Rifles
     <br>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('R-2 Amendment (Marksman Rifle)', helldivers_main_weps)">R-2 Amendment(Marksman Rifle)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('R-2124 Constitution (Marksman Rifle)', helldivers_main_weps)">R-2124 Constitution (Marksman Rifle)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('R-2 Amendment (Marksman Rifle)', helldivers_main_weps)">R-2 Amendment(Marksman Rifle)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('R-2124 Constitution (Marksman Rifle)', helldivers_main_weps)">R-2124 Constitution (Marksman Rifle)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('R-6 Deadeye (Marksman Rifle)', helldivers_main_weps)">R-6 Deadeye (Marksman Rifle)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('R-63 Diligence (Marksman Rifle)', helldivers_main_weps)">R-63 Diligence (Marksman Rifle)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('R-6 Deadeye (Marksman Rifle)', helldivers_main_weps)">R-6 Deadeye (Marksman Rifle)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('R-63 Diligence (Marksman Rifle)', helldivers_main_weps)">R-63 Diligence (Marksman Rifle)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('R-63 Diligence Counter Sniper (Marksman Rifle)', helldivers_main_weps)">R-63 Diligence Counter Sniper (Marksman Rifle)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('R-63 Diligence Counter Sniper (Marksman Rifle)', helldivers_main_weps)">R-63 Diligence Counter Sniper (Marksman Rifle)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
     <br>
     Submachine Guns
     <br>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('StA-11 SMG (Submachine Gun)', helldivers_main_weps)">StA-11 SMG (Submachine Gun)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('M7S SMG (Submachine Gun)', helldivers_main_weps)">M7S SMG (Submachine Gun)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('StA-11 SMG (Submachine Gun)', helldivers_main_weps)">StA-11 SMG (Submachine Gun)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('M7S SMG (Submachine Gun)', helldivers_main_weps)">M7S SMG (Submachine Gun)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('SMG-32 Reprimand (Submachine Gun)', helldivers_main_weps)">SMG-32 Reprimand (Submachine Gun)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('SMG-37 Defender (Submachine Gun)', helldivers_main_weps)">SMG-37 Defender (Submachine Gun)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('SMG-32 Reprimand (Submachine Gun)', helldivers_main_weps)">SMG-32 Reprimand (Submachine Gun)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('SMG-37 Defender (Submachine Gun)', helldivers_main_weps)">SMG-37 Defender (Submachine Gun)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('SMG-72 Pummeler (Submachine Gun)', helldivers_main_weps)">SMG-72 Pummeler (Submachine Gun)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('MP-98 Knight (Submachine Gun)', helldivers_main_weps)">MP-98 Knight (Submachine Gun)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('SMG-72 Pummeler (Submachine Gun)', helldivers_main_weps)">SMG-72 Pummeler (Submachine Gun)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('MP-98 Knight (Submachine Gun)', helldivers_main_weps)">MP-98 Knight (Submachine Gun)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
     <br>
     Shotguns
     <br>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('SG-8 Punisher (Shotgun)', helldivers_main_weps)">SG-8 Punisher (Shotgun)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('SG-8S Slugger (Shotgun)', helldivers_main_weps)">SG-8S Slugger (Shotgun)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('SG-8 Punisher (Shotgun)', helldivers_main_weps)">SG-8 Punisher (Shotgun)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('SG-8S Slugger (Shotgun)', helldivers_main_weps)">SG-8S Slugger (Shotgun)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('SG-20 Halt (Shotgun)', helldivers_main_weps)">SG-20 Halt (Shotgun)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('SG-451 Cookout (Shotgun)', helldivers_main_weps)">SG-451 Cookout (Shotgun)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('SG-20 Halt (Shotgun)', helldivers_main_weps)">SG-20 Halt (Shotgun)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('SG-451 Cookout (Shotgun)', helldivers_main_weps)">SG-451 Cookout (Shotgun)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('M9OA Shotgun (Shotgun)', helldivers_main_weps)">M9OA Shotgun (Shotgun)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('SG-225 Breaker (Shotgun)', helldivers_main_weps)">SG-225 Breaker (Shotgun)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('M9OA Shotgun (Shotgun)', helldivers_main_weps)">M9OA Shotgun (Shotgun)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('SG-225 Breaker (Shotgun)', helldivers_main_weps)">SG-225 Breaker (Shotgun)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('SG-225SP Breaker Spray&Pray (Shotgun)', helldivers_main_weps)">SG-225SP Breaker Spray&Pray (Shotgun)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('SG-225IE Breaker Incendiary (Shotgun)', helldivers_main_weps)">SG-225IE Breaker Incendiary (Shotgun)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('SG-225SP Breaker Spray&Pray (Shotgun)', helldivers_main_weps)">SG-225SP Breaker Spray&Pray (Shotgun)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('SG-225IE Breaker Incendiary (Shotgun)', helldivers_main_weps)">SG-225IE Breaker Incendiary (Shotgun)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
     <br>
     Explosive
     <br>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('CB-9 Exploding Crossbow (Explosive)', helldivers_main_weps)">CB-9 Exploding Crossbow (Explosive)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('R-36 Eruptor (Explosive)', helldivers_main_weps)">R-36 Eruptor (Explosive)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('CB-9 Exploding Crossbow (Explosive)', helldivers_main_weps)">CB-9 Exploding Crossbow (Explosive)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('R-36 Eruptor (Explosive)', helldivers_main_weps)">R-36 Eruptor (Explosive)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
     <br>
     Energy-Based
     <br>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('SG-8P Punisher Plasma (Energy-Based)', helldivers_main_weps)">SG-8P Punisher Plasma (Energy-Based)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('PLAS-39 Accelerator Rifle (Sniper Rifle)', helldivers_main_weps)">PLAS-39 Accelerator Rifle (Sniper Rifle)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('SG-8P Punisher Plasma (Energy-Based)', helldivers_main_weps)">SG-8P Punisher Plasma (Energy-Based)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('PLAS-39 Accelerator Rifle (Sniper Rifle)', helldivers_main_weps)">PLAS-39 Accelerator Rifle (Sniper Rifle)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('ARC-12 Blitzer (Energy-Based)', helldivers_main_weps)">ARC-12 Blitzer (Energy-Based)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('LAS-5 Scythe (Energy-Based)', helldivers_main_weps)">LAS-5 Scythe (Energy-Based)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('ARC-12 Blitzer (Energy-Based)', helldivers_main_weps)">ARC-12 Blitzer (Energy-Based)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('LAS-5 Scythe (Energy-Based)', helldivers_main_weps)">LAS-5 Scythe (Energy-Based)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('LAS-16 Sickle (Energy-Based)', helldivers_main_weps)">LAS-16 Sickle (Energy-Based)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('LAS-17 Double-Edge Sickle (Energy-Based)', helldivers_main_weps)">LAS-17 Double-Edge Sickle (Energy-Based)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('LAS-16 Sickle (Energy-Based)', helldivers_main_weps)">LAS-16 Sickle (Energy-Based)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('LAS-17 Double-Edge Sickle (Energy-Based)', helldivers_main_weps)">LAS-17 Double-Edge Sickle (Energy-Based)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('PLAS-1 Scorcher (Energy-Based)', helldivers_main_weps)">PLAS-1 Scorcher (Energy-Based)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('PLAS-101 Purifier (Energy-Based)', helldivers_main_weps)">PLAS-101 Purifier (Energy-Based)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('PLAS-1 Scorcher (Energy-Based)', helldivers_main_weps)">PLAS-1 Scorcher (Energy-Based)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('PLAS-101 Purifier (Energy-Based)', helldivers_main_weps)">PLAS-101 Purifier (Energy-Based)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
     <br>
     Special
     <br>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('VG-70 Variable (Special)', helldivers_main_weps)">VG-70 Variable (Special)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('FLAM-66 Torcher (Special)', helldivers_main_weps)">FLAM-66 Torcher (Special)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('VG-70 Variable (Special)', helldivers_main_weps)">VG-70 Variable (Special)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('FLAM-66 Torcher (Special)', helldivers_main_weps)">FLAM-66 Torcher (Special)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('Jar-5 Dominator (Special)', helldivers_main_weps)">Jar-5 Dominator (Special)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Jar-5 Dominator (Special)', helldivers_main_weps)">Jar-5 Dominator (Special)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
     <br>
     <br>
@@ -556,200 +960,440 @@
     Pistol
     <br>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('P-92 Warrant (Pistol)', helldivers_secondary_weps)">P-92 Warrant (Pistol)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('P-2 Peacemaker (Pistol)', helldivers_secondary_weps)">P-2 Peacemaker (Pistol)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('P-92 Warrant (Pistol)', helldivers_secondary_weps)">P-92 Warrant (Pistol)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('P-2 Peacemaker (Pistol)', helldivers_secondary_weps)">P-2 Peacemaker (Pistol)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('P-19 Redeemer (Pistol)', helldivers_secondary_weps)">P-19 Redeemer (Pistol)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('P-113 Verdict (Pistol)', helldivers_secondary_weps)">P-113 Verdict (Pistol)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('P-19 Redeemer (Pistol)', helldivers_secondary_weps)">P-19 Redeemer (Pistol)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('P-113 Verdict (Pistol)', helldivers_secondary_weps)">P-113 Verdict (Pistol)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('M6C/SOCOM Pistol (Pistol)', helldivers_secondary_weps)">M6C/SOCOM Pistol (Pistol)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('P-4 Senator (Pistol)', helldivers_secondary_weps)">P-4 Senator (Pistol)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('M6C/SOCOM Pistol (Pistol)', helldivers_secondary_weps)">M6C/SOCOM Pistol (Pistol)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('P-4 Senator (Pistol)', helldivers_secondary_weps)">P-4 Senator (Pistol)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
     <br>
     Melee
     <br>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('CQC-19 Stun Lance (Melee)', helldivers_secondary_weps)">CQC-19 Stun Lance (Melee)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('CQC-2 Saber (Melee)', helldivers_secondary_weps)">CQC-2 Saber (Melee)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('CQC-19 Stun Lance (Melee)', helldivers_secondary_weps)">CQC-19 Stun Lance (Melee)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('CQC-2 Saber (Melee)', helldivers_secondary_weps)">CQC-2 Saber (Melee)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('CQC-30 Stun Baton (Melee)', helldivers_secondary_weps)">CQC-30 Stun Baton (Melee)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('CQC-5 Combat Hatchet (Melee)', helldivers_secondary_weps)">CQC-5 Combat Hatchet (Melee)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('CQC-30 Stun Baton (Melee)', helldivers_secondary_weps)">CQC-30 Stun Baton (Melee)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('CQC-5 Combat Hatchet (Melee)', helldivers_secondary_weps)">CQC-5 Combat Hatchet (Melee)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
     <br>
     Special
     <br>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('P-11 Stim Pistol (Special)', helldivers_secondary_weps)">P-11 Stim Pistol (Special)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('SG-22 Bushwhacker (Special)', helldivers_secondary_weps)">SG-22 Bushwhacker (Special)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('P-11 Stim Pistol (Special)', helldivers_secondary_weps)">P-11 Stim Pistol (Special)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('SG-22 Bushwhacker (Special)', helldivers_secondary_weps)">SG-22 Bushwhacker (Special)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('LAS-58 Talon (Special)', helldivers_secondary_weps)">LAS-58 Talon (Special)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('P-72 Crisper (Special)', helldivers_secondary_weps)">P-72 Crisper (Special)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('LAS-58 Talon (Special)', helldivers_secondary_weps)">LAS-58 Talon (Special)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('P-72 Crisper (Special)', helldivers_secondary_weps)">P-72 Crisper (Special)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('GP-31 Grenade Pistol (Special)', helldivers_secondary_weps)">GP-31 Grenade Pistol (Special)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('LAS-7 Dagger (Special)', helldivers_secondary_weps)">LAS-7 Dagger (Special)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('GP-31 Grenade Pistol (Special)', helldivers_secondary_weps)">GP-31 Grenade Pistol (Special)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('LAS-7 Dagger (Special)', helldivers_secondary_weps)">LAS-7 Dagger (Special)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('GP-31 Ultimatum (Special)', helldivers_secondary_weps)">GP-31 Ultimatum (Special)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('PLAS-15 Loyalist (Special)', helldivers_secondary_weps)">PLAS-15 Loyalist (Special)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('GP-31 Ultimatum (Special)', helldivers_secondary_weps)">GP-31 Ultimatum (Special)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('PLAS-15 Loyalist (Special)', helldivers_secondary_weps)">PLAS-15 Loyalist (Special)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
     <br>
     <br>
     Standard Throwable
     <br>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('TED-63 Dynamite (Standard Throwable)', helldivers_grenades)">TED-63 Dynamite (Standard Throwable)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('C-6 Frag (Standard Throwable)', helldivers_grenades)">C-6 Frag (Standard Throwable)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('C-12 High Explosive (Standard Throwable)', helldivers_grenades)">C-12 High Explosive (Standard Throwable)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('TED-63 Dynamite (Standard Throwable)', helldivers_grenades)">TED-63 Dynamite (Standard Throwable)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('C-6 Frag (Standard Throwable)', helldivers_grenades)">C-6 Frag (Standard Throwable)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('C-12 High Explosive (Standard Throwable)', helldivers_grenades)">C-12 High Explosive (Standard Throwable)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('G-10 Incendiary (Standard Throwable)', helldivers_grenades)">G-10 Incendiary (Standard Throwable)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('G-10 Incendiary (Standard Throwable)', helldivers_grenades)">G-10 Incendiary (Standard Throwable)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
     <br>
     Special Throwable
     <br>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('G-31 Arc (Special Throwable)', helldivers_grenades)">G-31 Arc (Special Throwable)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('G-16 Impact (Special Throwable)', helldivers_grenades)">G-16 Impact (Special Throwable)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('G-13 Incendiary Impact (Special Throwable)', helldivers_grenades)">G-13 Incendiary Impact (Special Throwable)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('G-31 Arc (Special Throwable)', helldivers_grenades)">G-31 Arc (Special Throwable)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('G-16 Impact (Special Throwable)', helldivers_grenades)">G-16 Impact (Special Throwable)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('G-13 Incendiary Impact (Special Throwable)', helldivers_grenades)">G-13 Incendiary Impact (Special Throwable)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('G-123 Thermite (Special Throwable)', helldivers_grenades)">G-123 Thermite (Special Throwable)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('G-3 Smoke (Special Throwable)', helldivers_grenades)">G-3 Smoke (Special Throwable)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('G-23 Stun (Special Throwable)', helldivers_grenades)">G-23 Stun (Special Throwable)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('G-123 Thermite (Special Throwable)', helldivers_grenades)">G-123 Thermite (Special Throwable)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('G-3 Smoke (Special Throwable)', helldivers_grenades)">G-3 Smoke (Special Throwable)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('G-23 Stun (Special Throwable)', helldivers_grenades)">G-23 Stun (Special Throwable)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('G-50 Seeker (Special Throwable)', helldivers_grenades)">G-50 Seeker (Special Throwable)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('G-4 Gas (Special Throwable)', helldivers_grenades)">G-4 Gas (Special Throwable)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('K-2 Throwing Knife (Special Throwable)', helldivers_grenades)">K-2 Throwing Knife (Special Throwable)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('G-50 Seeker (Special Throwable)', helldivers_grenades)">G-50 Seeker (Special Throwable)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('G-4 Gas (Special Throwable)', helldivers_grenades)">G-4 Gas (Special Throwable)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('K-2 Throwing Knife (Special Throwable)', helldivers_grenades)">K-2 Throwing Knife (Special Throwable)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('G-142 Pyrotech (Special Throwable)', helldivers_grenades)">G-142 Pyrotech (Special Throwable)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('G-109 Urchin (Special Throwable)', helldivers_grenades)">G-109 Urchin (Special Throwable)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('G-7 Pineapple (Special Throwable)', helldivers_grenades)">G-7 Pineapple (Special Throwable)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('G-142 Pyrotech (Special Throwable)', helldivers_grenades)">G-142 Pyrotech (Special Throwable)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('G-109 Urchin (Special Throwable)', helldivers_grenades)">G-109 Urchin (Special Throwable)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('G-7 Pineapple (Special Throwable)', helldivers_grenades)">G-7 Pineapple (Special Throwable)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
     <br>
     <br>
     Light Armour
     <br>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('FS/37 Ravager (Light Armour)', helldivers_armour)">FS/37 Ravager (Light Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('CW-4 Arctic Ranger (Light Armour)', helldivers_armour)">CW-4 Arctic Ranger (Light Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('CE-74 Breaker (Light Armour)', helldivers_armour)">CE-74 Breaker (Light Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('FS/37 Ravager (Light Armour)', helldivers_armour)">FS/37 Ravager (Light Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('CW-4 Arctic Ranger (Light Armour)', helldivers_armour)">CW-4 Arctic Ranger (Light Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('CE-74 Breaker (Light Armour)', helldivers_armour)">CE-74 Breaker (Light Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('CE-67 Titan (Light Armour)', helldivers_armour)">CE-67 Titan (Light Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('CM-21 Trench Paramedic (Light Armour)', helldivers_armour)">CM-21 Trench Paramedic (Light Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('CE-07 Demolition Specialist (Light Armour)', helldivers_armour)">CE-07 Demolition Specialist (Light Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('CE-67 Titan (Light Armour)', helldivers_armour)">CE-67 Titan (Light Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('CM-21 Trench Paramedic (Light Armour)', helldivers_armour)">CM-21 Trench Paramedic (Light Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('CE-07 Demolition Specialist (Light Armour)', helldivers_armour)">CE-07 Demolition Specialist (Light Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('FS-38 Eradicator (Light Armour)', helldivers_armour)">FS-38 Eradicator (Light Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('EX-00 Prototype X (Light Armour)', helldivers_armour)">EX-00 Prototype X (Light Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('SC-37 Legionnaire (Light Armour)', helldivers_armour)">SC-37 Legionnaire (Light Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('FS-38 Eradicator (Light Armour)', helldivers_armour)">FS-38 Eradicator (Light Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('EX-00 Prototype X (Light Armour)', helldivers_armour)">EX-00 Prototype X (Light Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('SC-37 Legionnaire (Light Armour)', helldivers_armour)">SC-37 Legionnaire (Light Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('B-08 Light Gunner (Light Armour)', helldivers_armour)">B-08 Light Gunner (Light Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('SC-30 Trailblazer Scout (Light Armour)', helldivers_armour)">SC-30 Trailblazer Scout (Light Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('SC-34 Infiltrator (Light Armour)', helldivers_armour)">SC-34 Infiltrator (Light Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('B-08 Light Gunner (Light Armour)', helldivers_armour)">B-08 Light Gunner (Light Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('SC-30 Trailblazer Scout (Light Armour)', helldivers_armour)">SC-30 Trailblazer Scout (Light Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('SC-34 Infiltrator (Light Armour)', helldivers_armour)">SC-34 Infiltrator (Light Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('IE-57 Hell-Bent (Light Armour)', helldivers_armour)">IE-57 Hell-Bent (Light Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('GS-11 Democracys Deputy (Light Armour)', helldivers_armour)">GS-11 Democracys Deputy (Light Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('AF-50 Noxious Ranger (Light Armour)', helldivers_armour)">AF-50 Noxious Ranger (Light Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('IE-57 Hell-Bent (Light Armour)', helldivers_armour)">IE-57 Hell-Bent (Light Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('GS-11 Democracys Deputy (Light Armour)', helldivers_armour)">GS-11 Democracys Deputy (Light Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('AF-50 Noxious Ranger (Light Armour)', helldivers_armour)">AF-50 Noxious Ranger (Light Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('UF-16 Inspector (Light Armour)', helldivers_armour)">UF-16 Inspector (Light Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('SR-24 Street Scout (Light Armour)', helldivers_armour)">SR-24 Street Scout (Light Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('RE-1861 Parade Commander (Light Armour)', helldivers_armour)">RE-1861 Parade Commander (Light Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('UF-16 Inspector (Light Armour)', helldivers_armour)">UF-16 Inspector (Light Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('SR-24 Street Scout (Light Armour)', helldivers_armour)">SR-24 Street Scout (Light Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('RE-1861 Parade Commander (Light Armour)', helldivers_armour)">RE-1861 Parade Commander (Light Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('PH-9 Predator (Light Armour)', helldivers_armour)">PH-9 Predator (Light Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('I-09 Heatseeker (Light Armour)', helldivers_armour)">I-09 Heatseeker (Light Armour)</button> 
-    <button class ="toggleButton_active" onclick="toggleItem('AC-2 Obedient (Light Armour)', helldivers_armour)">AC-2 Obedient (Light Armour)</button> 
+    <button class ="toggleButton_active" onclick="toggleItem('PH-9 Predator (Light Armour)', helldivers_armour)">PH-9 Predator (Light Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('I-09 Heatseeker (Light Armour)', helldivers_armour)">I-09 Heatseeker (Light Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button> 
+    <button class ="toggleButton_active" onclick="toggleItem('AC-2 Obedient (Light Armour)', helldivers_armour)">AC-2 Obedient (Light Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button> 
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('BP-32 Jackbot (Light Armour)', helldivers_armour)">BP-32 Jackbot (Light Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('AD-11 Livewire (Light Armour)', helldivers_armour)">AD-11 Livewire (Light Armour)</button> 
+    <button class ="toggleButton_active" onclick="toggleItem('BP-32 Jackbot (Light Armour)', helldivers_armour)">BP-32 Jackbot (Light Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('AD-11 Livewire (Light Armour)', helldivers_armour)">AD-11 Livewire (Light Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button> 
     <br>
     <br>
     Medium Armour
     <br>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('SA-25 Steel Trooper (Medium Armour)', helldivers_armour)">SA-25 Steel Trooper (Medium Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('SA-12 Servo Assisted (Medium Armour)', helldivers_armour)">SA-12 Servo Assisted (Medium Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('DP-00 Tactical (Medium Armour)', helldivers_armour)">DP-00 Tactical (Medium Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('SA-25 Steel Trooper (Medium Armour)', helldivers_armour)">SA-25 Steel Trooper (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('SA-12 Servo Assisted (Medium Armour)', helldivers_armour)">SA-12 Servo Assisted (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('DP-00 Tactical (Medium Armour)', helldivers_armour)">DP-00 Tactical (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('CE-35 Trench Engineer (Medium Armour)', helldivers_armour)">CE-35 Trench Engineer (Medium Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('CE-27 Ground Breaker (Medium Armour)', helldivers_armour)">CE-27 Ground Breaker (Medium Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('CM-09 Bonesnapper (Medium Armour)', helldivers_armour)">CM-09 Bonesnapper (Medium Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('CE-35 Trench Engineer (Medium Armour)', helldivers_armour)">CE-35 Trench Engineer (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('CE-27 Ground Breaker (Medium Armour)', helldivers_armour)">CE-27 Ground Breaker (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('CM-09 Bonesnapper (Medium Armour)', helldivers_armour)">CM-09 Bonesnapper (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('CM-10 Clinician (Medium Armour)', helldivers_armour)">CM-10 Clinician (Medium Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('B-22 Model Citizen (Medium Armour)', helldivers_armour)">B-22 Model Citizen (Medium Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('SC-15 Drone Master (Medium Armour)', helldivers_armour)">SC-15 Drone Master (Medium Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('CM-10 Clinician (Medium Armour)', helldivers_armour)">CM-10 Clinician (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('B-22 Model Citizen (Medium Armour)', helldivers_armour)">B-22 Model Citizen (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('SC-15 Drone Master (Medium Armour)', helldivers_armour)">SC-15 Drone Master (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('EX-03 Prototype 3 (Medium Armour)', helldivers_armour)">EX-03 Prototype 3 (Medium Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('EX-16 Prototype 16 (Medium Armour)', helldivers_armour)">EX-16 Prototype 16 (Medium Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('FS-34 Exterminator (Medium Armour)', helldivers_armour)">FS-34 Exterminator (Medium Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('EX-03 Prototype 3 (Medium Armour)', helldivers_armour)">EX-03 Prototype 3 (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('EX-16 Prototype 16 (Medium Armour)', helldivers_armour)">EX-16 Prototype 16 (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('FS-34 Exterminator (Medium Armour)', helldivers_armour)">FS-34 Exterminator (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('DP-40 Hero of the federation (Medium Armour)', helldivers_armour)">DP-40 Hero of the federation (Medium Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('DP-11 Champion of the people (Medium Armour)', helldivers_armour)">DP-11 Champion of the people (Medium Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('CM-14 Physician (Medium Armour)', helldivers_armour)">CM-14 Physician (Medium Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('DP-40 Hero of the federation (Medium Armour)', helldivers_armour)">DP-40 Hero of the federation (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('DP-11 Champion of the people (Medium Armour)', helldivers_armour)">DP-11 Champion of the people (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('CM-14 Physician (Medium Armour)', helldivers_armour)">CM-14 Physician (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('TR-117 Alpha Commander (Medium Armour)', helldivers_armour)">TR-117 Alpha Commander (Medium Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('CE-81 Juggernaut (Medium Armour)', helldivers_armour)">CE-81 Juggernaut (Medium Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('A-9 Helljumper (Medium Armour)', helldivers_armour)">A-9 Helljumper (Medium Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('TR-117 Alpha Commander (Medium Armour)', helldivers_armour)">TR-117 Alpha Commander (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('CE-81 Juggernaut (Medium Armour)', helldivers_armour)">CE-81 Juggernaut (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('A-9 Helljumper (Medium Armour)', helldivers_armour)">A-9 Helljumper (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('A-35 Recon (Medium Armour)', helldivers_armour)">A-35 Recon (Medium Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('B-24 Enforcer (Medium Armour)', helldivers_armour)">B-24 Enforcer (Medium Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('B-01 Tactical (Medium Armour) (1)', helldivers_armour)">B-01 Tactical (Medium Armour) (1)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('A-35 Recon (Medium Armour)', helldivers_armour)">A-35 Recon (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('B-24 Enforcer (Medium Armour)', helldivers_armour)">B-24 Enforcer (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('B-01 Tactical (Medium Armour) (1)', helldivers_armour)">B-01 Tactical (Medium Armour) (1)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('B-01 Tactical (Medium Armour) (2)', helldivers_armour)">B-01 Tactical (Medium Armour) (2)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('B-01 Tactical (Medium Armour) (3)', helldivers_armour)">B-01 Tactical (Medium Armour) (3)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('B-01 Tactical (Medium Armour) (4)', helldivers_armour)">B-01 Tactical (Medium Armour) (4)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('B-01 Tactical (Medium Armour) (2)', helldivers_armour)">B-01 Tactical (Medium Armour) (2)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('B-01 Tactical (Medium Armour) (3)', helldivers_armour)">B-01 Tactical (Medium Armour) (3)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('B-01 Tactical (Medium Armour) (4)', helldivers_armour)">B-01 Tactical (Medium Armour) (4)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('TR-40 Gold Eagle (Medium Armour)', helldivers_armour)">TR-40 Gold Eagle (Medium Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('AF-91 Field Chemist (Medium Armour)', helldivers_armour)">AF-91 Field Chemist (Medium Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('UF-84 Doubt Killer (Medium Armour)', helldivers_armour)">UF-84 Doubt Killer (Medium Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('TR-40 Gold Eagle (Medium Armour)', helldivers_armour)">TR-40 Gold Eagle (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('AF-91 Field Chemist (Medium Armour)', helldivers_armour)">AF-91 Field Chemist (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('UF-84 Doubt Killer (Medium Armour)', helldivers_armour)">UF-84 Doubt Killer (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('CW-9 White Wolf (Medium Armour)', helldivers_armour)">CW-9 White Wolf (Medium Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('PH-56 Jaguar (Medium Armour)', helldivers_armour)">PH-56 Jaguar (Medium Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('I-92 Fire Fighter (Medium Armour)', helldivers_armour)">I-92 Fire Fighter (Medium Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('CW-9 White Wolf (Medium Armour)', helldivers_armour)">CW-9 White Wolf (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('PH-56 Jaguar (Medium Armour)', helldivers_armour)">PH-56 Jaguar (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('I-92 Fire Fighter (Medium Armour)', helldivers_armour)">I-92 Fire Fighter (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('SA-04 Combat Technician (Medium Armour)', helldivers_armour)">SA-04 Combat Technician (Medium Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('AF-02 Haz-Master (Medium Armour)', helldivers_armour)">AF-02 Haz-Master (Medium Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('UF-50 Bloodhound (Medium Armour)', helldivers_armour)">UF-50 Bloodhound (Medium Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('SA-04 Combat Technician (Medium Armour)', helldivers_armour)">SA-04 Combat Technician (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('AF-02 Haz-Master (Medium Armour)', helldivers_armour)">AF-02 Haz-Master (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('UF-50 Bloodhound (Medium Armour)', helldivers_armour)">UF-50 Bloodhound (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('IE-3 Martyr (Medium Armour)', helldivers_armour)">IE-3 Martyr (Medium Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('IE-12 Righteous (Medium Armour)', helldivers_armour)">IE-12 Righteous (Medium Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('GS-17 Frontier Marshal (Medium Armour)', helldivers_armour)">GS-17 Frontier Marshal (Medium Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('IE-3 Martyr (Medium Armour)', helldivers_armour)">IE-3 Martyr (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('IE-12 Righteous (Medium Armour)', helldivers_armour)">IE-12 Righteous (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('GS-17 Frontier Marshal (Medium Armour)', helldivers_armour)">GS-17 Frontier Marshal (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('RE-2310 Honorary Guard (Medium Armour)', helldivers_armour)">RE-2310 Honorary Guard (Medium Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('AD-26 Bleeding Edge (Medium Armour)', helldivers_armour)">AD-26 Bleeding Edge (Medium Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('BP-20 Corrections Officer (Medium Armour)', helldivers_armour)">BP-20 Corrections Officer (Medium Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('RE-2310 Honorary Guard (Medium Armour)', helldivers_armour)">RE-2310 Honorary Guard (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('AD-26 Bleeding Edge (Medium Armour)', helldivers_armour)">AD-26 Bleeding Edge (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('BP-20 Corrections Officer (Medium Armour)', helldivers_armour)">BP-20 Corrections Officer (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('DS-191 Scorpion (Medium Armour)', helldivers_armour)">DS-191 Scorpion (Medium Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('I-102 Draconaught (Medium Armour)', helldivers_armour)">I-102 Draconaught (Medium Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('DS-191 Scorpion (Medium Armour)', helldivers_armour)">DS-191 Scorpion (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('I-102 Draconaught (Medium Armour)', helldivers_armour)">I-102 Draconaught (Medium Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
     <br>
     Heavy Armour
     <br>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('FS-55 Devastator (Heavy Armour)', helldivers_armour)">FS-55 Devastator (Heavy Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('CW-22 Kodiak (Heavy Armour)', helldivers_armour)">CW-22 Kodiak (Heavy Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('SA-32 Dynamo (Heavy Armour)', helldivers_armour)">SA-32 Dynamo (Heavy Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('FS-55 Devastator (Heavy Armour)', helldivers_armour)">FS-55 Devastator (Heavy Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('CW-22 Kodiak (Heavy Armour)', helldivers_armour)">CW-22 Kodiak (Heavy Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('SA-32 Dynamo (Heavy Armour)', helldivers_armour)">SA-32 Dynamo (Heavy Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('CM-17 Butcher (Heavy Armour)', helldivers_armour)">CM-17 Butcher (Heavy Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('FS/61 Dreadnought (Heavy Armour)', helldivers_armour)">FS/61 Dreadnought (Heavy Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('B-27 Fortified Commando (Heavy Armour)', helldivers_armour)">B-27 Fortified Commando (Heavy Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('CM-17 Butcher (Heavy Armour)', helldivers_armour)">CM-17 Butcher (Heavy Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('FS/61 Dreadnought (Heavy Armour)', helldivers_armour)">FS/61 Dreadnought (Heavy Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('B-27 Fortified Commando (Heavy Armour)', helldivers_armour)">B-27 Fortified Commando (Heavy Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('FS-05 Marksman (Heavy Armour)', helldivers_armour)">FS-05 Marksman (Heavy Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('FS-11 Executioner (Heavy Armour)', helldivers_armour)">FS-11 Executioner (Heavy Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('AF-52 Lockdown (Heavy Armour)', helldivers_armour)">AF-52 Lockdown (Heavy Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('FS-05 Marksman (Heavy Armour)', helldivers_armour)">FS-05 Marksman (Heavy Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('FS-11 Executioner (Heavy Armour)', helldivers_armour)">FS-11 Executioner (Heavy Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('AF-52 Lockdown (Heavy Armour)', helldivers_armour)">AF-52 Lockdown (Heavy Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('SR-64 Cinderblock (Heavy Armour)', helldivers_armour)">SR-64 Cinderblock (Heavy Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('RE-824 Bearer of the Standard (Heavy Armour)', helldivers_armour)">RE-824 Bearer of the Standard (Heavy Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('BP-77 Grand Juror (Heavy Armour)', helldivers_armour)">BP-77 Grand Juror (Heavy Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('SR-64 Cinderblock (Heavy Armour)', helldivers_armour)">SR-64 Cinderblock (Heavy Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('RE-824 Bearer of the Standard (Heavy Armour)', helldivers_armour)">RE-824 Bearer of the Standard (Heavy Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('BP-77 Grand Juror (Heavy Armour)', helldivers_armour)">BP-77 Grand Juror (Heavy Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('CE-64 Grenadier (Heavy Armour)', helldivers_armour)">CE-64 Grenadier (Heavy Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('CE-101 Guerilla Gorilla (Heavy Armour)', helldivers_armour)">CE-101 Guerilla Gorilla (Heavy Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('I-44 Salamander (Heavy Armour)', helldivers_armour)">I-44 Salamander (Heavy Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('CE-64 Grenadier (Heavy Armour)', helldivers_armour)">CE-64 Grenadier (Heavy Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('CE-101 Guerilla Gorilla (Heavy Armour)', helldivers_armour)">CE-101 Guerilla Gorilla (Heavy Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('I-44 Salamander (Heavy Armour)', helldivers_armour)">I-44 Salamander (Heavy Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('SR-18 RoadBlock (Heavy Armour)', helldivers_armour)">SR-18 RoadBlock (Heavy Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('GS-66 Lawmaker (Heavy Armour)', helldivers_armour)">GS-66 Lawmaker (Heavy Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('AD-49 Apollonian (Heavy Armour)', helldivers_armour)">AD-49 Apollonian (Heavy Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('SR-18 RoadBlock (Heavy Armour)', helldivers_armour)">SR-18 RoadBlock (Heavy Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('GS-66 Lawmaker (Heavy Armour)', helldivers_armour)">GS-66 Lawmaker (Heavy Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('AD-49 Apollonian (Heavy Armour)', helldivers_armour)">AD-49 Apollonian (Heavy Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('DS-42 Federation\'s Blade (Heavy Armour)', helldivers_armour)">DS-42 Federation's Blade (Heavy Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('PH-202 Twigsnapper (Heavy Armour)', helldivers_armour)">PH-202 Twigsnapper (Heavy Armour)</button>
-    <button class ="toggleButton_active" onclick="toggleItem('FS-23 Battle Master (Heavy Armour)', helldivers_armour)">FS-23 Battle Master (Heavy Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('DS-42 Federation\'s Blade (Heavy Armour)', helldivers_armour)">DS-42 Federation's Blade (Heavy Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('PH-202 Twigsnapper (Heavy Armour)', helldivers_armour)">PH-202 Twigsnapper (Heavy Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('FS-23 Battle Master (Heavy Armour)', helldivers_armour)">FS-23 Battle Master (Heavy Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('CM-36 Winter Warrior (Heavy Armour)', helldivers_armour)">CM-36 Winter Warrior (Heavy Armour)</button>
+    <button class ="toggleButton_active" onclick="toggleItem('CM-36 Winter Warrior (Heavy Armour)', helldivers_armour)">CM-36 Winter Warrior (Heavy Armour)
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
 
 </div>
 
@@ -758,110 +1402,260 @@
     Offensive
     <br>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('Orbital Precision Strike', helldivers_strategems)">Orbital Precision Strike</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Orbital Gatling Barrage', helldivers_strategems)">Orbital Gatling Barrage</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Orbital Airburst Strike', helldivers_strategems)">Orbital Airburst Strike</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Orbital Napalm Barrage', helldivers_strategems)">Orbital Napalm Barrage</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Orbital Precision Strike', helldivers_strategems)">Orbital Precision Strike
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Orbital Gatling Barrage', helldivers_strategems)">Orbital Gatling Barrage
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Orbital Airburst Strike', helldivers_strategems)">Orbital Airburst Strike
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Orbital Napalm Barrage', helldivers_strategems)">Orbital Napalm Barrage
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('Orbital 120MM HE Barrage', helldivers_strategems)">Orbital 120MM HE Barrage</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Orbital Walking Barrage', helldivers_strategems)">Orbital Walking Barrage</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Orbital 380MM HE Barrage', helldivers_strategems)">Orbital 380MM HE Barrage</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Orbital Railcannon Strike', helldivers_strategems)">Orbital Railcannon Strike</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Orbital 120MM HE Barrage', helldivers_strategems)">Orbital 120MM HE Barrage
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Orbital Walking Barrage', helldivers_strategems)">Orbital Walking Barrage
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Orbital 380MM HE Barrage', helldivers_strategems)">Orbital 380MM HE Barrage
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Orbital Railcannon Strike', helldivers_strategems)">Orbital Railcannon Strike
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('Orbital Laser', helldivers_strategems)">Orbital Laser</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Orbital EMS Strike', helldivers_strategems)">Orbital EMS Strike</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Orbital Gas Strike', helldivers_strategems)">Orbital Gas Strike</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Orbital Smoke Strike', helldivers_strategems)">Orbital Smoke Strike</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Orbital Laser', helldivers_strategems)">Orbital Laser
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Orbital EMS Strike', helldivers_strategems)">Orbital EMS Strike
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Orbital Gas Strike', helldivers_strategems)">Orbital Gas Strike
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Orbital Smoke Strike', helldivers_strategems)">Orbital Smoke Strike
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('Eagle 500KG Bomb', helldivers_strategems)">Eagle 500KG Bomb</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Eagle Strafing Run', helldivers_strategems)">Eagle Strafing Run</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Eagle 110MM Rocket Pods', helldivers_strategems)">Eagle 110MM Rocket Pods</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Eagle Airstrike', helldivers_strategems)">Eagle Airstrike</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Eagle 500KG Bomb', helldivers_strategems)">Eagle 500KG Bomb
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Eagle Strafing Run', helldivers_strategems)">Eagle Strafing Run
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Eagle 110MM Rocket Pods', helldivers_strategems)">Eagle 110MM Rocket Pods
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Eagle Airstrike', helldivers_strategems)">Eagle Airstrike
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('Eagle Cluster Bomb', helldivers_strategems)">Eagle Cluster Bomb</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Eagle Napalm Airstrike', helldivers_strategems)">Eagle Napalm Airstrike</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Eagle Smoke Strike', helldivers_strategems)">Eagle Smoke Strike</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Eagle Cluster Bomb', helldivers_strategems)">Eagle Cluster Bomb
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Eagle Napalm Airstrike', helldivers_strategems)">Eagle Napalm Airstrike
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Eagle Smoke Strike', helldivers_strategems)">Eagle Smoke Strike
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
     <br>
     <br>
     Supply
     <br>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('One True Flag', helldivers_strategems)">One True Flag</button>
-    <button class ="toggleButton_active" onclick="toggleItem('MG-43 Machine Gun', helldivers_strategems)">MG-43 Machine Gun</button>
-    <button class ="toggleButton_active" onclick="toggleItem('M-105 Stalwart', helldivers_strategems)">M-105 Stalwart</button>
-    <button class ="toggleButton_active" onclick="toggleItem('MG-206 Heavy Machine Gun', helldivers_strategems)">MG-206 Heavy Machine Gun</button>
+    <button class ="toggleButton_active" onclick="toggleItem('One True Flag', helldivers_strategems)">One True Flag
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('MG-43 Machine Gun', helldivers_strategems)">MG-43 Machine Gun
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('M-105 Stalwart', helldivers_strategems)">M-105 Stalwart
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('MG-206 Heavy Machine Gun', helldivers_strategems)">MG-206 Heavy Machine Gun
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('RS-422 Railgun', helldivers_strategems)">RS-422 Railgun</button>
-    <button class ="toggleButton_active" onclick="toggleItem('S-11 Speargun', helldivers_strategems)">S-11 Speargun</button>
-    <button class ="toggleButton_active" onclick="toggleItem('APW-1 Anti Materiel Rifle', helldivers_strategems)">APW-1 Anti Materiel Rifle</button>
-    <button class ="toggleButton_active" onclick="toggleItem('PLAS-45 Epoch', helldivers_strategems)">PLAS-45 Epoch</button>
+    <button class ="toggleButton_active" onclick="toggleItem('RS-422 Railgun', helldivers_strategems)">RS-422 Railgun
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('S-11 Speargun', helldivers_strategems)">S-11 Speargun
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('APW-1 Anti Materiel Rifle', helldivers_strategems)">APW-1 Anti Materiel Rifle
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('PLAS-45 Epoch', helldivers_strategems)">PLAS-45 Epoch
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('GL-21 Grenade Launcher', helldivers_strategems)">GL-21 Grenade Launcher</button>
-    <button class ="toggleButton_active" onclick="toggleItem('GL-52 De-Escalator', helldivers_strategems)">GL-52 De-Escalator</button>
-    <button class ="toggleButton_active" onclick="toggleItem('TX-41 Sterilizer', helldivers_strategems)">TX-41 Sterilizer</button>
-    <button class ="toggleButton_active" onclick="toggleItem('FLAM-40 Flamethrower', helldivers_strategems)">FLAM-40 Flamethrower</button>
+    <button class ="toggleButton_active" onclick="toggleItem('GL-21 Grenade Launcher', helldivers_strategems)">GL-21 Grenade Launcher
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('GL-52 De-Escalator', helldivers_strategems)">GL-52 De-Escalator
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('TX-41 Sterilizer', helldivers_strategems)">TX-41 Sterilizer
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('FLAM-40 Flamethrower', helldivers_strategems)">FLAM-40 Flamethrower
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('LAS-98 Laser Cannon', helldivers_strategems)">LAS-98 Laser Cannon</button>
-    <button class ="toggleButton_active" onclick="toggleItem('LAS-99 Quasar Cannon', helldivers_strategems)">LAS-99 Quasar Cannon</button>
-    <button class ="toggleButton_active" onclick="toggleItem('ARC-3 Arc Thrower', helldivers_strategems)">ARC-3 Arc Thrower</button>
-    <button class ="toggleButton_active" onclick="toggleItem('MLS-4X Commando', helldivers_strategems)">MLS-4X Commando</button>
+    <button class ="toggleButton_active" onclick="toggleItem('LAS-98 Laser Cannon', helldivers_strategems)">LAS-98 Laser Cannon
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('LAS-99 Quasar Cannon', helldivers_strategems)">LAS-99 Quasar Cannon
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('ARC-3 Arc Thrower', helldivers_strategems)">ARC-3 Arc Thrower
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('MLS-4X Commando', helldivers_strategems)">MLS-4X Commando
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('EAT-700 Expendable Napalm', helldivers_strategems)">EAT-700 Expendable Napalm</button>
-    <button class ="toggleButton_active" onclick="toggleItem('MS-11 Solo Silo', helldivers_strategems)">MS-11 Solo Silo</button>
-    <button class ="toggleButton_active" onclick="toggleItem('EAT-17 Expendable Anti-Tank', helldivers_strategems)">EAT-17 Expendable Anti-Tank</button>
-    <button class ="toggleButton_active" onclick="toggleItem('AC-8 Autocannon', helldivers_strategems)">AC-8 Autocannon</button>
+    <button class ="toggleButton_active" onclick="toggleItem('EAT-700 Expendable Napalm', helldivers_strategems)">EAT-700 Expendable Napalm
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('MS-11 Solo Silo', helldivers_strategems)">MS-11 Solo Silo
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('EAT-17 Expendable Anti-Tank', helldivers_strategems)">EAT-17 Expendable Anti-Tank
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('AC-8 Autocannon', helldivers_strategems)">AC-8 Autocannon
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('RL-77 Airburst Rocket Launcher', helldivers_strategems)">RL-77 Airburst Rocket Launcher</button>
-    <button class ="toggleButton_active" onclick="toggleItem('FAF-14 Spear', helldivers_strategems)">FAF-14 Spear</button>
-    <button class ="toggleButton_active" onclick="toggleItem('StA-x3 W.A.S.P. Launcher', helldivers_strategems)">StA-x3 W.A.S.P. Launcher</button>
-    <button class ="toggleButton_active" onclick="toggleItem('GR-8 Recoilless Rifle', helldivers_strategems)">GR-8 Recoilless Rifle</button>
+    <button class ="toggleButton_active" onclick="toggleItem('RL-77 Airburst Rocket Launcher', helldivers_strategems)">RL-77 Airburst Rocket Launcher
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('FAF-14 Spear', helldivers_strategems)">FAF-14 Spear
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('StA-x3 W.A.S.P. Launcher', helldivers_strategems)">StA-x3 W.A.S.P. Launcher
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('GR-8 Recoilless Rifle', helldivers_strategems)">GR-8 Recoilless Rifle
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('SH-32 Shield Generator', helldivers_strategems)">SH-32 Shield Generator</button>
-    <button class ="toggleButton_active" onclick="toggleItem('SH-51 Directional Shield', helldivers_strategems)">SH-51 Directional Shield</button>
-    <button class ="toggleButton_active" onclick="toggleItem('SH-20 Ballistic Shield Backpack', helldivers_strategems)">SH-20 Ballistic Shield Backpack</button>
-    <button class ="toggleButton_active" onclick="toggleItem('LIFT-860 Hover pack', helldivers_strategems)">LIFT-860 Hover pack</button>
+    <button class ="toggleButton_active" onclick="toggleItem('SH-32 Shield Generator', helldivers_strategems)">SH-32 Shield Generator
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('SH-51 Directional Shield', helldivers_strategems)">SH-51 Directional Shield
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('SH-20 Ballistic Shield Backpack', helldivers_strategems)">SH-20 Ballistic Shield Backpack
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('LIFT-860 Hover pack', helldivers_strategems)">LIFT-860 Hover pack
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('B-1 Supply Pack', helldivers_strategems)">B-1 Supply Pack</button>
-    <button class ="toggleButton_active" onclick="toggleItem('B-100 Portable Hellbomb', helldivers_strategems)">B-100 Portable Hellbomb</button>
-    <button class ="toggleButton_active" onclick="toggleItem('LIFT-182 Warp Pack', helldivers_strategems)">LIFT-182 Warp Pack</button>
-    <button class ="toggleButton_active" onclick="toggleItem('LIFT-850 Jump Pack', helldivers_strategems)">LIFT-850 Jump Pack</button>
+    <button class ="toggleButton_active" onclick="toggleItem('B-1 Supply Pack', helldivers_strategems)">B-1 Supply Pack
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('B-100 Portable Hellbomb', helldivers_strategems)">B-100 Portable Hellbomb
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('LIFT-182 Warp Pack', helldivers_strategems)">LIFT-182 Warp Pack
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('LIFT-850 Jump Pack', helldivers_strategems)">LIFT-850 Jump Pack
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('AX/AR-23 Guard Dog', helldivers_strategems)">AX/AR-23 Guard Dog</button>
-    <button class ="toggleButton_active" onclick="toggleItem('AX/LAS-5 Guard Dog Rover', helldivers_strategems)">AX/LAS-5 Guard Dog Rover</button>
-    <button class ="toggleButton_active" onclick="toggleItem('AX/TX-13 Guard Dog Dog Breath', helldivers_strategems)">AX/TX-13 Guard Dog Dog Breath</button>
-    <button class ="toggleButton_active" onclick="toggleItem('M-102 Fast Recon Vehicle', helldivers_strategems)">M-102 Fast Recon Vehicle</button>
+    <button class ="toggleButton_active" onclick="toggleItem('AX/AR-23 Guard Dog', helldivers_strategems)">AX/AR-23 Guard Dog
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('AX/LAS-5 Guard Dog Rover', helldivers_strategems)">AX/LAS-5 Guard Dog Rover
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('AX/TX-13 Guard Dog Dog Breath', helldivers_strategems)">AX/TX-13 Guard Dog Dog Breath
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('M-102 Fast Recon Vehicle', helldivers_strategems)">M-102 Fast Recon Vehicle
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('EX-049 Emancipator Exosuit', helldivers_strategems)">EX-049 Emancipator Exosuit</button>
-    <button class ="toggleButton_active" onclick="toggleItem('EX-045 Patriot Suit', helldivers_strategems)">EX-045 Patriot Suit</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Guard Dog K-9', helldivers_strategems)">Guard Dog K-9</button>
+    <button class ="toggleButton_active" onclick="toggleItem('EX-049 Emancipator Exosuit', helldivers_strategems)">EX-049 Emancipator Exosuit
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('EX-045 Patriot Suit', helldivers_strategems)">EX-045 Patriot Suit
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Guard Dog K-9', helldivers_strategems)">Guard Dog K-9
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
     <br>
     <br>
     Defensive
     <br>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('A/G-16 Gatling Sentry', helldivers_strategems)">A/G-16 Gatling Sentry</button>
-    <button class ="toggleButton_active" onclick="toggleItem('A/MG-43 Machine Gun Sentry', helldivers_strategems)">A/MG-43 Machine Gun Sentry</button>
-    <button class ="toggleButton_active" onclick="toggleItem('A/Flam-40 Flame sentry', helldivers_strategems)">A/Flam-40 Flame sentry</button>
-    <button class ="toggleButton_active" onclick="toggleItem('A/LAS-98 Laser Sentry', helldivers_strategems)">A/LAS-98 Laser Sentry</button>
+    <button class ="toggleButton_active" onclick="toggleItem('A/G-16 Gatling Sentry', helldivers_strategems)">A/G-16 Gatling Sentry
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('A/MG-43 Machine Gun Sentry', helldivers_strategems)">A/MG-43 Machine Gun Sentry
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('A/Flam-40 Flame sentry', helldivers_strategems)">A/Flam-40 Flame sentry
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('A/LAS-98 Laser Sentry', helldivers_strategems)">A/LAS-98 Laser Sentry
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('A/MLS-4X Rocket Sentry', helldivers_strategems)">A/MLS-4X Rocket Sentry</button>
-    <button class ="toggleButton_active" onclick="toggleItem('A/AC-8 Autocannon Sentry', helldivers_strategems)">A/AC-8 Autocannon Sentry</button>
-    <button class ="toggleButton_active" onclick="toggleItem('A/M-23 EMS Mortar Sentry', helldivers_strategems)">A/M-23 EMS Mortar Sentry</button>
-    <button class ="toggleButton_active" onclick="toggleItem('A/M-12 Mortar Sentry', helldivers_strategems)">A/M-12 Mortar Sentry</button>
+    <button class ="toggleButton_active" onclick="toggleItem('A/MLS-4X Rocket Sentry', helldivers_strategems)">A/MLS-4X Rocket Sentry
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('A/AC-8 Autocannon Sentry', helldivers_strategems)">A/AC-8 Autocannon Sentry
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('A/M-23 EMS Mortar Sentry', helldivers_strategems)">A/M-23 EMS Mortar Sentry
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('A/M-12 Mortar Sentry', helldivers_strategems)">A/M-12 Mortar Sentry
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('FX-12 Shield Generator Relay', helldivers_strategems)">FX-12 Shield Generator Relay</button>
-    <button class ="toggleButton_active" onclick="toggleItem('E/GL-21 Grenadier Battlement', helldivers_strategems)">E/GL-21 Grenadier Battlement</button>
-    <button class ="toggleButton_active" onclick="toggleItem('E/AT-12 Anti-Tank Emplacement', helldivers_strategems)">E/AT-12 Anti-Tank Emplacement</button>
-    <button class ="toggleButton_active" onclick="toggleItem('E/MG-101 HMG Emplacement', helldivers_strategems)">E/MG-101 HMG Emplacement</button>
+    <button class ="toggleButton_active" onclick="toggleItem('FX-12 Shield Generator Relay', helldivers_strategems)">FX-12 Shield Generator Relay
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('E/GL-21 Grenadier Battlement', helldivers_strategems)">E/GL-21 Grenadier Battlement
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('E/AT-12 Anti-Tank Emplacement', helldivers_strategems)">E/AT-12 Anti-Tank Emplacement
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('E/MG-101 HMG Emplacement', helldivers_strategems)">E/MG-101 HMG Emplacement
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('A/ARC-3 Tesla Tower', helldivers_strategems)">A/ARC-3 Tesla Tower</button>
-    <button class ="toggleButton_active" onclick="toggleItem('MD-17 Anti-Tank Mines', helldivers_strategems)">MD-17 Anti-Tank Mines</button>
-    <button class ="toggleButton_active" onclick="toggleItem('MD-8 Gas Mines', helldivers_strategems)">MD-8 Gas Mines</button>
-    <button class ="toggleButton_active" onclick="toggleItem('MD-6 Anti-Personnel Minefield', helldivers_strategems)">MD-6 Anti-Personnel Minefield</button>
+    <button class ="toggleButton_active" onclick="toggleItem('A/ARC-3 Tesla Tower', helldivers_strategems)">A/ARC-3 Tesla Tower
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('MD-17 Anti-Tank Mines', helldivers_strategems)">MD-17 Anti-Tank Mines
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('MD-8 Gas Mines', helldivers_strategems)">MD-8 Gas Mines
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('MD-6 Anti-Personnel Minefield', helldivers_strategems)">MD-6 Anti-Personnel Minefield
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('MD-I4 Incendiary Mines', helldivers_strategems)">MD-I4 Incendiary Mines</button>
+    <button class ="toggleButton_active" onclick="toggleItem('MD-I4 Incendiary Mines', helldivers_strategems)">MD-I4 Incendiary Mines
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     
 
 </div>
@@ -869,28 +1663,62 @@
     Active Boosters:
     <br>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('Vitality Enhancement', helldivers_boosters)">Vitality Enhancement</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Stamina Enhancement', helldivers_boosters)">Stamina Enhancement</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Muscle Enhancement', helldivers_boosters)">Muscle Enhancement</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Vitality Enhancement', helldivers_boosters)">Vitality Enhancement
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Stamina Enhancement', helldivers_boosters)">Stamina Enhancement
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Muscle Enhancement', helldivers_boosters)">Muscle Enhancement
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('UAV Recon Booster', helldivers_boosters)">UAV Recon Booster</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Increased Reinforcement Budget', helldivers_boosters)">Increased Reinforcement Budget</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Flexible Reinforcement Budget', helldivers_boosters)">Flexible Reinforcement Budget</button>
+    <button class ="toggleButton_active" onclick="toggleItem('UAV Recon Booster', helldivers_boosters)">UAV Recon Booster
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Increased Reinforcement Budget', helldivers_boosters)">Increased Reinforcement Budget
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Flexible Reinforcement Budget', helldivers_boosters)">Flexible Reinforcement Budget
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('Hellpod Space Optimization', helldivers_boosters)">Hellpod Space Optimization</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Localization Confusion', helldivers_boosters)">Localization Confusion</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Expert Extraction Pilot', helldivers_boosters)">Expert Extraction Pilot</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Hellpod Space Optimization', helldivers_boosters)">Hellpod Space Optimization
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Localization Confusion', helldivers_boosters)">Localization Confusion
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Expert Extraction Pilot', helldivers_boosters)">Expert Extraction Pilot
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('Motivational Shocks', helldivers_boosters)">Motivational Shocks</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Experimental Infusion', helldivers_boosters)">Experimental Infusion</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Firebomb Hellpods', helldivers_boosters)">Firebomb Hellpods</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Motivational Shocks', helldivers_boosters)">Motivational Shocks
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Experimental Infusion', helldivers_boosters)">Experimental Infusion
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Firebomb Hellpods', helldivers_boosters)">Firebomb Hellpods
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('Dead Sprint', helldivers_boosters)">Dead Sprint</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Armed Resupply Pods', helldivers_boosters)">Armed Resupply Pods</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Sample Extractor', helldivers_boosters)">Sample Extractor</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Dead Sprint', helldivers_boosters)">Dead Sprint
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Armed Resupply Pods', helldivers_boosters)">Armed Resupply Pods
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Sample Extractor', helldivers_boosters)">Sample Extractor
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('Sample Scanner', helldivers_boosters)">Sample Scanner</button>
-    <button class ="toggleButton_active" onclick="toggleItem('Stun Pods', helldivers_boosters)">Stun Pods</button>
+    <button class ="toggleButton_active" onclick="toggleItem('Sample Scanner', helldivers_boosters)">Sample Scanner
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+    <button class ="toggleButton_active" onclick="toggleItem('Stun Pods', helldivers_boosters)">Stun Pods
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
 </div>
 
 <div id="cosm_tab" class="tabcontent">
@@ -898,141 +1726,395 @@
 <br>
 <br>
 <h6>helmets</h6>
-<button class="toggleButton_active" onclick="CosmToggle('Flex Prow Mark I', cosm_headgear)">Flex Prow Mark I"</button>
-<button class="toggleButton_active" onclick="CosmToggle('HF Hypsibius C', cosm_headgear)">HF Hypsibius C</button>
-<button class="toggleButton_active" onclick="CosmToggle('HF Nematode', cosm_headgear)">HF Nematode</button>
-<button class="toggleButton_active" onclick="CosmToggle('HF Decon First Response', cosm_headgear)">HF Decon First Response</button>
-<button class="toggleButton_active" onclick="CosmToggle('HF Tardigrade C', cosm_headgear)">HF Tardigrade C</button>
-<button class="toggleButton_active" onclick="CosmToggle('HF Panther 90', cosm_headgear)">HF Panther 90</button>
-<button class="toggleButton_active" onclick="CosmToggle('HF Arbustum Mark I', cosm_headgear)">HF Arbustum Mark I</button>
-<button class="toggleButton_active" onclick="CosmToggle('HF Arbustum Mark II', cosm_headgear)">HF Arbustum Mark II</button>
-<button class="toggleButton_active" onclick="CosmToggle('Omneco Pro-Tech Mark I', cosm_headgear)">Omneco Pro-Tech Mark I</button>
-<button class="toggleButton_active" onclick="CosmToggle('Omneco Reparo', cosm_headgear)">Omneco Reparo</button>
-<button class="toggleButton_active" onclick="CosmToggle('Santonian Skinwalker', cosm_headgear)">Santonian Skinwalker</button>
-<button class="toggleButton_active" onclick="CosmToggle('Santonian Galea Mark I', cosm_headgear)">Santonian Galea Mark I</button>
-<button class="toggleButton_active" onclick="CosmToggle('Convex Breather Mark I', cosm_headgear)">Convex Breather Mark I</button>
-<button class="toggleButton_active" onclick="CosmToggle('Convex Falcon Mark I', cosm_headgear)">Convex Falcon Mark I</button>
-<button class="toggleButton_active" onclick="CosmToggle('Convex Scorpion Mark I', cosm_headgear)">Convex Scorpion Mark I</button>
-<button class="toggleButton_active" onclick="CosmToggle('Kovac Red Ranger', cosm_headgear)">Kovac Red Ranger</button>
-<button class="toggleButton_active" onclick="CosmToggle('Kovac Green Guard', cosm_headgear)">Kovac Green Guard</button>
-<button class="toggleButton_active" onclick="CosmToggle('Kovac Smoke Viper', cosm_headgear)">Kovac Smoke Viper</button>
-<button class="toggleButton_active" onclick="CosmToggle('Kovac Typhoon Model I', cosm_headgear)">Kovac Typhoon Model I</button>
-<button class="toggleButton_active" onclick="CosmToggle('Storax Rocker N', cosm_headgear)">Storax Rocker N</button>
-<button class="toggleButton_active" onclick="CosmToggle('Storax Tegu Legacy', cosm_headgear)">Storax Tegu Legacy</button>
-<button class="toggleButton_active" onclick="CosmToggle('Storax Kimble Mark I', cosm_headgear)">Storax Kimble Mark I</button>
-<button class="toggleButton_active" onclick="CosmToggle('Storax Aranea Mark I', cosm_headgear)">Storax Aranea Mark I</button>
-<button class="toggleButton_active" onclick="CosmToggle('Storax Aranea Mark II', cosm_headgear)">Storax Aranea Mark II</button>
-<button class="toggleButton_active" onclick="CosmToggle('Qantex Dual Sacramento', cosm_headgear)">Qantex Dual Sacramento</button>
-<button class="toggleButton_active" onclick="CosmToggle('Qantex Dual Jungle', cosm_headgear)">Qantex Dual Jungle</button>
-<button class="toggleButton_active" onclick="CosmToggle('Quantex Forge Red', cosm_headgear)">Quantex Forge Red</button>
-<button class="toggleButton_active" onclick="CosmToggle('Twin Barrel Blade Visor Mark I', cosm_headgear)">Twin Barrel Blade Visor Mark I</button>
-<button class="toggleButton_active" onclick="CosmToggle('Twin Barrel Blade Visor Mark II', cosm_headgear)">Twin Barrel Blade Visor Mark II</button>
-<button class="toggleButton_active" onclick="CosmToggle('Gunnar Dual Vision Rogue', cosm_headgear)">Gunnar Dual Vision Rogue</button>
-<button class="toggleButton_active" onclick="CosmToggle('Gunnar Twin Scepter II', cosm_headgear)">Gunnar Twin Scepter II</button>
-<button class="toggleButton_active" onclick="CosmToggle('Mammoth Darkeye Mark I', cosm_headgear)">Mammoth Darkeye Mark I</button>
-<button class="toggleButton_active" onclick="CosmToggle('Darkeye V-Drum Mark I', cosm_headgear)">Darkeye V-Drum Mark I</button>
-<button class="toggleButton_active" onclick="CosmToggle('Visor Probo Mark I', cosm_headgear)">Visor Probo Mark I</button>
-<button class="toggleButton_active" onclick="CosmToggle('Inter Piranha Mark I', cosm_headgear)">Inter Piranha Mark I</button>
-<button class="toggleButton_active" onclick="CosmToggle('Oblique Tigris', cosm_headgear)">Oblique Tigris</button>
-<button class="toggleButton_active" onclick="CosmToggle('Dogjaw Mod Kit 107', cosm_headgear)">Dogjaw Mod Kit 107</button>
-<button class="toggleButton_active" onclick="CosmToggle('Spartacus MX-2', cosm_headgear)">Spartacus MX-2</button>
-<button class="toggleButton_active" onclick="CosmToggle('Argon Fenrir LG', cosm_headgear)">Argon Fenrir LG</button>
-<button class="toggleButton_active" onclick="CosmToggle('Garuga Alloy T17', cosm_headgear)">Garuga Alloy T17</button>
-<button class="toggleButton_active" onclick="CosmToggle('Snapjaw RX-A1 Herus', cosm_headgear)">Snapjaw RX-A1 Herus</button>
-<button class="toggleButton_active" onclick="CosmToggle('Woods Mask', cosm_headgear)">Woods' Mask</button>
-<button class="toggleButton_active" onclick="CosmToggle('Daudas Mask', cosm_headgear)">Dauda's Mask</button>
-<button class="toggleButton_active" onclick="CosmToggle('Bishops Mask', cosm_headgear)">Bishop's Mask</button>
-<button class="toggleButton_active" onclick="CosmToggle('Hacketts Mask', cosm_headgear)">Hackett's Mask</button>
-<button class="toggleButton_active" onclick="CosmToggle('Hacketts Wetworks', cosm_headgear)">Hackett's Wetworks</button>
+<button class="toggleButton_active" onclick="CosmToggle('Flex Prow Mark I', cosm_headgear)">Flex Prow Mark I"
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('HF Hypsibius C', cosm_headgear)">HF Hypsibius C
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('HF Nematode', cosm_headgear)">HF Nematode
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('HF Decon First Response', cosm_headgear)">HF Decon First Response
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('HF Tardigrade C', cosm_headgear)">HF Tardigrade C
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('HF Panther 90', cosm_headgear)">HF Panther 90
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('HF Arbustum Mark I', cosm_headgear)">HF Arbustum Mark I
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('HF Arbustum Mark II', cosm_headgear)">HF Arbustum Mark II
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Omneco Pro-Tech Mark I', cosm_headgear)">Omneco Pro-Tech Mark I
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Omneco Reparo', cosm_headgear)">Omneco Reparo
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Santonian Skinwalker', cosm_headgear)">Santonian Skinwalker
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Santonian Galea Mark I', cosm_headgear)">Santonian Galea Mark I
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Convex Breather Mark I', cosm_headgear)">Convex Breather Mark I
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Convex Falcon Mark I', cosm_headgear)">Convex Falcon Mark I
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Convex Scorpion Mark I', cosm_headgear)">Convex Scorpion Mark I
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Kovac Red Ranger', cosm_headgear)">Kovac Red Ranger
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Kovac Green Guard', cosm_headgear)">Kovac Green Guard
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Kovac Smoke Viper', cosm_headgear)">Kovac Smoke Viper
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Kovac Typhoon Model I', cosm_headgear)">Kovac Typhoon Model I
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Storax Rocker N', cosm_headgear)">Storax Rocker N
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Storax Tegu Legacy', cosm_headgear)">Storax Tegu Legacy
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Storax Kimble Mark I', cosm_headgear)">Storax Kimble Mark I
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Storax Aranea Mark I', cosm_headgear)">Storax Aranea Mark I
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Storax Aranea Mark II', cosm_headgear)">Storax Aranea Mark II
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Qantex Dual Sacramento', cosm_headgear)">Qantex Dual Sacramento
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Qantex Dual Jungle', cosm_headgear)">Qantex Dual Jungle
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Quantex Forge Red', cosm_headgear)">Quantex Forge Red
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Twin Barrel Blade Visor Mark I', cosm_headgear)">Twin Barrel Blade Visor Mark I
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Twin Barrel Blade Visor Mark II', cosm_headgear)">Twin Barrel Blade Visor Mark II
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Gunnar Dual Vision Rogue', cosm_headgear)">Gunnar Dual Vision Rogue
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Gunnar Twin Scepter II', cosm_headgear)">Gunnar Twin Scepter II
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Mammoth Darkeye Mark I', cosm_headgear)">Mammoth Darkeye Mark I
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Darkeye V-Drum Mark I', cosm_headgear)">Darkeye V-Drum Mark I
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Visor Probo Mark I', cosm_headgear)">Visor Probo Mark I
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Inter Piranha Mark I', cosm_headgear)">Inter Piranha Mark I
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Oblique Tigris', cosm_headgear)">Oblique Tigris
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Dogjaw Mod Kit 107', cosm_headgear)">Dogjaw Mod Kit 107
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Spartacus MX-2', cosm_headgear)">Spartacus MX-2
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Argon Fenrir LG', cosm_headgear)">Argon Fenrir LG
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Garuga Alloy T17', cosm_headgear)">Garuga Alloy T17
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Snapjaw RX-A1 Herus', cosm_headgear)">Snapjaw RX-A1 Herus
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Woods Mask', cosm_headgear)">Woods' Mask
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Daudas Mask', cosm_headgear)">Dauda's Mask
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Bishops Mask', cosm_headgear)">Bishop's Mask
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Hacketts Mask', cosm_headgear)">Hackett's Mask
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Hacketts Wetworks', cosm_headgear)">Hackett's Wetworks
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
 <br>
 <h6>Torso</h6>
-<button class="toggleButton_active" onclick="CosmToggle('Kovac Pro-Car Elite', cosm_torso)">Kovac Pro-Car Elite"</button>
-<button class="toggleButton_active" onclick="CosmToggle('Kovac Fortis Armis', cosm_torso)">Kovac Fortis Armis</button>
-<button class="toggleButton_active" onclick="CosmToggle('Kovac Carrier Model I', cosm_torso)">Kovac Carrier Model I</button>
-<button class="toggleButton_active" onclick="CosmToggle('Kovac Dragonscale Model I', cosm_torso)">Kovac Dragonscale Model I</button>
-<button class="toggleButton_active" onclick="CosmToggle('Santonian Spartan Vest Model I', cosm_torso)">Santonian Spartan Vest Model I</button>
-<button class="toggleButton_active" onclick="CosmToggle('SMC Cut Model I', cosm_torso)">SMC Cut Model I</button>
-<button class="toggleButton_active" onclick="CosmToggle('Qantex Canvas Gilet', cosm_torso)">Qantex Canvas Gilet</button>
-<button class="toggleButton_active" onclick="CosmToggle('Qantex Windbeater', cosm_torso)">Qantex Windbeater</button>
-<button class="toggleButton_active" onclick="CosmToggle('Coarse Puffer Vest Model I', cosm_torso)">Coarse Puffer Vest Model I</button>
-<button class="toggleButton_active" onclick="CosmToggle('KDS Spartan Vest Model I', cosm_torso)">KDS Spartan Vest Model I</button>
-<button class="toggleButton_active" onclick="CosmToggle('Primer Grid Model I', cosm_torso)">Primer Grid Model I</button>
-<button class="toggleButton_active" onclick="CosmToggle('10 Nation HL Anorak', cosm_torso)">10 Nation HL Anorak</button>
-<button class="toggleButton_active" onclick="CosmToggle('Commando Rhino Bush Vest', cosm_torso)">Commando Rhino Bush Vest</button>
-<button class="toggleButton_active" onclick="CosmToggle('Braveer Pathfinder Model I', cosm_torso)">Braveer Pathfinder Model I</button>
-<button class="toggleButton_active" onclick="CosmToggle('HF Oasis Model I', cosm_torso)">HF Oasis Model I</button>
-<button class="toggleButton_active" onclick="CosmToggle('Nyxos Antora', cosm_torso)">Nyxos Antora</button>
+<button class="toggleButton_active" onclick="CosmToggle('Kovac Pro-Car Elite', cosm_torso)">Kovac Pro-Car Elite"
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Kovac Fortis Armis', cosm_torso)">Kovac Fortis Armis
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Kovac Carrier Model I', cosm_torso)">Kovac Carrier Model I
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Kovac Dragonscale Model I', cosm_torso)">Kovac Dragonscale Model I
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Santonian Spartan Vest Model I', cosm_torso)">Santonian Spartan Vest Model I
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('SMC Cut Model I', cosm_torso)">SMC Cut Model I
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Qantex Canvas Gilet', cosm_torso)">Qantex Canvas Gilet
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Qantex Windbeater', cosm_torso)">Qantex Windbeater
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Coarse Puffer Vest Model I', cosm_torso)">Coarse Puffer Vest Model I
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('KDS Spartan Vest Model I', cosm_torso)">KDS Spartan Vest Model I
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Primer Grid Model I', cosm_torso)">Primer Grid Model I
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('10 Nation HL Anorak', cosm_torso)">10 Nation HL Anorak
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Commando Rhino Bush Vest', cosm_torso)">Commando Rhino Bush Vest
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Braveer Pathfinder Model I', cosm_torso)">Braveer Pathfinder Model I
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('HF Oasis Model I', cosm_torso)">HF Oasis Model I
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Nyxos Antora', cosm_torso)">Nyxos Antora
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
 <br>
 <h6>Legs</h6>
-<button class="toggleButton_active" onclick="CosmToggle('Nyxos Medlabs Oscar', cosm_legs)">Nyxos Medlabs Oscar"</button>
-<button class="toggleButton_active" onclick="CosmToggle('Nyxos Waders', cosm_legs)">Nyxos Waders</button>
-<button class="toggleButton_active" onclick="CosmToggle('Kovac Fortis Crura', cosm_legs)">Kovac Fortis Crura</button>
-<button class="toggleButton_active" onclick="CosmToggle('Burlap Dexterity', cosm_legs)">Burlap Dexterity</button>
-<button class="toggleButton_active" onclick="CosmToggle('Rough Dexterity', cosm_legs)">Rough Dexterity</button>
-<button class="toggleButton_active" onclick="CosmToggle('Roughneck MDR Cargo', cosm_legs)">Roughneck MDR Cargo</button>
-<button class="toggleButton_active" onclick="CosmToggle('Rough Cut', cosm_legs)">Rough Cut</button>
-<button class="toggleButton_active" onclick="CosmToggle('Cargo Composite', cosm_legs)">Cargo Composite</button>
-<button class="toggleButton_active" onclick="CosmToggle('Heavy Duty Pioneer', cosm_legs)">Heavy Duty Pioneer</button>
-<button class="toggleButton_active" onclick="CosmToggle('Left Behind', cosm_legs)">Left Behind</button>
-<button class="toggleButton_active" onclick="CosmToggle('Sharp Teeth', cosm_legs)">Sharp Teeth</button>
-<button class="toggleButton_active" onclick="CosmToggle('Commando Mudcrawler Bush Pants', cosm_legs)">Commando Mudcrawler Bush Pants</button>
-<button class="toggleButton_active" onclick="CosmToggle('Model W Hyperseal', cosm_legs)">Model W Hyperseal</button>
-<button class="toggleButton_active" onclick="CosmToggle('SMC Murk H', cosm_legs)">SMC Murk H</button>
-<button class="toggleButton_active" onclick="CosmToggle('HF Oasis Rel', cosm_legs)">HF Oasis Rel</button>
-<button class="toggleButton_active" onclick="CosmToggle('Braveer Pathfinder TR', cosm_legs)">Braveer Pathfinder TR</button>
+<button class="toggleButton_active" onclick="CosmToggle('Nyxos Medlabs Oscar', cosm_legs)">Nyxos Medlabs Oscar"
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Nyxos Waders', cosm_legs)">Nyxos Waders
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Kovac Fortis Crura', cosm_legs)">Kovac Fortis Crura
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Burlap Dexterity', cosm_legs)">Burlap Dexterity
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Rough Dexterity', cosm_legs)">Rough Dexterity
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Roughneck MDR Cargo', cosm_legs)">Roughneck MDR Cargo
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Rough Cut', cosm_legs)">Rough Cut
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Cargo Composite', cosm_legs)">Cargo Composite
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Heavy Duty Pioneer', cosm_legs)">Heavy Duty Pioneer
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Left Behind', cosm_legs)">Left Behind
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Sharp Teeth', cosm_legs)">Sharp Teeth
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Commando Mudcrawler Bush Pants', cosm_legs)">Commando Mudcrawler Bush Pants
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Model W Hyperseal', cosm_legs)">Model W Hyperseal
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('SMC Murk H', cosm_legs)">SMC Murk H
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('HF Oasis Rel', cosm_legs)">HF Oasis Rel
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Braveer Pathfinder TR', cosm_legs)">Braveer Pathfinder TR
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
 <br>
 <h6>Backpacks</h6>
-<button class="toggleButton_active" onclick="CosmToggle('KDS Slim Survivalist', cosm_back)">KDS Slim Survivalist"</button>
-<button class="toggleButton_active" onclick="CosmToggle('KDS Compact Survivalist', cosm_back)">KDS Compact Survivalist</button>
-<button class="toggleButton_active" onclick="CosmToggle('KDS Tri-Can Basic', cosm_back)">KDS Tri-Can Basic</button>
-<button class="toggleButton_active" onclick="CosmToggle('KDS Ray Proto Cage', cosm_back)">KDS Ray Proto Cage</button>
-<button class="toggleButton_active" onclick="CosmToggle('Kovac Praesidio', cosm_back)">Kovac Praesidio</button>
-<button class="toggleButton_active" onclick="CosmToggle('Santonian Apparatu', cosm_back)">Santonian Apparatu</button>
-<button class="toggleButton_active" onclick="CosmToggle('SMC Utility Kit', cosm_back)">SMC Utility Kit</button>
-<button class="toggleButton_active" onclick="CosmToggle('Utility Compact Pioneer', cosm_back)">Utility Compact Pioneer</button>
-<button class="toggleButton_active" onclick="CosmToggle('Utility Natural Pioneer', cosm_back)">Utility Natural Pioneer</button>
-<button class="toggleButton_active" onclick="CosmToggle('Insight Canteen Runner', cosm_back)">Insight Canteen Runner</button>
-<button class="toggleButton_active" onclick="CosmToggle('Outwear Compact Utility', cosm_back)">Outwear Compact Utility</button>
-<button class="toggleButton_active" onclick="CosmToggle('Braveer Compact Survivalist', cosm_back)">Braveer Compact Survivalist</button>
-<button class="toggleButton_active" onclick="CosmToggle('HF Van Niel T1', cosm_back)">HF Van Niel T1</button>
-<button class="toggleButton_active" onclick="CosmToggle('Commando Brawler Bush Pack', cosm_back)">Commando Brawler Bush Pack</button>
-<button class="toggleButton_active" onclick="CosmToggle('Outwear PM8', cosm_back)">Outwear PM8</button>
-<button class="toggleButton_active" onclick="CosmToggle('D-TEK Compact WM', cosm_back)">D-TEK Compact WM</button>
-<button class="toggleButton_active" onclick="CosmToggle('STRP Pack Mule', cosm_back)">STRP Pack Mule</button>
-<button class="toggleButton_active" onclick="CosmToggle('Outwear Demi Camo', cosm_back)">Outwear Demi Camo</button>
-<button class="toggleButton_active" onclick="CosmToggle('Tacklebox 003 Ash', cosm_back)">Tacklebox 003 Ash</button>
-<button class="toggleButton_active" onclick="CosmToggle('Kithauler Galaxy', cosm_back)">Kithauler Galaxy</button>
+<button class="toggleButton_active" onclick="CosmToggle('KDS Slim Survivalist', cosm_back)">KDS Slim Survivalist"
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('KDS Compact Survivalist', cosm_back)">KDS Compact Survivalist
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('KDS Tri-Can Basic', cosm_back)">KDS Tri-Can Basic
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('KDS Ray Proto Cage', cosm_back)">KDS Ray Proto Cage
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Kovac Praesidio', cosm_back)">Kovac Praesidio
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Santonian Apparatu', cosm_back)">Santonian Apparatu
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('SMC Utility Kit', cosm_back)">SMC Utility Kit
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Utility Compact Pioneer', cosm_back)">Utility Compact Pioneer
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Utility Natural Pioneer', cosm_back)">Utility Natural Pioneer
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Insight Canteen Runner', cosm_back)">Insight Canteen Runner
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Outwear Compact Utility', cosm_back)">Outwear Compact Utility
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Braveer Compact Survivalist', cosm_back)">Braveer Compact Survivalist
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('HF Van Niel T1', cosm_back)">HF Van Niel T1
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Commando Brawler Bush Pack', cosm_back)">Commando Brawler Bush Pack
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Outwear PM8', cosm_back)">Outwear PM8
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('D-TEK Compact WM', cosm_back)">D-TEK Compact WM
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('STRP Pack Mule', cosm_back)">STRP Pack Mule
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Outwear Demi Camo', cosm_back)">Outwear Demi Camo
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Tacklebox 003 Ash', cosm_back)">Tacklebox 003 Ash
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Kithauler Galaxy', cosm_back)">Kithauler Galaxy
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
 <br>
 <h6>Palletes</h6>
-<button class="toggleButton_active" onclick="CosmToggle('Overalls', cosm_palettes)">Overalls</button>
-<button class="toggleButton_active" onclick="CosmToggle('Early Adopter', cosm_palettes)">Early Adopter</button>
-<button class="toggleButton_active" onclick="CosmToggle('Bark Half-Life', cosm_palettes)">Bark Half-Life</button>
-<button class="toggleButton_active" onclick="CosmToggle('Nautical Dusk', cosm_palettes)">Nautical Dusk</button>
-<button class="toggleButton_active" onclick="CosmToggle('Subterranean Moss', cosm_palettes)">Subterranean Moss</button>
-<button class="toggleButton_active" onclick="CosmToggle('Beryl Restrained', cosm_palettes)">Beryl Restrained</button>
-<button class="toggleButton_active" onclick="CosmToggle('Bone Relic', cosm_palettes)">Bone Relic</button>
-<button class="toggleButton_active" onclick="CosmToggle('Artic Endurance', cosm_palettes)">Artic Endurance</button>
-<button class="toggleButton_active" onclick="CosmToggle('Miracle', cosm_palettes)">Miracle</button>
-<button class="toggleButton_active" onclick="CosmToggle('Eightball', cosm_palettes)">Eightball</button>
-<button class="toggleButton_active" onclick="CosmToggle('Longsword', cosm_palettes)">Longsword</button>
-<button class="toggleButton_active" onclick="CosmToggle('Heat', cosm_palettes)">Heat</button>
-<button class="toggleButton_active" onclick="CosmToggle('Destination', cosm_palettes)">Destination</button>
-<button class="toggleButton_active" onclick="CosmToggle('Lugubrious', cosm_palettes)">Lugubrious</button>
-<button class="toggleButton_active" onclick="CosmToggle('Overdive', cosm_palettes   )">Overdive</button>
-<button class="toggleButton_active" onclick="CosmToggle('Overload Six', cosm_palettes)">Overload Six</button>
-<button class="toggleButton_active" onclick="CosmToggle('Crimson Grit', cosm_palettes)">Crimson Grit</button>
-<button class="toggleButton_active" onclick="CosmToggle('Subterranean Garden', cosm_palettes)">Subterranean Garden</button>
-<button class="toggleButton_active" onclick="CosmToggle('Onyx Corruption', cosm_palettes)">Onyx Corruption</button>
-<button class="toggleButton_active" onclick="CosmToggle('Blush Safeguard', cosm_palettes)">Blush Safeguard</button>
-<button class="toggleButton_active" onclick="CosmToggle('Viride Silva', cosm_palettes)">Viride Silva</button>
-<button class="toggleButton_active" onclick="CosmToggle('Desertum', cosm_palettes)">Desertum</button>
-<button class="toggleButton_active" onclick="CosmToggle('Santonian Vestis', cosm_palettes)">Santonian Vestis</button>
-<button class="toggleButton_active" onclick="CosmToggle('Caerulus Grind', cosm_palettes)">Caerulus Grind</button>
-<button class="toggleButton_active" onclick="CosmToggle('Roughneck Robigo', cosm_palettes)">Roughneck Robigo</button>
-<button class="toggleButton_active" onclick="CosmToggle('Salvos Underworld', cosm_palettes)">Salvos Underworld</button>
-<button class="toggleButton_active" onclick="CosmToggle('Decem', cosm_palettes)">Decem</button>
-<button class="toggleButton_active" onclick="CosmToggle('Last Lazarus', cosm_palettes)">Last Lazarus</button>
-<button class="toggleButton_active" onclick="CosmToggle('Poison Lividus', cosm_palettes)">Poison Lividus</button>
+<button class="toggleButton_active" onclick="CosmToggle('Overalls', cosm_palettes)">Overalls
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Early Adopter', cosm_palettes)">Early Adopter
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Bark Half-Life', cosm_palettes)">Bark Half-Life
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Nautical Dusk', cosm_palettes)">Nautical Dusk
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Subterranean Moss', cosm_palettes)">Subterranean Moss
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Beryl Restrained', cosm_palettes)">Beryl Restrained
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Bone Relic', cosm_palettes)">Bone Relic
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Artic Endurance', cosm_palettes)">Artic Endurance
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Miracle', cosm_palettes)">Miracle
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Eightball', cosm_palettes)">Eightball
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Longsword', cosm_palettes)">Longsword
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Heat', cosm_palettes)">Heat
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Destination', cosm_palettes)">Destination
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Lugubrious', cosm_palettes)">Lugubrious
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Overdive', cosm_palettes   )">Overdive
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Overload Six', cosm_palettes)">Overload Six
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Crimson Grit', cosm_palettes)">Crimson Grit
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Subterranean Garden', cosm_palettes)">Subterranean Garden
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Onyx Corruption', cosm_palettes)">Onyx Corruption
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Blush Safeguard', cosm_palettes)">Blush Safeguard
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Viride Silva', cosm_palettes)">Viride Silva
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Desertum', cosm_palettes)">Desertum
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Santonian Vestis', cosm_palettes)">Santonian Vestis
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Caerulus Grind', cosm_palettes)">Caerulus Grind
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Roughneck Robigo', cosm_palettes)">Roughneck Robigo
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Salvos Underworld', cosm_palettes)">Salvos Underworld
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Decem', cosm_palettes)">Decem
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Last Lazarus', cosm_palettes)">Last Lazarus
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
+<button class="toggleButton_active" onclick="CosmToggle('Poison Lividus', cosm_palettes)">Poison Lividus
+        <img src="checkmark.png" class="icon-right_active">
+    </button>
 <br>
     <h6>Cosmetics</h6>
     <p>Headgear:</p>
@@ -2420,24 +3502,7 @@
         }
         item.toggle = !item.toggle;
         list.splice(list.indexOf(tempList[0]), 1, item);
-        var buttons = document.getElementsByClassName("toggleButton_active");
-        var buttons2 = document.getElementsByClassName("toggleButton_inactive");
-        var found = false;
 
-        for (var i = 0; i < buttons.length;i++) {
-            if (buttons[i].textContent == key) {
-                buttons[i].className = " toggleButton_inactive";
-                found = true;
-            } 
-        }
-
-        if (!found) {
-            for (var i = 0; i < buttons2.length;i++) {
-                if (buttons2[i].textContent == key) {
-                    buttons2[i].className = " toggleButton_active";
-                } 
-            }
-        }
         saveState();
         rerenderButtons();
     }
@@ -3227,7 +4292,7 @@
     }
 
     var currentVer = null;
-    var lastVer = "3.31.3";
+    var lastVer = "3.32.1";
 
     
     // Function to get the total probability stack of the provided list. 
@@ -4142,6 +5207,7 @@ function CosmToggle(item, array) {
     if (!found) console.error('Cosmic button not found for', item);
 
     saveState();
+    rerenderButtons();
 }
 
 
@@ -4216,7 +5282,7 @@ function CosmToggle(item, array) {
         // Iterate loop of keys that are meant to be off
         for (var i = 0; i < buttonList.length; i++) {
             for (var j = 0; j < keyList.length; j++) {
-                if (keyList[j] && buttonList[i] && keyList[j] == buttonList[i].textContent){
+                if (keyList[j] && buttonList[i] && keyList[j] == buttonList[i].textContent.trim()){
                     // Turn button off
                     buttonList[i].className = "toggleButton_inactive";
                 }
@@ -4226,12 +5292,46 @@ function CosmToggle(item, array) {
         // Iterate loop of keys that are meant to be on
         for (var i = 0; i < buttonList2.length; i++) {
             for (var j = 0; j < keyList2.length; j++) {
-                if (keyList2[j] && buttonList2[i] && keyList2[j] == buttonList2[i].textContent){
+                if (keyList2[j] && buttonList2[i] && keyList2[j] == buttonList2[i].textContent.trim()){
                     buttonList2[i].className = "toggleButton_active";
                 }
             }
 
         }
+        var buttons = document.getElementsByClassName("toggleButton_active");
+        var buttons2 = document.getElementsByClassName("toggleButton_inactive");
+        var imgs = document.querySelectorAll(".icon-right_active");
+        var imgs2 = document.querySelectorAll(".icon-right_inactive");
+        // var found = false;
+
+        for (var i = 0; i < buttons.length;i++) {
+            // console.log(buttons[i].textContent.trim())
+            // if (buttons[i].textContent.trim() == key) {
+                // console.log(temp);
+                for (var j = 0; j < imgs2.length; j++) {
+                    if (imgs2[j].parentNode.textContent == buttons[i].textContent) {
+                        imgs2[j].src = "checkmark.png";
+                        imgs2[j].className = "icon-right_active";
+                    }
+                }
+                //buttons[i].className = " toggleButton_inactive";
+                // found = true;
+            // } 
+        }
+
+        // if (!found) {
+            for (var i = 0; i < buttons2.length;i++) {
+                // if (buttons2[i].textContent.trim() == key) {
+                    for (var j = 0; j < imgs.length; j++) {
+                        if (imgs[j].parentNode.textContent == buttons2[i].textContent) {
+                            imgs[j].src = "cross.png";
+                            imgs[j].className = "icon-right_inactive";
+                        }
+                    }
+                    //buttons2[i].className = " toggleButton_active";
+                // } 
+            }
+        // }
     }
 
 
