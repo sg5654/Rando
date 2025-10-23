@@ -1,4 +1,8 @@
-     .3  -  Fixed spacing issues, changed min-pen to 4 due to newer enemies causing issues
+V3.32.3 -   Finally fixed the sorting on reload
+     .2 -   Continuation of UI overhaul, Usersettings now get saved on change and loaded, Specific strategems have been rebalanced or repurposed, changed the min_pen checking system
+     .1 -   Massive UI overhaul for the item toggle buttons, re-structured the render code for the buttons to make it easier to unify. Added images to make the purpose of the buttons more clear.
+V3.32   -   GTFO Cosmetic randomizer has been rewritten, UI overhaul on the way
+     .3 -   Fixed spacing issues, changed min-pen to 4 due to newer enemies causing issues
      .2 -   Adding button for superstore item
      .1 -   Bugfix for loading errors
 V3.31   -   Addition of the Dust Devils Warbond items
