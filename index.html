@@ -3766,6 +3766,9 @@
             document.getElementById("coord1").textContent = helldiver_lastLoadout[14];
         }
         
+        // Re-sort saved values since this is only visual
+        sortList([helldiver_lastLoadout[6], helldiver_lastLoadout[7], helldiver_lastLoadout[8], helldiver_lastLoadout[9]]);
+
         console.log(helldivers_main_weps);
         console.log(helldivers_secondary_weps);
         console.log(helldivers_grenades);
@@ -4333,7 +4336,7 @@
     }
 
     var currentVer = null;
-    var lastVer = "3.32.2";
+    var lastVer = "3.32.3";
 
     
     // Function to get the total probability stack of the provided list. 
@@ -4765,11 +4768,7 @@
             setProbabilities(helldivers_strategems, [helldiver_slot7, helldiver_slot8, helldiver_slot9, helldiver_slot10]);
             
 
-            // Write to view
-            document.getElementById("h_p7").textContent = tempList[0].key;
-            document.getElementById("h_p8").textContent = tempList[1].key;
-            document.getElementById("h_p9").textContent = tempList[2].key;
-            document.getElementById("h_p10").textContent = tempList[3].key;
+            
             bestPen = 0;
             var expl_found = false;
             if (expl_force) {
@@ -4918,9 +4917,16 @@
         helldivers_strategems.forEach(e => {
             items.forEach(i => {
                 // If item is found in original list, push to new list.
-                if (e == i) {tempList.push(i);}
+                if (e.key == i.key) {tempList.push(i);}
             });
         });
+
+        // Write to view
+        document.getElementById("h_p7").textContent = tempList[0].key;
+        document.getElementById("h_p8").textContent = tempList[1].key;
+        document.getElementById("h_p9").textContent = tempList[2].key;
+        document.getElementById("h_p10").textContent = tempList[3].key;
+        
         // Return sorted list
         return tempList;
     }
