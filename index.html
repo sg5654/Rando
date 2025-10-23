@@ -60,15 +60,16 @@
         min-width:250px;
         min-height:40px;
         max-height:40px;
+        line-height: 1;
         vertical-align: middle;
     }
 
     .toggleButton_active {
         /* padding: 8px 12px; */
-        /* justify-content: space-between; ensures content spreads to both sides */
+        justify-content: space-between;
         /* gap: 8px; */
         padding-right:30px;
-        background-color: #74bb74;
+        background-color: #4f8a4f;
         max-width:250px;
         min-width:250px;
         min-height:40px;
@@ -160,12 +161,12 @@
     <br></br>
 
     <!-- Section for disabling specific options-->
-    <input type="checkbox" id="ch1" value="tracker_on">
+    <!-- <input type="checkbox" id="ch1" value="tracker_on">
     <label for="ch1">Include BioTracker?</label> &nbsp;&nbsp;
     <input type="checkbox" id="ch2" value="foam_on" checked>
     <label for="ch2">Include C-Foam?</label> &nbsp;&nbsp;
     <input type="checkbox" id="ch3" value="mine_on" checked>
-    <label for="ch3">Include Mine Deployer?</label> &nbsp;&nbsp;
+    <label for="ch3">Include Mine Deployer?</label> &nbsp;&nbsp; -->
 
     <!-- Very shitty spacing solution -->
     <br></br>
@@ -750,25 +751,29 @@
     <!-- User input -->
     <button id="helldiver_rando_button" onclick="doHelldiverRando()">Randomize</button>
     force reroll?
-    <input type="checkbox" id="h_ch" value="always_new">
+    <input type="checkbox" id="h_ch" value="always_new" onchange="updateUserSettings()">
     &nbsp;&nbsp;
     force support wep?
-    <input type="checkbox" id="h_ch_sup">
+    <input type="checkbox" id="h_ch_sup" onchange="updateUserSettings()">
     &nbsp;&nbsp;
     max 1 support wep?
-    <input type="checkbox" id="h_ch_sup_max" checked>
+    <input type="checkbox" id="h_ch_sup_max" checked onchange="updateUserSettings()">
     &nbsp;&nbsp;
     max 1 backpack?
-    <input type="checkbox" id="h_ch_bp_max" checked>
-    &nbsp;&nbsp;
-    min penetration for faction
-    <input type="checkbox" id="h_ch_pen" checked>
+    <input type="checkbox" id="h_ch_bp_max" checked onchange="updateUserSettings()">
     &nbsp;&nbsp;
     lock faction
-    <input type="checkbox" id="h_ch_fac" checked>
+    <input type="checkbox" id="h_ch_fac" checked onchange="updateUserSettings()">
     &nbsp;&nbsp;
     force explosive?
-    <input type="checkbox" id="h_ch_expl" checked>
+    <input type="checkbox" id="h_ch_expl" checked onchange="updateUserSettings()">
+    &nbsp;&nbsp;
+    min penetration for faction
+    <select name="pen_select" id="h_ch_pen" title="pen_select" onchange="updateUserSettings()">
+        <option value="0">Any</option>
+        <option value="1">3</option>
+        <option value="2">4</option>
+    </select>
     &nbsp;&nbsp;
     <button id="helldiver_rando_reset" onclick="resetHelldiveRando(false)">reset lists</button>
     </div>
@@ -2805,7 +2810,7 @@
 
 
         // Strikes
-        {key: "Orbital Precision Strike", penetration: 9, properties: [Properties.Explosive, Properties.Orbital], probability: 50, toggle: true},
+        {key: "Orbital Precision Strike", penetration: 9, properties: [Properties.Orbital], probability: 50, toggle: true},
         {key: "Orbital Gatling Barrage", penetration: 2, properties: [Properties.Orbital], probability: 50, toggle: true},
         {key: "Orbital Airburst Strike", penetration: 2, properties: [Properties.Orbital], probability: 50, toggle: true},
         {key: "Orbital Napalm Barrage", penetration: 6, properties: [Properties.Orbital], probability: 50, toggle: true},
@@ -2822,7 +2827,7 @@
 
         {key: "Eagle 500KG Bomb", penetration: 9, properties: [Properties.Explosive, Properties.Eagle], probability: 50, toggle: true},
         {key: "Eagle Strafing Run", penetration: 2, properties: [Properties.Explosive, Properties.Eagle], probability: 50, toggle: true},
-        {key: "Eagle 110MM Rocket Pods", penetration: 9, properties: [Properties.Eagle], probability: 50, toggle: true},
+        {key: "Eagle 110MM Rocket Pods", penetration: 9, properties: [Properties.Eagle, Properties.Explosive], probability: 50, toggle: true},
         {key: "Eagle Airstrike", penetration: 9, properties: [Properties.Explosive, Properties.Eagle], probability: 50, toggle: true},
 
         {key: "Eagle Cluster Bomb", penetration: 2, properties: [Properties.Eagle], probability: 50, toggle: true},
@@ -2833,29 +2838,29 @@
         
         
         
-        {key: "One True Flag", penetration: 2, properties: [Properties.Support_Wep], probability: 50, toggle: true},
+        {key: "One True Flag", penetration: 3, properties: [Properties.Support_Wep], probability: 50, toggle: true},
         {key: "MG-43 Machine Gun", penetration: 3, properties: [Properties.Support_Wep], probability: 50, toggle: true},
         {key: "M-105 Stalwart", penetration: 2, properties: [Properties.Support_Wep], probability: 50, toggle: true},
         {key: "MG-206 Heavy Machine Gun", penetration: 4, properties: [Properties.Support_Wep], probability: 50, toggle: true},
 
         {key: "RS-422 Railgun", penetration: 5, properties: [Properties.Support_Wep], probability: 50, toggle: true},
-        {key: "S-11 Speargun", penetration: 5, properties: [Properties.Support_Wep], probability: 50, toggle: true},
+        {key: "S-11 Speargun", penetration: 5, properties: [Properties.Support_Wep, Properties.Explosive], probability: 50, toggle: true},
         {key: "APW-1 Anti Materiel Rifle", penetration: 4, properties: [Properties.Support_Wep], probability: 50, toggle: true},
-        {key: "PLAS-45 Epoch", penetration: 4, properties: [Properties.Support_Wep], probability: 50, toggle: true},
+        {key: "PLAS-45 Epoch", penetration: 4, properties: [Properties.Support_Wep, Properties.Explosive], probability: 50, toggle: true},
 
         {key: "GL-21 Grenade Launcher", penetration: 3, properties: [Properties.Explosive, Properties.Support_Wep], probability: 50, toggle: true},
         {key: "GL-52 De-Escalator", penetration: 5, properties: [Properties.Support_Wep], probability: 50, toggle: true},
-        {key: "TX-41 Sterilizer", penetration: 3, properties: [Properties.Support_Wep, Properties.Limited_Range], probability: 50, toggle: true},
-        {key: "FLAM-40 Flamethrower", penetration: 3, properties: [Properties.Incendiary, Properties.Support_Wep, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "TX-41 Sterilizer", penetration: 4, properties: [Properties.Support_Wep, Properties.Limited_Range], probability: 50, toggle: true},
+        {key: "FLAM-40 Flamethrower", penetration: 4, properties: [Properties.Incendiary, Properties.Support_Wep, Properties.Limited_Range], probability: 50, toggle: true},
 
         {key: "LAS-98 Laser Cannon", penetration: 4, properties: [Properties.Support_Wep], probability: 50, toggle: true},
         {key: "LAS-99 Quasar Cannon", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep], probability: 50, toggle: true},
         {key: "ARC-3 Arc Thrower", penetration: 7, properties: [Properties.Support_Wep, Properties.Limited_Range], probability: 50, toggle: true},
-        {key: "MLS-4X Commando", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep], probability: 50, toggle: true},
+        {key: "MLS-4X Commando", penetration: 6, properties: [Properties.Explosive], probability: 50, toggle: true},
 
-        {key: "EAT-700 Expendable Napalm", penetration: 3, properties: [Properties.Explosive, Properties.Support_Wep], probability: 50, toggle: true},
-        {key: "MS-11 Solo Silo", penetration: 5, properties: [Properties.Explosive, Properties.Support_Wep], probability: 50, toggle: true},
-        {key: "EAT-17 Expendable Anti-Tank", penetration: 6, properties: [Properties.Explosive, Properties.Support_Wep], probability: 50, toggle: true},
+        {key: "EAT-700 Expendable Napalm", penetration: 3, properties: [Properties.Explosive], probability: 50, toggle: true},
+        {key: "MS-11 Solo Silo", penetration: 5, properties: [Properties.Explosive, Properties.Limited_Supply], probability: 50, toggle: true},
+        {key: "EAT-17 Expendable Anti-Tank", penetration: 6, properties: [Properties.Explosive], probability: 50, toggle: true},
         {key: "AC-8 Autocannon", penetration: 4, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 50, toggle: true},
 
         {key: "RL-77 Airburst Rocket Launcher", penetration: 3, properties: [Properties.Explosive, Properties.Support_Wep, Properties.Backpack], probability: 50, toggle: true},
@@ -3463,6 +3468,15 @@
     ]
 
     // Global variables for memory
+    var rando_UserSettings = {
+        force_reroll: false,
+        force_support_wep : false,
+        max_support_wep : true,
+        max_backpack : true,
+        lock_faction : true,
+        force_explosive : true,
+        min_pen_index:0,
+    }
     var slot1, slot2, slot3, slot4, 
     helldiver_slot1, helldiver_slot2, 
     helldiver_slot3, helldiver_slot4, helldiver_slot5, helldiver_slot6, 
@@ -3646,6 +3660,7 @@
             localStorage.setItem("tools", JSON.stringify(tools));
             localStorage.setItem("melees", JSON.stringify(melees));
             localStorage.setItem("maps", JSON.stringify(maps));
+            localStorage.setItem("rando_UserSettings", JSON.stringify(rando_UserSettings));
 
             // Save latest loadout for refresh
             localStorage.setItem("helldiver_lastLoadout", JSON.stringify(helldiver_lastLoadout));
@@ -3696,6 +3711,22 @@
             
     }
 
+    // Function to update userData and save to local storage for onChange
+    function updateUserSettings() {
+        try {
+            rando_UserSettings.min_pen_index = document.getElementById("h_ch_pen").selectedIndex;
+            rando_UserSettings.force_reroll = document.getElementById("h_ch").checked;
+            rando_UserSettings.force_support_wep = document.getElementById("h_ch_sup").checked;
+            rando_UserSettings.max_support_wep = document.getElementById("h_ch_sup_max").checked;
+            rando_UserSettings.max_backpack = document.getElementById("h_ch_bp_max").checked;
+            rando_UserSettings.lock_faction = document.getElementById("h_ch_fac").checked;
+            rando_UserSettings.force_explosive = document.getElementById("h_ch_expl").checked;
+        }
+        catch(e) {
+            console.error(e);
+        }
+        saveState();
+    }
     // Function to load savedata on page load
     function loadState() {
         helldivers_main_weps = JSON.parse(localStorage.getItem("helldivers_main_weps")) ?? helldivers_main_weps;
@@ -3705,6 +3736,16 @@
         helldivers_strategems = JSON.parse(localStorage.getItem("helldivers_strategems"))?? helldivers_strategems;
         helldivers_boosters = JSON.parse(localStorage.getItem("helldivers_boosters"))?? helldivers_boosters;
         helldiver_lastLoadout = JSON.parse(localStorage.getItem("helldiver_lastLoadout"))?? helldiver_lastLoadout;
+        rando_UserSettings = JSON.parse(localStorage.getItem("rando_UserSettings"))?? rando_UserSettings;
+
+        // Set User Settings
+        document.getElementById("h_ch_pen").selectedIndex = rando_UserSettings.min_pen_index;
+        document.getElementById("h_ch").checked = rando_UserSettings.force_reroll;
+        document.getElementById("h_ch_sup").checked = rando_UserSettings.force_support_wep;
+        document.getElementById("h_ch_sup_max").checked = rando_UserSettings.max_support_wep;
+        document.getElementById("h_ch_bp_max").checked = rando_UserSettings.max_backpack;
+        document.getElementById("h_ch_fac").checked = rando_UserSettings.lock_faction;
+        document.getElementById("h_ch_expl").checked = rando_UserSettings.force_explosive;
 
         // load last loadout in case of refresh
         if (helldiver_lastLoadout.length != 0) {
@@ -4292,7 +4333,7 @@
     }
 
     var currentVer = null;
-    var lastVer = "3.32.1";
+    var lastVer = "3.32.2";
 
     
     // Function to get the total probability stack of the provided list. 
@@ -4433,7 +4474,8 @@
         var penList = [];
         //console.log(tempList);
 
-        pen = 4;
+        // rewritten so it's based on user input;
+        pen = document.getElementById("h_ch_pen").selectedIndex == 1 ? 3 : 4;
 
         if (pen_check && bestPen < pen ) {
             
@@ -4556,7 +4598,7 @@
             backpack_max = document.getElementById("h_ch_bp_max").checked;
             support_max = document.getElementById("h_ch_sup_max").checked;
             support_force = document.getElementById("h_ch_sup").checked;
-            pen_check = document.getElementById("h_ch_pen").checked;
+            pen_check = document.getElementById("h_ch_pen").selectedIndex != 0;
             fac_check = document.getElementById("h_ch_fac").checked;
             fac_select = document.getElementById("faction_select_box").value;
             expl_force = document.getElementById("h_ch_expl").checked;
