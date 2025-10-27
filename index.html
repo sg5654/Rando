@@ -825,7 +825,7 @@
     Marksman Rifles
     <br>
     <br>
-    <button class ="toggleButton_active" onclick="toggleItem('R-2 Amendment (Marksman Rifle)', helldivers_main_weps)">R-2 Amendment(Marksman Rifle)
+    <button class ="toggleButton_active" onclick="toggleItem('R-2 Amendment (Marksman Rifle)', helldivers_main_weps)">R-2 Amendment (Marksman Rifle)
         <img src="checkmark.png" class="icon-right_active">
     </button>
     <button class ="toggleButton_active" onclick="toggleItem('R-2124 Constitution (Marksman Rifle)', helldivers_main_weps)">R-2124 Constitution (Marksman Rifle)
@@ -3767,7 +3767,13 @@
         }
         
         // Re-sort saved values since this is only visual
-        sortList([helldiver_lastLoadout[6], helldiver_lastLoadout[7], helldiver_lastLoadout[8], helldiver_lastLoadout[9]]);
+        try {
+            sortList([helldiver_lastLoadout[6], helldiver_lastLoadout[7], helldiver_lastLoadout[8], helldiver_lastLoadout[9]]);
+        }
+        catch(e) {
+            console.error(e);
+        }
+        
 
         console.log(helldivers_main_weps);
         console.log(helldivers_secondary_weps);
@@ -4336,7 +4342,7 @@
     }
 
     var currentVer = null;
-    var lastVer = "3.32.3";
+    var lastVer = "3.32.4";
 
     
     // Function to get the total probability stack of the provided list. 
