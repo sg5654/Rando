@@ -1,4 +1,5 @@
-V3.32.3 -   Finally fixed the sorting on reload
+     .4 -   Bugfix for sortList when no cookie has been saved prior, fixed the amendment button typo causing it to not visually de-toggle
+     .3 -   Finally fixed the sorting on reload
      .2 -   Continuation of UI overhaul, Usersettings now get saved on change and loaded, Specific strategems have been rebalanced or repurposed, changed the min_pen checking system
      .1 -   Massive UI overhaul for the item toggle buttons, re-structured the render code for the buttons to make it easier to unify. Added images to make the purpose of the buttons more clear.
 V3.32   -   GTFO Cosmetic randomizer has been rewritten, UI overhaul on the way
