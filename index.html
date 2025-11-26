@@ -4342,7 +4342,7 @@
     }
 
     var currentVer = null;
-    var lastVer = "3.32.4";
+    var lastVer = "3.33";
 
     
     // Function to get the total probability stack of the provided list. 
@@ -4360,37 +4360,92 @@
     }
 
 
+
+    // Function to solve X 
+    // if a 99, length 52, b 100
+    // I want 99 to get closer to 100 fast
+    // if a 1, length 52, b 100
+    // I want 1 to get closer to 100 slow
+    // Simple pow function of x ^ 52 * a/100?
+    // x^52(100/a) = 100 seems promising
+    // perhaps if we split it down the middle with 50/a
+    // Or even better, something like 20/a
+    // Whatever number we put before a would be when it starts to really snowball, 10 already seemed pretty good but might get aggressive fast
+    // Let's just plug in the numbers
+
+    // Function to solve X for the function "x^length * (b / a) = 100"
+    // x:       Returned multiplier for the probabilities to update
+    // length:  Applicable length of the array before we loop through our options (length/4 for strategems for instance)
+    // a:       Current probability stack out of 100
+    // b:       Modifyable value for the snowball effect to turn
+    //
+    // Reversing the formula to solve for x gives us the following
+    // Take natural log of both sides
+    //  ln(x^length(b/a)) = ln(100)
+    //  length*(b/a)*ln(x) = ln(100)
+    //  ln(x) = ln(100)/length*(b/a)
+    //  ln(x) = a*ln(100)/length*b
+    //  x = exp(a*ln(100)/length*b)
+    //  x = 100^a/length*b
+    function solveForX(a, length) {
+        const b = 0.4;
+        var x = Math.pow(100, a/(length*b));
+        if (x < 1) {
+            console.error("Algebraic function returned invalid value for given values:" + a + ", " + length + ", " + x);
+            x = 1.1;
+        }
+        return x;
+    }
+
     // Function to solve backwards for the function "ax^length = b"
     // Used to obtain a multiplier for updating probabilities, so that they'll go back to roughly 100% if everything else got used first
-    // a: probability multiplier
+    // a: current probability
+    // x: probability multiplier required to reach 100 within the power of length
+    // b: 100
     // length: list length until running out of options
-    function solveForX(a, length) {
-    // Define the tolerance for equality check
-        const tolerance = 1e-1;
+    //
+    // Reversing the formula for X gives us :
+    //  x^length = b/a
+    //  x = (b/a)^(1/length)
+    // 
+    // function solveForX(a, length) {
+    //     var x = Math.pow((100/a),(1/length));
+    //     if (x < 1) {
+    //         console.error("Algebraic function returned invalid value for given values:" + a + ", " + length + ", " + x);
+    //         x = 1.1;
+    //     }
+    // }
+
+
+    // Old brute force formula for approximation
+    // 
+    // function solveForX(a, length) {
+    // // Define the tolerance for equality check
+    //     const tolerance = 1e-1;
         
-        // Define the initial guess for x
-        let x = Math.pow(1/a, 1/length);
+    //     // Define the initial guess for x
+    //     let x = Math.pow(1/a, 1/length);
         
-        // Newton's method to approximate the root
-        for (let i = 0; i < 100; i++) {
-            // Calculate the function value and its derivative at the current x
-            const fx = a * Math.pow(x, length) - 1;
-            const fpx = a * length * Math.pow(x, length - 1);
+    //     // Newton's method to approximate the root
+    //     for (let i = 0; i < 100; i++) {
+    //         // Calculate the function value and its derivative at the current x
+    //         const fx = a * Math.pow(x, length) - 1;
+    //         const fpx = a * length * Math.pow(x, length - 1);
             
-            // Update x using Newton's method
-            const newX = x - fx / fpx;
+    //         // Update x using Newton's method
+    //         const newX = x - fx / fpx;
             
-            // Check if the difference between current and new x is within tolerance
-            if (Math.abs(newX - x) < tolerance) {
-                return newX;
-            }
+    //         // Check if the difference between current and new x is within tolerance
+    //         if (Math.abs(newX - x) < tolerance) {
+    //             return newX;
+    //         }
             
-            x = newX;
-        }
+    //         x = newX;
+    //     }
         
-        // If the loop doesn't converge, return undefined
-        return 1.15;
-    }
+    //     // If the loop doesn't converge, return default value
+    //     return 1.15;
+    // }
 
     // Updates the probabilities of items in a list.
     // List: List to be updated
@@ -4407,7 +4462,7 @@
                     var item
                     if (i == e) {
                         item = e;
-                        item.probability = 2;
+                        item.probability = 5;
                         itemFound = true;
                         list.splice(list.indexOf(e), 1, item)
                         items.splice(items.indexOf(i), 1);
