@@ -2177,7 +2177,8 @@
         {key: "AR-23 Liberator (Assault Rifle)", penetration: 2, probability: 50, toggle: true},
         {key: "AR-23P Liberator Penetrator (Assault Rifle)", penetration: 3, probability: 50, toggle: true},
         {key: "AR-23C Liberator Concussive (Assault Rifle)", penetration: 2, properties: [Properties.Stun], probability: 50, toggle: true},
-        {key: "StA-52 Assault Rifle (Assault Rifle)", penetration: 2, probability: 50, toggle: true},
+        {key: "AR/GL-21 One-Two (Assault Rifle)", penetration: 2, probability: 50, toggle: true},
+        {key: "StA-52 Assault Rifle (Assault Rifle)", penetration: 2, properties: [Properties.Explosive], probability: 50, toggle: true},
         {key: "AR-32 Pacifier (Assault Rifle)", penetration: 2, probability: 50, toggle: true},
         {key: "AR-2 Coyote (Assault Rifle)", penetration: 3, properties: [Properties.Incendiary], probability: 50, toggle: true},
         {key: "MA5C Assault Rifle (Assault Rifle)", penetration: 3, probability: 50, toggle: true},
@@ -2206,6 +2207,7 @@
         {key: "SG-8S Slugger (Shotgun)", penetration: 3, probability: 50, toggle: true},
         {key: "SG-20 Halt (Shotgun)", penetration: 3, properties: [Properties.Stun], probability: 50, toggle: true},
         {key: "SG-451 Cookout (Shotgun)", penetration: 2, properties: [Properties.Incendiary], probability: 50, toggle: true},
+        {key: "DBS-2 Double Freedom (Shotgun)", penetration: 2, probability: 50, toggle: true},
         {key: "M9OA Shotgun (Shotgun)", penetration: 2, probability: 50, toggle: true},
         {key: "SG-225 Breaker (Shotgun)", penetration: 2, probability: 50, toggle: true},
         {key: "SG-225IE Breaker Incendiary (Shotgun)", penetration: 2, properties: [Properties.Incendiary], probability: 50, toggle: true},
@@ -2239,6 +2241,7 @@
         {key: "AR-23 Liberator (Assault Rifle)", penetration: 2, probability: 50, toggle: true},
         {key: "AR-23P Liberator Penetrator (Assault Rifle)", penetration: 3, probability: 50, toggle: true},
         {key: "AR-23C Liberator Concussive (Assault Rifle)", penetration: 2, properties: [Properties.Stun], probability: 50, toggle: true},
+        {key: "AR/GL-21 One-Two (Assault Rifle)", penetration: 2, probability: 50, toggle: true},
         {key: "StA-52 Assault Rifle (Assault Rifle)", penetration: 2, probability: 50, toggle: true},
         {key: "AR-32 Pacifier (Assault Rifle)", penetration: 2, probability: 50, toggle: true},
         {key: "AR-2 Coyote (Assault Rifle)", penetration: 3, properties: [Properties.Incendiary], probability: 50, toggle: true},
@@ -2268,6 +2271,7 @@
         {key: "SG-8S Slugger (Shotgun)", penetration: 3, probability: 50, toggle: true},
         {key: "SG-20 Halt (Shotgun)", penetration: 3, properties: [Properties.Stun], probability: 50, toggle: true},
         {key: "SG-451 Cookout (Shotgun)", penetration: 2, properties: [Properties.Incendiary], probability: 50, toggle: true},
+        {key: "DBS-2 Double Freedom (Shotgun)", penetration: 2, probability: 50, toggle: true},
         {key: "M9OA Shotgun (Shotgun)", penetration: 2, probability: 50, toggle: true},
         {key: "SG-225 Breaker (Shotgun)", penetration: 2, probability: 50, toggle: true},
         {key: "SG-225IE Breaker Incendiary (Shotgun)", penetration: 2, properties: [Properties.Incendiary], probability: 50, toggle: true},
@@ -2426,18 +2430,22 @@
 
         {key: "IE-57 Hell-Bent (Light Armour)", probability: 50, toggle: true},
         {key: "GS-11 Democracys Deputy (Light Armour)", probability: 50, toggle: true},
-        {key: "AF-50 Noxious Ranger (Light Armour)", probability: 50, toggle: true},
+        {key: "AD-11 Livewire (Light Armour)", probability: 50, toggle: true},
 
+        {key: "DS-10 Big Game Hunter (Light Armour)", probability: 50, toggle: true},
+        {key: "AF-50 Noxious Ranger (Light Armour)", probability: 50, toggle: true},
         {key: "UF-16 Inspector (Light Armour)", probability: 50, toggle: true},
+
         {key: "SR-24 Street Scout (Light Armour)", probability: 50, toggle: true},
         {key: "RE-1861 Parade Commander (Light Armour)", probability: 50, toggle: true},
-
         {key: "BP-32 Jackbot (Light Armour)", probability: 50, toggle: true},
+
+        {key: "RS-20 Constrictor", probability: 50, toggle: true},
         {key: "PH-9 Predator (Light Armour)", probability: 50, toggle: true},
         {key: "I-09 Heatseeker (Light Armour)", probability: 50, toggle: true},
 
         {key: "AC-2 Obedient (Light Armour)", probability: 50, toggle: true},
-        {key: "AD-11 Livewire (Light Armour)", probability: 50, toggle: true},
+        
         
 
         // medium
@@ -2495,6 +2503,7 @@
         
         {key: "DS-191 Scorpion (Medium Armour)", probability: 50, toggle: true},
         {key: "I-102 Draconaught (Medium Armour)", probability: 50, toggle: true},
+        {key: "RS-6 Fiend Destroyer (Medium Armour)", probability: 50, toggle: true},
 
         // heavy
         {key: "FS-55 Devastator (Heavy Armour)", probability: 50, toggle: true},
@@ -2526,6 +2535,7 @@
         {key: "FS-23 Battle Master (Heavy Armour)", probability: 50, toggle: true},
 
         {key: "CM-36 Winter Warrior (Heavy Armour)", probability: 50, toggle: true},
+        {key: "RS-40 Beast of Prey (Heavy Armour)", probability: 50, toggle: true}
 
     ]
 
@@ -2550,18 +2560,22 @@
 
         {key: "IE-57 Hell-Bent (Light Armour)", probability: 50, toggle: true},
         {key: "GS-11 Democracys Deputy (Light Armour)", probability: 50, toggle: true},
-        {key: "AF-50 Noxious Ranger (Light Armour)", probability: 50, toggle: true},
+        {key: "AD-11 Livewire (Light Armour)", probability: 50, toggle: true},
 
+        {key: "DS-10 Big Game Hunter (Light Armour)", probability: 50, toggle: true},
+        {key: "AF-50 Noxious Ranger (Light Armour)", probability: 50, toggle: true},
         {key: "UF-16 Inspector (Light Armour)", probability: 50, toggle: true},
+
         {key: "SR-24 Street Scout (Light Armour)", probability: 50, toggle: true},
         {key: "RE-1861 Parade Commander (Light Armour)", probability: 50, toggle: true},
-
         {key: "BP-32 Jackbot (Light Armour)", probability: 50, toggle: true},
+
+        {key: "RS-20 Constrictor", probability: 50, toggle: true},
         {key: "PH-9 Predator (Light Armour)", probability: 50, toggle: true},
         {key: "I-09 Heatseeker (Light Armour)", probability: 50, toggle: true},
 
         {key: "AC-2 Obedient (Light Armour)", probability: 50, toggle: true},
-        {key: "AD-11 Livewire (Light Armour)", probability: 50, toggle: true},
+        
         
 
         // medium
@@ -2619,6 +2633,7 @@
         
         {key: "DS-191 Scorpion (Medium Armour)", probability: 50, toggle: true},
         {key: "I-102 Draconaught (Medium Armour)", probability: 50, toggle: true},
+        {key: "RS-6 Fiend Destroyer (Medium Armour)", probability: 50, toggle: true},
 
         // heavy
         {key: "FS-55 Devastator (Heavy Armour)", probability: 50, toggle: true},
@@ -2650,6 +2665,7 @@
         {key: "FS-23 Battle Master (Heavy Armour)", probability: 50, toggle: true},
 
         {key: "CM-36 Winter Warrior (Heavy Armour)", probability: 50, toggle: true},
+        {key: "RS-40 Beast of Prey (Heavy Armour)", probability: 50, toggle: true}
         
 
     ]
@@ -2776,7 +2792,9 @@
         {key: "M-102 Fast Recon Vehicle", properties: [Properties.Vehicle], probability: 50, toggle: true},
         {key: "EX-049 Emancipator Exosuit", properties: [Properties.Explosive, Properties.Limited_Supply], probability: 50, toggle: true},
         {key: "EX-045 Patriot Suit", properties: [Properties.Explosive, Properties.Limited_Supply], probability: 50, toggle: true},
-
+        {key: "MINIGUN", properties: [Properties.Support_Wep, Properties.Backpack], probability: 50, toggle: true},
+        {key: "DEFOLIATION TOOL", properties: [Properties.Support_Wep], probability: 50, toggle: true},
+        {key: "FIRE BACK BOI", properties: [Properties.Backpack], probability: 50, toggle: true},
         
         
         // Defensive buildings
@@ -2886,6 +2904,9 @@
         {key: "M-102 Fast Recon Vehicle", properties: [Properties.Vehicle], probability: 50, toggle: true},
         {key: "EX-049 Emancipator Exosuit", properties: [Properties.Explosive, Properties.Limited_Supply], probability: 50, toggle: true},
         {key: "EX-045 Patriot Suit", properties: [Properties.Explosive, Properties.Limited_Supply], probability: 50, toggle: true},
+        {key: "MINIGUN", properties: [Properties.Support_Wep, Properties.Backpack], probability: 50, toggle: true},
+        {key: "DEFOLIATION TOOL", properties: [Properties.Support_Wep], probability: 50, toggle: true},
+        {key: "FIRE BACK BOI", properties: [Properties.Backpack], probability: 50, toggle: true},
 
         
         
@@ -4342,7 +4363,7 @@
     }
 
     var currentVer = null;
-    var lastVer = "3.33";
+    var lastVer = "3.33.1";
 
     
     // Function to get the total probability stack of the provided list. 
