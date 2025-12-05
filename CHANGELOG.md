@@ -1,3 +1,4 @@
+     .2 -   warbond items
 V3.33   -   Adjusted the SolveForX function to use a proper algebraic function, adjusted to return for x with the formula "x^length * (b / a) = 100"
             This should help the probability caulcations curve to favour high probability stacks much more over lower ones, with the possibility of fine-tuning these changes whenever.
      .4 -   Bugfix for sortList when no cookie has been saved prior, fixed the amendment button typo causing it to not visually de-toggle
