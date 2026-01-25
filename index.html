@@ -3451,6 +3451,7 @@
         helldivers_boosters = JSON.parse(localStorage.getItem("helldivers_boosters"))?? [...helldivers_boosters_clone];
         helldiver_lastLoadout = JSON.parse(localStorage.getItem("helldiver_lastLoadout"))?? helldiver_lastLoadout;
         rando_UserSettings = JSON.parse(localStorage.getItem("rando_UserSettings"))?? rando_UserSettings;
+        helldivers_factions = [...helldivers_factions_clone];
 
         // Set User Settings
         document.getElementById("h_ch_pen").selectedIndex = rando_UserSettings.min_pen_index;
