@@ -1,3 +1,4 @@
+V3.35   -   Added everything that was missing as of 30/08/2026. Fixed up missing item names. Updated some of the codes that were changed in between. Adapted logic for exosuits.
      .1 -   Items fixed
 V3.34   -   new Warbond Intro
      .2 -   warbond items
